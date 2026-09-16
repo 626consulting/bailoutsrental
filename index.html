@@ -26,9 +26,16 @@
             line-height: 1.6;
         }
 
-        /* =========================
-           HEADER
-        ========================== */
+        section {
+            padding: 80px 25px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* HEADER */
 
         header {
             background: #080808;
@@ -90,24 +97,13 @@
             color: white;
         }
 
-        /* =========================
-           HERO
-        ========================== */
+        /* HERO */
 
         .hero {
             min-height: 640px;
             background:
-                linear-gradient(
-                    rgba(0,0,0,.74),
-                    rgba(0,0,0,.74)
-                ),
-                linear-gradient(
-                    135deg,
-                    #111 0%,
-                    #222 50%,
-                    #0e3216 100%
-                );
-
+                linear-gradient(rgba(0,0,0,.74), rgba(0,0,0,.74)),
+                linear-gradient(135deg, #111 0%, #222 50%, #0e3216 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -138,7 +134,6 @@
         .hero h2 {
             font-size: 27px;
             margin-bottom: 22px;
-            font-weight: 600;
         }
 
         .hero p {
@@ -184,18 +179,7 @@
             color: #111;
         }
 
-        /* =========================
-           GENERAL
-        ========================== */
-
-        section {
-            padding: 80px 25px;
-        }
-
-        .container {
-            max-width: 1150px;
-            margin: auto;
-        }
+        /* GENERAL HEADINGS */
 
         .section-heading {
             text-align: center;
@@ -221,9 +205,7 @@
             font-size: 17px;
         }
 
-        /* =========================
-           RENTALS
-        ========================== */
+        /* RENTALS */
 
         .rentals {
             background: #f5f5f5;
@@ -254,8 +236,10 @@
             align-items: center;
             justify-content: center;
             color: #4caf50;
-            font-size: 55px;
+            font-size: 42px;
             font-weight: bold;
+            text-align: center;
+            padding: 20px;
         }
 
         .card-content {
@@ -290,9 +274,7 @@
             margin-bottom: 10px;
         }
 
-        /* =========================
-           HOW IT WORKS
-        ========================== */
+        /* HOW IT WORKS */
 
         .steps {
             display: grid;
@@ -323,9 +305,7 @@
             color: #666;
         }
 
-        /* =========================
-           WHY CHOOSE US
-        ========================== */
+        /* WHY CHOOSE US */
 
         .why {
             background: #0d0d0d;
@@ -358,9 +338,7 @@
             color: #d1d1d1;
         }
 
-        /* =========================
-           SERVICE AREA
-        ========================== */
+        /* SERVICE AREA */
 
         .service-area {
             text-align: center;
@@ -380,9 +358,7 @@
             margin-bottom: 10px;
         }
 
-        /* =========================
-           FAQ
-        ========================== */
+        /* FAQ */
 
         .faq {
             background: #f5f5f5;
@@ -412,9 +388,7 @@
             color: #606060;
         }
 
-        /* =========================
-           QUOTE
-        ========================== */
+        /* QUOTE SECTION */
 
         .quote {
             background: #319343;
@@ -444,6 +418,17 @@
             opacity: .9;
         }
 
+        .contact-info {
+            margin-top: 25px;
+        }
+
+        .contact-info a {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
         .quote-form {
             background: white;
             padding: 30px;
@@ -459,6 +444,15 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             font-family: inherit;
+            font-size: 15px;
+        }
+
+        .quote-form label {
+            display: block;
+            color: #333;
+            margin-bottom: 6px;
+            font-size: 14px;
+            font-weight: bold;
         }
 
         .quote-form textarea {
@@ -473,9 +467,7 @@
             font-size: 15px;
         }
 
-        /* =========================
-           FOOTER
-        ========================== */
+        /* FOOTER */
 
         footer {
             background: #080808;
@@ -504,9 +496,7 @@
             text-decoration: none;
         }
 
-        /* =========================
-           MOBILE
-        ========================== */
+        /* MOBILE */
 
         @media (max-width: 900px) {
 
@@ -538,6 +528,10 @@
         }
 
         @media (max-width: 600px) {
+
+            section {
+                padding: 60px 20px;
+            }
 
             nav {
                 gap: 12px;
@@ -580,9 +574,7 @@
 
 <body>
 
-<!-- =========================
-     HEADER
-========================== -->
+<!-- HEADER -->
 
 <header>
     <div class="nav-container">
@@ -597,6 +589,7 @@
             <a href="#how">How It Works</a>
             <a href="#service">Service Area</a>
             <a href="#faq">FAQ</a>
+            <a href="tel:6416918799">Call</a>
             <a href="#quote" class="nav-button">Request a Quote</a>
         </nav>
 
@@ -604,9 +597,7 @@
 </header>
 
 
-<!-- =========================
-     HERO
-========================== -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
@@ -632,8 +623,8 @@
                 Request a Quote
             </a>
 
-            <a href="#rentals" class="btn btn-outline">
-                View Rentals
+            <a href="tel:6416918799" class="btn btn-outline">
+                Call 641-691-8799
             </a>
 
         </div>
@@ -643,9 +634,7 @@
 </section>
 
 
-<!-- =========================
-     RENTALS
-========================== -->
+<!-- RENTALS -->
 
 <section class="rentals" id="rentals">
 
@@ -668,12 +657,12 @@
 
         <div class="cards">
 
-            <!-- 15 YARD -->
+            <!-- 15-YARD DUMPSTER -->
 
             <div class="card">
 
                 <div class="card-image">
-                    15 YD
+                    15 YARD
                 </div>
 
                 <div class="card-content">
@@ -681,9 +670,9 @@
                     <h3>15-Yard Roll-Off Dumpster</h3>
 
                     <p>
-                        A versatile dumpster option for residential cleanouts,
-                        remodeling projects, property cleanup, construction
-                        debris and more.
+                        A versatile dumpster option for residential
+                        cleanouts, remodeling projects, property cleanup,
+                        construction debris and more.
                     </p>
 
                     <a href="#quote">
@@ -695,12 +684,12 @@
             </div>
 
 
-            <!-- 20 YARD -->
+            <!-- 20-YARD DUMPSTER -->
 
             <div class="card">
 
                 <div class="card-image">
-                    20 YD
+                    20 YARD
                 </div>
 
                 <div class="card-content">
@@ -731,7 +720,7 @@
             <div class="card">
 
                 <div class="card-image">
-                    TRAILER
+                    TRAILERS
                 </div>
 
                 <div class="card-content">
@@ -739,7 +728,7 @@
                     <h3>Trailer Rentals</h3>
 
                     <p>
-                        Dependable trailer rental options for hauling,
+                        Dependable trailer rental options for hauling
                         equipment, materials and projects. Contact us
                         for current trailer availability.
                     </p>
@@ -759,9 +748,7 @@
 </section>
 
 
-<!-- =========================
-     HOW IT WORKS
-========================== -->
+<!-- HOW IT WORKS -->
 
 <section id="how">
 
@@ -769,7 +756,9 @@
 
         <div class="section-heading">
 
-            <div class="eyebrow">Simple Rental Process</div>
+            <div class="eyebrow">
+                Simple Rental Process
+            </div>
 
             <h2>How It Works</h2>
 
@@ -816,7 +805,7 @@
                 <h3>Delivery or Pickup</h3>
 
                 <p>
-                    We'll coordinate the rental details with you.
+                    We'll coordinate your rental and delivery details.
                 </p>
 
             </div>
@@ -841,9 +830,7 @@
 </section>
 
 
-<!-- =========================
-     WHY BAIL OUT
-========================== -->
+<!-- WHY BAIL OUT -->
 
 <section class="why">
 
@@ -851,7 +838,9 @@
 
         <div class="section-heading">
 
-            <div class="eyebrow">Why BAIL OUT?</div>
+            <div class="eyebrow">
+                Why BAIL OUT?
+            </div>
 
             <h2>Rental Service Made Simple</h2>
 
@@ -867,34 +856,49 @@
         <div class="features">
 
             <div class="feature">
+
                 <h3>Dependable Rentals</h3>
+
                 <p>
                     Equipment ready to help you tackle your next project.
                 </p>
+
             </div>
 
+
             <div class="feature">
+
                 <h3>Simple Process</h3>
+
                 <p>
-                    No complicated rental process. Tell us what you need
-                    and we'll help get you started.
+                    Tell us what you need and we'll help get your
+                    rental started.
                 </p>
+
             </div>
 
+
             <div class="feature">
+
                 <h3>Convenient Service</h3>
+
                 <p>
                     Rental options designed around real projects and
                     real customer needs.
                 </p>
+
             </div>
 
+
             <div class="feature">
+
                 <h3>Local Business</h3>
+
                 <p>
                     Personal service from a local rental company that
                     values its customers.
                 </p>
+
             </div>
 
         </div>
@@ -904,9 +908,7 @@
 </section>
 
 
-<!-- =========================
-     SERVICE AREA
-========================== -->
+<!-- SERVICE AREA -->
 
 <section class="service-area" id="service">
 
@@ -914,16 +916,19 @@
 
         <div class="section-heading">
 
-            <div class="eyebrow">Local Rental Service</div>
+            <div class="eyebrow">
+                Local Rental Service
+            </div>
 
             <h2>Our Service Area</h2>
 
             <p>
                 BAIL OUT provides dumpster and trailer rental services
-                to customers throughout our local service area.
+                throughout our local service area.
             </p>
 
         </div>
+
 
         <div class="service-box">
 
@@ -935,6 +940,13 @@
                 is within our current delivery area.
             </p>
 
+            <br>
+
+            <a href="tel:6416918799"
+               class="btn btn-green">
+                Call 641-691-8799
+            </a>
+
         </div>
 
     </div>
@@ -942,9 +954,7 @@
 </section>
 
 
-<!-- =========================
-     FAQ
-========================== -->
+<!-- FAQ -->
 
 <section class="faq" id="faq">
 
@@ -952,13 +962,15 @@
 
         <div class="section-heading">
 
-            <div class="eyebrow">Questions?</div>
+            <div class="eyebrow">
+                Questions?
+            </div>
 
             <h2>Frequently Asked Questions</h2>
 
             <p>
-                Here are answers to some common questions about renting
-                from BAIL OUT.
+                Here are answers to some common questions about
+                renting from BAIL OUT.
             </p>
 
         </div>
@@ -967,57 +979,78 @@
         <div class="faq-list">
 
             <details>
-                <summary>What size dumpsters do you offer?</summary>
+
+                <summary>
+                    What size dumpsters do you offer?
+                </summary>
 
                 <p>
-                    BAIL OUT currently offers 15-yard roll-off dumpsters,
-                    with 20-yard dumpsters planned. Contact us for current
-                    availability.
+                    BAIL OUT currently offers 15-yard roll-off
+                    dumpsters, with 20-yard dumpsters planned.
+                    Contact us for current availability.
                 </p>
+
             </details>
 
 
             <details>
-                <summary>How long can I keep my rental?</summary>
+
+                <summary>
+                    How long can I keep my rental?
+                </summary>
 
                 <p>
-                    Rental periods vary depending on the equipment and
-                    availability. Submit a rental request with your dates
-                    and we'll provide the available options.
+                    Rental periods vary depending on the equipment
+                    and availability. Submit a rental request with
+                    your dates and we'll provide available options.
                 </p>
+
             </details>
 
 
             <details>
-                <summary>Do you deliver dumpsters?</summary>
+
+                <summary>
+                    Do you deliver dumpsters?
+                </summary>
 
                 <p>
-                    Delivery options are available. Provide your delivery
-                    address when requesting a quote so we can confirm
-                    availability and any applicable delivery charges.
+                    Delivery options are available. Provide your
+                    delivery address when requesting a quote so we
+                    can confirm availability and applicable charges.
                 </p>
+
             </details>
 
 
             <details>
-                <summary>What trailers are available?</summary>
+
+                <summary>
+                    What trailers are available?
+                </summary>
 
                 <p>
-                    Trailer inventory and availability may vary. Contact
-                    BAIL OUT with information about what you need to haul
-                    and your requested rental dates.
+                    Trailer inventory and availability may vary.
+                    Contact BAIL OUT with information about what
+                    you need to haul and your requested dates.
                 </p>
+
             </details>
 
 
             <details>
-                <summary>Can I book online?</summary>
+
+                <summary>
+                    Can I book online?
+                </summary>
 
                 <p>
-                    Online booking is being developed. For now, submit
-                    a rental request and we'll contact you to confirm
-                    availability and rental details.
+                    Online booking is being developed. For now,
+                    submit a rental request and we'll contact you
+                    to confirm availability, pricing and rental
+                    details.
                 </p>
+
             </details>
 
         </div>
@@ -1027,9 +1060,7 @@
 </section>
 
 
-<!-- =========================
-     REQUEST A QUOTE
-========================== -->
+<!-- REQUEST A QUOTE -->
 
 <section class="quote" id="quote">
 
@@ -1047,9 +1078,20 @@
                     pricing and the next steps for your rental.
                 </p>
 
+                <div class="contact-info">
+
+                    <p>Prefer to call?</p>
+
+                    <a href="tel:6416918799">
+                        641-691-8799
+                    </a>
+
+                </div>
+
                 <p class="quote-note">
-                    Online booking is coming soon. This request does not
-                    guarantee availability until your rental is confirmed.
+                    Online booking is coming soon. A quote request
+                    does not guarantee availability until your
+                    rental is confirmed.
                 </p>
 
             </div>
@@ -1057,71 +1099,130 @@
 
             <div class="quote-form">
 
-                <!--
-                    FORM CONNECTION WILL BE ADDED LATER.
-                    DO NOT COLLECT REAL CUSTOMER REQUESTS
-                    UNTIL THIS FORM IS CONNECTED.
-                -->
+                <form
+                    action="https://formspree.io/f/mzezbzyq"
+                    method="POST"
+                >
 
-                <form>
+                    <input
+                        type="hidden"
+                        name="_subject"
+                        value="New BAIL OUT Rental Quote Request"
+                    >
+
 
                     <input
                         type="text"
+                        name="customer_name"
                         placeholder="Full Name"
                         required
                     >
 
+
                     <input
                         type="tel"
+                        name="phone"
                         placeholder="Phone Number"
                         required
                     >
 
+
                     <input
                         type="email"
+                        name="email"
                         placeholder="Email Address"
                         required
                     >
 
+
                     <input
                         type="text"
+                        name="service_address"
                         placeholder="Delivery / Service Address"
+                        required
                     >
 
-                    <select required>
+
+                    <select
+                        name="rental_type"
+                        required
+                    >
 
                         <option value="">
                             What do you need?
                         </option>
 
-                        <option>
+                        <option value="15-Yard Dumpster">
                             15-Yard Dumpster
                         </option>
 
-                        <option>
+                        <option value="20-Yard Dumpster">
                             20-Yard Dumpster
                         </option>
 
-                        <option>
+                        <option value="Trailer Rental">
                             Trailer Rental
                         </option>
 
-                        <option>
+                        <option value="Not Sure">
                             Not Sure
                         </option>
 
                     </select>
 
+
+                    <label for="rental-date">
+                        Requested Rental Date
+                    </label>
+
                     <input
+                        id="rental-date"
                         type="date"
+                        name="requested_date"
+                        required
                     >
 
+
+                    <select
+                        name="rental_duration"
+                        required
+                    >
+
+                        <option value="">
+                            How long do you need the rental?
+                        </option>
+
+                        <option value="1 Day">
+                            1 Day
+                        </option>
+
+                        <option value="Weekend">
+                            Weekend
+                        </option>
+
+                        <option value="1 Week">
+                            1 Week
+                        </option>
+
+                        <option value="More Than 1 Week">
+                            More Than 1 Week
+                        </option>
+
+                        <option value="Not Sure">
+                            Not Sure
+                        </option>
+
+                    </select>
+
+
                     <textarea
+                        name="project_details"
                         placeholder="Tell us about your project or rental needs..."
                     ></textarea>
 
+
                     <button
-                        type="button"
+                        type="submit"
                         class="btn btn-green"
                     >
                         Request a Quote
@@ -1138,9 +1239,7 @@
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================== -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -1150,6 +1249,12 @@
 
     <p>
         Roll-Off Dumpster Service & Trailer Rentals
+    </p>
+
+    <p>
+        <a href="tel:6416918799">
+            641-691-8799
+        </a>
     </p>
 
     <p>
