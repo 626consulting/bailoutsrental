@@ -1,617 +1,1169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>BAIL OUT | Roll-Off Dumpster & Trailer Rentals</title>
-
-    <meta name="description" content="BAIL OUT provides dependable roll-off dumpster and trailer rentals for cleanouts, renovations, construction projects, hauling and more.">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #ffffff;
-            color: #1b1b1b;
-            line-height: 1.6;
-        }
-
-        section {
-            padding: 80px 25px;
-        }
-
-        .container {
-            max-width: 1150px;
-            margin: auto;
-        }
-
-        /* HEADER */
-
-        header {
-            background: #080808;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 4px solid #2f9e44;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 16px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .brand {
-            color: white;
-            text-decoration: none;
-            font-size: 28px;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
-
-        .brand span {
-            color: #39a84b;
-        }
-
-        nav {
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        nav a:hover {
-            color: #4aba5c;
-        }
-
-        .nav-button {
-            background: #369e47;
-            padding: 10px 18px;
-            border-radius: 5px;
-        }
-
-        .nav-button:hover {
-            background: #48b85a;
-            color: white;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 640px;
-            background:
-                linear-gradient(rgba(0,0,0,.74), rgba(0,0,0,.74)),
-                linear-gradient(135deg, #111 0%, #222 50%, #0e3216 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 80px 25px;
-        }
-
-        .hero-content {
-            max-width: 900px;
-        }
-
-        .hero-small {
-            color: #50bd61;
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
-            font-size: 68px;
-            line-height: 1;
-            margin-bottom: 15px;
-            font-weight: 900;
-        }
-
-        .hero h2 {
-            font-size: 27px;
-            margin-bottom: 22px;
-        }
-
-        .hero p {
-            font-size: 19px;
-            max-width: 760px;
-            margin: 0 auto 32px;
-            color: #ededed;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            padding: 14px 27px;
-            border-radius: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: .2s;
-        }
-
-        .btn-green {
-            background: #369e47;
-            color: white;
-        }
-
-        .btn-green:hover {
-            background: #48b85a;
-        }
-
-        .btn-outline {
-            border: 2px solid white;
-            color: white;
-        }
-
-        .btn-outline:hover {
-            background: white;
-            color: #111;
-        }
-
-        /* GENERAL HEADINGS */
-
-        .section-heading {
-            text-align: center;
-            max-width: 760px;
-            margin: 0 auto 50px;
-        }
-
-        .eyebrow {
-            color: #2f923f;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 14px;
-        }
-
-        .section-heading h2 {
-            font-size: 40px;
-            margin: 8px 0 12px;
-        }
-
-        .section-heading p {
-            color: #606060;
-            font-size: 17px;
-        }
-
-        /* RENTALS */
-
-        .rentals {
-            background: #f5f5f5;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,.08);
-            transition: .25s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card-image {
-            height: 210px;
-            background: #171717;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #4caf50;
-            font-size: 42px;
-            font-weight: bold;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .card-content {
-            padding: 28px;
-        }
-
-        .card-content h3 {
-            font-size: 23px;
-            margin-bottom: 12px;
-        }
-
-        .card-content p {
-            color: #626262;
-            margin-bottom: 18px;
-        }
-
-        .card-content a {
-            color: #2e913f;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .coming {
-            display: inline-block;
-            background: #e9f6eb;
-            color: #267d34;
-            padding: 4px 9px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        /* HOW IT WORKS */
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            text-align: center;
-        }
-
-        .step-number {
-            width: 62px;
-            height: 62px;
-            background: #359c46;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0 auto 18px;
-        }
-
-        .step h3 {
-            margin-bottom: 8px;
-        }
-
-        .step p {
-            color: #666;
-        }
-
-        /* WHY CHOOSE US */
-
-        .why {
-            background: #0d0d0d;
-            color: white;
-        }
-
-        .why .section-heading p {
-            color: #d1d1d1;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
-
-        .feature {
-            padding: 25px;
-            border: 1px solid #333;
-            border-radius: 7px;
-            text-align: center;
-        }
-
-        .feature h3 {
-            color: #4bb85c;
-            margin-bottom: 10px;
-        }
-
-        .feature p {
-            color: #d1d1d1;
-        }
-
-        /* SERVICE AREA */
-
-        .service-area {
-            text-align: center;
-        }
-
-        .service-box {
-            background: #edf7ef;
-            border-left: 5px solid #359c46;
-            padding: 35px;
-            max-width: 800px;
-            margin: auto;
-            border-radius: 5px;
-        }
-
-        .service-box h3 {
-            font-size: 26px;
-            margin-bottom: 10px;
-        }
-
-        /* FAQ */
-
-        .faq {
-            background: #f5f5f5;
-        }
-
-        .faq-list {
-            max-width: 850px;
-            margin: auto;
-        }
-
-        details {
-            background: white;
-            margin-bottom: 13px;
-            padding: 20px 22px;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,.05);
-        }
-
-        summary {
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 17px;
-        }
-
-        details p {
-            padding-top: 12px;
-            color: #606060;
-        }
-
-        /* QUOTE SECTION */
-
-        .quote {
-            background: #319343;
-            color: white;
-        }
-
-        .quote-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 55px;
-            align-items: center;
-        }
-
-        .quote h2 {
-            font-size: 42px;
-            line-height: 1.1;
-            margin-bottom: 18px;
-        }
-
-        .quote p {
-            font-size: 17px;
-            margin-bottom: 20px;
-        }
-
-        .quote-note {
-            font-size: 14px !important;
-            opacity: .9;
-        }
-
-        .contact-info {
-            margin-top: 25px;
-        }
-
-        .contact-info a {
-            color: white;
-            font-size: 22px;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .quote-form {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-        }
-
-        .quote-form input,
-        .quote-form select,
-        .quote-form textarea {
-            width: 100%;
-            padding: 13px;
-            margin-bottom: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-family: inherit;
-            font-size: 15px;
-        }
-
-        .quote-form label {
-            display: block;
-            color: #333;
-            margin-bottom: 6px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .quote-form textarea {
-            min-height: 110px;
-            resize: vertical;
-        }
-
-        .quote-form button {
-            width: 100%;
-            border: none;
-            cursor: pointer;
-            font-size: 15px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            background: #080808;
-            color: #aaa;
-            padding: 45px 25px;
-            text-align: center;
-        }
-
-        footer .footer-brand {
-            color: white;
-            font-size: 25px;
-            font-weight: 900;
-            margin-bottom: 8px;
-        }
-
-        footer .footer-brand span {
-            color: #3faa51;
-        }
-
-        footer p {
-            margin: 5px 0;
-        }
-
-        footer a {
-            color: #4ab95c;
-            text-decoration: none;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 900px) {
-
-            .nav-container {
-                flex-direction: column;
-            }
-
-            nav {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .cards,
-            .features {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .steps {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .quote-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            section {
-                padding: 60px 20px;
-            }
-
-            nav {
-                gap: 12px;
-            }
-
-            nav a {
-                font-size: 12px;
-            }
-
-            .hero {
-                min-height: 560px;
-            }
-
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .hero h2 {
-                font-size: 21px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .cards,
-            .features,
-            .steps {
-                grid-template-columns: 1fr;
-            }
-
-            .section-heading h2,
-            .quote h2 {
-                font-size: 32px;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BAIL OUT | Roll-Off Dumpster & Trailer Rentals</title>
+
+<meta name="description" content="BAIL OUT provides dependable roll-off dumpster and trailer rentals for cleanouts, renovations, construction projects, hauling and more.">
+
+<style>
+
+:root{
+    --green:#35b54a;
+    --green-dark:#218d34;
+    --green-light:#54d267;
+    --black:#080a09;
+    --charcoal:#111512;
+    --gray:#f3f4f3;
+    --text:#1c1c1c;
+    --muted:#646464;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--text);
+    background:#fff;
+    line-height:1.55;
+}
+
+img{
+    max-width:100%;
+}
+
+.container{
+    width:min(1180px, calc(100% - 40px));
+    margin:auto;
+}
+
+a{
+    text-decoration:none;
+}
+
+section{
+    scroll-margin-top:95px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:rgba(5,7,6,.98);
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    border-bottom:1px solid #252925;
+}
+
+.nav-wrap{
+    width:min(1240px, calc(100% - 36px));
+    min-height:92px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.logo-link{
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
+}
+
+.logo{
+    width:105px;
+    max-height:82px;
+    object-fit:contain;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:27px;
+    flex:1;
+}
+
+nav a{
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    transition:.2s;
+}
+
+nav a:hover{
+    color:var(--green-light);
+}
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+.header-quote{
+    background:var(--green);
+    color:#fff;
+    padding:13px 21px;
+    border-radius:6px;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+.header-quote:hover{
+    background:var(--green-light);
+}
+
+.header-phone{
+    color:white;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    white-space:nowrap;
+}
+
+.phone-icon{
+    width:37px;
+    height:37px;
+    border-radius:50%;
+    background:var(--green);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:19px;
+}
+
+.phone-copy{
+    line-height:1.15;
+}
+
+.phone-copy small{
+    display:block;
+    font-size:11px;
+    color:#d1d1d1;
+}
+
+.phone-copy strong{
+    font-size:17px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:610px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    color:white;
+
+    /*
+    When you get a real hero photo, upload it as hero.jpg
+    and replace the background below with:
+
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.78) 48%,rgba(0,0,0,.20) 100%),
+    url('hero.jpg') center/cover no-repeat;
+    */
+
+    background:
+    radial-gradient(circle at 75% 50%, rgba(52,181,74,.23), transparent 31%),
+    linear-gradient(120deg,#050706 0%,#0b0f0c 52%,#17361d 100%);
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size:45px 45px;
+}
+
+.hero-inner{
+    width:min(1180px, calc(100% - 40px));
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    align-items:center;
+    gap:55px;
+    position:relative;
+    z-index:2;
+    padding:75px 0;
+}
+
+.hero-eyebrow{
+    color:var(--green-light);
+    font-size:15px;
+    font-weight:900;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:13px;
+}
+
+.hero h1{
+    font-size:76px;
+    line-height:.95;
+    font-weight:900;
+    letter-spacing:-3px;
+    margin-bottom:13px;
+}
+
+.hero h1 span{
+    color:var(--green);
+}
+
+.hero h2{
+    font-size:27px;
+    line-height:1.2;
+    margin-bottom:19px;
+}
+
+.hero-copy{
+    color:#e3e3e3;
+    font-size:18px;
+    max-width:650px;
+    margin-bottom:28px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:52px;
+    padding:0 25px;
+    border-radius:6px;
+    font-weight:800;
+    transition:.2s;
+    cursor:pointer;
+}
+
+.btn-green{
+    background:var(--green);
+    color:#fff;
+}
+
+.btn-green:hover{
+    background:var(--green-light);
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    color:white;
+    border:2px solid white;
+}
+
+.btn-outline:hover{
+    color:#111;
+    background:white;
+}
+
+.hero-visual{
+    position:relative;
+}
+
+.hero-photo-placeholder{
+    height:390px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.15);
+    background:
+        linear-gradient(145deg,#181d19,#0b0d0c);
+    box-shadow:0 30px 60px rgba(0,0,0,.45);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    overflow:hidden;
+    position:relative;
+}
+
+.hero-photo-placeholder:before{
+    content:"";
+    position:absolute;
+    width:380px;
+    height:220px;
+    border:10px solid #202720;
+    background:#090b09;
+    bottom:62px;
+    right:-25px;
+    transform:skew(-5deg);
+    box-shadow:0 12px 25px rgba(0,0,0,.5);
+}
+
+.hero-photo-placeholder:after{
+    content:"DUMPSTER & TRAILER RENTALS";
+    color:#4fd15f;
+    font-weight:900;
+    letter-spacing:2px;
+    font-size:14px;
+    position:absolute;
+    top:30px;
+}
+
+.hero-logo{
+    width:185px;
+    z-index:3;
+    position:relative;
+    filter:drop-shadow(0 8px 8px rgba(0,0,0,.6));
+}
+
+.hero-badge{
+    position:absolute;
+    bottom:-18px;
+    left:-18px;
+    background:var(--green);
+    color:white;
+    padding:17px 21px;
+    font-weight:900;
+    border-radius:8px;
+    box-shadow:0 12px 25px rgba(0,0,0,.3);
+}
+
+/* HERO TRUST BAR */
+
+.trust-bar{
+    background:#090b09;
+    border-top:1px solid #242824;
+    color:white;
+}
+
+.trust-items{
+    width:min(1180px, calc(100% - 40px));
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.trust-item{
+    padding:19px 15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    font-weight:700;
+    font-size:14px;
+}
+
+.check{
+    width:23px;
+    height:23px;
+    background:var(--green);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+}
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+.section{
+    padding:82px 0;
+}
+
+.section-head{
+    max-width:760px;
+    margin:0 auto 43px;
+    text-align:center;
+}
+
+.eyebrow{
+    color:var(--green-dark);
+    font-size:13px;
+    letter-spacing:2px;
+    font-weight:900;
+    text-transform:uppercase;
+}
+
+.section-head h2{
+    font-size:41px;
+    line-height:1.1;
+    margin:8px 0 13px;
+}
+
+.section-head p{
+    color:var(--muted);
+    font-size:17px;
+}
+
+/* =========================
+   RENTALS
+========================= */
+
+.rentals{
+    background:#f5f6f5;
+}
+
+.rental-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.rental-card{
+    background:white;
+    border-radius:11px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.25s;
+    border:1px solid #e8e8e8;
+}
+
+.rental-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 15px 35px rgba(0,0,0,.13);
+}
+
+.rental-photo{
+    height:245px;
+    background:
+        linear-gradient(145deg,#1d221e,#080a09);
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.rental-photo .equipment-shape{
+    width:78%;
+    height:54%;
+    background:#111;
+    border:6px solid #252b26;
+    position:relative;
+    box-shadow:0 15px 20px rgba(0,0,0,.5);
+}
+
+.rental-photo .equipment-shape:before{
+    content:"";
+    position:absolute;
+    width:90%;
+    height:9px;
+    background:var(--green);
+    top:-15px;
+    left:5%;
+}
+
+.rental-photo .equipment-shape:after{
+    content:"PLACEHOLDER PHOTO";
+    color:#555;
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    letter-spacing:2px;
+    font-weight:bold;
+}
+
+.trailer-shape{
+    width:80% !important;
+    height:22% !important;
+    margin-top:70px;
+}
+
+.coming-soon{
+    position:absolute;
+    top:20px;
+    left:-7px;
+    background:var(--green);
+    color:white;
+    padding:8px 25px;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:1px;
+    transform:rotate(-4deg);
+    z-index:3;
+}
+
+.rental-content{
+    padding:25px;
+}
+
+.rental-content h3{
+    font-size:22px;
+    margin-bottom:9px;
+}
+
+.rental-content p{
+    color:#626262;
+    min-height:100px;
+}
+
+.card-link{
+    display:inline-block;
+    margin-top:13px;
+    color:var(--green-dark);
+    font-weight:900;
+}
+
+.card-link:hover{
+    color:var(--green);
+}
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.step{
+    text-align:center;
+    padding:28px 20px;
+}
+
+.step-number{
+    width:62px;
+    height:62px;
+    margin:0 auto 18px;
+    border-radius:50%;
+    background:var(--green);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    font-weight:900;
+    box-shadow:0 7px 18px rgba(53,181,74,.3);
+}
+
+.step h3{
+    margin-bottom:7px;
+}
+
+.step p{
+    color:#666;
+}
+
+/* =========================
+   WHY US
+========================= */
+
+.why{
+    background:linear-gradient(135deg,#070908,#121713);
+    color:white;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.why-item{
+    text-align:center;
+    padding:34px 25px;
+    border-right:1px solid #3a3d3a;
+}
+
+.why-item:last-child{
+    border-right:none;
+}
+
+.why-icon{
+    width:54px;
+    height:54px;
+    background:var(--green);
+    color:white;
+    border-radius:50%;
+    margin:0 auto 15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.why-item h3{
+    margin-bottom:7px;
+}
+
+.why-item p{
+    color:#cfcfcf;
+    font-size:14px;
+}
+
+/* =========================
+   SERVICE AREA
+========================= */
+
+.service-area{
+    background:white;
+}
+
+.service-box{
+    max-width:900px;
+    margin:auto;
+    padding:42px;
+    background:#edf8ef;
+    border-left:6px solid var(--green);
+    border-radius:8px;
+    text-align:center;
+}
+
+.service-box h3{
+    font-size:27px;
+    margin-bottom:10px;
+}
+
+.service-box p{
+    color:#555;
+    margin-bottom:22px;
+}
+
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+    background:#f5f6f5;
+}
+
+.faq-list{
+    max-width:850px;
+    margin:auto;
+}
+
+details{
+    background:white;
+    margin-bottom:12px;
+    padding:20px 23px;
+    border-radius:7px;
+    border:1px solid #e6e6e6;
+}
+
+summary{
+    font-weight:800;
+    cursor:pointer;
+    font-size:17px;
+}
+
+details p{
+    color:#626262;
+    padding-top:12px;
+}
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote{
+    padding:85px 0;
+    background:
+        linear-gradient(120deg,#fff 0%,#f5f7f5 100%);
+}
+
+.quote-grid{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:60px;
+    align-items:center;
+}
+
+.quote-left .eyebrow{
+    font-size:14px;
+}
+
+.quote-left h2{
+    font-size:49px;
+    line-height:1;
+    margin:9px 0 18px;
+}
+
+.quote-left > p{
+    font-size:17px;
+    color:#4e4e4e;
+}
+
+.big-phone{
+    margin:28px 0;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.big-phone-icon{
+    width:62px;
+    height:62px;
+    background:var(--green);
+    border-radius:50%;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:27px;
+}
+
+.big-phone small{
+    display:block;
+    color:#444;
+    font-weight:bold;
+}
+
+.big-phone a{
+    display:block;
+    color:var(--green-dark);
+    font-size:32px;
+    font-weight:900;
+    line-height:1.1;
+}
+
+.disclaimer{
+    font-size:13px !important;
+    color:#666 !important;
+}
+
+.quote-mini-logo{
+    margin-top:28px;
+    width:110px;
+}
+
+.form-card{
+    background:white;
+    border-radius:13px;
+    padding:32px;
+    box-shadow:0 12px 40px rgba(0,0,0,.12);
+    border:1px solid #e5e5e5;
+}
+
+.form-card h3{
+    font-size:29px;
+    margin-bottom:22px;
+}
+
+.form-card h3:after{
+    content:"";
+    display:block;
+    width:48px;
+    height:4px;
+    background:var(--green);
+    margin-top:7px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.field.full{
+    grid-column:1 / -1;
+}
+
+.field label{
+    display:block;
+    font-size:12px;
+    font-weight:800;
+    margin-bottom:5px;
+}
+
+.field input,
+.field select,
+.field textarea{
+    width:100%;
+    border:1px solid #cfcfcf;
+    background:white;
+    padding:12px;
+    border-radius:5px;
+    font-family:inherit;
+    font-size:14px;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+    outline:2px solid rgba(53,181,74,.25);
+    border-color:var(--green);
+}
+
+.field textarea{
+    min-height:105px;
+    resize:vertical;
+}
+
+.submit-btn{
+    width:100%;
+    border:0;
+    margin-top:17px;
+    background:var(--green);
+    color:white;
+    min-height:54px;
+    border-radius:6px;
+    font-size:17px;
+    font-weight:900;
+    cursor:pointer;
+}
+
+.submit-btn:hover{
+    background:var(--green-dark);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#070908;
+    color:#aaa;
+    padding:35px 0;
+}
+
+.footer-wrap{
+    width:min(1180px, calc(100% - 40px));
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+}
+
+.footer-left{
+    display:flex;
+    align-items:center;
+    gap:17px;
+}
+
+.footer-logo{
+    width:72px;
+}
+
+.footer-name{
+    color:white;
+    font-weight:900;
+    font-size:17px;
+}
+
+.footer-links{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.footer-links a{
+    color:#ccc;
+    font-size:13px;
+}
+
+.footer-links a:hover{
+    color:var(--green);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1050px){
+
+    nav{
+        display:none;
+    }
+
+    .hero-inner{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero h1{
+        font-size:63px;
+    }
+}
+
+@media(max-width:850px){
+
+    .header-phone{
+        display:none;
+    }
+
+    .hero-inner{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero-copy{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-visual{
+        max-width:600px;
+        width:100%;
+        margin:auto;
+    }
+
+    .trust-items{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .rental-grid{
+        grid-template-columns:1fr;
+        max-width:650px;
+        margin:auto;
+    }
+
+    .rental-content p{
+        min-height:auto;
+    }
+
+    .steps{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .why-item:nth-child(2){
+        border-right:none;
+    }
+
+    .why-item:nth-child(-n+2){
+        border-bottom:1px solid #3a3d3a;
+    }
+
+    .quote-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-wrap{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+@media(max-width:600px){
+
+    .nav-wrap{
+        min-height:75px;
+    }
+
+    .logo{
+        width:78px;
+        max-height:65px;
+    }
+
+    .header-quote{
+        padding:10px 14px;
+        font-size:12px;
+    }
+
+    .hero{
+        min-height:auto;
+    }
+
+    .hero-inner{
+        padding:55px 0 65px;
+    }
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .hero h2{
+        font-size:22px;
+    }
+
+    .hero-copy{
+        font-size:16px;
+    }
+
+    .hero-photo-placeholder{
+        height:300px;
+    }
+
+    .hero-logo{
+        width:145px;
+    }
+
+    .trust-items{
+        grid-template-columns:1fr;
+        padding:10px 0;
+    }
+
+    .trust-item{
+        padding:10px;
+    }
+
+    .section{
+        padding:60px 0;
+    }
+
+    .section-head h2{
+        font-size:32px;
+    }
+
+    .steps{
+        grid-template-columns:1fr;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .why-item{
+        border-right:none;
+        border-bottom:1px solid #3a3d3a;
+    }
+
+    .why-item:last-child{
+        border-bottom:none;
+    }
+
+    .service-box{
+        padding:30px 20px;
+    }
+
+    .quote-left{
+        text-align:center;
+    }
+
+    .quote-left h2{
+        font-size:38px;
+    }
+
+    .big-phone{
+        justify-content:center;
+    }
+
+    .big-phone a{
+        font-size:26px;
+    }
+
+    .quote-mini-logo{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .form-card{
+        padding:23px 18px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .field.full{
+        grid-column:auto;
+    }
+
+    .footer-left{
+        flex-direction:column;
+    }
+}
+
+</style>
 </head>
+
 
 <body>
 
-<!-- HEADER -->
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
-    <div class="nav-container">
 
-        <a href="#home" class="brand">
-            BAIL <span>OUT</span>
+<div class="nav-wrap">
+
+    <a href="#home" class="logo-link">
+        <img
+            src="logo.webp"
+            alt="Justin's Premier Shed and Trailer Sales"
+            class="logo"
+        >
+    </a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#rentals">Rentals</a>
+        <a href="#how">How It Works</a>
+        <a href="#service">Service Area</a>
+        <a href="#faq">FAQ</a>
+        <a href="#quote">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+
+        <a href="#quote" class="header-quote">
+            Request a Quote
         </a>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#rentals">Rentals</a>
-            <a href="#how">How It Works</a>
-            <a href="#service">Service Area</a>
-            <a href="#faq">FAQ</a>
-            <a href="tel:6416918799">Call</a>
-            <a href="#quote" class="nav-button">Request a Quote</a>
-        </nav>
+        <a href="tel:6416918799" class="header-phone">
+
+            <div class="phone-icon">
+                ☎
+            </div>
+
+            <div class="phone-copy">
+                <small>Call Now</small>
+                <strong>641-691-8799</strong>
+            </div>
+
+        </a>
 
     </div>
+
+</div>
+
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero" id="home">
 
-    <div class="hero-content">
+<div class="hero-inner">
 
-        <div class="hero-small">
+    <div>
+
+        <div class="hero-eyebrow">
             Roll-Off Dumpster & Trailer Rentals
         </div>
 
-        <h1>BAIL OUT</h1>
+        <h1>
+            BAIL <span>OUT</span>
+        </h1>
 
-        <h2>The Right Rental. Right When You Need It.</h2>
+        <h2>
+            The Right Rental. Right When You Need It.
+        </h2>
 
-        <p>
+        <p class="hero-copy">
             Whether you're cleaning out a property, tackling a renovation,
             working on a job site, or need a dependable trailer for your
             next project, BAIL OUT makes renting simple.
@@ -620,467 +1172,560 @@
         <div class="hero-buttons">
 
             <a href="#quote" class="btn btn-green">
-                Request a Quote
+                Request a Quote →
             </a>
 
             <a href="tel:6416918799" class="btn btn-outline">
-                Call 641-691-8799
+                ☎ &nbsp; Call 641-691-8799
             </a>
 
         </div>
 
     </div>
 
+
+    <div class="hero-visual">
+
+        <div class="hero-photo-placeholder">
+
+            <img
+                src="logo.webp"
+                alt="Justin's Premier"
+                class="hero-logo"
+            >
+
+        </div>
+
+        <div class="hero-badge">
+            CLEANOUTS • RENOVATIONS • JOB SITES
+        </div>
+
+    </div>
+
+</div>
+
 </section>
 
 
-<!-- RENTALS -->
+<!-- TRUST BAR -->
 
-<section class="rentals" id="rentals">
+<div class="trust-bar">
 
-    <div class="container">
+<div class="trust-items">
 
-        <div class="section-heading">
+    <div class="trust-item">
+        <span class="check">✓</span>
+        Reliable Equipment
+    </div>
 
-            <div class="eyebrow">Our Rentals</div>
+    <div class="trust-item">
+        <span class="check">✓</span>
+        Simple Rental Process
+    </div>
 
-            <h2>Equipment for Your Next Project</h2>
+    <div class="trust-item">
+        <span class="check">✓</span>
+        Delivery Available
+    </div>
+
+    <div class="trust-item">
+        <span class="check">✓</span>
+        Local & Dependable
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     RENTALS
+========================= -->
+
+<section class="section rentals" id="rentals">
+
+<div class="container">
+
+    <div class="section-head">
+
+        <div class="eyebrow">
+            Our Rentals
+        </div>
+
+        <h2>
+            Equipment for Your Next Project
+        </h2>
+
+        <p>
+            From property cleanouts and renovations to hauling and
+            job-site projects, BAIL OUT provides dependable rental
+            options to help you get the job done.
+        </p>
+
+    </div>
+
+
+    <div class="rental-grid">
+
+
+        <!-- 15 YARD -->
+
+        <article class="rental-card">
+
+            <div class="rental-photo">
+
+                <div class="equipment-shape"></div>
+
+            </div>
+
+            <div class="rental-content">
+
+                <h3>
+                    15-Yard Roll-Off Dumpster
+                </h3>
+
+                <p>
+                    A versatile dumpster option for residential cleanouts,
+                    remodeling projects, property cleanup, construction
+                    debris and more.
+                </p>
+
+                <a href="#quote" class="card-link">
+                    Request Pricing →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- 20 YARD -->
+
+        <article class="rental-card">
+
+            <div class="rental-photo">
+
+                <div class="coming-soon">
+                    COMING SOON
+                </div>
+
+                <div class="equipment-shape"></div>
+
+            </div>
+
+            <div class="rental-content">
+
+                <h3>
+                    20-Yard Roll-Off Dumpster
+                </h3>
+
+                <p>
+                    Additional capacity for larger cleanouts, renovation
+                    projects, construction work and jobs requiring more room.
+                </p>
+
+                <a href="#quote" class="card-link">
+                    Ask About Availability →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- TRAILER -->
+
+        <article class="rental-card">
+
+            <div class="rental-photo">
+
+                <div class="equipment-shape trailer-shape"></div>
+
+            </div>
+
+            <div class="rental-content">
+
+                <h3>
+                    Trailer Rentals
+                </h3>
+
+                <p>
+                    Dependable trailer rental options for hauling equipment,
+                    materials and projects. Contact us for current trailer
+                    availability.
+                </p>
+
+                <a href="#quote" class="card-link">
+                    Request a Trailer →
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
+<section class="section" id="how">
+
+<div class="container">
+
+    <div class="section-head">
+
+        <div class="eyebrow">
+            Simple Rental Process
+        </div>
+
+        <h2>
+            How It Works
+        </h2>
+
+        <p>
+            Getting started is simple. Tell us what you need,
+            when you need it and where you need it.
+        </p>
+
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">1</div>
+
+            <h3>Choose Your Rental</h3>
 
             <p>
-                From property cleanouts and renovations to hauling and
-                job-site projects, BAIL OUT provides dependable rental
-                options to help you get the job done.
+                Select the dumpster or trailer that fits your project.
             </p>
 
         </div>
 
 
-        <div class="cards">
+        <div class="step">
 
-            <!-- 15-YARD DUMPSTER -->
+            <div class="step-number">2</div>
 
-            <div class="card">
-
-                <div class="card-image">
-                    15 YARD
-                </div>
-
-                <div class="card-content">
-
-                    <h3>15-Yard Roll-Off Dumpster</h3>
-
-                    <p>
-                        A versatile dumpster option for residential
-                        cleanouts, remodeling projects, property cleanup,
-                        construction debris and more.
-                    </p>
-
-                    <a href="#quote">
-                        Request Pricing →
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- 20-YARD DUMPSTER -->
-
-            <div class="card">
-
-                <div class="card-image">
-                    20 YARD
-                </div>
-
-                <div class="card-content">
-
-                    <div class="coming">
-                        Coming Soon
-                    </div>
-
-                    <h3>20-Yard Roll-Off Dumpster</h3>
-
-                    <p>
-                        Additional capacity for larger cleanouts,
-                        renovation projects, construction work and jobs
-                        requiring more room.
-                    </p>
-
-                    <a href="#quote">
-                        Ask About Availability →
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- TRAILERS -->
-
-            <div class="card">
-
-                <div class="card-image">
-                    TRAILERS
-                </div>
-
-                <div class="card-content">
-
-                    <h3>Trailer Rentals</h3>
-
-                    <p>
-                        Dependable trailer rental options for hauling
-                        equipment, materials and projects. Contact us
-                        for current trailer availability.
-                    </p>
-
-                    <a href="#quote">
-                        Request a Trailer →
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- HOW IT WORKS -->
-
-<section id="how">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div class="eyebrow">
-                Simple Rental Process
-            </div>
-
-            <h2>How It Works</h2>
+            <h3>Request Your Dates</h3>
 
             <p>
-                We make renting a dumpster or trailer straightforward
-                from your first request through pickup.
+                Tell us when you need your rental.
             </p>
 
         </div>
 
 
-        <div class="steps">
+        <div class="step">
 
-            <div class="step">
+            <div class="step-number">3</div>
 
-                <div class="step-number">1</div>
+            <h3>Confirm the Details</h3>
 
-                <h3>Choose Your Rental</h3>
+            <p>
+                We'll confirm availability, location and rental details.
+            </p>
 
-                <p>
-                    Tell us what you need for your project.
-                </p>
-
-            </div>
+        </div>
 
 
-            <div class="step">
+        <div class="step">
 
-                <div class="step-number">2</div>
+            <div class="step-number">4</div>
 
-                <h3>Request Your Dates</h3>
+            <h3>Get the Job Done</h3>
 
-                <p>
-                    Let us know when and where you need it.
-                </p>
-
-            </div>
-
-
-            <div class="step">
-
-                <div class="step-number">3</div>
-
-                <h3>Delivery or Pickup</h3>
-
-                <p>
-                    We'll coordinate your rental and delivery details.
-                </p>
-
-            </div>
-
-
-            <div class="step">
-
-                <div class="step-number">4</div>
-
-                <h3>Get the Job Done</h3>
-
-                <p>
-                    Use your rental and contact us when you're finished.
-                </p>
-
-            </div>
+            <p>
+                Use your rental and contact us when you're finished.
+            </p>
 
         </div>
 
     </div>
 
+</div>
+
 </section>
 
 
-<!-- WHY BAIL OUT -->
+<!-- =========================
+     WHY BAIL OUT
+========================= -->
 
 <section class="why">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-heading">
+    <div class="why-grid">
 
-            <div class="eyebrow">
-                Why BAIL OUT?
-            </div>
+        <div class="why-item">
 
-            <h2>Rental Service Made Simple</h2>
+            <div class="why-icon">✓</div>
+
+            <h3>
+                Dependable Rentals
+            </h3>
 
             <p>
-                Straightforward rentals and dependable service for
-                homeowners, contractors, businesses and anyone with
-                a project to tackle.
+                Equipment ready to help you tackle your next project.
             </p>
 
         </div>
 
 
-        <div class="features">
+        <div class="why-item">
 
-            <div class="feature">
+            <div class="why-icon">⚙</div>
 
-                <h3>Dependable Rentals</h3>
+            <h3>
+                Simple Process
+            </h3>
 
-                <p>
-                    Equipment ready to help you tackle your next project.
-                </p>
+            <p>
+                Tell us what you need and we'll help get your rental started.
+            </p>
 
-            </div>
-
-
-            <div class="feature">
-
-                <h3>Simple Process</h3>
-
-                <p>
-                    Tell us what you need and we'll help get your
-                    rental started.
-                </p>
-
-            </div>
+        </div>
 
 
-            <div class="feature">
+        <div class="why-item">
 
-                <h3>Convenient Service</h3>
+            <div class="why-icon">★</div>
 
-                <p>
-                    Rental options designed around real projects and
-                    real customer needs.
-                </p>
+            <h3>
+                Convenient Service
+            </h3>
 
-            </div>
+            <p>
+                Rental options designed around real projects and customer needs.
+            </p>
+
+        </div>
 
 
-            <div class="feature">
+        <div class="why-item">
 
-                <h3>Local Business</h3>
+            <div class="why-icon">⌖</div>
 
-                <p>
-                    Personal service from a local rental company that
-                    values its customers.
-                </p>
+            <h3>
+                Local Business
+            </h3>
 
-            </div>
+            <p>
+                Personal service from a local rental company that values its customers.
+            </p>
 
         </div>
 
     </div>
 
+</div>
+
 </section>
 
 
-<!-- SERVICE AREA -->
+<!-- =========================
+     SERVICE AREA
+========================= -->
 
-<section class="service-area" id="service">
+<section class="section service-area" id="service">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-heading">
+    <div class="section-head">
 
-            <div class="eyebrow">
-                Local Rental Service
-            </div>
-
-            <h2>Our Service Area</h2>
-
-            <p>
-                BAIL OUT provides dumpster and trailer rental services
-                throughout our local service area.
-            </p>
-
+        <div class="eyebrow">
+            Local Rental Service
         </div>
 
+        <h2>
+            Need a Rental Delivered?
+        </h2>
 
-        <div class="service-box">
-
-            <h3>Need a Rental Delivered to You?</h3>
-
-            <p>
-                Contact us with your location and project details.
-                We'll confirm availability and whether your address
-                is within our current delivery area.
-            </p>
-
-            <br>
-
-            <a href="tel:6416918799"
-               class="btn btn-green">
-                Call 641-691-8799
-            </a>
-
-        </div>
+        <p>
+            Contact BAIL OUT with your project location and we'll
+            confirm availability and delivery options.
+        </p>
 
     </div>
 
-</section>
 
+    <div class="service-box">
 
-<!-- FAQ -->
+        <h3>
+            Tell Us Where Your Project Is Located
+        </h3>
 
-<section class="faq" id="faq">
+        <p>
+            Enter your delivery or service address when requesting a
+            quote. We'll confirm whether your location is within our
+            current service area and provide applicable delivery information.
+        </p>
 
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div class="eyebrow">
-                Questions?
-            </div>
-
-            <h2>Frequently Asked Questions</h2>
-
-            <p>
-                Here are answers to some common questions about
-                renting from BAIL OUT.
-            </p>
-
-        </div>
-
-
-        <div class="faq-list">
-
-            <details>
-
-                <summary>
-                    What size dumpsters do you offer?
-                </summary>
-
-                <p>
-                    BAIL OUT currently offers 15-yard roll-off
-                    dumpsters, with 20-yard dumpsters planned.
-                    Contact us for current availability.
-                </p>
-
-            </details>
-
-
-            <details>
-
-                <summary>
-                    How long can I keep my rental?
-                </summary>
-
-                <p>
-                    Rental periods vary depending on the equipment
-                    and availability. Submit a rental request with
-                    your dates and we'll provide available options.
-                </p>
-
-            </details>
-
-
-            <details>
-
-                <summary>
-                    Do you deliver dumpsters?
-                </summary>
-
-                <p>
-                    Delivery options are available. Provide your
-                    delivery address when requesting a quote so we
-                    can confirm availability and applicable charges.
-                </p>
-
-            </details>
-
-
-            <details>
-
-                <summary>
-                    What trailers are available?
-                </summary>
-
-                <p>
-                    Trailer inventory and availability may vary.
-                    Contact BAIL OUT with information about what
-                    you need to haul and your requested dates.
-                </p>
-
-            </details>
-
-
-            <details>
-
-                <summary>
-                    Can I book online?
-                </summary>
-
-                <p>
-                    Online booking is being developed. For now,
-                    submit a rental request and we'll contact you
-                    to confirm availability, pricing and rental
-                    details.
-                </p>
-
-            </details>
-
-        </div>
+        <a href="#quote" class="btn btn-green">
+            Check Availability
+        </a>
 
     </div>
 
+</div>
+
 </section>
 
 
-<!-- REQUEST A QUOTE -->
+<!-- =========================
+     FAQ
+========================= -->
+
+<section class="section faq" id="faq">
+
+<div class="container">
+
+    <div class="section-head">
+
+        <div class="eyebrow">
+            Questions?
+        </div>
+
+        <h2>
+            Frequently Asked Questions
+        </h2>
+
+    </div>
+
+
+    <div class="faq-list">
+
+        <details>
+
+            <summary>
+                What size dumpsters do you offer?
+            </summary>
+
+            <p>
+                BAIL OUT currently offers 15-yard roll-off dumpsters,
+                with 20-yard dumpsters coming soon. Contact us for
+                current availability.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                How long can I keep my rental?
+            </summary>
+
+            <p>
+                Rental periods vary based on equipment and availability.
+                Submit your requested dates and we'll provide the available
+                rental options.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Do you deliver dumpsters?
+            </summary>
+
+            <p>
+                Delivery options are available. Include your delivery
+                address with your quote request so we can confirm service
+                availability and applicable charges.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                What trailers are available?
+            </summary>
+
+            <p>
+                Trailer inventory may vary. Tell us what you need to
+                haul and your requested dates and we'll confirm the
+                available trailer options.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                Can I book online?
+            </summary>
+
+            <p>
+                Online booking is being developed. For now, submit a
+                quote request and BAIL OUT will contact you to confirm
+                availability, pricing and rental details.
+            </p>
+
+        </details>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     QUOTE FORM
+========================= -->
 
 <section class="quote" id="quote">
 
-    <div class="container">
+<div class="container">
 
-        <div class="quote-grid">
+    <div class="quote-grid">
 
-            <div>
 
-                <h2>Ready to Get Started?</h2>
+        <!-- LEFT -->
 
-                <p>
-                    Tell us what you need and when you need it.
-                    BAIL OUT will follow up with availability,
-                    pricing and the next steps for your rental.
-                </p>
+        <div class="quote-left">
 
-                <div class="contact-info">
+            <div class="eyebrow">
+                Get Started Today
+            </div>
 
-                    <p>Prefer to call?</p>
+            <h2>
+                Request a Quote
+            </h2>
+
+            <p>
+                Tell us what you need and when you need it.
+                BAIL OUT will follow up with availability, pricing
+                and the next steps for your rental.
+            </p>
+
+
+            <div class="big-phone">
+
+                <div class="big-phone-icon">
+                    ☎
+                </div>
+
+                <div>
+
+                    <small>
+                        Prefer to call?
+                    </small>
 
                     <a href="tel:6416918799">
                         641-691-8799
@@ -1088,182 +1733,301 @@
 
                 </div>
 
-                <p class="quote-note">
-                    Online booking is coming soon. A quote request
-                    does not guarantee availability until your
-                    rental is confirmed.
-                </p>
-
             </div>
 
 
-            <div class="quote-form">
+            <p class="disclaimer">
+                Online booking is coming soon. A quote request does
+                not guarantee availability until your rental is confirmed.
+            </p>
 
-                <form
-                    action="https://formspree.io/f/mzezbzyq"
-                    method="POST"
+
+            <img
+                src="logo.webp"
+                alt="Justin's Premier"
+                class="quote-mini-logo"
+            >
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <div class="form-card">
+
+            <h3>
+                Request a Quote
+            </h3>
+
+
+            <form
+                action="https://formspree.io/f/mzezbzyq"
+                method="POST"
+            >
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="New BAIL OUT Rental Quote Request"
                 >
 
-                    <input
-                        type="hidden"
-                        name="_subject"
-                        value="New BAIL OUT Rental Quote Request"
-                    >
+
+                <div class="form-grid">
 
 
-                    <input
-                        type="text"
-                        name="customer_name"
-                        placeholder="Full Name"
-                        required
-                    >
+                    <div class="field">
+
+                        <label for="name">
+                            Full Name *
+                        </label>
+
+                        <input
+                            id="name"
+                            type="text"
+                            name="customer_name"
+                            placeholder="Your name"
+                            required
+                        >
+
+                    </div>
 
 
-                    <input
-                        type="tel"
-                        name="phone"
-                        placeholder="Phone Number"
-                        required
-                    >
+                    <div class="field">
+
+                        <label for="phone">
+                            Phone Number *
+                        </label>
+
+                        <input
+                            id="phone"
+                            type="tel"
+                            name="phone"
+                            placeholder="(555) 555-5555"
+                            required
+                        >
+
+                    </div>
 
 
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Email Address"
-                        required
-                    >
+                    <div class="field">
+
+                        <label for="email">
+                            Email Address *
+                        </label>
+
+                        <input
+                            id="email"
+                            type="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+
+                    </div>
 
 
-                    <input
-                        type="text"
-                        name="service_address"
-                        placeholder="Delivery / Service Address"
-                        required
-                    >
+                    <div class="field">
+
+                        <label for="address">
+                            Delivery / Service Address *
+                        </label>
+
+                        <input
+                            id="address"
+                            type="text"
+                            name="service_address"
+                            placeholder="Enter your address"
+                            required
+                        >
+
+                    </div>
 
 
-                    <select
-                        name="rental_type"
-                        required
-                    >
+                    <div class="field">
 
-                        <option value="">
-                            What do you need?
-                        </option>
+                        <label for="rental">
+                            What do you need? *
+                        </label>
 
-                        <option value="15-Yard Dumpster">
-                            15-Yard Dumpster
-                        </option>
+                        <select
+                            id="rental"
+                            name="rental_type"
+                            required
+                        >
 
-                        <option value="20-Yard Dumpster">
-                            20-Yard Dumpster
-                        </option>
+                            <option value="">
+                                Select an option
+                            </option>
 
-                        <option value="Trailer Rental">
-                            Trailer Rental
-                        </option>
+                            <option value="15-Yard Dumpster">
+                                15-Yard Dumpster
+                            </option>
 
-                        <option value="Not Sure">
-                            Not Sure
-                        </option>
+                            <option value="20-Yard Dumpster">
+                                20-Yard Dumpster
+                            </option>
 
-                    </select>
+                            <option value="Trailer Rental">
+                                Trailer Rental
+                            </option>
 
+                            <option value="Not Sure">
+                                Not Sure
+                            </option>
 
-                    <label for="rental-date">
-                        Requested Rental Date
-                    </label>
+                        </select>
 
-                    <input
-                        id="rental-date"
-                        type="date"
-                        name="requested_date"
-                        required
-                    >
+                    </div>
 
 
-                    <select
-                        name="rental_duration"
-                        required
-                    >
+                    <div class="field">
 
-                        <option value="">
-                            How long do you need the rental?
-                        </option>
+                        <label for="date">
+                            Requested Rental Date *
+                        </label>
 
-                        <option value="1 Day">
-                            1 Day
-                        </option>
+                        <input
+                            id="date"
+                            type="date"
+                            name="requested_date"
+                            required
+                        >
 
-                        <option value="Weekend">
-                            Weekend
-                        </option>
-
-                        <option value="1 Week">
-                            1 Week
-                        </option>
-
-                        <option value="More Than 1 Week">
-                            More Than 1 Week
-                        </option>
-
-                        <option value="Not Sure">
-                            Not Sure
-                        </option>
-
-                    </select>
+                    </div>
 
 
-                    <textarea
-                        name="project_details"
-                        placeholder="Tell us about your project or rental needs..."
-                    ></textarea>
+                    <div class="field full">
+
+                        <label for="duration">
+                            How long do you need the rental? *
+                        </label>
+
+                        <select
+                            id="duration"
+                            name="rental_duration"
+                            required
+                        >
+
+                            <option value="">
+                                Select an option
+                            </option>
+
+                            <option value="1 Day">
+                                1 Day
+                            </option>
+
+                            <option value="Weekend">
+                                Weekend
+                            </option>
+
+                            <option value="1 Week">
+                                1 Week
+                            </option>
+
+                            <option value="More Than 1 Week">
+                                More Than 1 Week
+                            </option>
+
+                            <option value="Not Sure">
+                                Not Sure
+                            </option>
+
+                        </select>
+
+                    </div>
 
 
-                    <button
-                        type="submit"
-                        class="btn btn-green"
-                    >
-                        Request a Quote
-                    </button>
+                    <div class="field full">
 
-                </form>
+                        <label for="details">
+                            Project Details
+                        </label>
 
+                        <textarea
+                            id="details"
+                            name="project_details"
+                            placeholder="Tell us about your project or rental needs..."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    ➤ &nbsp; Request a Quote
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="footer-wrap">
+
+    <div class="footer-left">
+
+        <img
+            src="logo.webp"
+            alt="Justin's Premier"
+            class="footer-logo"
+        >
+
+        <div>
+
+            <div class="footer-name">
+                BAIL OUT
+            </div>
+
+            <div>
+                Roll-Off Dumpster & Trailer Rentals
+            </div>
+
+            <div>
+                © 2026 BAIL OUT. All Rights Reserved.
             </div>
 
         </div>
 
     </div>
 
-</section>
 
+    <div class="footer-links">
 
-<!-- FOOTER -->
+        <a href="#home">Home</a>
 
-<footer>
+        <a href="#rentals">Rentals</a>
 
-    <div class="footer-brand">
-        BAIL <span>OUT</span>
-    </div>
+        <a href="#how">How It Works</a>
 
-    <p>
-        Roll-Off Dumpster Service & Trailer Rentals
-    </p>
+        <a href="#service">Service Area</a>
 
-    <p>
+        <a href="#faq">FAQ</a>
+
+        <a href="#quote">Contact</a>
+
         <a href="tel:6416918799">
             641-691-8799
         </a>
-    </p>
 
-    <p>
-        bailoutsrental.com
-    </p>
+    </div>
 
-    <p style="margin-top:20px;">
-        © 2026 BAIL OUT. All Rights Reserved.
-    </p>
+</div>
 
 </footer>
 
