@@ -364,6 +364,60 @@ header{
 }
 
 
+
+/* =====================================
+   RENTAL PRICING
+===================================== */
+
+.price-box{
+    background:#f7faf7;
+    border:1px solid #dce5dc;
+    border-left:5px solid var(--green);
+    border-radius:7px;
+    padding:16px;
+    margin:15px 0 18px;
+}
+
+.price-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    padding:7px 0;
+    border-bottom:1px solid #e1e7e1;
+    font-weight:800;
+}
+
+.price-row:last-of-type{
+    border-bottom:none;
+}
+
+.price-row strong{
+    color:#0a8f25;
+    font-size:19px;
+}
+
+.included{
+    margin-top:10px;
+    color:#171b17;
+    font-size:13px;
+    font-weight:900;
+}
+
+.available-badge{
+    display:inline-block;
+    background:var(--green);
+    color:#061007;
+    padding:5px 10px;
+    border-radius:4px;
+    font-size:11px;
+    font-weight:1000;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+
+
 /* =====================================
    HOW IT WORKS
 ===================================== */
@@ -996,8 +1050,8 @@ footer{
         </h2>
 
         <p>
-            Select a rental below to view more information
-            and submit a request for availability and pricing.
+            Select your rental, review the pricing and submit a booking request.
+            BAIL OUT will confirm availability and delivery details.
         </p>
 
     </div>
@@ -1041,11 +1095,25 @@ footer{
                     project needs.
                 </p>
 
+                <div class="price-box">
+                    <div class="price-row">
+                        <span>7 Days</span>
+                        <strong>$375</strong>
+                    </div>
+                    <div class="price-row">
+                        <span>14 Days</span>
+                        <strong>$475</strong>
+                    </div>
+                    <div class="included">
+                        ✓ 2 Tons of Disposal Included
+                    </div>
+                </div>
+
                 <a
-                    href="15yard.html"
+                    href="15yard.html#request"
                     class="card-link"
                 >
-                    View Details & Request Rental →
+                    Request Booking →
                 </a>
 
             </div>
@@ -1077,6 +1145,10 @@ footer{
                     Dumpster Rental
                 </div>
 
+                <div class="available-badge">
+                    Now Available
+                </div>
+
                 <h3>
                     20-Yard Roll-Off Dumpster
                 </h3>
@@ -1088,11 +1160,25 @@ footer{
                     of debris.
                 </p>
 
+                <div class="price-box">
+                    <div class="price-row">
+                        <span>7 Days</span>
+                        <strong>$450</strong>
+                    </div>
+                    <div class="price-row">
+                        <span>14 Days</span>
+                        <strong>$550</strong>
+                    </div>
+                    <div class="included">
+                        ✓ 2 Tons of Disposal Included
+                    </div>
+                </div>
+
                 <a
-                    href="20yard.html"
+                    href="20yard.html#request"
                     class="card-link"
                 >
-                    View Details & Request Rental →
+                    Request Booking →
                 </a>
 
             </div>
@@ -1135,10 +1221,10 @@ footer{
                 </p>
 
                 <a
-                    href="trailer.html"
+                    href="trailer.html#request"
                     class="card-link"
                 >
-                    View Details & Request Rental →
+                    Request Trailer Rental →
                 </a>
 
             </div>
@@ -1414,9 +1500,9 @@ footer{
             </h3>
 
             <p>
-                BAIL OUT offers 15-yard roll-off dumpster
-                rentals. You can also submit a request for
-                a 20-yard dumpster to check current availability.
+                BAIL OUT offers both 15-yard and 20-yard roll-off
+                dumpsters. The 20-yard dumpster is now available.
+                All bookings remain subject to confirmation.
             </p>
 
         </div>
@@ -1429,10 +1515,11 @@ footer{
             </h3>
 
             <p>
-                Rental periods may vary depending on the
-                equipment and availability. Submit your requested
-                dates and rental length, and BAIL OUT will confirm
-                the details with you.
+                Dumpster rentals are available for 7-day or
+                14-day rental periods. The 15-yard dumpster is $375
+                for 7 days or $475 for 14 days. The 20-yard dumpster
+                is $450 for 7 days or $550 for 14 days. Both include
+                2 tons of disposal. Trailer rental periods may vary.
             </p>
 
         </div>
@@ -1708,24 +1795,16 @@ footer{
                                 Select rental length
                             </option>
 
-                            <option value="1 Day">
-                                1 Day
+                            <option value="7 Days">
+                                7 Days
                             </option>
 
-                            <option value="Weekend">
-                                Weekend
+                            <option value="14 Days">
+                                14 Days
                             </option>
 
-                            <option value="3-5 Days">
-                                3-5 Days
-                            </option>
-
-                            <option value="1 Week">
-                                1 Week
-                            </option>
-
-                            <option value="More Than 1 Week">
-                                More Than 1 Week
+                            <option value="Trailer - Other Duration">
+                                Trailer - Other Duration
                             </option>
 
                             <option value="Not Sure">
