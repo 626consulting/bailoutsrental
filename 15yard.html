@@ -224,6 +224,64 @@ header{
 }
 
 
+
+/* PRICING */
+
+.pricing-panel{
+    margin-top:28px;
+    background:#111511;
+    border:1px solid #293029;
+    border-left:5px solid var(--green);
+    border-radius:8px;
+    padding:20px;
+}
+
+.pricing-panel h3{
+    color:white;
+    font-size:18px;
+    margin-bottom:12px;
+}
+
+.pricing-row{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    padding:9px 0;
+    border-bottom:1px solid #303630;
+    color:#e8ece8;
+    font-weight:800;
+}
+
+.pricing-row:last-of-type{
+    border-bottom:none;
+}
+
+.pricing-row strong{
+    color:var(--green);
+    font-size:20px;
+}
+
+.pricing-included{
+    margin-top:12px;
+    color:white;
+    font-size:14px;
+    font-weight:900;
+}
+
+.booking-summary{
+    background:#eff9f0;
+    border:1px solid #cfe7d2;
+    border-left:5px solid var(--green);
+    border-radius:7px;
+    padding:18px;
+    margin-bottom:24px;
+}
+
+.booking-summary strong{
+    color:#0a8f25;
+}
+
+
 /* FORM SECTION */
 
 .quote{
@@ -503,7 +561,7 @@ footer{
         </a>
 
         <a href="#request" class="header-button">
-            Request Rental
+            Request Booking
         </a>
 
     </div>
@@ -570,6 +628,21 @@ footer{
                 Flexible Rental Options
             </div>
 
+        </div>
+
+        <div class="pricing-panel">
+            <h3>15-Yard Dumpster Pricing</h3>
+            <div class="pricing-row">
+                <span>7 Days</span>
+                <strong>$375</strong>
+            </div>
+            <div class="pricing-row">
+                <span>14 Days</span>
+                <strong>$475</strong>
+            </div>
+            <div class="pricing-included">
+                ✓ 2 Tons of Disposal Included
+            </div>
         </div>
 
     </div>
@@ -644,16 +717,16 @@ footer{
     <div class="section-heading">
 
         <div class="eyebrow">
-            Check Availability
+            Request Booking
         </div>
 
         <h2>
-            Request a 15-Yard Dumpster
+            Request Your 15-Yard Dumpster
         </h2>
 
         <p>
-            Complete the form below and BAIL OUT will follow up
-            with availability, pricing and rental details.
+            Choose your rental period and requested delivery date below.
+            BAIL OUT will confirm availability and delivery details.
         </p>
 
     </div>
@@ -661,6 +734,11 @@ footer{
 
     <div class="form-card">
 
+        <div class="booking-summary">
+            <strong>15-Yard Roll-Off Dumpster</strong><br>
+            $375 for 7 days &nbsp; | &nbsp; $475 for 14 days<br>
+            2 tons of disposal included.
+        </div>
 
         <form
             action="https://formspree.io/f/mzezbzyq"
@@ -671,7 +749,7 @@ footer{
             <input
                 type="hidden"
                 name="_subject"
-                value="15-Yard Dumpster Rental Request"
+                value="15-Yard Dumpster Booking Request"
             >
 
             <input
@@ -771,7 +849,7 @@ footer{
                 <div class="field">
 
                     <label for="duration">
-                        How Long Do You Need It? *
+                        Rental Period *
                     </label>
 
                     <select
@@ -781,31 +859,15 @@ footer{
                     >
 
                         <option value="">
-                            Select rental length
+                            Select rental period
                         </option>
 
-                        <option value="1 Day">
-                            1 Day
+                        <option value="7 Days - $375">
+                            7 Days - $375
                         </option>
 
-                        <option value="Weekend">
-                            Weekend
-                        </option>
-
-                        <option value="3-5 Days">
-                            3-5 Days
-                        </option>
-
-                        <option value="1 Week">
-                            1 Week
-                        </option>
-
-                        <option value="More Than 1 Week">
-                            More Than 1 Week
-                        </option>
-
-                        <option value="Not Sure">
-                            Not Sure
+                        <option value="14 Days - $475">
+                            14 Days - $475
                         </option>
 
                     </select>
@@ -896,13 +958,13 @@ footer{
                 type="submit"
                 class="submit-button"
             >
-                Request 15-Yard Dumpster
+                Submit 15-Yard Booking Request
             </button>
 
 
             <p class="form-note">
-                Submitting this form is a rental request and does not
-                guarantee availability until confirmed by BAIL OUT.
+                Submitting this form sends a booking request. Your requested dates
+                are not reserved until availability is confirmed by BAIL OUT.
             </p>
 
 
@@ -926,7 +988,7 @@ footer{
     </h2>
 
     <p>
-        Call BAIL OUT for rental questions and availability.
+        Call BAIL OUT with booking questions or to check availability.
     </p>
 
     <a href="tel:6416918799">
