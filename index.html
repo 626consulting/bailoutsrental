@@ -975,6 +975,366 @@ footer{
         padding:27px 20px;
     }
 }
+
+/* ==========================================================
+   VISUAL UPGRADE - BRIGHTER, BOLDER, LESS BLACK
+========================================================== */
+
+/* Stronger section headings without making the page feel oversized */
+.section-heading h2{
+    position:relative;
+    display:inline-block;
+    padding-bottom:12px;
+}
+
+.section-heading h2::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:0;
+    width:72px;
+    height:4px;
+    transform:translateX(-50%);
+    border-radius:99px;
+    background:linear-gradient(90deg,var(--green-dark),var(--green),var(--green-light));
+}
+
+/* Rental cards get a more custom branded finish */
+.rental-card{
+    border-top:0;
+}
+
+.rental-card::before{
+    content:"";
+    height:6px;
+    width:100%;
+    display:block;
+    flex:0 0 6px;
+    background:
+        repeating-linear-gradient(
+            135deg,
+            var(--green) 0 18px,
+            #151b16 18px 28px
+        );
+}
+
+.rental-content h3{
+    letter-spacing:-.25px;
+}
+
+.rental-card .card-link{
+    box-shadow:0 8px 18px rgba(32,214,66,.18);
+}
+
+/* New standout highlight band */
+.impact-strip{
+    position:relative;
+    overflow:hidden;
+    padding:24px 0;
+    background:
+        linear-gradient(100deg,#15b934 0%,var(--green) 45%,#54ea70 100%);
+    border-top:1px solid rgba(0,0,0,.08);
+    border-bottom:1px solid rgba(0,0,0,.12);
+}
+
+.impact-strip::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    opacity:.09;
+    background:
+        repeating-linear-gradient(
+            135deg,
+            transparent 0 20px,
+            #061007 20px 22px
+        );
+}
+
+.impact-grid{
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+}
+
+.impact-item{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    min-height:74px;
+    padding:10px 24px;
+    color:#061007;
+    border-right:1px solid rgba(6,16,7,.22);
+}
+
+.impact-item:last-child{
+    border-right:0;
+}
+
+.impact-mark{
+    flex:0 0 42px;
+    width:42px;
+    height:42px;
+    display:grid;
+    place-items:center;
+    background:#071009;
+    color:var(--green);
+    border-radius:50%;
+    font-size:12px;
+    font-weight:1000;
+    letter-spacing:.5px;
+    box-shadow:0 5px 14px rgba(0,0,0,.16);
+}
+
+.impact-item strong{
+    display:block;
+    margin-bottom:2px;
+    color:#061007;
+    font-size:15px;
+    font-weight:1000;
+}
+
+.impact-item span:not(.impact-mark){
+    display:block;
+    color:#17331c;
+    font-size:12px;
+    font-weight:700;
+    line-height:1.4;
+}
+
+/* Give How It Works a little more visual personality */
+#how{
+    background:
+        radial-gradient(circle at 10% 0%,rgba(32,214,66,.10),transparent 26%),
+        #fff;
+}
+
+.step{
+    overflow:hidden;
+    background:#fff;
+    border:1px solid #d9e5da;
+    box-shadow:0 10px 25px rgba(18,32,20,.08);
+}
+
+.step::before{
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    width:46px;
+    height:46px;
+    background:linear-gradient(135deg,transparent 50%,rgba(32,214,66,.17) 50%);
+}
+
+/* Why section gets a subtle branded pattern instead of a plain gray block */
+.why{
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(rgba(244,248,244,.96),rgba(244,248,244,.96)),
+        repeating-linear-gradient(
+            135deg,
+            transparent 0 22px,
+            rgba(32,214,66,.07) 22px 24px
+        );
+}
+
+.why-card{
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.why-card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(32,214,66,.5);
+    box-shadow:0 15px 30px rgba(18,32,20,.11);
+}
+
+/* FAQ remains collapsible but feels cleaner */
+#faq{
+    background:
+        linear-gradient(180deg,#ffffff 0%,#f7faf7 100%);
+}
+
+.faq-item{
+    transition:transform .18s ease, box-shadow .18s ease;
+}
+
+.faq-item:hover{
+    transform:translateX(3px);
+    box-shadow:0 10px 22px rgba(18,32,20,.09);
+}
+
+/* Bottom form: replace the black contact block with a bright green/white panel */
+.quote-section{
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 10% 15%,rgba(32,214,66,.16),transparent 26%),
+        linear-gradient(180deg,#f5faf5 0%,#eaf4eb 100%);
+    border-top:1px solid #d9e6da;
+}
+
+.quote-section::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:50%;
+    width:150px;
+    height:6px;
+    transform:translateX(-50%);
+    background:var(--green);
+    border-radius:0 0 5px 5px;
+}
+
+.quote-wrap{
+    grid-template-columns:.82fr 1.18fr;
+    border:1px solid #cfddcf;
+    border-radius:16px;
+    box-shadow:0 22px 50px rgba(19,43,24,.13);
+}
+
+.quote-info{
+    position:relative;
+    padding:38px;
+    color:var(--ink);
+    background:
+        linear-gradient(145deg,#dff8e3 0%,#f7fff8 66%,#ffffff 100%);
+    border-right:1px solid #cfe0d1;
+}
+
+.quote-info::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:8px;
+    background:
+        repeating-linear-gradient(
+            135deg,
+            var(--green) 0 18px,
+            #d4f0d8 18px 28px
+        );
+}
+
+.quote-info img{
+    width:145px;
+    padding:10px;
+    margin-bottom:22px;
+    background:#fff;
+    border:1px solid #cde0d0;
+    border-radius:9px;
+    box-shadow:0 7px 18px rgba(19,43,24,.09);
+}
+
+.quote-info h2{
+    color:var(--ink);
+    font-size:31px;
+}
+
+.quote-info p{
+    color:#4e5d51;
+    font-size:15px;
+}
+
+.contact-box{
+    margin-top:24px;
+    padding:18px 20px;
+    background:#fff;
+    border:1px solid #c5ddc8;
+    border-left:5px solid var(--green);
+    border-radius:8px;
+    box-shadow:0 7px 18px rgba(19,43,24,.07);
+}
+
+.contact-label{
+    color:#5c6b5f;
+}
+
+.contact-phone{
+    color:#0b7f23;
+}
+
+.form-card{
+    position:relative;
+    padding:38px;
+    background:#fff;
+}
+
+.form-card::before{
+    content:"QUICK RENTAL REQUEST";
+    display:inline-block;
+    margin-bottom:9px;
+    padding:5px 9px;
+    border-radius:999px;
+    background:var(--soft-green);
+    border:1px solid rgba(32,214,66,.35);
+    color:var(--green-dark);
+    font-size:10px;
+    font-weight:1000;
+    letter-spacing:1px;
+}
+
+.form-card h2{
+    margin-top:0;
+    font-size:30px;
+    line-height:1.1;
+}
+
+.field input,
+.field select,
+.field textarea{
+    background:#fff;
+    border:1px solid #c7d4c9;
+    transition:border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+.field input:hover,
+.field select:hover,
+.field textarea:hover{
+    background:#fbfefb;
+    border-color:#aebdaf;
+}
+
+.submit-button{
+    min-height:48px;
+    box-shadow:0 9px 22px rgba(32,214,66,.22);
+    letter-spacing:.2px;
+}
+
+/* Responsive standout elements */
+@media(max-width:900px){
+    .impact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .impact-item{
+        border-right:0;
+        border-bottom:1px solid rgba(6,16,7,.18);
+    }
+
+    .impact-item:last-child{
+        border-bottom:0;
+    }
+
+    .quote-info{
+        border-right:0;
+        border-bottom:1px solid #cfe0d1;
+    }
+}
+
+@media(max-width:680px){
+    .impact-item{
+        padding:12px 8px;
+    }
+
+    .quote-info,
+    .form-card{
+        padding:28px 22px;
+    }
+}
+
 </style>
 
 
@@ -1349,6 +1709,39 @@ footer{
 
 </div>
 
+</section>
+
+
+
+<!-- =====================================
+     BAIL OUT HIGHLIGHT STRIP
+===================================== -->
+<section class="impact-strip" aria-label="BAIL OUT rental highlights">
+    <div class="container impact-grid">
+        <div class="impact-item">
+            <span class="impact-mark">01</span>
+            <div>
+                <strong>Straightforward Pricing</strong>
+                <span>Clear rental options before you request.</span>
+            </div>
+        </div>
+
+        <div class="impact-item">
+            <span class="impact-mark">02</span>
+            <div>
+                <strong>2 Tons Included</strong>
+                <span>Included with 15-yard and 20-yard dumpster rentals.</span>
+            </div>
+        </div>
+
+        <div class="impact-item">
+            <span class="impact-mark">03</span>
+            <div>
+                <strong>Local Rental Service</strong>
+                <span>Work directly with BAIL OUT for your project.</span>
+            </div>
+        </div>
+    </div>
 </section>
 
 
