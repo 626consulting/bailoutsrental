@@ -1512,6 +1512,42 @@ footer{
     }
 }
 
+
+/* ==========================================================
+   VIDEO-ONLY SHOWCASE
+========================================================== */
+.showcase-grid{
+    grid-template-columns:1fr !important;
+    max-width:900px !important;
+}
+
+.showcase-card{
+    width:100% !important;
+    max-width:900px !important;
+    margin:0 auto !important;
+}
+
+.showcase-media video{
+    width:100% !important;
+    height:auto !important;
+    max-height:560px !important;
+    aspect-ratio:16 / 9;
+    object-fit:cover !important;
+}
+
+.showcase-content{
+    text-align:center;
+    align-items:center;
+}
+
+.showcase-label{
+    align-self:center !important;
+}
+
+.showcase-video-note{
+    margin-top:15px !important;
+}
+
 </style>
 
 
@@ -1548,9 +1584,7 @@ footer{
             Rentals
         </a>
 
-        <a href="#showcase">
-            In Action
-        </a>
+        <a href="about.html">About Us</a>
 
         <a href="#how">
             How It Works
@@ -1946,9 +1980,8 @@ footer{
         </h2>
 
         <p>
-            Take a look at the people and equipment behind BAIL OUT.
-            We are building a rental experience that is straightforward,
-            dependable and ready for real projects.
+            See BAIL OUT equipment in action. The video plays automatically on mute
+            and loops continuously, with controls available whenever you want them.
         </p>
 
     </div>
@@ -1956,42 +1989,7 @@ footer{
 
     <div class="showcase-grid">
 
-        <!-- REAL PHOTO -->
-        <article class="showcase-card">
-
-            <div class="showcase-media">
-                <img
-                    src="IMG_20260919_003012~2.jpg"
-                    alt="BAIL OUT team with roll-off dumpster"
-                    loading="lazy"
-                >
-            </div>
-
-            <div class="showcase-content">
-
-                <div class="showcase-label">
-                    Behind BAIL OUT
-                </div>
-
-                <h3>
-                    Real People. Real Equipment.
-                </h3>
-
-                <p>
-                    BAIL OUT is built around local service and dependable
-                    rental equipment for cleanouts, construction, property
-                    projects and everyday hauling needs.
-                </p>
-
-                <ul class="showcase-points">
-                    <li>Local rental service</li>
-                    <li>Roll-off dumpster options</li>
-                    <li>Straightforward customer support</li>
-                </ul>
-
-            </div>
-
-        </article>
+        
 
 
         <!-- REAL VIDEO -->
@@ -1999,10 +1997,12 @@ footer{
 
             <div class="showcase-media">
                 <video
-                    controls
+                    autoplay
+                    muted
+                    loop
                     playsinline
-                    preload="metadata"
-                    poster="IMG_20260919_003012~2.jpg"
+                    controls
+                    preload="auto"
                     aria-label="BAIL OUT equipment video"
                 >
                     <source
@@ -2030,7 +2030,7 @@ footer{
                 </p>
 
                 <div class="showcase-video-note">
-                    Press play to view the video.
+                    Video plays automatically on mute and loops continuously.
                 </div>
 
             </div>
@@ -2679,6 +2679,10 @@ footer{
 
             <a href="#rentals">
                 Rentals
+            </a>
+
+            <a href="about.html">
+                About Us
             </a>
 
             <a href="#how">
