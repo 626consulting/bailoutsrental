@@ -3,7 +3,7 @@
 
 <head>
 
-<!-- Google tag (gtag.js) -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRD4HDEY70"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -19,8 +19,8 @@
 <title>15-Yard Dumpster Rental | BAIL OUT</title>
 
 <meta
-    name="description"
-    content="Request a 15-yard roll-off dumpster rental from BAIL OUT for cleanouts, remodeling, property cleanup, construction debris and more."
+  name="description"
+  content="Request a 15-yard roll-off dumpster rental from BAIL OUT for cleanouts, remodeling, property cleanup, construction debris and more."
 >
 
 <style>
@@ -68,9 +68,7 @@ a{
 }
 
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header{
     background:#050706;
@@ -123,9 +121,7 @@ header{
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
     background:#080a09;
@@ -198,9 +194,7 @@ header{
 }
 
 
-/* =========================
-   PRICING
-========================= */
+/* PRICING */
 
 .pricing-panel{
     margin-top:28px;
@@ -244,9 +238,7 @@ header{
 }
 
 
-/* =========================
-   ABOUT
-========================= */
+/* ABOUT */
 
 .intro{
     background:white;
@@ -289,9 +281,7 @@ header{
 }
 
 
-/* =========================
-   FORM SECTION
-========================= */
+/* FORM */
 
 .quote{
     padding:80px 0;
@@ -400,8 +390,8 @@ header{
 }
 
 .submit-button:disabled{
-    cursor:not-allowed;
     opacity:.65;
+    cursor:not-allowed;
 }
 
 .form-note{
@@ -411,34 +401,46 @@ header{
     margin-top:14px;
 }
 
-.form-status{
+
+/* Formspree messages */
+
+.form-success,
+.form-error{
     display:none;
-    margin-top:16px;
-    padding:13px 15px;
+    margin-bottom:20px;
+    padding:14px 16px;
     border-radius:6px;
-    text-align:center;
-    font-size:14px;
     font-weight:800;
+    text-align:center;
 }
 
-.form-status.error{
+.form-success[data-fs-active]{
     display:block;
-    color:#8c1c13;
+    background:#eff9f0;
+    border:1px solid #b9dfbf;
+    color:#176526;
+}
+
+.form-error[data-fs-active]{
+    display:block;
     background:#fff0ee;
     border:1px solid #efc2bd;
+    color:#8c1c13;
 }
 
-.form-status.sending{
+.field-error{
     display:block;
-    color:#255a2d;
-    background:#eff9f0;
-    border:1px solid #cfe7d2;
+    margin-top:4px;
+    color:#a52a20;
+    font-size:12px;
+}
+
+[data-fs-field][aria-invalid="true"]{
+    border-color:#a52a20;
 }
 
 
-/* =========================
-   CALL SECTION
-========================= */
+/* CALL */
 
 .call-section{
     background:var(--green);
@@ -463,9 +465,7 @@ header{
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
     background:#050706;
@@ -510,9 +510,7 @@ footer{
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:800px){
 
@@ -596,9 +594,7 @@ footer{
 <body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
 <header>
 
@@ -617,24 +613,15 @@ footer{
 
     <div class="header-actions">
 
-        <a
-            href="index.html"
-            class="back-link"
-        >
+        <a href="index.html" class="back-link">
             ← Back to Home
         </a>
 
-        <a
-            href="tel:6416918799"
-            class="header-phone"
-        >
+        <a href="tel:6416918799" class="header-phone">
             641-691-8799
         </a>
 
-        <a
-            href="#request"
-            class="header-button"
-        >
+        <a href="#request" class="header-button">
             Request Booking
         </a>
 
@@ -645,9 +632,7 @@ footer{
 </header>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -711,9 +696,7 @@ footer{
 
         <div class="pricing-panel">
 
-            <h3>
-                15-Yard Dumpster Pricing
-            </h3>
+            <h3>15-Yard Dumpster Pricing</h3>
 
             <div class="pricing-row">
                 <span>7 Days</span>
@@ -731,7 +714,6 @@ footer{
 
         </div>
 
-
     </div>
 
 
@@ -742,9 +724,7 @@ footer{
 </section>
 
 
-<!-- =========================
-     ABOUT
-========================= -->
+<!-- ABOUT -->
 
 <section class="intro">
 
@@ -772,9 +752,7 @@ footer{
 
     <div class="good-for">
 
-        <h3>
-            Great For:
-        </h3>
+        <h3>Great For:</h3>
 
         <ul>
             <li>Home cleanouts</li>
@@ -796,14 +774,9 @@ footer{
 </section>
 
 
-<!-- =========================
-     REQUEST FORM
-========================= -->
+<!-- REQUEST FORM -->
 
-<section
-    class="quote"
-    id="request"
->
+<section class="quote" id="request">
 
 <div class="container">
 
@@ -846,11 +819,27 @@ footer{
         </div>
 
 
-        <form
-            id="booking-form"
-            action="https://formspree.io/f/mzezbzyq"
-            method="POST"
-        >
+        <!-- Formspree success/error containers -->
+
+        <div
+            class="form-success"
+            data-fs-success
+            aria-live="polite"
+        ></div>
+
+        <div
+            class="form-error"
+            data-fs-error
+            aria-live="polite"
+        ></div>
+
+
+        <!-- IMPORTANT:
+             No action or method is needed here.
+             Formspree AJAX handles the submission.
+        -->
+
+        <form id="booking-form">
 
 
             <input
@@ -882,7 +871,13 @@ footer{
                         placeholder="Your name"
                         autocomplete="name"
                         required
+                        data-fs-field
                     >
+
+                    <span
+                        class="field-error"
+                        data-fs-error="customer_name"
+                    ></span>
 
                 </div>
 
@@ -900,7 +895,13 @@ footer{
                         placeholder="(555) 555-5555"
                         autocomplete="tel"
                         required
+                        data-fs-field
                     >
+
+                    <span
+                        class="field-error"
+                        data-fs-error="phone"
+                    ></span>
 
                 </div>
 
@@ -918,7 +919,13 @@ footer{
                         placeholder="you@example.com"
                         autocomplete="email"
                         required
+                        data-fs-field
                     >
+
+                    <span
+                        class="field-error"
+                        data-fs-error="email"
+                    ></span>
 
                 </div>
 
@@ -936,7 +943,13 @@ footer{
                         placeholder="Street, City, State, ZIP"
                         autocomplete="street-address"
                         required
+                        data-fs-field
                     >
+
+                    <span
+                        class="field-error"
+                        data-fs-error="delivery_address"
+                    ></span>
 
                 </div>
 
@@ -952,7 +965,13 @@ footer{
                         type="date"
                         name="requested_delivery_date"
                         required
+                        data-fs-field
                     >
+
+                    <span
+                        class="field-error"
+                        data-fs-error="requested_delivery_date"
+                    ></span>
 
                 </div>
 
@@ -967,6 +986,7 @@ footer{
                         id="duration"
                         name="rental_duration"
                         required
+                        data-fs-field
                     >
 
                         <option value="">
@@ -983,6 +1003,11 @@ footer{
 
                     </select>
 
+                    <span
+                        class="field-error"
+                        data-fs-error="rental_duration"
+                    ></span>
+
                 </div>
 
 
@@ -996,6 +1021,7 @@ footer{
                         id="project"
                         name="project_type"
                         required
+                        data-fs-field
                     >
 
                         <option value="">
@@ -1028,6 +1054,11 @@ footer{
 
                     </select>
 
+                    <span
+                        class="field-error"
+                        data-fs-error="project_type"
+                    ></span>
+
                 </div>
 
 
@@ -1042,7 +1073,13 @@ footer{
                         name="materials"
                         placeholder="Example: household items, remodeling debris, wood, furniture, etc."
                         required
+                        data-fs-field
                     ></textarea>
+
+                    <span
+                        class="field-error"
+                        data-fs-error="materials"
+                    ></span>
 
                 </div>
 
@@ -1057,7 +1094,13 @@ footer{
                         id="details"
                         name="additional_details"
                         placeholder="Tell us anything else we should know about your rental or delivery location."
+                        data-fs-field
                     ></textarea>
+
+                    <span
+                        class="field-error"
+                        data-fs-error="additional_details"
+                    ></span>
 
                 </div>
 
@@ -1066,28 +1109,18 @@ footer{
 
 
             <button
-                id="submit-button"
                 type="submit"
                 class="submit-button"
+                data-fs-submit-btn
             >
                 Submit 15-Yard Booking Request
             </button>
 
 
-            <div
-                id="form-status"
-                class="form-status"
-                role="status"
-                aria-live="polite"
-            ></div>
-
-
             <p class="form-note">
-
                 Submitting this form sends a booking request.
                 Your requested dates are not reserved until availability
                 is confirmed by BAIL OUT.
-
             </p>
 
 
@@ -1102,9 +1135,7 @@ footer{
 </section>
 
 
-<!-- =========================
-     CALL
-========================= -->
+<!-- CALL -->
 
 <section class="call-section">
 
@@ -1123,9 +1154,7 @@ footer{
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -1181,93 +1210,69 @@ footer{
 </footer>
 
 
-<!-- =========================
-     FORMSPREE AJAX SUBMISSION
-========================= -->
+<!-- ==========================================
+     FORMSPREE AJAX
+
+     Form ID:
+     mzezbzyq
+
+     After Formspree confirms a successful
+     submission, customer is redirected to
+     our custom thank-you page.
+=========================================== -->
 
 <script>
 
-const bookingForm = document.getElementById('booking-form');
-const submitButton = document.getElementById('submit-button');
-const formStatus = document.getElementById('form-status');
+window.formspree =
+    window.formspree ||
+    function () {
+        (formspree.q = formspree.q || []).push(arguments);
+    };
 
-bookingForm.addEventListener('submit', async function(event){
 
-    event.preventDefault();
+formspree('initForm', {
 
-    submitButton.disabled = true;
-    submitButton.textContent = 'Sending Request...';
+    formElement: '#booking-form',
 
-    formStatus.className = 'form-status sending';
-    formStatus.textContent = 'Sending your rental request...';
+    formId: 'mzezbzyq',
 
-    const formData = new FormData(bookingForm);
 
-    try{
+    onSuccess: function(context, result){
 
-        const response = await fetch(bookingForm.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
+        window.location.href =
+            'thank-you-15yard.html';
 
-        if(response.ok){
+    },
 
-            /*
-             Formspree confirmed the submission.
-             Send the customer to the custom BAIL OUT
-             thank-you page.
 
-             The thank-you page will fire the GA4
-             generate_lead event.
-            */
+    onError: function(context, error){
 
-            window.location.href = 'thank-you-15yard.html';
+        console.error(
+            'Formspree validation error:',
+            error
+        );
 
-        }else{
+    },
 
-            let message = 'We could not send your request. Please try again or call BAIL OUT at 641-691-8799.';
 
-            try{
+    onFailure: function(context, error){
 
-                const data = await response.json();
-
-                if(data.errors && data.errors.length){
-
-                    message = data.errors
-                        .map(error => error.message)
-                        .join(', ');
-
-                }
-
-            }catch(error){
-                /* Use default message */
-            }
-
-            throw new Error(message);
-
-        }
-
-    }catch(error){
-
-        formStatus.className = 'form-status error';
-
-        formStatus.textContent =
-            error.message ||
-            'We could not send your request. Please try again or call BAIL OUT at 641-691-8799.';
-
-        submitButton.disabled = false;
-
-        submitButton.textContent =
-            'Submit 15-Yard Booking Request';
+        console.error(
+            'Formspree submission failure:',
+            error
+        );
 
     }
 
 });
 
 </script>
+
+
+<script
+    src="https://unpkg.com/@formspree/ajax@1"
+    defer
+></script>
 
 
 </body>
