@@ -2,22 +2,29 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
+
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRD4HDEY70"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-KRD4HDEY70');
+    function gtag(){
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-KRD4HDEY70');
 </script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Trailer Rental | BAIL OUT</title>
 
-<meta name="description"
-content="Request a trailer rental from BAIL OUT for hauling equipment, materials and other project needs.">
+<meta
+    name="description"
+    content="Request a trailer rental from BAIL OUT for hauling equipment, materials and other project needs."
+>
 
 <style>
 
@@ -38,7 +45,9 @@ content="Request a trailer rental from BAIL OUT for hauling equipment, materials
     box-sizing:border-box;
 }
 
-html{scroll-behavior:smooth;}
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     font-family:Arial, Helvetica, sans-serif;
@@ -52,7 +61,9 @@ img{
     display:block;
 }
 
-a{text-decoration:none;}
+a{
+    text-decoration:none;
+}
 
 .container{
     width:min(1150px, calc(100% - 40px));
@@ -95,7 +106,9 @@ header{
     font-weight:800;
 }
 
-.back-link:hover{color:var(--green);}
+.back-link:hover{
+    color:var(--green);
+}
 
 .header-phone{
     color:var(--green);
@@ -108,6 +121,10 @@ header{
     padding:12px 20px;
     border-radius:5px;
     font-weight:900;
+}
+
+.header-button:hover{
+    background:var(--green-light);
 }
 
 
@@ -203,7 +220,9 @@ header{
     margin-bottom:15px;
 }
 
-.intro p{color:#5e635e;}
+.intro p{
+    color:#5e635e;
+}
 
 .good-for{
     background:#eff9f0;
@@ -212,16 +231,24 @@ header{
     border-radius:6px;
 }
 
-.good-for h3{margin-bottom:12px;}
+.good-for h3{
+    margin-bottom:12px;
+}
 
-.good-for ul{padding-left:20px;}
+.good-for ul{
+    padding-left:20px;
+}
 
-.good-for li{margin-bottom:7px;}
+.good-for li{
+    margin-bottom:7px;
+}
 
 
 /* FORM */
 
-.quote{padding:80px 0;}
+.quote{
+    padding:80px 0;
+}
 
 .section-heading{
     text-align:center;
@@ -260,7 +287,9 @@ header{
     gap:18px;
 }
 
-.field.full{grid-column:1/-1;}
+.field.full{
+    grid-column:1/-1;
+}
 
 .field label{
     display:block;
@@ -310,6 +339,34 @@ header{
     background:var(--green-light);
 }
 
+.submit-button:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+}
+
+.form-status{
+    display:none;
+    margin-top:18px;
+    padding:18px;
+    border-radius:7px;
+    text-align:center;
+    font-size:15px;
+}
+
+.form-status.sending{
+    display:block;
+    background:#eff9f0;
+    border:1px solid #b9dfbf;
+    color:#176526;
+}
+
+.form-status.error{
+    display:block;
+    background:#fff0ee;
+    border:1px solid #efc2bd;
+    color:#8c1c13;
+}
+
 .form-note{
     text-align:center;
     color:#6b706b;
@@ -327,7 +384,9 @@ header{
     color:#061007;
 }
 
-.call-section h2{font-size:32px;}
+.call-section h2{
+    font-size:32px;
+}
 
 .call-section p{
     margin:5px 0 15px;
@@ -362,7 +421,9 @@ footer{
     gap:20px;
 }
 
-.footer-logo{width:100px;}
+.footer-logo{
+    width:100px;
+}
 
 .footer-name{
     color:white;
@@ -375,9 +436,13 @@ footer{
     gap:20px;
 }
 
-.footer-links a{color:#ccc;}
+.footer-links a{
+    color:#ccc;
+}
 
-.footer-links a:hover{color:var(--green);}
+.footer-links a:hover{
+    color:var(--green);
+}
 
 
 /* MOBILE */
@@ -389,15 +454,25 @@ footer{
         grid-template-columns:1fr;
     }
 
-    .hero h1{font-size:42px;}
+    .hero h1{
+        font-size:42px;
+    }
 
-    .hero-image img{height:auto;}
+    .hero-image img{
+        height:auto;
+    }
 
-    .header-phone{display:none;}
+    .header-phone{
+        display:none;
+    }
 
-    .form-grid{grid-template-columns:1fr;}
+    .form-grid{
+        grid-template-columns:1fr;
+    }
 
-    .field.full{grid-column:auto;}
+    .field.full{
+        grid-column:auto;
+    }
 
     .footer-wrap{
         flex-direction:column;
@@ -407,24 +482,38 @@ footer{
 
 @media(max-width:550px){
 
-    .nav-wrap{min-height:78px;}
+    .nav-wrap{
+        min-height:78px;
+    }
 
-    .logo{width:95px;}
+    .logo{
+        width:95px;
+    }
 
-    .back-link{display:none;}
+    .back-link{
+        display:none;
+    }
 
     .header-button{
         font-size:12px;
         padding:10px 12px;
     }
 
-    .hero{padding:50px 0;}
+    .hero{
+        padding:50px 0;
+    }
 
-    .hero h1{font-size:36px;}
+    .hero h1{
+        font-size:36px;
+    }
 
-    .form-card{padding:25px 18px;}
+    .form-card{
+        padding:25px 18px;
+    }
 
-    .section-heading h2{font-size:33px;}
+    .section-heading h2{
+        font-size:33px;
+    }
 
     .footer-links{
         flex-direction:column;
@@ -433,7 +522,9 @@ footer{
 }
 
 </style>
+
 </head>
+
 
 <body>
 
@@ -443,9 +534,13 @@ footer{
 <div class="nav-wrap">
 
     <a href="index.html">
-        <img src="logo.png"
-             alt="BAIL OUT Roll-Off Dumpster and Trailer Rentals"
-             class="logo">
+
+        <img
+            src="logo.png"
+            alt="BAIL OUT Roll-Off Dumpster and Trailer Rentals"
+            class="logo"
+        >
+
     </a>
 
     <div class="header-actions">
@@ -459,7 +554,7 @@ footer{
         </a>
 
         <a href="#request" class="header-button">
-            Request Rental
+            Request Trailer
         </a>
 
     </div>
@@ -467,6 +562,7 @@ footer{
 </div>
 
 </header>
+
 
 
 <section class="hero">
@@ -477,10 +573,13 @@ footer{
 
     <div class="hero-image">
 
-        <img src="trailer.png"
-             alt="BAIL OUT Trailer Rental">
+        <img
+            src="trailer.png"
+            alt="BAIL OUT Trailer Rental"
+        >
 
     </div>
+
 
     <div>
 
@@ -532,6 +631,7 @@ footer{
 </section>
 
 
+
 <section class="intro">
 
 <div class="container">
@@ -554,9 +654,12 @@ footer{
 
     </div>
 
+
     <div class="good-for">
 
-        <h3>Great For:</h3>
+        <h3>
+            Great For:
+        </h3>
 
         <ul>
             <li>Equipment hauling</li>
@@ -577,6 +680,7 @@ footer{
 </section>
 
 
+
 <section class="quote" id="request">
 
 <div class="container">
@@ -584,7 +688,7 @@ footer{
     <div class="section-heading">
 
         <div class="eyebrow">
-            Check Availability
+            Submit Trailer Rental Request
         </div>
 
         <h2>
@@ -592,8 +696,9 @@ footer{
         </h2>
 
         <p>
-            Tell us about your hauling needs and BAIL OUT will
-            follow up with availability, pricing and rental details.
+            Tell us what you need to haul, your requested date
+            and rental length. BAIL OUT will follow up with
+            availability, pricing and rental details.
         </p>
 
     </div>
@@ -601,16 +706,24 @@ footer{
 
     <div class="form-card">
 
+
+        <!--
+        No normal Formspree action.
+        JavaScript submits the request.
+        -->
+
         <form
-            action="https://formspree.io/f/mzezbzyq"
-            method="POST"
+            id="booking-form"
+            onsubmit="handleTrailerSubmit(event); return false;"
         >
+
 
             <input
                 type="hidden"
                 name="_subject"
-                value="Trailer Rental Request"
+                value="Trailer Rental / Availability Request"
             >
+
 
             <input
                 type="hidden"
@@ -633,6 +746,7 @@ footer{
                         type="text"
                         name="customer_name"
                         placeholder="Your name"
+                        autocomplete="name"
                         required
                     >
 
@@ -650,6 +764,7 @@ footer{
                         type="tel"
                         name="phone"
                         placeholder="(555) 555-5555"
+                        autocomplete="tel"
                         required
                     >
 
@@ -667,6 +782,7 @@ footer{
                         type="email"
                         name="email"
                         placeholder="you@example.com"
+                        autocomplete="email"
                         required
                     >
 
@@ -828,11 +944,11 @@ footer{
 
                 </div>
 
-
             </div>
 
 
             <button
+                id="submit-button"
                 type="submit"
                 class="submit-button"
             >
@@ -840,9 +956,18 @@ footer{
             </button>
 
 
+            <div
+                id="form-status"
+                class="form-status"
+                role="status"
+                aria-live="polite"
+            ></div>
+
+
             <p class="form-note">
-                Submitting this form is a rental request and does not
-                guarantee availability until confirmed by BAIL OUT.
+                Submitting this form sends a trailer rental request.
+                Your requested date is not reserved until availability
+                is confirmed by BAIL OUT.
             </p>
 
 
@@ -853,6 +978,7 @@ footer{
 </div>
 
 </section>
+
 
 
 <section class="call-section">
@@ -870,6 +996,7 @@ footer{
     </a>
 
 </section>
+
 
 
 <footer>
@@ -922,6 +1049,190 @@ footer{
 </div>
 
 </footer>
+
+
+
+<!-- FORM SUBMISSION -->
+
+<script>
+
+async function handleTrailerSubmit(event){
+
+    event.preventDefault();
+
+
+    const bookingForm =
+        document.getElementById('booking-form');
+
+    const submitButton =
+        document.getElementById('submit-button');
+
+    const formStatus =
+        document.getElementById('form-status');
+
+
+    submitButton.disabled = true;
+
+    submitButton.textContent =
+        'Sending Request...';
+
+
+    formStatus.className =
+        'form-status sending';
+
+    formStatus.textContent =
+        'Sending your trailer rental request...';
+
+
+    const formData =
+        new FormData(bookingForm);
+
+
+    try{
+
+
+        const response =
+            await fetch(
+
+                'https://formspree.io/f/mzezbzyq',
+
+                {
+
+                    method:'POST',
+
+                    body:formData,
+
+                    headers:{
+
+                        'Accept':
+                            'application/json'
+
+                    }
+
+                }
+
+            );
+
+
+        if(response.ok){
+
+
+            /*
+            Record successful trailer lead
+            in Google Analytics
+            */
+
+            if(
+                typeof gtag ===
+                'function'
+            ){
+
+                gtag(
+                    'event',
+                    'generate_lead',
+                    {
+
+                        lead_source:
+                            'trailer_rental',
+
+                        rental_type:
+                            'trailer'
+
+                    }
+                );
+
+            }
+
+
+            /*
+            Brief delay gives Analytics
+            time to send the event.
+            */
+
+            setTimeout(
+                function(){
+
+                    window.location.href =
+                        'thank-you-trailer.html';
+
+                },
+                400
+            );
+
+
+            return;
+
+        }
+
+
+        let errorMessage =
+
+            'We could not send your request. Please try again or call BAIL OUT at 641-691-8799.';
+
+
+        try{
+
+
+            const data =
+                await response.json();
+
+
+            if(
+                data.errors &&
+                data.errors.length
+            ){
+
+                errorMessage =
+                    data.errors
+                    .map(
+                        error =>
+                            error.message
+                    )
+                    .join(', ');
+
+            }
+
+
+        } catch(error){
+
+            /* Keep default message */
+
+        }
+
+
+        throw new Error(
+            errorMessage
+        );
+
+
+    } catch(error){
+
+
+        formStatus.className =
+            'form-status error';
+
+
+        formStatus.textContent =
+
+            error.message ||
+
+            'We could not send your request. Please try again or call BAIL OUT at 641-691-8799.';
+
+
+        submitButton.disabled =
+            false;
+
+
+        submitButton.textContent =
+            'Request Trailer Rental';
+
+
+    }
+
+}
+
+</script>
+
 
 </body>
 </html>
