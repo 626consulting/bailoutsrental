@@ -1,24 +1,36 @@
 <!DOCTYPE html>
-<!-- BAIL OUT 20-YARD DUMPSTER PAGE - CORRECTED -->
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
+
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRD4HDEY70"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-KRD4HDEY70');
+    function gtag(){
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-KRD4HDEY70');
 </script>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>20-Yard Dumpster Rental | BAIL OUT</title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-<meta name="description"
-content="Request a 20-yard roll-off dumpster rental from BAIL OUT for larger cleanouts, renovations, construction projects and property cleanup.">
+<title>
+    20-Yard Dumpster Rental | BAIL OUT
+</title>
+
+<meta
+    name="description"
+    content="Request a 20-yard roll-off dumpster rental from BAIL OUT for larger cleanouts, remodeling, construction, property cleanup and more."
+>
 
 <style>
 
@@ -30,7 +42,6 @@ content="Request a 20-yard roll-off dumpster rental from BAIL OUT for larger cle
     --gray:#f4f5f4;
     --white:#ffffff;
     --text:#171917;
-    --muted:#626762;
 }
 
 *{
@@ -39,7 +50,9 @@ content="Request a 20-yard roll-off dumpster rental from BAIL OUT for larger cle
     box-sizing:border-box;
 }
 
-html{scroll-behavior:smooth;}
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     font-family:Arial, Helvetica, sans-serif;
@@ -53,7 +66,9 @@ img{
     display:block;
 }
 
-a{text-decoration:none;}
+a{
+    text-decoration:none;
+}
 
 .container{
     width:min(1150px, calc(100% - 40px));
@@ -96,7 +111,9 @@ header{
     font-weight:800;
 }
 
-.back-link:hover{color:var(--green);}
+.back-link:hover{
+    color:var(--green);
+}
 
 .header-phone{
     color:var(--green);
@@ -109,6 +126,10 @@ header{
     padding:12px 20px;
     border-radius:5px;
     font-weight:900;
+}
+
+.header-button:hover{
+    background:var(--green-light);
 }
 
 
@@ -185,42 +206,6 @@ header{
 }
 
 
-/* INTRO */
-
-.intro{
-    background:white;
-    padding:65px 0;
-}
-
-.intro-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-}
-
-.intro h2{
-    font-size:35px;
-    line-height:1.1;
-    margin-bottom:15px;
-}
-
-.intro p{color:#5e635e;}
-
-.good-for{
-    background:#eff9f0;
-    border-left:5px solid var(--green);
-    padding:28px;
-    border-radius:6px;
-}
-
-.good-for h3{margin-bottom:12px;}
-
-.good-for ul{padding-left:20px;}
-
-.good-for li{margin-bottom:7px;}
-
-
-
 /* PRICING */
 
 .pricing-panel{
@@ -264,36 +249,55 @@ header{
     font-weight:900;
 }
 
-.available-badge{
-    display:inline-block;
-    background:var(--green);
-    color:#061007;
-    padding:6px 11px;
-    border-radius:4px;
-    font-size:12px;
-    font-weight:1000;
-    letter-spacing:1px;
-    text-transform:uppercase;
-    margin-bottom:10px;
+
+/* ABOUT */
+
+.intro{
+    background:white;
+    padding:65px 0;
 }
 
-.booking-summary{
+.intro-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+.intro h2{
+    font-size:35px;
+    line-height:1.1;
+    margin-bottom:15px;
+}
+
+.intro p{
+    color:#5e635e;
+}
+
+.good-for{
     background:#eff9f0;
-    border:1px solid #cfe7d2;
     border-left:5px solid var(--green);
-    border-radius:7px;
-    padding:18px;
-    margin-bottom:24px;
+    padding:28px;
+    border-radius:6px;
 }
 
-.booking-summary strong{
-    color:#0a8f25;
+.good-for h3{
+    margin-bottom:12px;
+}
+
+.good-for ul{
+    padding-left:20px;
+}
+
+.good-for li{
+    margin-bottom:7px;
 }
 
 
 /* FORM */
 
-.quote{padding:80px 0;}
+.quote{
+    padding:80px 0;
+}
 
 .section-heading{
     text-align:center;
@@ -326,13 +330,28 @@ header{
     border:1px solid #e1e4e1;
 }
 
+.booking-summary{
+    background:#eff9f0;
+    border:1px solid #cfe7d2;
+    border-left:5px solid var(--green);
+    border-radius:7px;
+    padding:18px;
+    margin-bottom:24px;
+}
+
+.booking-summary strong{
+    color:#0a8f25;
+}
+
 .form-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:18px;
 }
 
-.field.full{grid-column:1/-1;}
+.field.full{
+    grid-column:1/-1;
+}
 
 .field label{
     display:block;
@@ -382,6 +401,43 @@ header{
     background:var(--green-light);
 }
 
+.submit-button:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+}
+
+.form-status{
+    display:none;
+    margin-top:18px;
+    padding:18px;
+    border-radius:7px;
+    text-align:center;
+    font-size:15px;
+    line-height:1.6;
+}
+
+.form-status.sending{
+    display:block;
+    background:#eff9f0;
+    border:1px solid #b9dfbf;
+    color:#176526;
+}
+
+.form-status.success{
+    display:block;
+    background:#eaf9ed;
+    border:2px solid var(--green);
+    color:#125f21;
+    font-size:16px;
+}
+
+.form-status.error{
+    display:block;
+    background:#fff0ee;
+    border:1px solid #efc2bd;
+    color:#8c1c13;
+}
+
 .form-note{
     text-align:center;
     color:#6b706b;
@@ -399,7 +455,9 @@ header{
     color:#061007;
 }
 
-.call-section h2{font-size:32px;}
+.call-section h2{
+    font-size:32px;
+}
 
 .call-section p{
     margin:5px 0 15px;
@@ -434,7 +492,9 @@ footer{
     gap:20px;
 }
 
-.footer-logo{width:100px;}
+.footer-logo{
+    width:100px;
+}
 
 .footer-name{
     color:white;
@@ -447,9 +507,13 @@ footer{
     gap:20px;
 }
 
-.footer-links a{color:#ccc;}
+.footer-links a{
+    color:#ccc;
+}
 
-.footer-links a:hover{color:var(--green);}
+.footer-links a:hover{
+    color:var(--green);
+}
 
 
 /* MOBILE */
@@ -461,15 +525,25 @@ footer{
         grid-template-columns:1fr;
     }
 
-    .hero h1{font-size:42px;}
+    .hero h1{
+        font-size:42px;
+    }
 
-    .hero-image img{height:auto;}
+    .hero-image img{
+        height:auto;
+    }
 
-    .header-phone{display:none;}
+    .header-phone{
+        display:none;
+    }
 
-    .form-grid{grid-template-columns:1fr;}
+    .form-grid{
+        grid-template-columns:1fr;
+    }
 
-    .field.full{grid-column:auto;}
+    .field.full{
+        grid-column:auto;
+    }
 
     .footer-wrap{
         flex-direction:column;
@@ -479,24 +553,38 @@ footer{
 
 @media(max-width:550px){
 
-    .nav-wrap{min-height:78px;}
+    .nav-wrap{
+        min-height:78px;
+    }
 
-    .logo{width:95px;}
+    .logo{
+        width:95px;
+    }
 
-    .back-link{display:none;}
+    .back-link{
+        display:none;
+    }
 
     .header-button{
         font-size:12px;
         padding:10px 12px;
     }
 
-    .hero{padding:50px 0;}
+    .hero{
+        padding:50px 0;
+    }
 
-    .hero h1{font-size:36px;}
+    .hero h1{
+        font-size:36px;
+    }
 
-    .form-card{padding:25px 18px;}
+    .form-card{
+        padding:25px 18px;
+    }
 
-    .section-heading h2{font-size:33px;}
+    .section-heading h2{
+        font-size:33px;
+    }
 
     .footer-links{
         flex-direction:column;
@@ -505,32 +593,49 @@ footer{
 }
 
 </style>
+
 </head>
 
 <body>
 
+
+<!-- HEADER -->
 
 <header>
 
 <div class="nav-wrap">
 
     <a href="index.html">
-        <img src="logo.png"
-             alt="BAIL OUT Roll-Off Dumpster Rentals"
-             class="logo">
+
+        <img
+            src="logo.png"
+            alt="BAIL OUT Roll-Off Dumpster and Trailer Rentals"
+            class="logo"
+        >
+
     </a>
+
 
     <div class="header-actions">
 
-        <a href="index.html" class="back-link">
+        <a
+            href="index.html"
+            class="back-link"
+        >
             ← Back to Home
         </a>
 
-        <a href="tel:6416918799" class="header-phone">
+        <a
+            href="tel:6416918799"
+            class="header-phone"
+        >
             641-691-8799
         </a>
 
-        <a href="#request" class="header-button">
+        <a
+            href="#request"
+            class="header-button"
+        >
             Request Booking
         </a>
 
@@ -541,18 +646,24 @@ footer{
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero">
 
 <div class="container">
 
 <div class="hero-grid">
 
+
     <div class="hero-image">
 
-        <img src="20yard.png"
-             alt="BAIL OUT 20-Yard Roll-Off Dumpster">
+        <img
+            src="20yard.png"
+            alt="BAIL OUT 20-Yard Roll-Off Dumpster"
+        >
 
     </div>
+
 
     <div>
 
@@ -560,31 +671,28 @@ footer{
             BAIL OUT Dumpster Rentals
         </div>
 
-        <div class="available-badge">
-            Now Available
-        </div>
-
         <h1>
             20-Yard Roll-Off Dumpster
         </h1>
 
         <p>
-            Need more capacity for your project? The 20-yard
-            roll-off dumpster is designed for larger cleanouts,
-            renovation projects, construction work and jobs
-            that produce a greater amount of debris.
+            A larger roll-off dumpster option for remodeling,
+            construction projects, property cleanups, moving,
+            larger household cleanouts and jobs that create
+            more debris.
         </p>
+
 
         <div class="hero-features">
 
             <div class="feature">
                 <span class="check">✓</span>
-                Larger Project Capacity
+                Residential & Commercial Projects
             </div>
 
             <div class="feature">
                 <span class="check">✓</span>
-                Residential & Commercial Projects
+                Extra Capacity for Larger Jobs
             </div>
 
             <div class="feature">
@@ -599,22 +707,45 @@ footer{
 
         </div>
 
+
         <div class="pricing-panel">
-            <h3>20-Yard Dumpster Pricing</h3>
+
+            <h3>
+                20-Yard Dumpster Pricing
+            </h3>
+
             <div class="pricing-row">
-                <span>7 Days</span>
-                <strong>$450</strong>
+
+                <span>
+                    7 Days
+                </span>
+
+                <strong>
+                    $450
+                </strong>
+
             </div>
+
             <div class="pricing-row">
-                <span>14 Days</span>
-                <strong>$550</strong>
+
+                <span>
+                    14 Days
+                </span>
+
+                <strong>
+                    $550
+                </strong>
+
             </div>
+
             <div class="pricing-included">
                 ✓ 2 Tons of Disposal Included
             </div>
+
         </div>
 
     </div>
+
 
 </div>
 
@@ -622,6 +753,8 @@ footer{
 
 </section>
 
+
+<!-- ABOUT -->
 
 <section class="intro">
 
@@ -629,37 +762,64 @@ footer{
 
 <div class="intro-grid">
 
+
     <div>
 
         <h2>
-            More Room for Bigger Projects
+            More Capacity for Bigger Projects
         </h2>
 
         <p>
-            A 20-yard dumpster provides additional capacity for
-            projects that generate more debris. It can be a useful
-            choice for larger property cleanouts, renovation work,
-            construction projects and other jobs where a smaller
-            dumpster may not provide enough room.
+            The 20-yard roll-off dumpster provides additional
+            capacity for projects that produce a larger amount of
+            debris. It can be a practical choice for remodeling,
+            construction work, property cleanups, moving projects
+            and larger household cleanouts.
         </p>
 
     </div>
 
+
     <div class="good-for">
 
-        <h3>Great For:</h3>
+        <h3>
+            Great For:
+        </h3>
 
         <ul>
-            <li>Larger home cleanouts</li>
-            <li>Renovation projects</li>
-            <li>Construction projects</li>
-            <li>Property cleanup</li>
-            <li>Moving and downsizing</li>
-            <li>Commercial cleanup projects</li>
-            <li>General debris removal</li>
+
+            <li>
+                Large home cleanouts
+            </li>
+
+            <li>
+                Remodeling and renovation
+            </li>
+
+            <li>
+                Construction projects
+            </li>
+
+            <li>
+                Property cleanup
+            </li>
+
+            <li>
+                Moving and downsizing
+            </li>
+
+            <li>
+                Garage and basement cleanouts
+            </li>
+
+            <li>
+                General debris removal
+            </li>
+
         </ul>
 
     </div>
+
 
 </div>
 
@@ -668,9 +828,15 @@ footer{
 </section>
 
 
-<section class="quote" id="request">
+<!-- REQUEST FORM -->
+
+<section
+    class="quote"
+    id="request"
+>
 
 <div class="container">
+
 
     <div class="section-heading">
 
@@ -692,16 +858,33 @@ footer{
 
     <div class="form-card">
 
+
         <div class="booking-summary">
-            <strong>20-Yard Roll-Off Dumpster - Now Available</strong><br>
-            $450 for 7 days &nbsp; | &nbsp; $550 for 14 days<br>
+
+            <strong>
+                20-Yard Roll-Off Dumpster
+            </strong>
+
+            <br>
+
+            $450 for 7 days
+            &nbsp; | &nbsp;
+            $550 for 14 days
+
+            <br>
+
             2 tons of disposal included.
+
         </div>
 
-        <form
-            action="https://formspree.io/f/mzezbzyq"
-            method="POST"
-        >
+
+        <!--
+        No Formspree action is used here.
+        JavaScript sends the form in the background.
+        -->
+
+        <form id="booking-form">
+
 
             <input
                 type="hidden"
@@ -730,6 +913,7 @@ footer{
                         type="text"
                         name="customer_name"
                         placeholder="Your name"
+                        autocomplete="name"
                         required
                     >
 
@@ -747,6 +931,7 @@ footer{
                         type="tel"
                         name="phone"
                         placeholder="(555) 555-5555"
+                        autocomplete="tel"
                         required
                     >
 
@@ -764,6 +949,7 @@ footer{
                         type="email"
                         name="email"
                         placeholder="you@example.com"
+                        autocomplete="email"
                         required
                     >
 
@@ -781,6 +967,7 @@ footer{
                         type="text"
                         name="delivery_address"
                         placeholder="Street, City, State, ZIP"
+                        autocomplete="street-address"
                         required
                     >
 
@@ -864,10 +1051,6 @@ footer{
                             Property Cleanup
                         </option>
 
-                        <option value="Commercial Project">
-                            Commercial Project
-                        </option>
-
                         <option value="Moving">
                             Moving / Downsizing
                         </option>
@@ -916,6 +1099,7 @@ footer{
 
 
             <button
+                id="submit-button"
                 type="submit"
                 class="submit-button"
             >
@@ -923,20 +1107,35 @@ footer{
             </button>
 
 
+            <div
+                id="form-status"
+                class="form-status"
+                role="status"
+                aria-live="polite"
+            ></div>
+
+
             <p class="form-note">
-                Submitting this form sends a booking request. Your requested dates
-                are not reserved until availability is confirmed by BAIL OUT.
+
+                Submitting this form sends a booking request.
+                Your requested dates are not reserved until
+                availability is confirmed by BAIL OUT.
+
             </p>
 
 
         </form>
 
+
     </div>
+
 
 </div>
 
 </section>
 
+
+<!-- CALL -->
 
 <section class="call-section">
 
@@ -955,9 +1154,12 @@ footer{
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
 
 <div class="container footer-wrap">
+
 
     <div class="footer-brand">
 
@@ -974,7 +1176,7 @@ footer{
             </div>
 
             <div>
-                Roll-Off Dumpster Rentals
+                Roll-Off Dumpster & Trailer Rentals
             </div>
 
             <div>
@@ -1002,9 +1204,233 @@ footer{
 
     </div>
 
+
 </div>
 
 </footer>
+
+
+<!-- FORM SUBMISSION SCRIPT -->
+
+<script>
+
+const bookingForm =
+    document.getElementById('booking-form');
+
+const submitButton =
+    document.getElementById('submit-button');
+
+const formStatus =
+    document.getElementById('form-status');
+
+
+bookingForm.addEventListener(
+    'submit',
+    async function(event) {
+
+        event.preventDefault();
+
+
+        submitButton.disabled = true;
+
+        submitButton.textContent =
+            'Sending Request...';
+
+
+        formStatus.className =
+            'form-status sending';
+
+        formStatus.textContent =
+            'Sending your rental request...';
+
+
+        const formData =
+            new FormData(bookingForm);
+
+
+        try {
+
+
+            const response =
+                await fetch(
+
+                    'https://formspree.io/f/mzezbzyq',
+
+                    {
+
+                        method:'POST',
+
+                        body:formData,
+
+                        headers:{
+
+                            'Accept':
+                                'application/json'
+
+                        }
+
+                    }
+
+                );
+
+
+            if(response.ok){
+
+
+                /*
+                GOOGLE ANALYTICS
+                Successful 20-yard lead
+                */
+
+                if(
+                    typeof gtag ===
+                    'function'
+                ){
+
+                    gtag(
+                        'event',
+                        'generate_lead',
+                        {
+
+                            lead_source:
+                                '20_yard_dumpster',
+
+                            rental_type:
+                                '20_yard'
+
+                        }
+                    );
+
+                }
+
+
+                bookingForm.reset();
+
+
+                formStatus.className =
+                    'form-status success';
+
+
+                formStatus.innerHTML = `
+
+                    <strong>
+                        Thank you! Your request has been received.
+                    </strong>
+
+                    <br><br>
+
+                    BAIL OUT will contact you regarding
+                    availability, pricing and delivery details.
+
+                    <br><br>
+
+                    Need help sooner?
+
+                    <a
+                        href="tel:6416918799"
+                        style="
+                            color:#0a8f25;
+                            font-weight:900;
+                        "
+                    >
+                        Call 641-691-8799
+                    </a>
+
+                `;
+
+
+                submitButton.textContent =
+                    'Request Received';
+
+
+                submitButton.disabled =
+                    true;
+
+
+                formStatus.scrollIntoView({
+
+                    behavior:'smooth',
+
+                    block:'center'
+
+                });
+
+
+                return;
+
+            }
+
+
+            let errorMessage =
+
+                'We could not send your request. Please try again or call BAIL OUT at 641-691-8799.';
+
+
+            try {
+
+
+                const data =
+                    await response.json();
+
+
+                if(
+                    data.errors &&
+                    data.errors.length
+                ){
+
+                    errorMessage =
+                        data.errors
+                        .map(
+                            error =>
+                                error.message
+                        )
+                        .join(', ');
+
+                }
+
+
+            } catch(error){
+
+                /* Keep default error message */
+
+            }
+
+
+            throw new Error(
+                errorMessage
+            );
+
+
+        } catch(error){
+
+
+            formStatus.className =
+                'form-status error';
+
+
+            formStatus.textContent =
+
+                error.message ||
+
+                'We could not send your request. Please try again or call BAIL OUT at 641-691-8799.';
+
+
+            submitButton.disabled =
+                false;
+
+
+            submitButton.textContent =
+                'Submit 20-Yard Booking Request';
+
+
+        }
+
+
+    }
+);
+
+</script>
+
 
 </body>
 </html>
