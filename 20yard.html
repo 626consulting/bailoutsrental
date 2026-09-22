@@ -17,15 +17,9 @@
 </script>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>
-    20-Yard Dumpster Rental | BAIL OUT
-</title>
+<title>20-Yard Dumpster Rental | BAIL OUT</title>
 
 <meta
     name="description"
@@ -42,6 +36,7 @@
     --gray:#f4f5f4;
     --white:#ffffff;
     --text:#171917;
+    --muted:#626762;
 }
 
 *{
@@ -250,7 +245,7 @@ header{
 }
 
 
-/* ABOUT */
+/* INTRO */
 
 .intro{
     background:white;
@@ -412,8 +407,6 @@ header{
     padding:18px;
     border-radius:7px;
     text-align:center;
-    font-size:15px;
-    line-height:1.6;
 }
 
 .form-status.sending{
@@ -421,14 +414,6 @@ header{
     background:#eff9f0;
     border:1px solid #b9dfbf;
     color:#176526;
-}
-
-.form-status.success{
-    display:block;
-    background:#eaf9ed;
-    border:2px solid var(--green);
-    color:#125f21;
-    font-size:16px;
 }
 
 .form-status.error{
@@ -596,10 +581,9 @@ footer{
 
 </head>
 
+
 <body>
 
-
-<!-- HEADER -->
 
 <header>
 
@@ -615,27 +599,17 @@ footer{
 
     </a>
 
-
     <div class="header-actions">
 
-        <a
-            href="index.html"
-            class="back-link"
-        >
+        <a href="index.html" class="back-link">
             ← Back to Home
         </a>
 
-        <a
-            href="tel:6416918799"
-            class="header-phone"
-        >
+        <a href="tel:6416918799" class="header-phone">
             641-691-8799
         </a>
 
-        <a
-            href="#request"
-            class="header-button"
-        >
+        <a href="#request" class="header-button">
             Request Booking
         </a>
 
@@ -646,14 +620,11 @@ footer{
 </header>
 
 
-<!-- HERO -->
-
 <section class="hero">
 
 <div class="container">
 
 <div class="hero-grid">
-
 
     <div class="hero-image">
 
@@ -663,7 +634,6 @@ footer{
         >
 
     </div>
-
 
     <div>
 
@@ -681,7 +651,6 @@ footer{
             larger household cleanouts and jobs that create
             more debris.
         </p>
-
 
         <div class="hero-features">
 
@@ -715,27 +684,13 @@ footer{
             </h3>
 
             <div class="pricing-row">
-
-                <span>
-                    7 Days
-                </span>
-
-                <strong>
-                    $450
-                </strong>
-
+                <span>7 Days</span>
+                <strong>$450</strong>
             </div>
 
             <div class="pricing-row">
-
-                <span>
-                    14 Days
-                </span>
-
-                <strong>
-                    $550
-                </strong>
-
+                <span>14 Days</span>
+                <strong>$550</strong>
             </div>
 
             <div class="pricing-included">
@@ -746,7 +701,6 @@ footer{
 
     </div>
 
-
 </div>
 
 </div>
@@ -754,14 +708,11 @@ footer{
 </section>
 
 
-<!-- ABOUT -->
-
 <section class="intro">
 
 <div class="container">
 
 <div class="intro-grid">
-
 
     <div>
 
@@ -771,8 +722,8 @@ footer{
 
         <p>
             The 20-yard roll-off dumpster provides additional
-            capacity for projects that produce a larger amount of
-            debris. It can be a practical choice for remodeling,
+            capacity for projects that produce a larger amount
+            of debris. It can be a practical choice for remodeling,
             construction work, property cleanups, moving projects
             and larger household cleanouts.
         </p>
@@ -787,39 +738,16 @@ footer{
         </h3>
 
         <ul>
-
-            <li>
-                Large home cleanouts
-            </li>
-
-            <li>
-                Remodeling and renovation
-            </li>
-
-            <li>
-                Construction projects
-            </li>
-
-            <li>
-                Property cleanup
-            </li>
-
-            <li>
-                Moving and downsizing
-            </li>
-
-            <li>
-                Garage and basement cleanouts
-            </li>
-
-            <li>
-                General debris removal
-            </li>
-
+            <li>Large home cleanouts</li>
+            <li>Remodeling and renovation</li>
+            <li>Construction projects</li>
+            <li>Property cleanup</li>
+            <li>Moving and downsizing</li>
+            <li>Garage and basement cleanouts</li>
+            <li>General debris removal</li>
         </ul>
 
     </div>
-
 
 </div>
 
@@ -828,15 +756,9 @@ footer{
 </section>
 
 
-<!-- REQUEST FORM -->
-
-<section
-    class="quote"
-    id="request"
->
+<section class="quote" id="request">
 
 <div class="container">
-
 
     <div class="section-heading">
 
@@ -858,7 +780,6 @@ footer{
 
     <div class="form-card">
 
-
         <div class="booking-summary">
 
             <strong>
@@ -878,13 +799,10 @@ footer{
         </div>
 
 
-        <!--
-        No Formspree action is used here.
-        JavaScript sends the form in the background.
-        -->
-
-        <form id="booking-form">
-
+        <form
+            id="booking-form"
+            onsubmit="handleDumpsterSubmit(event); return false;"
+        >
 
             <input
                 type="hidden"
@@ -1094,7 +1012,6 @@ footer{
 
                 </div>
 
-
             </div>
 
 
@@ -1116,26 +1033,19 @@ footer{
 
 
             <p class="form-note">
-
                 Submitting this form sends a booking request.
                 Your requested dates are not reserved until
                 availability is confirmed by BAIL OUT.
-
             </p>
-
 
         </form>
 
-
     </div>
-
 
 </div>
 
 </section>
 
-
-<!-- CALL -->
 
 <section class="call-section">
 
@@ -1154,12 +1064,9 @@ footer{
 </section>
 
 
-<!-- FOOTER -->
-
 <footer>
 
 <div class="container footer-wrap">
-
 
     <div class="footer-brand">
 
@@ -1204,230 +1111,163 @@ footer{
 
     </div>
 
-
 </div>
 
 </footer>
 
 
-<!-- FORM SUBMISSION SCRIPT -->
-
 <script>
 
-const bookingForm =
-    document.getElementById('booking-form');
+async function handleDumpsterSubmit(event){
 
-const submitButton =
-    document.getElementById('submit-button');
+    event.preventDefault();
 
-const formStatus =
-    document.getElementById('form-status');
+    const bookingForm =
+        document.getElementById('booking-form');
 
+    const submitButton =
+        document.getElementById('submit-button');
 
-bookingForm.addEventListener(
-    'submit',
-    async function(event) {
-
-        event.preventDefault();
+    const formStatus =
+        document.getElementById('form-status');
 
 
-        submitButton.disabled = true;
+    submitButton.disabled = true;
 
-        submitButton.textContent =
-            'Sending Request...';
-
-
-        formStatus.className =
-            'form-status sending';
-
-        formStatus.textContent =
-            'Sending your rental request...';
+    submitButton.textContent =
+        'Sending Request...';
 
 
-        const formData =
-            new FormData(bookingForm);
+    formStatus.className =
+        'form-status sending';
+
+    formStatus.textContent =
+        'Sending your rental request...';
 
 
-        try {
+    const formData =
+        new FormData(bookingForm);
 
 
-            const response =
-                await fetch(
+    try{
 
-                    'https://formspree.io/f/mzezbzyq',
 
-                    {
+        const response =
+            await fetch(
 
-                        method:'POST',
+                'https://formspree.io/f/mzezbzyq',
 
-                        body:formData,
+                {
 
-                        headers:{
+                    method:'POST',
 
-                            'Accept':
-                                'application/json'
+                    body:formData,
 
-                        }
-
+                    headers:{
+                        'Accept':'application/json'
                     }
 
-                );
-
-
-            if(response.ok){
-
-
-                /*
-                GOOGLE ANALYTICS
-                Successful 20-yard lead
-                */
-
-                if(
-                    typeof gtag ===
-                    'function'
-                ){
-
-                    gtag(
-                        'event',
-                        'generate_lead',
-                        {
-
-                            lead_source:
-                                '20_yard_dumpster',
-
-                            rental_type:
-                                '20_yard'
-
-                        }
-                    );
-
                 }
 
-
-                bookingForm.reset();
-
-
-                formStatus.className =
-                    'form-status success';
-
-
-                formStatus.innerHTML = `
-
-                    <strong>
-                        Thank you! Your request has been received.
-                    </strong>
-
-                    <br><br>
-
-                    BAIL OUT will contact you regarding
-                    availability, pricing and delivery details.
-
-                    <br><br>
-
-                    Need help sooner?
-
-                    <a
-                        href="tel:6416918799"
-                        style="
-                            color:#0a8f25;
-                            font-weight:900;
-                        "
-                    >
-                        Call 641-691-8799
-                    </a>
-
-                `;
-
-
-                submitButton.textContent =
-                    'Request Received';
-
-
-                submitButton.disabled =
-                    true;
-
-
-                formStatus.scrollIntoView({
-
-                    behavior:'smooth',
-
-                    block:'center'
-
-                });
-
-
-                return;
-
-            }
-
-
-            let errorMessage =
-
-                'We could not send your request. Please try again or call BAIL OUT at 641-691-8799.';
-
-
-            try {
-
-
-                const data =
-                    await response.json();
-
-
-                if(
-                    data.errors &&
-                    data.errors.length
-                ){
-
-                    errorMessage =
-                        data.errors
-                        .map(
-                            error =>
-                                error.message
-                        )
-                        .join(', ');
-
-                }
-
-
-            } catch(error){
-
-                /* Keep default error message */
-
-            }
-
-
-            throw new Error(
-                errorMessage
             );
 
 
-        } catch(error){
+        if(response.ok){
 
 
-            formStatus.className =
-                'form-status error';
+            if(typeof gtag === 'function'){
+
+                gtag(
+                    'event',
+                    'generate_lead',
+                    {
+                        lead_source:'20_yard_dumpster',
+                        rental_type:'20_yard'
+                    }
+                );
+
+            }
 
 
-            formStatus.textContent =
+            setTimeout(
+                function(){
 
-                error.message ||
+                    window.location.href =
+                        'thank-you-20yard.html';
 
-                'We could not send your request. Please try again or call BAIL OUT at 641-691-8799.';
+                },
+                400
+            );
 
 
-            submitButton.disabled =
-                false;
-
-
-            submitButton.textContent =
-                'Submit 20-Yard Booking Request';
-
+            return;
 
         }
 
 
+        let errorMessage =
+            'We could not send your request. Please try again or call BAIL OUT at 641-691-8799.';
+
+
+        try{
+
+
+            const data =
+                await response.json();
+
+
+            if(
+                data.errors &&
+                data.errors.length
+            ){
+
+                errorMessage =
+                    data.errors
+                    .map(
+                        error =>
+                            error.message
+                    )
+                    .join(', ');
+
+            }
+
+
+        } catch(error){
+
+            /* Keep default message */
+
+        }
+
+
+        throw new Error(
+            errorMessage
+        );
+
+
+    } catch(error){
+
+
+        formStatus.className =
+            'form-status error';
+
+
+        formStatus.textContent =
+
+            error.message ||
+
+            'We could not send your request. Please try again or call BAIL OUT at 641-691-8799.';
+
+
+        submitButton.disabled =
+            false;
+
+
+        submitButton.textContent =
+            'Submit 20-Yard Booking Request';
+
     }
-);
+
+}
 
 </script>
 
