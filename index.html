@@ -2,7 +2,15 @@
 <html lang="en">
 
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRD4HDEY70"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-KRD4HDEY70');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -838,6 +846,26 @@ footer{
     font-weight:1000;
 }
 
+.footer-email{
+    display:block;
+    color:#d9ded9;
+    font-size:14px;
+    overflow-wrap:anywhere;
+}
+
+.contact-email-label{
+    margin-top:16px;
+}
+
+.contact-email{
+    display:block;
+    margin-top:4px;
+    color:#0b7f23;
+    font-size:18px;
+    font-weight:800;
+    overflow-wrap:anywhere;
+}
+
 .footer-links{
     display:flex;
     gap:18px;
@@ -1548,23 +1576,6 @@ footer{
     margin-top:15px !important;
 }
 
-
-/* DUMPSTER PRICING DETAILS */
-.pricing-detail{
-    display:block;
-    margin-top:7px;
-    padding-top:7px;
-    border-top:1px solid #2c342d;
-    color:#f2f5f2;
-    font-size:12px;
-    font-weight:800;
-    line-height:1.35;
-}
-
-.pricing-detail:last-child{
-    color:var(--green);
-}
-
 </style>
 
 
@@ -1718,7 +1729,7 @@ footer{
         </div>
 
         <div class="trust-item">
-            No Dumpster Delivery Charge
+            Delivery Available
         </div>
 
         <div class="trust-item">
@@ -1811,8 +1822,6 @@ footer{
                     </div>
                     <div class="included">
                         ✓ 2 Tons of Disposal Included
-                        <span class="pricing-detail">Additional Weight: $100 per Ton</span>
-                        <span class="pricing-detail">Dumpster Delivery: No Charge</span>
                     </div>
                 </div>
 
@@ -1878,8 +1887,6 @@ footer{
                     </div>
                     <div class="included">
                         ✓ 2 Tons of Disposal Included
-                        <span class="pricing-detail">Additional Weight: $100 per Ton</span>
-                        <span class="pricing-detail">Dumpster Delivery: No Charge</span>
                     </div>
                 </div>
 
@@ -1966,7 +1973,7 @@ footer{
             <span class="impact-mark">02</span>
             <div>
                 <strong>2 Tons Included</strong>
-                <span>Additional weight is $100 per ton.</span>
+                <span>Included with 15-yard and 20-yard dumpster rentals.</span>
             </div>
         </div>
 
@@ -2001,8 +2008,8 @@ footer{
         </h2>
 
         <p>
-            See BAIL OUT equipment in action. The video plays automatically on mute
-            and loops continuously, with controls available whenever you want them.
+            See BAIL OUT equipment up close and in action. Get a better look at the
+            quality, condition, and capability of our rental equipment before you book.
         </p>
 
     </div>
@@ -2037,22 +2044,18 @@ footer{
             <div class="showcase-content">
 
                 <div class="showcase-label">
-                    Watch the Video
+                    See Our Equipment
                 </div>
 
                 <h3>
-                    A Closer Look at BAIL OUT
+                    Built for Real Projects
                 </h3>
 
                 <p>
-                    See the rental equipment up close and get a better look
-                    at what customers can expect when they choose BAIL OUT
-                    for their next project.
+                    Take a closer look at BAIL OUT equipment and see what you can expect
+                    when you rent with us. Reliable equipment, straightforward service,
+                    and rental options ready for real projects.
                 </p>
-
-                <div class="showcase-video-note">
-                    Video plays automatically on mute and loops continuously.
-                </div>
 
             </div>
 
@@ -2330,7 +2333,7 @@ footer{
         <details class="faq-item">
             <summary>How long can I keep my rental?<span class="faq-toggle" aria-hidden="true">+</span></summary>
             <div class="faq-answer">
-                <p>Dumpster rentals are available for 7-day or 14-day rental periods. The 15-yard dumpster is $375 for 7 days or $475 for 14 days. The 20-yard dumpster is $450 for 7 days or $550 for 14 days. Both include 2 tons of disposal. Additional weight is charged at $100 per ton. Trailer rental periods may vary.</p>
+                <p>Dumpster rentals are available for 7-day or 14-day rental periods. The 15-yard dumpster is $375 for 7 days or $475 for 14 days. The 20-yard dumpster is $450 for 7 days or $550 for 14 days. Both include 2 tons of disposal. Trailer rental periods may vary.</p>
             </div>
         </details>
 
@@ -2338,7 +2341,7 @@ footer{
         <details class="faq-item">
             <summary>Do you deliver dumpsters?<span class="faq-toggle" aria-hidden="true">+</span></summary>
             <div class="faq-answer">
-                <p>There is no separate delivery charge for dumpster rentals. Submit your delivery address with your rental request so BAIL OUT can confirm availability and the rental details for your location.</p>
+                <p>Delivery is available. Submit your delivery address with your rental request so BAIL OUT can confirm the details for your location.</p>
             </div>
         </details>
 
@@ -2410,6 +2413,14 @@ footer{
                     class="contact-phone"
                 >
                     641-691-8799
+                </a>
+
+                <div class="contact-label contact-email-label">
+                    Email BAIL OUT
+                </div>
+
+                <a href="mailto:bailoutrentals@gmail.com" class="contact-email">
+                    bailoutrentals@gmail.com
                 </a>
 
             </div>
@@ -2685,6 +2696,10 @@ footer{
                     class="footer-phone"
                 >
                     641-691-8799
+                </a>
+
+                <a href="mailto:bailoutrentals@gmail.com" class="footer-email">
+                    bailoutrentals@gmail.com
                 </a>
 
             </div>
