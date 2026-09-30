@@ -1,64 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
-    <title>Thank You for Your Request | BAIL OUT</title>
-    <meta name="description" content="Thank you for contacting BAIL OUT about your rental needs.">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRD4HDEY70"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){ dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-KRD4HDEY70');
-    </script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S81QYFRSXC"></script>
 
-    <style>
-        :root { --green:#20d642; --black:#050706; --text:#1b211c; }
-        * { box-sizing:border-box; }
-        body { margin:0; font-family:Arial,Helvetica,sans-serif; line-height:1.6; color:var(--text); background:#f3f6f3; }
-        header { background:var(--black); border-bottom:3px solid var(--green); }
-        .header-inner { max-width:1100px; margin:auto; padding:16px 24px; }
-        .logo { display:block; width:110px; max-width:100%; }
-        main { min-height:calc(100vh - 175px); display:grid; place-items:center; padding:72px 20px; }
-        .card { width:min(100%,690px); padding:50px 42px; background:#fff; border-radius:14px;
-                border-top:6px solid var(--green); box-shadow:0 16px 48px rgba(0,0,0,.10); text-align:center; }
-        .mark { width:62px; height:62px; margin:0 auto 18px; display:grid; place-items:center;
-                border-radius:50%; background:var(--green); color:var(--black); font-size:34px; font-weight:900; }
-        h1 { margin:0 0 15px; font-size:clamp(30px,5vw,44px); line-height:1.1; }
-        p { margin:0 auto 18px; max-width:540px; }
-        .note { margin-top:24px; padding:17px; background:#eef8ef; border-radius:8px; font-size:15px; }
-        .actions { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; margin-top:30px; }
-        .button { display:inline-block; padding:13px 21px; border-radius:6px; font-weight:800;
-                  text-decoration:none; background:var(--green); color:var(--black); }
-        .button.secondary { background:#fff; border:2px solid #d4dfd5; }
-        .contact { margin-top:24px; font-size:14px; }
-        .contact a { color:#0b7f23; font-weight:700; overflow-wrap:anywhere; }
-        footer { padding:18px 20px; background:var(--black); color:#d5dcd6; text-align:center; font-size:13px; }
-        @media(max-width:560px) { .card { padding:38px 22px; } }
-    </style>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-S81QYFRSXC');
+
+    /*
+      Record a successful homepage quote request as a lead.
+
+      sessionStorage helps prevent the same lead from being counted
+      again if the customer refreshes the thank-you page.
+    */
+    if (!sessionStorage.getItem('homepage_quote_lead_recorded')) {
+
+        gtag('event', 'generate_lead', {
+            form_name: 'homepage_quote',
+            rental_type: 'general rental quote'
+        });
+
+        sessionStorage.setItem('homepage_quote_lead_recorded', 'true');
+    }
+</script>
+
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="robots"
+    content="noindex, follow"
+>
+
+<title>Request Received | BAIL OUT</title>
+
+
+<style>
+
+:root{
+    --green:#20d642;
+    --green-dark:#12a82e;
+    --black:#050706;
+    --white:#ffffff;
+    --gray:#f4f5f4;
+    --text:#171917;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    min-height:100vh;
+    background:#f4f5f4;
+    color:var(--text);
+    display:flex;
+    flex-direction:column;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* HEADER */
+
+header{
+    background:#050706;
+    padding:18px 20px;
+}
+
+.header-inner{
+    width:min(1100px, calc(100% - 20px));
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    width:120px;
+}
+
+.phone{
+    color:var(--green);
+    font-weight:900;
+}
+
+
+/* MAIN */
+
+main{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:60px 20px;
+}
+
+.thank-you-card{
+    width:min(700px, 100%);
+    background:white;
+    border-radius:14px;
+    box-shadow:0 15px 45px rgba(0,0,0,.12);
+    padding:50px 35px;
+    text-align:center;
+    border-top:7px solid var(--green);
+}
+
+.check{
+    width:80px;
+    height:80px;
+    margin:0 auto 25px;
+    border-radius:50%;
+    background:var(--green);
+    color:#061007;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:40px;
+    font-weight:900;
+}
+
+.thank-you-card h1{
+    font-size:40px;
+    line-height:1.1;
+    margin-bottom:18px;
+}
+
+.thank-you-card p{
+    font-size:18px;
+    color:#5d625d;
+    margin-bottom:16px;
+}
+
+.highlight{
+    background:#eff9f0;
+    border-left:5px solid var(--green);
+    padding:18px;
+    margin:28px 0;
+    border-radius:6px;
+}
+
+.highlight strong{
+    color:#0a8f25;
+}
+
+.button{
+    display:inline-block;
+    background:var(--green);
+    color:#061007;
+    padding:15px 28px;
+    border-radius:6px;
+    font-weight:900;
+    margin-top:10px;
+}
+
+.button:hover{
+    background:#4be766;
+}
+
+.call{
+    margin-top:25px;
+    font-size:15px;
+}
+
+.call a{
+    color:#0a8f25;
+    font-weight:900;
+}
+
+
+/* FOOTER */
+
+footer{
+    background:#050706;
+    color:#aaa;
+    text-align:center;
+    padding:22px;
+    font-size:13px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .thank-you-card{
+        padding:40px 22px;
+    }
+
+    .thank-you-card h1{
+        font-size:32px;
+    }
+
+    .phone{
+        font-size:13px;
+    }
+
+    .logo{
+        width:95px;
+    }
+
+}
+
+</style>
+
 </head>
+
+
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="index.html" aria-label="BAIL OUT home"><img src="logo.png" class="logo" alt="BAIL OUT"></a>
-        </div>
-    </header>
-    <main>
-        <section class="card" aria-labelledby="thank-you-title">
-            <div class="mark" aria-hidden="true">✓</div>
-            <h1 id="thank-you-title">Thank you for reaching out!</h1>
-            <p>We received your rental request. BAIL OUT will review the details and follow up with you about availability, pricing, and the next steps.</p>
-            <p class="note">Your rental is not reserved until BAIL OUT confirms it with you.</p>
-            <div class="actions">
-                <a class="button" href="index.html">Back to Home</a>
-                <a class="button secondary" href="index.html#rentals">View Rentals</a>
-            </div>
-            <p class="contact">Need to reach us sooner? Call <a href="tel:6416918799">641-691-8799</a> or email <a href="mailto:bailoutrentals@gmail.com">bailoutrentals@gmail.com</a>.</p>
-        </section>
-    </main>
-    <footer>© 2026 BAIL OUT Roll-Off Dumpster &amp; Trailer Rentals.</footer>
+
+
+<header>
+
+<div class="header-inner">
+
+    <a href="index.html">
+
+        <img
+            src="logo.png"
+            alt="BAIL OUT"
+            class="logo"
+        >
+
+    </a>
+
+
+    <a
+        href="tel:6416918799"
+        class="phone"
+    >
+        641-691-8799
+    </a>
+
+</div>
+
+</header>
+
+
+
+<main>
+
+
+<div class="thank-you-card">
+
+
+    <div class="check">
+        ✓
+    </div>
+
+
+    <h1>
+        Thank You!
+    </h1>
+
+
+    <p>
+        Your rental request has been received.
+    </p>
+
+
+    <div class="highlight">
+
+        <strong>
+            What happens next?
+        </strong>
+
+        <br><br>
+
+        BAIL OUT will review your request and contact you
+        to confirm availability, pricing and rental details.
+
+    </div>
+
+
+    <p>
+        Your requested date is not reserved until
+        BAIL OUT confirms your booking.
+    </p>
+
+
+    <a
+        href="index.html"
+        class="button"
+    >
+        Return to BAIL OUT
+    </a>
+
+
+    <div class="call">
+
+        Need help sooner?
+
+        <br>
+
+        <a href="tel:6416918799">
+            Call 641-691-8799
+        </a>
+
+    </div>
+
+
+</div>
+
+
+</main>
+
+
+
+<footer>
+
+    © 2026 BAIL OUT.
+    Roll-Off Dumpster & Trailer Rentals.
+
+</footer>
+
+
 </body>
+
 </html>
