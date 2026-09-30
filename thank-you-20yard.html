@@ -4,7 +4,8 @@
 <head>
 
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRD4HDEY70"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S81QYFRSXC"></script>
+
 <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -13,8 +14,26 @@
     }
 
     gtag('js', new Date());
-    gtag('config', 'G-KRD4HDEY70');
+
+    gtag('config', 'G-S81QYFRSXC');
+
+    /*
+      Record the successful 20-yard dumpster request as a lead.
+
+      sessionStorage prevents the same lead from being counted
+      again if the customer refreshes the thank-you page.
+    */
+    if (!sessionStorage.getItem('20_yard_lead_recorded')) {
+
+        gtag('event', 'generate_lead', {
+            form_name: '20_yard_dumpster',
+            rental_type: '20-yard dumpster'
+        });
+
+        sessionStorage.setItem('20_yard_lead_recorded', 'true');
+    }
 </script>
+
 
 <meta charset="UTF-8">
 
@@ -28,7 +47,8 @@
     content="noindex, follow"
 >
 
-<title>20-Yard Request Received | BAIL OUT</title>
+<title>Request Received | BAIL OUT</title>
+
 
 <style>
 
@@ -60,6 +80,7 @@ a{
     text-decoration:none;
 }
 
+
 /* HEADER */
 
 header{
@@ -84,6 +105,7 @@ header{
     color:var(--green);
     font-weight:900;
 }
+
 
 /* MAIN */
 
@@ -167,6 +189,7 @@ main{
     font-weight:900;
 }
 
+
 /* FOOTER */
 
 footer{
@@ -176,6 +199,7 @@ footer{
     padding:22px;
     font-size:13px;
 }
+
 
 /* MOBILE */
 
@@ -196,6 +220,7 @@ footer{
     .logo{
         width:95px;
     }
+
 }
 
 </style>
@@ -220,6 +245,7 @@ footer{
 
     </a>
 
+
     <a
         href="tel:6416918799"
         class="phone"
@@ -232,21 +258,27 @@ footer{
 </header>
 
 
+
 <main>
 
+
 <div class="thank-you-card">
+
 
     <div class="check">
         ✓
     </div>
 
+
     <h1>
         Thank You!
     </h1>
 
+
     <p>
         Your 20-yard dumpster rental request has been received.
     </p>
+
 
     <div class="highlight">
 
@@ -261,10 +293,12 @@ footer{
 
     </div>
 
+
     <p>
         Your requested date is not reserved until
         BAIL OUT confirms your booking.
     </p>
+
 
     <a
         href="index.html"
@@ -272,6 +306,7 @@ footer{
     >
         Return to BAIL OUT
     </a>
+
 
     <div class="call">
 
@@ -285,9 +320,12 @@ footer{
 
     </div>
 
+
 </div>
 
+
 </main>
+
 
 
 <footer>
