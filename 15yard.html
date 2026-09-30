@@ -13,9 +13,14 @@
 >
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S81QYFRSXC"></script>
+
 <script>
 window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
+
+function gtag(){
+    dataLayer.push(arguments);
+}
+
 gtag('js', new Date());
 gtag('config', 'G-S81QYFRSXC');
 </script>
@@ -66,8 +71,11 @@ img{
     margin:auto;
 }
 
+
+/* HEADER */
+
 header{
-    background:#050706;
+    background:var(--black);
     border-bottom:3px solid var(--green);
 }
 
@@ -94,7 +102,7 @@ header{
 }
 
 .back-link{
-    color:#fff;
+    color:#ffffff;
 }
 
 .back-link:hover{
@@ -116,10 +124,13 @@ header{
     background:var(--green-light);
 }
 
+
+/* HERO */
+
 .hero{
     padding:65px 0;
     background:#080a09;
-    color:#fff;
+    color:#ffffff;
 }
 
 .hero-grid{
@@ -218,9 +229,12 @@ header{
     font-weight:900;
 }
 
+
+/* INTRO */
+
 .intro{
     padding:60px 0;
-    background:#fff;
+    background:#ffffff;
 }
 
 .intro-grid{
@@ -250,6 +264,9 @@ header{
     padding-left:20px;
 }
 
+
+/* FORM */
+
 .quote{
     scroll-margin-top:20px;
     padding:70px 0;
@@ -265,7 +282,6 @@ header{
 .section-heading h2{
     margin:7px 0 10px;
     font-size:40px;
-    line-height:1.1;
 }
 
 .section-heading p{
@@ -276,7 +292,7 @@ header{
     max-width:900px;
     margin:auto;
     padding:35px;
-    background:#fff;
+    background:#ffffff;
     border:1px solid var(--line);
     border-radius:12px;
     box-shadow:0 15px 40px rgba(0,0,0,.10);
@@ -318,7 +334,7 @@ header{
     padding:13px;
     border:1px solid #c8d0c9;
     border-radius:5px;
-    background:#fff;
+    background:#ffffff;
     font:inherit;
 }
 
@@ -352,12 +368,41 @@ header{
     background:var(--green-light);
 }
 
+.submit-button:disabled{
+    opacity:.65;
+    cursor:not-allowed;
+}
+
+.form-status{
+    margin-top:15px;
+    padding:12px;
+    border-radius:5px;
+    text-align:center;
+    font-weight:800;
+    display:none;
+}
+
+.form-status.sending{
+    display:block;
+    background:#eef8ef;
+    color:#1f612d;
+}
+
+.form-status.error{
+    display:block;
+    background:#fff0f0;
+    color:#9b1c1c;
+}
+
 .form-note{
     margin-top:12px;
     color:var(--muted);
     font-size:12px;
     text-align:center;
 }
+
+
+/* CALL */
 
 .call-section{
     padding:40px 20px;
@@ -378,10 +423,13 @@ header{
     font-weight:1000;
 }
 
+
+/* FOOTER */
+
 footer{
     padding:35px 0;
-    background:#050706;
-    color:#aaa;
+    background:var(--black);
+    color:#aaaaaa;
 }
 
 .footer-wrap{
@@ -402,7 +450,7 @@ footer{
 }
 
 .footer-name{
-    color:#fff;
+    color:#ffffff;
     font-weight:1000;
 }
 
@@ -412,12 +460,15 @@ footer{
 }
 
 .footer-links a{
-    color:#ddd;
+    color:#dddddd;
 }
 
 .footer-links a:hover{
     color:var(--green);
 }
+
+
+/* MOBILE */
 
 @media(max-width:800px){
 
@@ -474,6 +525,7 @@ footer{
 
 <body>
 
+
 <header>
 
 <div class="container nav-wrap">
@@ -515,10 +567,11 @@ footer{
 
         <img
             src="/15yard.png"
-            alt="15-Yard Roll-Off Dumpster"
+            alt="BAIL OUT 15-Yard Roll-Off Dumpster"
         >
 
     </div>
+
 
     <div>
 
@@ -534,6 +587,7 @@ footer{
             A practical option for home cleanouts, remodeling,
             property cleanup, construction debris and similar projects.
         </p>
+
 
         <div class="features">
 
@@ -558,6 +612,7 @@ footer{
             </div>
 
         </div>
+
 
         <div class="pricing">
 
@@ -600,12 +655,13 @@ footer{
         </h2>
 
         <p>
-            The 15-yard roll-off dumpster provides a convenient
-            solution for cleanup projects without requiring the
-            space of a larger dumpster.
+            The 15-yard dumpster is a convenient option for
+            home cleanouts, remodeling projects, property cleanup,
+            moving and general debris removal.
         </p>
 
     </div>
+
 
     <div class="good-for">
 
@@ -615,7 +671,7 @@ footer{
 
         <ul>
             <li>Home cleanouts</li>
-            <li>Garage cleanup</li>
+            <li>Garage and basement cleanup</li>
             <li>Remodeling projects</li>
             <li>Property cleanup</li>
             <li>Construction projects</li>
@@ -634,6 +690,7 @@ footer{
 
 <div class="container">
 
+
     <div class="section-heading">
 
         <div class="eyebrow">
@@ -645,12 +702,15 @@ footer{
         </h2>
 
         <p>
-            Complete the form below and BAIL OUT will confirm availability and rental details.
+            Complete the form below and BAIL OUT will confirm
+            availability and rental details.
         </p>
 
     </div>
 
+
     <div class="form-card">
+
 
         <div class="booking-summary">
 
@@ -670,7 +730,9 @@ footer{
 
         </div>
 
+
         <form
+            id="booking-form"
             action="https://formsubmit.co/bailoutrentals@gmail.com"
             method="POST"
         >
@@ -678,7 +740,7 @@ footer{
             <input
                 type="hidden"
                 name="_subject"
-                value="New 15-Yard Dumpster Booking Request"
+                value="New BAIL OUT 15-Yard Dumpster Request"
             >
 
             <input
@@ -693,25 +755,75 @@ footer{
                 value="15-Yard Roll-Off Dumpster"
             >
 
+            <input
+                type="text"
+                name="_honey"
+                style="display:none"
+                tabindex="-1"
+                autocomplete="off"
+            >
+
+
             <div class="form-grid">
 
-                <div class="field">
-                    <label for="name">Full Name *</label>
-                    <input id="name" name="customer_name" type="text" required>
-                </div>
 
                 <div class="field">
-                    <label for="phone">Phone Number *</label>
-                    <input id="phone" name="phone" type="tel" required>
+
+                    <label for="name">
+                        Full Name *
+                    </label>
+
+                    <input
+                        id="name"
+                        name="customer_name"
+                        type="text"
+                        autocomplete="name"
+                        required
+                    >
+
                 </div>
 
-                <div class="field">
-                    <label for="email">Email Address *</label>
-                    <input id="email" name="email" type="email" required>
-                </div>
 
                 <div class="field">
-                    <label for="address">Delivery Address *</label>
+
+                    <label for="phone">
+                        Phone Number *
+                    </label>
+
+                    <input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        autocomplete="tel"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="email">
+                        Email Address *
+                    </label>
+
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="address">
+                        Delivery Address *
+                    </label>
+
                     <input
                         id="address"
                         name="delivery_address"
@@ -719,17 +831,25 @@ footer{
                         placeholder="Street, City, State, ZIP"
                         required
                     >
+
                 </div>
 
+
                 <div class="field">
-                    <label for="date">Requested Delivery Date *</label>
+
+                    <label for="date">
+                        Requested Delivery Date *
+                    </label>
+
                     <input
                         id="date"
                         name="requested_delivery_date"
                         type="date"
                         required
                     >
+
                 </div>
+
 
                 <div class="field">
 
@@ -742,6 +862,7 @@ footer{
                         name="rental_period"
                         required
                     >
+
                         <option value="">
                             Select rental period
                         </option>
@@ -758,6 +879,7 @@ footer{
 
                 </div>
 
+
                 <div class="field full">
 
                     <label for="materials">
@@ -767,11 +889,12 @@ footer{
                     <textarea
                         id="materials"
                         name="materials"
-                        placeholder="Household items, furniture, construction debris, wood, etc."
+                        placeholder="Household items, furniture, remodeling debris, construction debris, wood, etc."
                         required
                     ></textarea>
 
                 </div>
+
 
                 <div class="field full">
 
@@ -789,12 +912,23 @@ footer{
 
             </div>
 
+
             <button
+                id="submit-button"
                 type="submit"
                 class="submit-button"
             >
                 Submit 15-Yard Booking Request
             </button>
+
+
+            <div
+                id="form-status"
+                class="form-status"
+                role="status"
+                aria-live="polite"
+            ></div>
+
 
             <p class="form-note">
                 Your rental is not reserved until BAIL OUT confirms availability.
@@ -839,6 +973,7 @@ footer{
         >
 
         <div>
+
             <div class="footer-name">
                 BAIL OUT
             </div>
@@ -846,9 +981,11 @@ footer{
             <div>
                 Roll-Off Dumpster & Trailer Rentals
             </div>
+
         </div>
 
     </div>
+
 
     <div class="footer-links">
 
@@ -869,6 +1006,143 @@ footer{
 </div>
 
 </footer>
+
+
+<script>
+
+const bookingForm =
+    document.getElementById("booking-form");
+
+bookingForm.addEventListener(
+    "submit",
+    async function(event){
+
+        event.preventDefault();
+
+
+        const submitButton =
+            document.getElementById("submit-button");
+
+        const formStatus =
+            document.getElementById("form-status");
+
+
+        submitButton.disabled = true;
+
+        submitButton.textContent =
+            "Sending Request...";
+
+
+        formStatus.className =
+            "form-status sending";
+
+        formStatus.textContent =
+            "Sending your rental request...";
+
+
+        const formData =
+            new FormData(bookingForm);
+
+        const formObject =
+            Object.fromEntries(
+                formData.entries()
+            );
+
+
+        try{
+
+            const response =
+                await fetch(
+                    "https://formsubmit.co/ajax/bailoutrentals@gmail.com",
+                    {
+                        method:"POST",
+
+                        headers:{
+                            "Content-Type":"application/json",
+                            "Accept":"application/json"
+                        },
+
+                        body:
+                            JSON.stringify(
+                                formObject
+                            )
+                    }
+                );
+
+
+            const result =
+                await response
+                .json()
+                .catch(
+                    () => ({})
+                );
+
+
+            if(
+                response.ok &&
+                result.success !== false &&
+                result.success !== "false"
+            ){
+
+                if(
+                    typeof gtag ===
+                    "function"
+                ){
+
+                    gtag(
+                        "event",
+                        "generate_lead",
+                        {
+                            rental_type:
+                                "15_yard_dumpster"
+                        }
+                    );
+
+                }
+
+
+                window.location.href =
+                    "/thank-you-15yard.html";
+
+                return;
+
+            }
+
+
+            throw new Error(
+                result.message ||
+                "The request could not be submitted."
+            );
+
+
+        }catch(error){
+
+            console.error(
+                "FormSubmit Error:",
+                error
+            );
+
+
+            formStatus.className =
+                "form-status error";
+
+            formStatus.textContent =
+                "We could not send your request. Please try again or call BAIL OUT at 641-691-8799.";
+
+
+            submitButton.disabled =
+                false;
+
+            submitButton.textContent =
+                "Submit 15-Yard Booking Request";
+
+        }
+
+    }
+);
+
+</script>
+
 
 </body>
 </html>
