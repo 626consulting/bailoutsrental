@@ -1,64 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRD4HDEY70"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag(){
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'G-KRD4HDEY70');
-</script>
-
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>15-Yard Dumpster Rental | BAIL OUT</title>
 
-<meta
-    name="description"
-    content="Request a 15-yard roll-off dumpster from BAIL OUT. $375 for 7 days or $475 for 14 days, 2 tons included, no separate dumpster delivery charge, and additional weight at $100 per ton."
->
-
+<meta name="description"
+content="Request a 15-yard roll-off dumpster from BAIL OUT. $375 for 7 days or $475 for 14 days.">
 
 <style>
-
 :root{
     --green:#20d642;
-    --green-dark:#12a82e;
-    --green-light:#4be766;
-    --black:#050706;
-    --gray:#f4f5f4;
-    --white:#ffffff;
+    --dark:#050706;
+    --light:#f4f5f4;
     --text:#171917;
-    --muted:#626762;
 }
 
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f4f5f4;
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--light);
     color:var(--text);
     line-height:1.6;
+}
+
+a{
+    text-decoration:none;
 }
 
 img{
@@ -66,36 +39,26 @@ img{
     display:block;
 }
 
-a{
-    text-decoration:none;
-}
-
 .container{
-    width:min(1150px, calc(100% - 40px));
+    width:min(1150px,calc(100% - 40px));
     margin:auto;
 }
 
-
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header{
-    background:#050706;
-    border-bottom:1px solid #252825;
-    box-shadow:0 4px 20px rgba(0,0,0,.25);
+    background:var(--dark);
+    border-bottom:1px solid #292d29;
 }
 
 .nav-wrap{
-    width:min(1200px, calc(100% - 40px));
+    width:min(1200px,calc(100% - 40px));
     min-height:92px;
     margin:auto;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
-
-    gap:30px;
+    gap:25px;
 }
 
 .logo{
@@ -110,51 +73,33 @@ header{
     gap:20px;
 }
 
-.back-link,
-.service-link{
+.header-actions a{
     color:white;
-    font-weight:800;
+    font-weight:bold;
 }
 
-.back-link:hover,
-.service-link:hover{
+.header-actions a:hover{
     color:var(--green);
 }
 
 .header-phone{
-    color:var(--green);
-    font-weight:900;
+    color:var(--green)!important;
 }
 
 .header-button{
     background:var(--green);
-    color:#061007;
+    color:#061007!important;
     padding:12px 20px;
     border-radius:5px;
-    font-weight:900;
 }
 
-.header-button:hover{
-    background:var(--green-light);
-}
-
-
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
     padding:70px 0;
-
     background:
-        radial-gradient(
-            circle at 82% 10%,
-            rgba(32,214,66,.13),
-            transparent 30%
-        ),
-        #f4f5f4;
-
-    color:#111712;
+        radial-gradient(circle at 82% 10%,rgba(32,214,66,.13),transparent 30%),
+        var(--light);
 }
 
 .hero-grid{
@@ -166,29 +111,9 @@ header{
 
 .hero-image{
     position:relative;
-    border-radius:13px;
     overflow:hidden;
-
-    box-shadow:
-        0 20px 46px rgba(17,35,20,.15);
-}
-
-.hero-image::after{
-    content:"";
-
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-
-    height:6px;
-
-    background:
-        repeating-linear-gradient(
-            135deg,
-            var(--green) 0 18px,
-            #111612 18px 29px
-        );
+    border-radius:13px;
+    box-shadow:0 20px 46px rgba(17,35,20,.15);
 }
 
 .hero-image img{
@@ -197,32 +122,33 @@ header{
     object-fit:cover;
 }
 
+.hero-image:after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:6px;
+    background:var(--green);
+}
+
 .eyebrow{
-    color:var(--green-dark);
-
+    color:#12a82e;
     font-size:13px;
-    font-weight:900;
-
-    text-transform:uppercase;
+    font-weight:bold;
     letter-spacing:2px;
+    text-transform:uppercase;
 }
 
 .hero h1{
-    color:#0b100c;
-
     font-size:52px;
     line-height:1.05;
-
     margin:10px 0 18px;
-
-    letter-spacing:-1px;
 }
 
 .hero p{
     color:#4f5b51;
-
     font-size:18px;
-
     margin-bottom:25px;
 }
 
@@ -233,85 +159,50 @@ header{
 
 .feature{
     display:flex;
-    gap:10px;
     align-items:center;
-
-    background:#fff;
-
+    gap:10px;
+    background:white;
     border:1px solid #dbe3dc;
     border-radius:7px;
-
-    padding:9px 12px;
-
-    box-shadow:
-        0 6px 16px rgba(18,32,20,.05);
-
-    font-weight:700;
+    padding:10px 12px;
+    font-weight:bold;
 }
 
 .check{
     width:25px;
     height:25px;
-
-    border-radius:50%;
-
-    background:var(--green);
-    color:#061007;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
-    font-weight:1000;
-
     flex-shrink:0;
+    border-radius:50%;
+    background:var(--green);
+    color:#061007;
+    font-weight:bold;
 }
 
-
-/* =========================
-   PRICING PANEL
-========================= */
+/* PRICING */
 
 .pricing-panel{
     margin-top:28px;
-
-    background:#111511;
-
-    border:1px solid #293029;
-    border-left:6px solid var(--green);
-
-    border-radius:8px;
-
     padding:20px;
-
-    box-shadow:
-        0 14px 32px rgba(0,0,0,.15);
+    background:#111511;
+    color:white;
+    border-left:6px solid var(--green);
+    border-radius:8px;
 }
 
 .pricing-panel h3{
     color:var(--green);
-
-    font-size:18px;
-
     margin-bottom:12px;
 }
 
 .pricing-row{
     display:flex;
     justify-content:space-between;
-    gap:15px;
-
     padding:9px 0;
-
     border-bottom:1px solid #303630;
-
-    color:white;
-
-    font-weight:800;
-}
-
-.pricing-row:last-of-type{
-    border-bottom:none;
+    font-weight:bold;
 }
 
 .pricing-row strong{
@@ -321,140 +212,49 @@ header{
 
 .pricing-included{
     margin-top:12px;
-
-    color:white;
-
-    font-size:14px;
-    font-weight:900;
-
-    line-height:1.45;
+    font-weight:bold;
 }
 
 .pricing-extra{
     margin-top:8px;
     padding-top:8px;
-
     border-top:1px solid #2a332c;
-
-    color:#f0f4f0;
-
     font-size:12px;
-    font-weight:800;
 }
 
 .pricing-free{
     color:var(--green);
 }
 
-.pricing-fee{
-    color:#fff;
+/* INFORMATION */
+
+.info{
+    padding:60px 0;
+    background:white;
 }
 
-
-/* =========================
-   QUICK PRICING FACTS
-========================= */
-
-.pricing-facts{
-    background:#fff;
-
-    border-top:1px solid #dce4dc;
-    border-bottom:1px solid #dce4dc;
-}
-
-.pricing-facts-grid{
-    display:grid;
-    grid-template-columns:repeat(6,1fr);
-}
-
-.pricing-fact{
-    padding:20px 13px;
-
-    text-align:center;
-
-    border-right:1px solid #e0e6e0;
-}
-
-.pricing-fact:last-child{
-    border-right:0;
-}
-
-.pricing-fact span{
-    display:block;
-
-    color:#677069;
-
-    font-size:10px;
-    font-weight:900;
-
-    text-transform:uppercase;
-    letter-spacing:.55px;
-}
-
-.pricing-fact strong{
-    display:block;
-
-    margin-top:5px;
-
-    color:#111712;
-
-    font-size:17px;
-    font-weight:1000;
-}
-
-.pricing-fact:nth-child(5) strong{
-    color:var(--green-dark);
-}
-
-
-/* =========================
-   ABOUT / GREAT FOR
-========================= */
-
-.intro{
-    padding:65px 0;
-
-    background:
-        linear-gradient(
-            rgba(247,250,247,.96),
-            rgba(247,250,247,.96)
-        ),
-        repeating-linear-gradient(
-            135deg,
-            transparent 0 22px,
-            rgba(32,214,66,.05) 22px 24px
-        );
-}
-
-.intro-grid{
+.info-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:60px;
 }
 
-.intro h2{
+.info h2{
     font-size:35px;
     line-height:1.1;
-
     margin-bottom:15px;
 }
 
-.intro p{
+.info p{
     color:#5e635e;
 }
 
 .good-for{
+    padding:28px;
     background:#eff9f0;
-
     border-left:5px solid var(--green);
     border-top:5px solid var(--green);
-
-    padding:28px;
-
     border-radius:6px;
-
-    box-shadow:
-        0 12px 26px rgba(18,32,20,.08);
 }
 
 .good-for h3{
@@ -469,88 +269,48 @@ header{
     margin-bottom:7px;
 }
 
-
-/* =========================
-   FORM SECTION
-========================= */
+/* FORM */
 
 .quote{
-    position:relative;
-
     padding:80px 0;
-
-    background:
-        radial-gradient(
-            circle at 10% 10%,
-            rgba(32,214,66,.10),
-            transparent 28%
-        ),
-        #fff;
+    background:white;
 }
 
 .section-heading{
-    text-align:center;
-
     max-width:750px;
-
     margin:0 auto 40px;
+    text-align:center;
 }
 
 .section-heading h2{
     font-size:42px;
     line-height:1.1;
-
     margin:8px 0 13px;
 }
 
 .section-heading p{
     color:#606560;
-
     font-size:17px;
 }
 
 .form-card{
     max-width:900px;
-
     margin:auto;
-
-    background:white;
-
-    border-radius:12px;
-
     padding:38px;
-
+    background:white;
     border:1px solid #e1e4e1;
     border-top:6px solid var(--green);
-
-    box-shadow:
-        0 18px 42px rgba(18,32,20,.12);
+    border-radius:12px;
+    box-shadow:0 18px 42px rgba(18,32,20,.12);
 }
 
 .booking-summary{
-    background:
-        linear-gradient(
-            135deg,
-            #e9f8eb,
-            #fafffa
-        );
-
-    border:1px solid #cce3cf;
-    border-left:5px solid var(--green);
-
-    border-radius:8px;
-
     padding:18px;
-
     margin-bottom:24px;
-
-    color:#223027;
-
+    background:#eff9f0;
+    border-left:5px solid var(--green);
+    border-radius:8px;
     line-height:1.6;
-}
-
-.booking-summary strong{
-    color:#101711;
 }
 
 .form-grid{
@@ -565,34 +325,20 @@ header{
 
 .field label{
     display:block;
-
-    font-size:13px;
-    font-weight:900;
-
     margin-bottom:6px;
+    font-size:13px;
+    font-weight:bold;
 }
 
 .field input,
 .field select,
 .field textarea{
     width:100%;
-
     padding:14px;
-
     border:1px solid #cbd0cb;
     border-radius:5px;
-
     background:white;
-
-    font-family:inherit;
-    font-size:14px;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus{
-    outline:2px solid rgba(32,214,66,.18);
-    border-color:var(--green);
+    font:inherit;
 }
 
 .field textarea{
@@ -602,141 +348,59 @@ header{
 
 .submit-button{
     width:100%;
-
+    margin-top:22px;
+    padding:17px;
     border:0;
-
+    border-radius:6px;
     background:var(--green);
     color:#061007;
-
-    padding:17px;
-
     font-size:17px;
-    font-weight:1000;
-
-    border-radius:6px;
-
+    font-weight:bold;
     cursor:pointer;
-
-    margin-top:22px;
-
-    box-shadow:
-        0 9px 22px rgba(32,214,66,.20);
-}
-
-.submit-button:hover{
-    background:var(--green-light);
-}
-
-.submit-button:disabled{
-    opacity:.7;
-    cursor:not-allowed;
-}
-
-
-/* FORM STATUS */
-
-.form-status{
-    display:none;
-
-    margin-top:18px;
-
-    padding:16px;
-
-    border-radius:7px;
-
-    text-align:center;
-
-    font-size:14px;
-    font-weight:700;
-}
-
-.form-status.sending{
-    display:block;
-
-    background:#eff9f0;
-
-    border:1px solid #b9dfbf;
-
-    color:#176526;
-}
-
-.form-status.error{
-    display:block;
-
-    background:#fff0ee;
-
-    border:1px solid #efc2bd;
-
-    color:#8c1c13;
 }
 
 .form-note{
-    text-align:center;
-
-    color:#6b706b;
-
-    font-size:12px;
-
     margin-top:14px;
+    color:#6b706b;
+    font-size:12px;
+    text-align:center;
 }
 
-
-/* =========================
-   CALL SECTION
-========================= */
+/* CALL AND FOOTER */
 
 .call-section{
-    background:var(--green);
-
     padding:45px 20px;
-
-    text-align:center;
-
+    background:var(--green);
     color:#061007;
+    text-align:center;
 }
 
 .call-section h2{
     font-size:32px;
 }
 
-.call-section p{
-    margin:5px 0 15px;
-
-    font-weight:700;
-}
-
 .call-section a{
     color:#061007;
-
     font-size:30px;
-    font-weight:1000;
+    font-weight:bold;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
-
 footer{
-    background:#050706;
-
-    color:#aaa;
-
     padding:40px 0;
+    background:var(--dark);
+    color:#aaa;
 }
 
 .footer-wrap{
     display:flex;
-    justify-content:space-between;
     align-items:center;
-
+    justify-content:space-between;
     gap:30px;
 }
 
 .footer-brand{
     display:flex;
     align-items:center;
-
     gap:20px;
 }
 
@@ -746,14 +410,12 @@ footer{
 
 .footer-name{
     color:white;
-
-    font-weight:900;
     font-size:20px;
+    font-weight:bold;
 }
 
 .footer-links{
     display:flex;
-
     gap:20px;
 }
 
@@ -761,45 +423,15 @@ footer{
     color:#ccc;
 }
 
-.footer-links a:hover{
-    color:var(--green);
-}
-
-
-/* =========================
-   MOBILE STICKY BAR
-========================= */
-
-.dumpster-mobile-bar{
-    display:none;
-}
-
-
-/* =========================
-   TABLET / MOBILE
-========================= */
-
-@media(max-width:980px){
-
-    .pricing-facts-grid{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-    .pricing-fact:nth-child(3){
-        border-right:0;
-    }
-
-    .pricing-fact:nth-child(-n+3){
-        border-bottom:1px solid #e0e6e0;
-    }
-}
-
-
 @media(max-width:800px){
-
     .hero-grid,
-    .intro-grid{
+    .info-grid,
+    .form-grid{
         grid-template-columns:1fr;
+    }
+
+    .field.full{
+        grid-column:auto;
     }
 
     .hero h1{
@@ -810,16 +442,9 @@ footer{
         height:auto;
     }
 
-    .header-phone{
+    .header-phone,
+    .back-link{
         display:none;
-    }
-
-    .form-grid{
-        grid-template-columns:1fr;
-    }
-
-    .field.full{
-        grid-column:auto;
     }
 
     .footer-wrap{
@@ -828,80 +453,7 @@ footer{
     }
 }
 
-
-@media(max-width:700px){
-
-    body{
-        padding-bottom:64px;
-    }
-
-    .pricing-facts-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .pricing-fact{
-        border-right:1px solid #e0e6e0 !important;
-        border-bottom:1px solid #e0e6e0 !important;
-    }
-
-    .pricing-fact:nth-child(even){
-        border-right:0 !important;
-    }
-
-    .pricing-fact:nth-last-child(-n+2){
-        border-bottom:0 !important;
-    }
-
-    .dumpster-mobile-bar{
-        position:fixed;
-
-        left:0;
-        right:0;
-        bottom:0;
-
-        z-index:2000;
-
-        display:grid;
-
-        grid-template-columns:1fr 1fr;
-
-        gap:1px;
-
-        padding:8px;
-
-        background:#071009;
-
-        box-shadow:
-            0 -5px 20px rgba(0,0,0,.22);
-    }
-
-    .dumpster-mobile-bar a{
-        min-height:47px;
-
-        display:flex;
-        align-items:center;
-        justify-content:center;
-
-        border-radius:5px;
-
-        font-size:12px;
-        font-weight:1000;
-    }
-
-    .mobile-call{
-        background:#fff;
-        color:#071009;
-    }
-
-    .mobile-book{
-        background:var(--green);
-        color:#061007;
-    }
-}
-
-
 @media(max-width:550px){
-
     .nav-wrap{
         min-height:78px;
     }
@@ -910,18 +462,13 @@ footer{
         width:95px;
     }
 
-    .back-link{
-        display:none;
-    }
-
     .service-link{
         font-size:12px;
-        white-space:nowrap;
     }
 
     .header-button{
-        font-size:12px;
         padding:10px 12px;
+        font-size:12px;
     }
 
     .hero{
@@ -945,1111 +492,420 @@ footer{
         gap:8px;
     }
 }
-
-
-@media(max-width:480px){
-
-    .pricing-fact{
-        padding:17px 8px;
-    }
-
-    .pricing-fact strong{
-        font-size:15px;
-    }
-}
-
 </style>
-
-
-<script type="application/ld+json">
-{
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"BAIL OUT Roll-Off Dumpster & Trailer Rentals",
-    "url":"https://bailoutrentals.com/",
-    "telephone":"+1-641-691-8799",
-    "description":"Request a 15-yard roll-off dumpster from BAIL OUT. $375 for 7 days or $475 for 14 days, 2 tons included, no separate dumpster delivery charge, and additional weight at $100 per ton.",
-    "image":"https://bailoutrentals.com/15yard.png"
-}
-</script>
-
 </head>
-
 
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
-
-<div class="nav-wrap">
-
-    <a href="index.html">
-
-        <img
-            src="logo.png"
-            alt="BAIL OUT Roll-Off Dumpster and Trailer Rentals"
-            class="logo"
-        >
-
-    </a>
-
-
-    <div class="header-actions">
-
-        <a
-            href="index.html"
-            class="back-link"
-        >
-            ← Back to Home
+    <div class="nav-wrap">
+        <a href="index.html">
+            <img
+                src="logo.png"
+                alt="BAIL OUT Roll-Off Dumpster Rentals"
+                class="logo"
+            >
         </a>
 
-
-        <a
-            href="service-area.html"
-            class="service-link"
-        >
-            Service Area
-        </a>
-
-
-        <a
-            href="tel:6416918799"
-            class="header-phone"
-        >
-            641-691-8799
-        </a>
-
-
-        <a
-            href="#request"
-            class="header-button"
-        >
-            Request Booking
-        </a>
-
+        <div class="header-actions">
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <a href="service-area.html" class="service-link">Service Area</a>
+            <a href="tel:6416918799" class="header-phone">
+                641-691-8799
+            </a>
+            <a href="#request" class="header-button">
+                Request Booking
+            </a>
+        </div>
     </div>
-
-</div>
-
 </header>
 
-
-
-<!-- =========================
-     HERO
-========================= -->
-
 <section class="hero">
+    <div class="container">
+        <div class="hero-grid">
 
-<div class="container">
+            <div class="hero-image">
+                <img
+                    src="15yard.png"
+                    alt="BAIL OUT 15-Yard Roll-Off Dumpster"
+                >
+            </div>
 
-<div class="hero-grid">
+            <div>
+                <div class="eyebrow">
+                    BAIL OUT Dumpster Rentals
+                </div>
 
+                <h1>15-Yard Roll-Off Dumpster</h1>
 
-    <div class="hero-image">
+                <p>
+                    A versatile dumpster rental option for cleanouts,
+                    remodeling projects, property cleanup, construction
+                    debris and other projects where you need a convenient
+                    way to manage waste.
+                </p>
 
-        <img
-            src="15yard.png"
-            alt="BAIL OUT 15-Yard Roll-Off Dumpster"
-        >
+                <div class="hero-features">
+                    <div class="feature">
+                        <span class="check">✓</span>
+                        Residential &amp; Commercial Projects
+                    </div>
 
+                    <div class="feature">
+                        <span class="check">✓</span>
+                        Convenient Roll-Off Design
+                    </div>
+
+                    <div class="feature">
+                        <span class="check">✓</span>
+                        No Dumpster Delivery Charge
+                    </div>
+
+                    <div class="feature">
+                        <span class="check">✓</span>
+                        7 &amp; 14 Day Rental Options
+                    </div>
+                </div>
+
+                <div class="pricing-panel">
+                    <h3>15-Yard Dumpster Pricing</h3>
+
+                    <div class="pricing-row">
+                        <span>7 Days</span>
+                        <strong>$375</strong>
+                    </div>
+
+                    <div class="pricing-row">
+                        <span>14 Days</span>
+                        <strong>$475</strong>
+                    </div>
+
+                    <div class="pricing-included">
+                        <div>✓ 2 Tons of Disposal Included</div>
+
+                        <div class="pricing-extra">
+                            Additional Weight: $100 per Ton
+                        </div>
+
+                        <div class="pricing-extra pricing-free">
+                            Dumpster Delivery: No Charge
+                        </div>
+
+                        <div class="pricing-extra">
+                            Failed Delivery Fee: $100
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-
-
-    <div>
-
-        <div class="eyebrow">
-            BAIL OUT Dumpster Rentals
-        </div>
-
-
-        <h1>
-            15-Yard Roll-Off Dumpster
-        </h1>
-
-
-        <p>
-            A versatile dumpster rental option for cleanouts,
-            remodeling projects, property cleanup, construction
-            debris and other projects where you need a convenient
-            way to manage waste.
-        </p>
-
-
-        <div class="hero-features">
-
-            <div class="feature">
-
-                <span class="check">
-                    ✓
-                </span>
-
-                Residential & Commercial Projects
-
-            </div>
-
-
-            <div class="feature">
-
-                <span class="check">
-                    ✓
-                </span>
-
-                Convenient Roll-Off Design
-
-            </div>
-
-
-            <div class="feature">
-
-                <span class="check">
-                    ✓
-                </span>
-
-                No Dumpster Delivery Charge
-
-            </div>
-
-
-            <div class="feature">
-
-                <span class="check">
-                    ✓
-                </span>
-
-                7 & 14 Day Rental Options
-
-            </div>
-
-        </div>
-
-
-        <div class="pricing-panel">
-
-            <h3>
-                15-Yard Dumpster Pricing
-            </h3>
-
-
-            <div class="pricing-row">
-
-                <span>
-                    7 Days
-                </span>
-
-                <strong>
-                    $375
-                </strong>
-
-            </div>
-
-
-            <div class="pricing-row">
-
-                <span>
-                    14 Days
-                </span>
-
-                <strong>
-                    $475
-                </strong>
-
-            </div>
-
-
-            <div class="pricing-included">
-
-                <div>
-                    ✓ 2 Tons of Disposal Included
-                </div>
-
-                <div class="pricing-extra">
-                    Additional Weight: $100 per Ton
-                </div>
-
-                <div class="pricing-extra pricing-free">
-                    Dumpster Delivery: No Charge
-                </div>
-
-                <div class="pricing-extra pricing-fee">
-                    Failed Delivery Fee: $100
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-</div>
-
-</div>
-
 </section>
 
-
-
-<!-- =========================
-     QUICK PRICING
-========================= -->
-
-<section
-    class="pricing-facts"
-    aria-label="15-yard dumpster rental pricing details"
->
-
-<div class="container pricing-facts-grid">
-
-
-    <div class="pricing-fact">
-
-        <span>
-            7 Days
-        </span>
-
-        <strong>
-            $375
-        </strong>
-
-    </div>
-
-
-    <div class="pricing-fact">
-
-        <span>
-            14 Days
-        </span>
-
-        <strong>
-            $475
-        </strong>
-
-    </div>
-
-
-    <div class="pricing-fact">
-
-        <span>
-            Disposal Included
-        </span>
-
-        <strong>
-            2 Tons
-        </strong>
-
-    </div>
-
-
-    <div class="pricing-fact">
-
-        <span>
-            Additional Weight
-        </span>
-
-        <strong>
-            $100/Ton
-        </strong>
-
-    </div>
-
-
-    <div class="pricing-fact">
-
-        <span>
-            Dumpster Delivery
-        </span>
-
-        <strong>
-            No Charge
-        </strong>
-
-    </div>
-
-
-    <div class="pricing-fact">
-
-        <span>
-            Failed Delivery
-        </span>
-
-        <strong>
-            $100
-        </strong>
-
-    </div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section class="intro">
-
-<div class="container">
-
-<div class="intro-grid">
-
-
-    <div>
-
-        <h2>
-            A Great Size for Everyday Projects
-        </h2>
-
-        <p>
-            The 15-yard roll-off dumpster provides useful capacity
-            without requiring the space of a larger container.
-            It can be a practical option for home improvement
-            projects, property cleanups, remodeling work and
-            other jobs that produce more debris than standard
-            trash service can handle.
-        </p>
-
-    </div>
-
-
-    <div class="good-for">
-
-        <h3>
-            Great For:
-        </h3>
-
-        <ul>
-
-            <li>
-                Home cleanouts
-            </li>
-
-            <li>
-                Garage and basement cleanup
-            </li>
-
-            <li>
-                Remodeling projects
-            </li>
-
-            <li>
-                Property cleanup
-            </li>
-
-            <li>
-                Construction projects
-            </li>
-
-            <li>
-                Moving and downsizing
-            </li>
-
-            <li>
-                General debris removal
-            </li>
-
-        </ul>
-
-    </div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     REQUEST FORM
-========================= -->
-
-<section
-    class="quote"
-    id="request"
->
-
-<div class="container">
-
-
-    <div class="section-heading">
-
-        <div class="eyebrow">
-            Request Booking
-        </div>
-
-
-        <h2>
-            Request Your 15-Yard Dumpster
-        </h2>
-
-
-        <p>
-            Choose your rental period and requested delivery
-            date below. BAIL OUT will confirm availability
-            and your rental details.
-        </p>
-
-    </div>
-
-
-
-    <div class="form-card">
-
-
-        <div class="booking-summary">
-
-            <strong>
-                15-Yard Roll-Off Dumpster
-            </strong>
-
-            <br>
-
-            $375 for 7 days
-
-            &nbsp; | &nbsp;
-
-            $475 for 14 days
-
-            <br>
-
-            2 tons included
-
-            &nbsp; • &nbsp;
-
-            Additional weight $100/ton
-
-            <br>
-
-            No dumpster delivery charge
-
-            &nbsp; • &nbsp;
-
-            Failed delivery fee $100
-
-        </div>
-
-
-
-        <!--
-        IMPORTANT:
-        JavaScript submits this form to Formspree.
-        After Formspree confirms success, the customer
-        is redirected to thank-you-15yard.html
-        -->
-
-        <form
-            id="booking-form"
-            onsubmit="handleDumpsterSubmit(event); return false;"
-        >
-
-
-            <input
-                type="hidden"
-                name="_subject"
-                value="15-Yard Dumpster Booking Request"
-            >
-
-
-            <input
-                type="hidden"
-                name="rental_type"
-                value="15-Yard Roll-Off Dumpster"
-            >
-
-
-
-            <div class="form-grid">
-
-
-                <div class="field">
-
-                    <label for="name">
-                        Full Name *
-                    </label>
-
-                    <input
-                        id="name"
-                        type="text"
-                        name="customer_name"
-                        placeholder="Your name"
-                        autocomplete="name"
-                        required
-                    >
-
-                </div>
-
-
-
-                <div class="field">
-
-                    <label for="phone">
-                        Phone Number *
-                    </label>
-
-                    <input
-                        id="phone"
-                        type="tel"
-                        name="phone"
-                        placeholder="(555) 555-5555"
-                        autocomplete="tel"
-                        required
-                    >
-
-                </div>
-
-
-
-                <div class="field">
-
-                    <label for="email">
-                        Email Address *
-                    </label>
-
-                    <input
-                        id="email"
-                        type="email"
-                        name="email"
-                        placeholder="you@example.com"
-                        autocomplete="email"
-                        required
-                    >
-
-                </div>
-
-
-
-                <div class="field">
-
-                    <label for="address">
-                        Delivery Address *
-                    </label>
-
-                    <input
-                        id="address"
-                        type="text"
-                        name="delivery_address"
-                        placeholder="Street, City, State, ZIP"
-                        autocomplete="street-address"
-                        required
-                    >
-
-                </div>
-
-
-
-                <div class="field">
-
-                    <label for="delivery-date">
-                        Requested Delivery Date *
-                    </label>
-
-                    <input
-                        id="delivery-date"
-                        type="date"
-                        name="requested_delivery_date"
-                        required
-                    >
-
-                </div>
-
-
-
-                <div class="field">
-
-                    <label for="duration">
-                        Rental Period *
-                    </label>
-
-                    <select
-                        id="duration"
-                        name="rental_duration"
-                        required
-                    >
-
-                        <option value="">
-                            Select rental period
-                        </option>
-
-                        <option value="7 Days - $375">
-                            7 Days - $375
-                        </option>
-
-                        <option value="14 Days - $475">
-                            14 Days - $475
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-
-                <div class="field full">
-
-                    <label for="project">
-                        What Type of Project Is This? *
-                    </label>
-
-                    <select
-                        id="project"
-                        name="project_type"
-                        required
-                    >
-
-                        <option value="">
-                            Select project type
-                        </option>
-
-                        <option value="Home Cleanout">
-                            Home Cleanout
-                        </option>
-
-                        <option value="Remodeling">
-                            Remodeling / Renovation
-                        </option>
-
-                        <option value="Construction">
-                            Construction
-                        </option>
-
-                        <option value="Property Cleanup">
-                            Property Cleanup
-                        </option>
-
-                        <option value="Moving">
-                            Moving / Downsizing
-                        </option>
-
-                        <option value="Other">
-                            Other
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-
-                <div class="field full">
-
-                    <label for="materials">
-                        What Will You Be Putting in the Dumpster? *
-                    </label>
-
-                    <textarea
-                        id="materials"
-                        name="materials"
-                        placeholder="Example: household items, remodeling debris, wood, furniture, etc."
-                        required
-                    ></textarea>
-
-                </div>
-
-
-
-                <div class="field full">
-
-                    <label for="details">
-                        Additional Details
-                    </label>
-
-                    <textarea
-                        id="details"
-                        name="additional_details"
-                        placeholder="Tell us anything else we should know about your rental or delivery location."
-                    ></textarea>
-
-                </div>
-
-
+<section class="info">
+    <div class="container">
+        <div class="info-grid">
+
+            <div>
+                <h2>A Great Size for Everyday Projects</h2>
+
+                <p>
+                    The 15-yard roll-off dumpster provides useful capacity
+                    without requiring the space of a larger container. It
+                    works well for home improvement projects, property
+                    cleanups, remodeling work and general debris removal.
+                </p>
             </div>
 
+            <div class="good-for">
+                <h3>Great For:</h3>
 
+                <ul>
+                    <li>Home cleanouts</li>
+                    <li>Garage and basement cleanup</li>
+                    <li>Remodeling projects</li>
+                    <li>Property cleanup</li>
+                    <li>Construction projects</li>
+                    <li>Moving and downsizing</li>
+                    <li>General debris removal</li>
+                </ul>
+            </div>
 
-            <button
-                id="submit-button"
-                type="submit"
-                class="submit-button"
-            >
-                Submit 15-Yard Booking Request
-            </button>
+        </div>
+    </div>
+</section>
 
+<section class="quote" id="request">
+    <div class="container">
 
+        <div class="section-heading">
+            <div class="eyebrow">Request Booking</div>
 
-            <div
-                id="form-status"
-                class="form-status"
-                role="status"
-                aria-live="polite"
-            ></div>
+            <h2>Request Your 15-Yard Dumpster</h2>
 
-
-
-            <p class="form-note">
-
-                Submitting this form sends a booking request.
-
-                Your requested dates are not reserved until
-                availability is confirmed by BAIL OUT.
-
-                Additional weight is $100 per ton.
-
-                A failed delivery fee of $100 applies when applicable.
-
+            <p>
+                Choose your rental period and requested delivery date below.
+                BAIL OUT will confirm availability and your rental details.
             </p>
+        </div>
 
+        <div class="form-card">
 
-        </form>
+            <div class="booking-summary">
+                <strong>15-Yard Roll-Off Dumpster</strong>
+                <br>
+                $375 for 7 days &nbsp; | &nbsp; $475 for 14 days
+                <br>
+                2 tons included &nbsp; • &nbsp; Additional weight $100/ton
+                <br>
+                No dumpster delivery charge &nbsp; • &nbsp;
+                Failed delivery fee $100
+            </div>
 
+            <form
+                action="https://formsubmit.co/el/dinute"
+                method="POST"
+            >
+                <input
+                    type="hidden"
+                    name="_next"
+                    value="https://bailoutrentals.com/thank-you-15yard.html"
+                >
 
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="15-Yard Dumpster Booking Request"
+                >
+
+                <input
+                    type="hidden"
+                    name="_template"
+                    value="table"
+                >
+
+                <input
+                    type="hidden"
+                    name="rental_type"
+                    value="15-Yard Roll-Off Dumpster"
+                >
+
+                <input
+                    type="hidden"
+                    name="_url"
+                    value="https://bailoutrentals.com/15yard.html"
+                >
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="name">Full Name *</label>
+
+                        <input
+                            id="name"
+                            type="text"
+                            name="customer_name"
+                            placeholder="Your name"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Phone Number *</label>
+
+                        <input
+                            id="phone"
+                            type="tel"
+                            name="phone"
+                            placeholder="(555) 555-5555"
+                            autocomplete="tel"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email Address *</label>
+
+                        <input
+                            id="email"
+                            type="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="address">Delivery Address *</label>
+
+                        <input
+                            id="address"
+                            type="text"
+                            name="delivery_address"
+                            placeholder="Street, City, State, ZIP"
+                            autocomplete="street-address"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="delivery-date">
+                            Requested Delivery Date *
+                        </label>
+
+                        <input
+                            id="delivery-date"
+                            type="date"
+                            name="requested_delivery_date"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="duration">Rental Period *</label>
+
+                        <select
+                            id="duration"
+                            name="rental_duration"
+                            required
+                        >
+                            <option value="">
+                                Select rental period
+                            </option>
+
+                            <option value="7 Days - $375">
+                                7 Days - $375
+                            </option>
+
+                            <option value="14 Days - $475">
+                                14 Days - $475
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="field full">
+                        <label for="project">
+                            What Type of Project Is This? *
+                        </label>
+
+                        <select
+                            id="project"
+                            name="project_type"
+                            required
+                        >
+                            <option value="">
+                                Select project type
+                            </option>
+
+                            <option value="Home Cleanout">
+                                Home Cleanout
+                            </option>
+
+                            <option value="Remodeling">
+                                Remodeling / Renovation
+                            </option>
+
+                            <option value="Construction">
+                                Construction
+                            </option>
+
+                            <option value="Property Cleanup">
+                                Property Cleanup
+                            </option>
+
+                            <option value="Moving">
+                                Moving / Downsizing
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="field full">
+                        <label for="materials">
+                            What Will You Be Putting in the Dumpster? *
+                        </label>
+
+                        <textarea
+                            id="materials"
+                            name="materials"
+                            placeholder="Example: household items, remodeling debris, wood, furniture, etc."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="field full">
+                        <label for="details">
+                            Additional Details
+                        </label>
+
+                        <textarea
+                            id="details"
+                            name="additional_details"
+                            placeholder="Tell us anything else we should know about your rental or delivery location."
+                        ></textarea>
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+                    Submit 15-Yard Booking Request
+                </button>
+
+                <p class="form-note">
+                    Submitting this form sends a booking request.
+                    Your requested dates are not reserved until
+                    availability is confirmed by BAIL OUT.
+                </p>
+            </form>
+        </div>
     </div>
-
-
-</div>
-
 </section>
-
-
-
-<!-- =========================
-     CALL SECTION
-========================= -->
 
 <section class="call-section">
-
-    <h2>
-        Prefer to Talk to Someone?
-    </h2>
+    <h2>Prefer to Talk to Someone?</h2>
 
     <p>
-        Call BAIL OUT with booking questions
-        or to check availability.
+        Call BAIL OUT with booking questions or to check availability.
     </p>
 
-    <a href="tel:6416918799">
-        641-691-8799
-    </a>
-
+    <a href="tel:6416918799">641-691-8799</a>
 </section>
 
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
+    <div class="container footer-wrap">
 
-<div class="container footer-wrap">
-
-
-    <div class="footer-brand">
-
-        <img
-            src="logo.png"
-            alt="BAIL OUT"
-            class="footer-logo"
-        >
-
-
-        <div>
-
-            <div class="footer-name">
-                BAIL OUT
-            </div>
+        <div class="footer-brand">
+            <img
+                src="logo.png"
+                alt="BAIL OUT"
+                class="footer-logo"
+            >
 
             <div>
-                Roll-Off Dumpster & Trailer Rentals
+                <div class="footer-name">BAIL OUT</div>
+                <div>Roll-Off Dumpster &amp; Trailer Rentals</div>
+                <div>© 2026 BAIL OUT. All Rights Reserved.</div>
             </div>
+        </div>
 
-            <div>
-                © 2026 BAIL OUT. All Rights Reserved.
-            </div>
-
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#rentals">All Rentals</a>
+            <a href="about.html">About Us</a>
+            <a href="service-area.html">Service Area</a>
+            <a href="tel:6416918799">Call Us</a>
         </div>
 
     </div>
-
-
-
-    <div class="footer-links">
-
-        <a href="index.html">
-            Home
-        </a>
-
-        <a href="index.html#rentals">
-            All Rentals
-        </a>
-
-        <a href="about.html">
-            About Us
-        </a>
-
-        <a href="service-area.html">
-            Service Area
-        </a>
-
-        <a href="tel:6416918799">
-            Call Us
-        </a>
-
-    </div>
-
-
-</div>
-
 </footer>
 
-
-
-<!-- MOBILE ACTION BAR -->
-
-<div
-    class="dumpster-mobile-bar"
-    aria-label="15-yard dumpster quick actions"
->
-
-    <a
-        href="tel:6416918799"
-        class="mobile-call"
-    >
-        Call BAIL OUT
-    </a>
-
-    <a
-        href="#request"
-        class="mobile-book"
-    >
-        Request 15-Yard
-    </a>
-
-</div>
-
-
-
-<!-- =========================
-     FORM SUBMISSION
-========================= -->
-
-<script>
-
-async function handleDumpsterSubmit(event){
-
-    event.preventDefault();
-
-
-    const bookingForm =
-        document.getElementById('booking-form');
-
-
-    const submitButton =
-        document.getElementById('submit-button');
-
-
-    const formStatus =
-        document.getElementById('form-status');
-
-
-    /*
-    Prevent multiple submissions while the
-    first request is being processed.
-    */
-
-    submitButton.disabled = true;
-
-    submitButton.textContent =
-        'Sending Request...';
-
-
-    formStatus.className =
-        'form-status sending';
-
-    formStatus.textContent =
-        'Sending your rental request...';
-
-
-
-    /*
-    Collect all customer form fields.
-    */
-
-    const formData =
-        new FormData(bookingForm);
-
-
-
-    try{
-
-
-        /*
-        Submit the rental request to the
-        working Formspree endpoint.
-        */
-
-        const response =
-            await fetch(
-
-                'https://formspree.io/f/mzezbzyq',
-
-                {
-                    method:'POST',
-
-                    body:formData,
-
-                    headers:{
-                        'Accept':'application/json'
-                    }
-                }
-
-            );
-
-
-
-        /*
-        Only show the thank-you page if
-        Formspree confirms the submission
-        was successful.
-        */
-
-        if(response.ok){
-
-
-            /*
-            Record the lead in Google Analytics
-            if Google Analytics is available.
-            */
-
-            if(typeof gtag === 'function'){
-
-                gtag(
-                    'event',
-                    'generate_lead',
-                    {
-                        lead_source:
-                            '15_yard_dumpster',
-
-                        rental_type:
-                            '15_yard'
-                    }
-                );
-
-            }
-
-
-
-            /*
-            Redirect customer to the custom
-            BAIL OUT thank-you page.
-            */
-
-            window.location.href =
-                'thank-you-15yard.html';
-
-
-            return;
-
-        }
-
-
-
-        /*
-        If Formspree returns an error,
-        attempt to display its message.
-        */
-
-        let errorMessage =
-
-            'We could not send your request. Please try again or call BAIL OUT at 641-691-8799.';
-
-
-
-        try{
-
-
-            const data =
-                await response.json();
-
-
-            if(
-                data.errors &&
-                data.errors.length
-            ){
-
-                errorMessage =
-
-                    data.errors
-
-                    .map(
-                        error =>
-                            error.message
-                    )
-
-                    .join(', ');
-
-            }
-
-
-        }
-        catch(error){
-
-            /*
-            Keep the default error message.
-            */
-
-        }
-
-
-
-        throw new Error(
-            errorMessage
-        );
-
-
-    }
-    catch(error){
-
-
-        /*
-        Display the error and allow the
-        customer to try again.
-        */
-
-        formStatus.className =
-            'form-status error';
-
-
-        formStatus.textContent =
-
-            error.message ||
-
-            'We could not send your request. Please try again or call BAIL OUT at 641-691-8799.';
-
-
-
-        submitButton.disabled =
-            false;
-
-
-        submitButton.textContent =
-            'Submit 15-Yard Booking Request';
-
-    }
-
-}
-
-</script>
-
-
 </body>
-
 </html>
