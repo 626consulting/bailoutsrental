@@ -2,14 +2,6 @@
 <html lang="en">
 <head>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S81QYFRSXC"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-S81QYFRSXC');
-</script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,8 +9,16 @@ gtag('config', 'G-S81QYFRSXC');
 
 <meta
     name="description"
-    content="Request a 20-yard roll-off dumpster rental from BAIL OUT."
+    content="Request a 20-yard roll-off dumpster rental from BAIL OUT in Marshalltown, Iowa."
 >
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S81QYFRSXC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-S81QYFRSXC');
+</script>
 
 <style>
 
@@ -66,9 +66,6 @@ img{
     margin:auto;
 }
 
-
-/* HEADER */
-
 header{
     background:#050706;
     border-bottom:3px solid var(--green);
@@ -100,6 +97,10 @@ header{
     color:#fff;
 }
 
+.back-link:hover{
+    color:var(--green);
+}
+
 .header-phone{
     color:var(--green);
 }
@@ -111,8 +112,9 @@ header{
     color:#061007;
 }
 
-
-/* HERO */
+.header-button:hover{
+    background:var(--green-light);
+}
 
 .hero{
     padding:65px 0;
@@ -201,6 +203,10 @@ header{
     border-bottom:1px solid #303630;
 }
 
+.price-row:last-of-type{
+    border-bottom:none;
+}
+
 .price-row strong{
     color:var(--green);
     font-size:20px;
@@ -211,9 +217,6 @@ header{
     font-size:13px;
     font-weight:900;
 }
-
-
-/* INTRO */
 
 .intro{
     padding:60px 0;
@@ -246,9 +249,6 @@ header{
     margin-top:10px;
     padding-left:20px;
 }
-
-
-/* FORM */
 
 .quote{
     scroll-margin-top:20px;
@@ -359,9 +359,6 @@ header{
     text-align:center;
 }
 
-
-/* CALL */
-
 .call-section{
     padding:40px 20px;
     background:var(--green);
@@ -380,9 +377,6 @@ header{
     font-size:27px;
     font-weight:1000;
 }
-
-
-/* FOOTER */
 
 footer{
     padding:35px 0;
@@ -421,8 +415,9 @@ footer{
     color:#ddd;
 }
 
-
-/* MOBILE */
+.footer-links a:hover{
+    color:var(--green);
+}
 
 @media(max-width:800px){
 
@@ -452,7 +447,6 @@ footer{
         flex-direction:column;
         text-align:center;
     }
-
 }
 
 @media(max-width:550px){
@@ -472,11 +466,6 @@ footer{
     .form-card{
         padding:24px 18px;
     }
-
-    .section-heading h2{
-        font-size:32px;
-    }
-
 }
 
 </style>
@@ -484,7 +473,6 @@ footer{
 </head>
 
 <body>
-
 
 <header>
 
@@ -500,24 +488,15 @@ footer{
 
     <div class="header-actions">
 
-        <a
-            href="/index.html"
-            class="back-link"
-        >
+        <a href="/index.html" class="back-link">
             ← Back to Home
         </a>
 
-        <a
-            href="tel:6416918799"
-            class="header-phone"
-        >
+        <a href="tel:6416918799" class="header-phone">
             641-691-8799
         </a>
 
-        <a
-            href="#request"
-            class="header-button"
-        >
+        <a href="#request" class="header-button">
             Request 20-Yard Dumpster
         </a>
 
@@ -552,9 +531,8 @@ footer{
         </h1>
 
         <p>
-            More room for larger cleanouts, renovations,
-            construction work, property cleanup and projects
-            that generate more debris.
+            More capacity for larger cleanouts, renovations,
+            construction projects and jobs that generate more debris.
         </p>
 
         <div class="features">
@@ -622,9 +600,9 @@ footer{
         </h2>
 
         <p>
-            The 20-yard dumpster gives you additional space
-            for larger cleanouts, renovation debris,
-            construction materials and property projects.
+            The 20-yard roll-off dumpster gives you extra room
+            for larger cleanup, remodeling, construction and
+            property projects.
         </p>
 
     </div>
@@ -652,11 +630,7 @@ footer{
 </section>
 
 
-<!-- THIS IS THE FORM TARGET -->
-<section
-    class="quote"
-    id="request"
->
+<section class="quote" id="request">
 
 <div class="container">
 
@@ -671,12 +645,10 @@ footer{
         </h2>
 
         <p>
-            Complete the form below and BAIL OUT will confirm
-            availability and rental details.
+            Complete the form below and BAIL OUT will confirm availability and rental details.
         </p>
 
     </div>
-
 
     <div class="form-card">
 
@@ -698,7 +670,6 @@ footer{
 
         </div>
 
-
         <form
             action="https://formsubmit.co/bailoutrentals@gmail.com"
             method="POST"
@@ -712,20 +683,8 @@ footer{
 
             <input
                 type="hidden"
-                name="_next"
-                value="https://bailoutrentals.com/thank-you-20yard.html"
-            >
-
-            <input
-                type="hidden"
-                name="_captcha"
-                value="false"
-            >
-
-            <input
-                type="hidden"
-                name="_template"
-                value="table"
+                name="_url"
+                value="https://bailoutrentals.com/20yard.html"
             >
 
             <input
@@ -734,64 +693,25 @@ footer{
                 value="20-Yard Roll-Off Dumpster"
             >
 
-
             <div class="form-grid">
 
-
                 <div class="field">
-
-                    <label for="name">
-                        Full Name *
-                    </label>
-
-                    <input
-                        id="name"
-                        name="customer_name"
-                        type="text"
-                        required
-                    >
-
+                    <label for="name">Full Name *</label>
+                    <input id="name" name="customer_name" type="text" required>
                 </div>
 
-
                 <div class="field">
-
-                    <label for="phone">
-                        Phone Number *
-                    </label>
-
-                    <input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        required
-                    >
-
+                    <label for="phone">Phone Number *</label>
+                    <input id="phone" name="phone" type="tel" required>
                 </div>
 
-
                 <div class="field">
-
-                    <label for="email">
-                        Email Address *
-                    </label>
-
-                    <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                    >
-
+                    <label for="email">Email Address *</label>
+                    <input id="email" name="email" type="email" required>
                 </div>
 
-
                 <div class="field">
-
-                    <label for="address">
-                        Delivery Address *
-                    </label>
-
+                    <label for="address">Delivery Address *</label>
                     <input
                         id="address"
                         name="delivery_address"
@@ -799,38 +719,29 @@ footer{
                         placeholder="Street, City, State, ZIP"
                         required
                     >
-
                 </div>
 
-
                 <div class="field">
-
-                    <label for="delivery-date">
-                        Requested Delivery Date *
-                    </label>
-
+                    <label for="date">Requested Delivery Date *</label>
                     <input
-                        id="delivery-date"
+                        id="date"
                         name="requested_delivery_date"
                         type="date"
                         required
                     >
-
                 </div>
-
 
                 <div class="field">
 
-                    <label for="duration">
+                    <label for="period">
                         Rental Period *
                     </label>
 
                     <select
-                        id="duration"
-                        name="rental_duration"
+                        id="period"
+                        name="rental_period"
                         required
                     >
-
                         <option value="">
                             Select rental period
                         </option>
@@ -847,56 +758,6 @@ footer{
 
                 </div>
 
-
-                <div class="field full">
-
-                    <label for="project">
-                        Project Type *
-                    </label>
-
-                    <select
-                        id="project"
-                        name="project_type"
-                        required
-                    >
-
-                        <option value="">
-                            Select project
-                        </option>
-
-                        <option value="Home Cleanout">
-                            Home Cleanout
-                        </option>
-
-                        <option value="Remodeling">
-                            Remodeling / Renovation
-                        </option>
-
-                        <option value="Construction">
-                            Construction
-                        </option>
-
-                        <option value="Property Cleanup">
-                            Property Cleanup
-                        </option>
-
-                        <option value="Commercial">
-                            Commercial Project
-                        </option>
-
-                        <option value="Moving">
-                            Moving / Downsizing
-                        </option>
-
-                        <option value="Other">
-                            Other
-                        </option>
-
-                    </select>
-
-                </div>
-
-
                 <div class="field full">
 
                     <label for="materials">
@@ -911,7 +772,6 @@ footer{
                     ></textarea>
 
                 </div>
-
 
                 <div class="field full">
 
@@ -929,14 +789,12 @@ footer{
 
             </div>
 
-
             <button
                 type="submit"
                 class="submit-button"
             >
                 Submit 20-Yard Booking Request
             </button>
-
 
             <p class="form-note">
                 Your rental is not reserved until BAIL OUT confirms availability.
@@ -981,7 +839,6 @@ footer{
         >
 
         <div>
-
             <div class="footer-name">
                 BAIL OUT
             </div>
@@ -989,11 +846,9 @@ footer{
             <div>
                 Roll-Off Dumpster & Trailer Rentals
             </div>
-
         </div>
 
     </div>
-
 
     <div class="footer-links">
 
