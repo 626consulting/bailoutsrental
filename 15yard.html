@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -12,13 +13,20 @@
     content="Request a 15-yard roll-off dumpster rental from BAIL OUT in Marshalltown, Iowa."
 >
 
+<!-- GOOGLE ANALYTICS -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S81QYFRSXC"></script>
+
 <script>
 window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
+
+function gtag(){
+    dataLayer.push(arguments);
+}
+
 gtag('js', new Date());
 gtag('config', 'G-S81QYFRSXC');
 </script>
+
 
 <style>
 
@@ -65,6 +73,9 @@ img{
     width:min(1100px, calc(100% - 40px));
     margin:auto;
 }
+
+
+/* HEADER */
 
 header{
     background:#050706;
@@ -115,6 +126,9 @@ header{
 .header-button:hover{
     background:var(--green-light);
 }
+
+
+/* HERO */
 
 .hero{
     padding:65px 0;
@@ -218,6 +232,9 @@ header{
     font-weight:900;
 }
 
+
+/* INTRO */
+
 .intro{
     padding:60px 0;
     background:#fff;
@@ -250,6 +267,9 @@ header{
     padding-left:20px;
 }
 
+
+/* FORM */
+
 .quote{
     scroll-margin-top:20px;
     padding:70px 0;
@@ -265,7 +285,6 @@ header{
 .section-heading h2{
     margin:7px 0 10px;
     font-size:40px;
-    line-height:1.1;
 }
 
 .section-heading p{
@@ -359,6 +378,9 @@ header{
     text-align:center;
 }
 
+
+/* CALL */
+
 .call-section{
     padding:40px 20px;
     background:var(--green);
@@ -377,6 +399,9 @@ header{
     font-size:27px;
     font-weight:1000;
 }
+
+
+/* FOOTER */
 
 footer{
     padding:35px 0;
@@ -418,6 +443,9 @@ footer{
 .footer-links a:hover{
     color:var(--green);
 }
+
+
+/* MOBILE */
 
 @media(max-width:800px){
 
@@ -472,7 +500,9 @@ footer{
 
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -488,15 +518,24 @@ footer{
 
     <div class="header-actions">
 
-        <a href="/index.html" class="back-link">
+        <a
+            href="/index.html"
+            class="back-link"
+        >
             ← Back to Home
         </a>
 
-        <a href="tel:6416918799" class="header-phone">
+        <a
+            href="tel:6416918799"
+            class="header-phone"
+        >
             641-691-8799
         </a>
 
-        <a href="#request" class="header-button">
+        <a
+            href="#request"
+            class="header-button"
+        >
             Request 15-Yard Dumpster
         </a>
 
@@ -601,8 +640,8 @@ footer{
 
         <p>
             The 15-yard roll-off dumpster provides a convenient
-            solution for cleanup projects without requiring the
-            space of a larger dumpster.
+            option for home cleanouts, remodeling, property cleanup,
+            moving projects and general debris removal.
         </p>
 
     </div>
@@ -630,7 +669,10 @@ footer{
 </section>
 
 
-<section class="quote" id="request">
+<section
+    class="quote"
+    id="request"
+>
 
 <div class="container">
 
@@ -645,10 +687,12 @@ footer{
         </h2>
 
         <p>
-            Complete the form below and BAIL OUT will confirm availability and rental details.
+            Complete the form below and BAIL OUT will confirm
+            availability and rental details.
         </p>
 
     </div>
+
 
     <div class="form-card">
 
@@ -670,66 +714,134 @@ footer{
 
         </div>
 
+
+        <!-- WEB3FORMS -->
         <form
-            action="https://formsubmit.co/bailoutrentals@gmail.com"
+            action="https://api.web3forms.com/submit"
             method="POST"
         >
 
+            <!-- WEB3FORMS ACCESS KEY -->
             <input
                 type="hidden"
-                name="_subject"
-                value="New 15-Yard Dumpster Booking Request"
+                name="access_key"
+                value="5bc18f88-b3dc-43aa-9a11-f287b59df2a4"
             >
 
             <input
                 type="hidden"
-                name="_url"
-                value="https://bailoutrentals.com/15yard.html"
+                name="subject"
+                value="New BAIL OUT 15-Yard Dumpster Request"
             >
 
             <input
                 type="hidden"
-                name="rental_type"
+                name="from_name"
+                value="BAIL OUT Website"
+            >
+
+            <input
+                type="hidden"
+                name="redirect"
+                value="https://bailoutrentals.com/thank-you-15yard.html"
+            >
+
+            <input
+                type="hidden"
+                name="Rental Type"
                 value="15-Yard Roll-Off Dumpster"
             >
+
+            <!-- BOT PROTECTION -->
+            <input
+                type="checkbox"
+                name="botcheck"
+                style="display:none;"
+            >
+
 
             <div class="form-grid">
 
                 <div class="field">
-                    <label for="name">Full Name *</label>
-                    <input id="name" name="customer_name" type="text" required>
+
+                    <label for="name">
+                        Full Name *
+                    </label>
+
+                    <input
+                        id="name"
+                        name="Name"
+                        type="text"
+                        required
+                    >
+
                 </div>
 
-                <div class="field">
-                    <label for="phone">Phone Number *</label>
-                    <input id="phone" name="phone" type="tel" required>
-                </div>
 
                 <div class="field">
-                    <label for="email">Email Address *</label>
-                    <input id="email" name="email" type="email" required>
+
+                    <label for="phone">
+                        Phone Number *
+                    </label>
+
+                    <input
+                        id="phone"
+                        name="Phone"
+                        type="tel"
+                        required
+                    >
+
                 </div>
 
+
                 <div class="field">
-                    <label for="address">Delivery Address *</label>
+
+                    <label for="email">
+                        Email Address *
+                    </label>
+
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="address">
+                        Delivery Address *
+                    </label>
+
                     <input
                         id="address"
-                        name="delivery_address"
+                        name="Delivery Address"
                         type="text"
                         placeholder="Street, City, State, ZIP"
                         required
                     >
+
                 </div>
 
+
                 <div class="field">
-                    <label for="date">Requested Delivery Date *</label>
+
+                    <label for="date">
+                        Requested Delivery Date *
+                    </label>
+
                     <input
                         id="date"
-                        name="requested_delivery_date"
+                        name="Requested Delivery Date"
                         type="date"
                         required
                     >
+
                 </div>
+
 
                 <div class="field">
 
@@ -739,9 +851,10 @@ footer{
 
                     <select
                         id="period"
-                        name="rental_period"
+                        name="Rental Period"
                         required
                     >
+
                         <option value="">
                             Select rental period
                         </option>
@@ -758,6 +871,7 @@ footer{
 
                 </div>
 
+
                 <div class="field full">
 
                     <label for="materials">
@@ -766,12 +880,13 @@ footer{
 
                     <textarea
                         id="materials"
-                        name="materials"
+                        name="Materials"
                         placeholder="Household items, furniture, construction debris, wood, etc."
                         required
                     ></textarea>
 
                 </div>
+
 
                 <div class="field full">
 
@@ -781,7 +896,7 @@ footer{
 
                     <textarea
                         id="details"
-                        name="additional_details"
+                        name="Additional Details"
                         placeholder="Anything else we should know?"
                     ></textarea>
 
@@ -789,12 +904,14 @@ footer{
 
             </div>
 
+
             <button
                 type="submit"
                 class="submit-button"
             >
                 Submit 15-Yard Booking Request
             </button>
+
 
             <p class="form-note">
                 Your rental is not reserved until BAIL OUT confirms availability.
@@ -839,6 +956,7 @@ footer{
         >
 
         <div>
+
             <div class="footer-name">
                 BAIL OUT
             </div>
@@ -846,9 +964,11 @@ footer{
             <div>
                 Roll-Off Dumpster & Trailer Rentals
             </div>
+
         </div>
 
     </div>
+
 
     <div class="footer-links">
 
@@ -869,6 +989,7 @@ footer{
 </div>
 
 </footer>
+
 
 </body>
 </html>
