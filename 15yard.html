@@ -6,15 +6,11 @@
 
   <title>15 Yard Dumpster Rental | Bail Out Rentals</title>
   <meta name="description"
-    content="Request a 15-yard dumpster rental from Bail Out Rentals in Marshalltown, Iowa.">
+        content="Request a 15-yard dumpster rental from Bail Out Rentals in Marshalltown, Iowa.">
 
   <style>
     * {
       box-sizing: border-box;
-    }
-
-    [hidden] {
-      display: none !important;
     }
 
     body {
@@ -43,7 +39,7 @@
 
     nav a {
       display: inline-block;
-      color: white;
+      color: #fff;
       text-decoration: none;
       margin: 5px 8px;
       font-weight: bold;
@@ -55,7 +51,7 @@
 
     .hero {
       background: #333;
-      color: white;
+      color: #fff;
       padding: 55px 20px;
       text-align: center;
     }
@@ -66,8 +62,8 @@
     }
 
     .hero p {
-      font-size: 19px;
       margin: 0;
+      font-size: 19px;
     }
 
     .container {
@@ -85,14 +81,13 @@
 
     .product img {
       width: 100%;
-      border-radius: 10px;
       display: block;
+      border-radius: 10px;
     }
 
     .card,
-    form,
-    .thank-you {
-      background: white;
+    form {
+      background: #fff;
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 3px 12px rgba(0, 0, 0, .12);
@@ -135,91 +130,43 @@
       resize: vertical;
     }
 
-    input:focus,
-    select:focus,
-    textarea:focus,
-    button:focus-visible,
-    a:focus-visible {
-      outline: 3px solid #d88900;
-      outline-offset: 3px;
-    }
-
-    button,
-    .button-link {
-      display: inline-block;
-      padding: 15px;
-      background: #a86500;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font: inherit;
-      font-size: 18px;
-      font-weight: bold;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
     button {
       width: 100%;
       margin-top: 25px;
+      padding: 15px;
+      background: #a86500;
+      color: #fff;
+      border: 0;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
-    button:hover,
-    .button-link:hover {
+    button:hover {
       background: #824e00;
     }
 
-    button:disabled {
-      opacity: .65;
-      cursor: not-allowed;
-    }
-
-    .note {
-      font-size: 14px;
-      color: #555;
-    }
-
-    .status {
-      margin-top: 20px;
-      padding: 15px;
-      border-radius: 5px;
-      background: #eef3f8;
-      overflow-wrap: anywhere;
-    }
-
-    .status.error {
-      background: #fff0f0;
-      border: 1px solid #b42318;
-      color: #801b13;
-    }
-
-    .thank-you {
-      border-top: 6px solid #237a3b;
-    }
-
-    .thank-you h2 {
-      color: #216b35;
-    }
-
     .contact {
-      text-align: center;
       margin-top: 35px;
+      text-align: center;
     }
 
-    .contact a,
-    .email-help a {
+    .contact a {
       color: #824e00;
       font-weight: bold;
-      overflow-wrap: anywhere;
     }
 
     footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
       margin-top: 40px;
+      padding: 25px 15px;
+      background: #111;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hidden-field {
+      display: none;
     }
 
     @media (max-width: 750px) {
@@ -232,8 +179,7 @@
       }
 
       .card,
-      form,
-      .thank-you {
+      form {
         padding: 22px;
       }
     }
@@ -241,16 +187,15 @@
 </head>
 
 <body>
-  <!-- Version: 15yard-ajax-v2 -->
 
   <header>
     <a href="index.html">
-      <img src="logo.png" alt="Bail Out Rentals home">
+      <img src="logo.png" alt="Bail Out Rentals logo">
     </a>
 
     <nav aria-label="Main navigation">
       <a href="index.html">Home</a>
-      <a href="15yard.html" aria-current="page">15-Yard Dumpster</a>
+      <a href="15yard.html">15-Yard Dumpster</a>
       <a href="20yard.html">20-Yard Dumpster</a>
       <a href="trailer.html">Trailer Rental</a>
       <a href="#contact">Contact</a>
@@ -266,6 +211,7 @@
   </section>
 
   <main class="container">
+
     <section class="product">
       <div>
         <img src="15yard.png" alt="15-yard roll-off dumpster rental">
@@ -291,53 +237,60 @@
         </ul>
 
         <p>
-          Complete the form below and Bail Out Rentals will contact
-          you to confirm availability, delivery details, and pricing.
+          Complete the form below and Bail Out Rentals will contact you
+          to confirm availability, delivery details, and pricing.
         </p>
       </div>
     </section>
 
-    <section class="form-section" aria-labelledby="request-heading">
-      <h2 id="request-heading">Request a 15-Yard Dumpster</h2>
-
-      <noscript>
-        <p>
-          JavaScript must be enabled to submit this form.
-          You can also email
-          <a href="mailto:bailoutrentals@gmail.com">
-            bailoutrentals@gmail.com
-          </a>.
-        </p>
-      </noscript>
+    <section class="form-section">
+      <h2>Request a 15-Yard Dumpster</h2>
 
       <form
-        id="rental-form"
-        action="https://formsubmit.co/ajax/bailoutrentals@gmail.com"
+        action="https://api.web3forms.com/submit"
         method="POST"
       >
-        <input type="hidden" name="_subject"
-          value="15-Yard Dumpster Rental Request">
+        <!-- Web3Forms access key -->
+        <input
+          type="hidden"
+          name="access_key"
+          value="f21f2cfc-658a-4a34-889b-66c19cc0f3a8"
+        >
 
-        <input type="hidden" name="_template" value="table">
+        <!-- Email subject -->
+        <input
+          type="hidden"
+          name="subject"
+          value="15-Yard Dumpster Rental Request"
+        >
 
-        <input type="hidden" name="_captcha" value="false">
+        <!-- Thank-you page -->
+        <input
+          type="hidden"
+          name="redirect"
+          value="https://bailoutrentals.com/thank-you-15yard.html"
+        >
 
-        <input type="hidden" name="_url"
-          value="https://bailoutrentals.com/15yard.html">
+        <input
+          type="hidden"
+          name="from_name"
+          value="Bail Out Rentals Website"
+        >
 
-        <input type="hidden" name="rental_type"
-          value="15-Yard Roll-Off Dumpster">
+        <input
+          type="hidden"
+          name="rental_type"
+          value="15-Yard Roll-Off Dumpster"
+        >
 
-        <div hidden>
-          <label for="website">Leave this field empty</label>
-          <input
-            type="text"
-            id="website"
-            name="_honey"
-            tabindex="-1"
-            autocomplete="off"
-          >
-        </div>
+        <!-- Spam protection -->
+        <input
+          type="checkbox"
+          name="botcheck"
+          class="hidden-field"
+          tabindex="-1"
+          autocomplete="off"
+        >
 
         <label for="name">Full Name *</label>
         <input
@@ -345,7 +298,6 @@
           id="name"
           name="name"
           autocomplete="name"
-          maxlength="150"
           required
         >
 
@@ -355,7 +307,6 @@
           id="email"
           name="email"
           autocomplete="email"
-          maxlength="254"
           required
         >
 
@@ -365,7 +316,6 @@
           id="phone"
           name="phone"
           autocomplete="tel"
-          maxlength="40"
           required
         >
 
@@ -375,7 +325,6 @@
           id="address"
           name="delivery_address"
           autocomplete="street-address"
-          maxlength="300"
           required
         >
 
@@ -385,7 +334,6 @@
           id="city"
           name="city"
           autocomplete="address-level2"
-          maxlength="100"
           required
         >
 
@@ -396,7 +344,6 @@
           name="state"
           value="Iowa"
           autocomplete="address-level1"
-          maxlength="100"
           required
         >
 
@@ -406,7 +353,6 @@
           id="zip"
           name="zip_code"
           autocomplete="postal-code"
-          maxlength="10"
           required
         >
 
@@ -431,7 +377,6 @@
         <textarea
           id="debris"
           name="debris_type"
-          maxlength="3000"
           placeholder="Tell us what you plan to dispose of."
         ></textarea>
 
@@ -439,68 +384,28 @@
         <textarea
           id="message"
           name="message"
-          maxlength="5000"
           placeholder="Add delivery instructions or questions."
         ></textarea>
 
-        <p class="note">
+        <p>
           This is a rental request, not a confirmed reservation.
           We will contact you to confirm availability and pricing.
         </p>
 
-        <button type="submit" id="submit-button" disabled>
-          Send Rental Request
-        </button>
-
-        <div
-          id="form-status"
-          class="status"
-          role="status"
-          aria-live="polite"
-          hidden
-        ></div>
-
-        <p class="email-help" id="email-help" hidden>
-          Need help? Email
-          <a href="mailto:bailoutrentals@gmail.com">
-            bailoutrentals@gmail.com
-          </a>.
-        </p>
+        <button type="submit">Send Rental Request</button>
       </form>
-
-      <section
-        id="thank-you"
-        class="thank-you"
-        aria-labelledby="thank-you-heading"
-        hidden
-      >
-        <h2 id="thank-you-heading" tabindex="-1">
-          Thank you for your request!
-        </h2>
-
-        <p>
-          Your 15-yard dumpster request was accepted by our
-          form service.
-        </p>
-
-        <p>
-          Bail Out Rentals will contact you to confirm availability,
-          delivery details, and pricing. Your reservation is not
-          confirmed until we contact you.
-        </p>
-
-        <a class="button-link" href="index.html">Return to Home</a>
-      </section>
     </section>
 
     <section class="contact" id="contact">
       <p>Questions? Contact Bail Out Rentals.</p>
+
       <p>
         <a href="mailto:bailoutrentals@gmail.com">
           bailoutrentals@gmail.com
         </a>
       </p>
     </section>
+
   </main>
 
   <footer>
@@ -508,168 +413,5 @@
     <p>Marshalltown, Iowa and surrounding areas.</p>
   </footer>
 
-  <script>
-    (() => {
-      "use strict";
-
-      const form = document.getElementById("rental-form");
-      const button = document.getElementById("submit-button");
-      const status = document.getElementById("form-status");
-      const emailHelp = document.getElementById("email-help");
-      const thankYou = document.getElementById("thank-you");
-      const thankYouHeading =
-        document.getElementById("thank-you-heading");
-
-      let submitting = false;
-      let completed = false;
-
-      function showStatus(message, isError = false) {
-        status.textContent = message;
-        status.classList.toggle("error", isError);
-        status.hidden = false;
-        emailHelp.hidden = !isError;
-      }
-
-      form.addEventListener("submit", async (event) => {
-        // Stop the browser from navigating away on submission.
-        event.preventDefault();
-
-        if (submitting || completed) {
-          return;
-        }
-
-        if (!form.reportValidity()) {
-          return;
-        }
-
-        if (form.elements["_honey"].value.trim()) {
-          showStatus(
-            "The spam-check field must be empty. " +
-            "Please contact us by email if this continues.",
-            true
-          );
-          return;
-        }
-
-        submitting = true;
-        button.disabled = true;
-        button.textContent = "Sending request…";
-        form.setAttribute("aria-busy", "true");
-
-        showStatus("Sending your request. Please wait.");
-
-        const controller = new AbortController();
-
-        const timeout = window.setTimeout(() => {
-          controller.abort();
-        }, 25000);
-
-        try {
-          const payload =
-            Object.fromEntries(new FormData(form).entries());
-
-          const response = await fetch(form.action, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "Accept": "application/json"
-            },
-            body: JSON.stringify(payload),
-            signal: controller.signal
-          });
-
-          let result;
-
-          try {
-            result = await response.json();
-          } catch (error) {
-            if (error.name === "AbortError") {
-              throw error;
-            }
-
-            throw new Error(
-              "FormSubmit returned an unreadable response " +
-              "(HTTP " + response.status + "). " +
-              "Submission could not be confirmed."
-            );
-          }
-
-          const providerMessage =
-            typeof result?.message === "string"
-              ? result.message
-              : "";
-
-          if (!response.ok) {
-            throw new Error(
-              "FormSubmit returned HTTP " + response.status +
-              (providerMessage ? ": " + providerMessage : ".") +
-              " Submission could not be confirmed."
-            );
-          }
-
-          const accepted =
-            result?.success === true ||
-            result?.success === "true";
-
-          // An activation notice is not submission confirmation.
-          const activationNotice =
-            /activat|verif|confirm.{0,30}email/i.test(
-              providerMessage
-            );
-
-          if (!accepted || activationNotice) {
-            throw new Error(
-              providerMessage ||
-              "FormSubmit did not confirm acceptance of the request."
-            );
-          }
-
-          completed = true;
-          form.hidden = true;
-          thankYou.hidden = false;
-
-          thankYouHeading.focus();
-          thankYou.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-          });
-        } catch (error) {
-          let message;
-
-          if (error.name === "AbortError") {
-            message =
-              "FormSubmit did not respond within 25 seconds. " +
-              "We cannot confirm whether your request was received. " +
-              "Your entries are still here. Please contact us " +
-              "before retrying to avoid a duplicate request.";
-          } else if (error instanceof TypeError) {
-            message =
-              "We could not get a response from FormSubmit. " +
-              "Your entries are still here, but submission is " +
-              "unconfirmed. Please contact us by email.";
-          } else {
-            message =
-              error.message ||
-              "Submission could not be confirmed. " +
-              "Please contact us by email.";
-          }
-
-          showStatus(message, true);
-        } finally {
-          window.clearTimeout(timeout);
-          submitting = false;
-          form.removeAttribute("aria-busy");
-
-          if (!completed) {
-            button.disabled = false;
-            button.textContent = "Send Rental Request";
-          }
-        }
-      });
-
-      // Enable submission only after the handler is attached.
-      button.disabled = false;
-    })();
-  </script>
 </body>
 </html>
