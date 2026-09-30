@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>15 Yard Dumpster Rental | Bail Out Rentals</title>
-  <meta name="description" content="Rent a 15-yard dumpster from Bail Out Rentals in Marshalltown, Iowa.">
 
   <style>
     * {
@@ -36,7 +34,7 @@
     }
 
     nav a {
-      color: #fff;
+      color: white;
       text-decoration: none;
       margin: 0 8px;
       font-weight: bold;
@@ -48,7 +46,7 @@
 
     .hero {
       background: #333;
-      color: #fff;
+      color: white;
       padding: 55px 20px;
       text-align: center;
     }
@@ -84,14 +82,13 @@
 
     .card,
     form {
-      background: #fff;
+      background: white;
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 3px 12px rgba(0, 0, 0, .12);
     }
 
-    .card h2,
-    .form-section h2 {
+    h2 {
       margin-top: 0;
     }
 
@@ -133,7 +130,7 @@
       margin-top: 25px;
       padding: 15px;
       background: #d88900;
-      color: #fff;
+      color: white;
       border: none;
       border-radius: 5px;
       font-size: 18px;
@@ -157,7 +154,7 @@
 
     footer {
       background: #111;
-      color: #fff;
+      color: white;
       text-align: center;
       padding: 25px 15px;
       margin-top: 40px;
@@ -235,7 +232,10 @@
     <section class="form-section">
       <h2>Request a 15-Yard Dumpster</h2>
 
-      <form action="https://formsubmit.co/el/cehuhu/?next=https://bailoutrentals.com/thank-you-15yard.html" method="POST">
+      <form action="https://formsubmit.co/el/cehuhu" method="POST">
+
+        <input type="hidden" name="_next"
+          value="https://bailoutrentals.com/thank-you-15yard.html">
 
         <input type="hidden" name="_subject"
           value="15-Yard Dumpster Rental Request">
@@ -243,6 +243,9 @@
         <input type="hidden" name="_template" value="table">
 
         <input type="hidden" name="_captcha" value="false">
+
+        <input type="hidden" name="_url"
+          value="https://bailoutrentals.com/15yard.html">
 
         <input type="hidden" name="rental_type"
           value="15-Yard Roll-Off Dumpster">
@@ -293,7 +296,7 @@
       </form>
     </section>
 
-    <section class="contact">
+    <section class="contact" id="contact">
       <p>Questions? Contact Bail Out Rentals.</p>
 
       <p>
