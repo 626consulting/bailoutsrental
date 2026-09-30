@@ -17,21 +17,10 @@
 
     gtag('config', 'G-S81QYFRSXC');
 
-    /*
-      Record the successful trailer rental request as a lead.
-
-      sessionStorage helps prevent the same lead from being counted
-      again if the customer refreshes the thank-you page.
-    */
-    if (!sessionStorage.getItem('trailer_lead_recorded')) {
-
-        gtag('event', 'generate_lead', {
-            form_name: 'trailer_rental',
-            rental_type: 'trailer rental'
-        });
-
-        sessionStorage.setItem('trailer_lead_recorded', 'true');
-    }
+    gtag('event', 'generate_lead', {
+        form_name: 'trailer_rental',
+        rental_type: 'trailer rental'
+    });
 </script>
 
 
@@ -258,7 +247,6 @@ footer{
 </header>
 
 
-
 <main>
 
 
@@ -289,7 +277,7 @@ footer{
         <br><br>
 
         BAIL OUT will review your request and contact you
-        to confirm availability, pricing and pickup or delivery details.
+        to confirm availability, pricing, and pickup or delivery details.
 
     </div>
 
@@ -325,7 +313,6 @@ footer{
 
 
 </main>
-
 
 
 <footer>
