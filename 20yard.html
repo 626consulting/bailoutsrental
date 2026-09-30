@@ -102,6 +102,7 @@
       color: #a86500;
       font-size: 28px;
       font-weight: bold;
+      line-height: 1.5;
       margin: 15px 0;
     }
 
@@ -233,12 +234,16 @@
           moderate construction debris.
         </p>
 
-        <div class="price">Now Available</div>
+        <div class="price">
+          $450 for up to 7 days<br>
+          $550 for up to 14 days
+        </div>
 
         <ul>
-          <li>$450 for up to 7 days</li>
-          <li>$550 for up to 14 days</li>
-          <li>2 tons of material included</li>
+          <li>2 tons of disposal included</li>
+          <li>$100 per additional ton</li>
+          <li>No separate dumpster delivery charge</li>
+          <li>$100 failed-delivery fee may apply</li>
           <li>Fast and dependable delivery</li>
           <li>Scheduled pickup after your rental</li>
           <li>Serving Marshalltown and surrounding areas</li>
@@ -258,21 +263,18 @@
         action="https://api.web3forms.com/submit"
         method="POST"
       >
-        <!-- Web3Forms access key -->
         <input
           type="hidden"
           name="access_key"
           value="06c93387-5ab0-4fc4-b790-77b6a90db46d"
         >
 
-        <!-- Email subject -->
         <input
           type="hidden"
           name="subject"
           value="20-Yard Dumpster Rental Request"
         >
 
-        <!-- Thank-you page -->
         <input
           type="hidden"
           name="redirect"
@@ -294,16 +296,27 @@
         <input
           type="hidden"
           name="rental_price"
-          value="$450 for 7 days or $550 for 14 days"
+          value="$450 for up to 7 days or $550 for up to 14 days"
         >
 
         <input
           type="hidden"
           name="included_material"
-          value="2 tons included"
+          value="2 tons of disposal included; $100 per additional ton"
         >
 
-        <!-- Spam protection -->
+        <input
+          type="hidden"
+          name="delivery_charge"
+          value="No separate dumpster delivery charge"
+        >
+
+        <input
+          type="hidden"
+          name="failed_delivery_fee"
+          value="$100 failed-delivery fee may apply"
+        >
+
         <input
           type="checkbox"
           name="botcheck"
