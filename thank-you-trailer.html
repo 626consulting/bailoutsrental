@@ -4,7 +4,8 @@
 <head>
 
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRD4HDEY70"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S81QYFRSXC"></script>
+
 <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -13,8 +14,26 @@
     }
 
     gtag('js', new Date());
-    gtag('config', 'G-KRD4HDEY70');
+
+    gtag('config', 'G-S81QYFRSXC');
+
+    /*
+      Record the successful trailer rental request as a lead.
+
+      sessionStorage helps prevent the same lead from being counted
+      again if the customer refreshes the thank-you page.
+    */
+    if (!sessionStorage.getItem('trailer_lead_recorded')) {
+
+        gtag('event', 'generate_lead', {
+            form_name: 'trailer_rental',
+            rental_type: 'trailer rental'
+        });
+
+        sessionStorage.setItem('trailer_lead_recorded', 'true');
+    }
 </script>
+
 
 <meta charset="UTF-8">
 
@@ -28,7 +47,8 @@
     content="noindex, follow"
 >
 
-<title>Trailer Request Received | BAIL OUT</title>
+<title>Request Received | BAIL OUT</title>
+
 
 <style>
 
@@ -241,6 +261,7 @@ footer{
 
 <main>
 
+
 <div class="thank-you-card">
 
 
@@ -268,14 +289,13 @@ footer{
         <br><br>
 
         BAIL OUT will review your request and contact you
-        to confirm trailer availability, pricing and
-        rental details.
+        to confirm availability, pricing and pickup or delivery details.
 
     </div>
 
 
     <p>
-        Your requested rental date is not reserved until
+        Your requested date is not reserved until
         BAIL OUT confirms your booking.
     </p>
 
@@ -303,6 +323,7 @@ footer{
 
 </div>
 
+
 </main>
 
 
@@ -316,4 +337,5 @@ footer{
 
 
 </body>
+
 </html>
