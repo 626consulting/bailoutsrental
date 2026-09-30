@@ -6,7 +6,7 @@
 
   <title>15 Yard Dumpster Rental | Bail Out Rentals</title>
   <meta name="description"
-    content="Request a 15-yard dumpster from Bail Out Rentals in Marshalltown, Iowa.">
+    content="Request a 15-yard dumpster rental from Bail Out Rentals in Marshalltown, Iowa.">
 
   <style>
     * {
@@ -43,7 +43,7 @@
 
     nav a {
       display: inline-block;
-      color: #fff;
+      color: white;
       text-decoration: none;
       margin: 5px 8px;
       font-weight: bold;
@@ -55,7 +55,7 @@
 
     .hero {
       background: #333;
-      color: #fff;
+      color: white;
       padding: 55px 20px;
       text-align: center;
     }
@@ -92,7 +92,7 @@
     .card,
     form,
     .thank-you {
-      background: #fff;
+      background: white;
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 3px 12px rgba(0, 0, 0, .12);
@@ -149,7 +149,7 @@
       display: inline-block;
       padding: 15px;
       background: #a86500;
-      color: #fff;
+      color: white;
       border: none;
       border-radius: 5px;
       font: inherit;
@@ -172,7 +172,7 @@
 
     button:disabled {
       opacity: .65;
-      cursor: wait;
+      cursor: not-allowed;
     }
 
     .note {
@@ -216,7 +216,7 @@
 
     footer {
       background: #111;
-      color: #fff;
+      color: white;
       text-align: center;
       padding: 25px 15px;
       margin-top: 40px;
@@ -241,6 +241,8 @@
 </head>
 
 <body>
+  <!-- Version: 15yard-ajax-v2 -->
+
   <header>
     <a href="index.html">
       <img src="logo.png" alt="Bail Out Rentals home">
@@ -300,7 +302,8 @@
 
       <noscript>
         <p>
-          Please enable JavaScript to use this form, or email
+          JavaScript must be enabled to submit this form.
+          You can also email
           <a href="mailto:bailoutrentals@gmail.com">
             bailoutrentals@gmail.com
           </a>.
@@ -309,7 +312,7 @@
 
       <form
         id="rental-form"
-        action="https://formsubmit.co/bailoutrentals@gmail.com"
+        action="https://formsubmit.co/ajax/bailoutrentals@gmail.com"
         method="POST"
       >
         <input type="hidden" name="_subject"
@@ -517,9 +520,6 @@
       const thankYouHeading =
         document.getElementById("thank-you-heading");
 
-      const endpoint =
-        "https://formsubmit.co/ajax/bailoutrentals@gmail.com";
-
       let submitting = false;
       let completed = false;
 
@@ -531,6 +531,7 @@
       }
 
       form.addEventListener("submit", async (event) => {
+        // Stop the browser from navigating away on submission.
         event.preventDefault();
 
         if (submitting || completed) {
@@ -558,6 +559,7 @@
         showStatus("Sending your request. Please wait.");
 
         const controller = new AbortController();
+
         const timeout = window.setTimeout(() => {
           controller.abort();
         }, 25000);
@@ -566,7 +568,7 @@
           const payload =
             Object.fromEntries(new FormData(form).entries());
 
-          const response = await fetch(endpoint, {
+          const response = await fetch(form.action, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -580,7 +582,11 @@
 
           try {
             result = await response.json();
-          } catch {
+          } catch (error) {
+            if (error.name === "AbortError") {
+              throw error;
+            }
+
             throw new Error(
               "FormSubmit returned an unreadable response " +
               "(HTTP " + response.status + "). " +
@@ -605,13 +611,13 @@
             result?.success === true ||
             result?.success === "true";
 
-          // Do not present an activation notice as a rental success.
-          const activationRequired =
+          // An activation notice is not submission confirmation.
+          const activationNotice =
             /activat|verif|confirm.{0,30}email/i.test(
               providerMessage
             );
 
-          if (!accepted || activationRequired) {
+          if (!accepted || activationNotice) {
             throw new Error(
               providerMessage ||
               "FormSubmit did not confirm acceptance of the request."
@@ -621,6 +627,7 @@
           completed = true;
           form.hidden = true;
           thankYou.hidden = false;
+
           thankYouHeading.focus();
           thankYou.scrollIntoView({
             behavior: "smooth",
@@ -641,7 +648,8 @@
               "Your entries are still here, but submission is " +
               "unconfirmed. Please contact us by email.";
           } else {
-            message = error.message ||
+            message =
+              error.message ||
               "Submission could not be confirmed. " +
               "Please contact us by email.";
           }
@@ -659,6 +667,7 @@
         }
       });
 
+      // Enable submission only after the handler is attached.
       button.disabled = false;
     })();
   </script>
