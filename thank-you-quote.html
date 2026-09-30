@@ -17,21 +17,10 @@
 
     gtag('config', 'G-S81QYFRSXC');
 
-    /*
-      Record a successful homepage quote request as a lead.
-
-      sessionStorage helps prevent the same lead from being counted
-      again if the customer refreshes the thank-you page.
-    */
-    if (!sessionStorage.getItem('homepage_quote_lead_recorded')) {
-
-        gtag('event', 'generate_lead', {
-            form_name: 'homepage_quote',
-            rental_type: 'general rental quote'
-        });
-
-        sessionStorage.setItem('homepage_quote_lead_recorded', 'true');
-    }
+    gtag('event', 'generate_lead', {
+        form_name: 'homepage_quote',
+        rental_type: 'general rental quote'
+    });
 </script>
 
 
@@ -258,7 +247,6 @@ footer{
 </header>
 
 
-
 <main>
 
 
@@ -276,7 +264,7 @@ footer{
 
 
     <p>
-        Your rental request has been received.
+        Your rental quote request has been received.
     </p>
 
 
@@ -289,14 +277,14 @@ footer{
         <br><br>
 
         BAIL OUT will review your request and contact you
-        to confirm availability, pricing and rental details.
+        to confirm availability, pricing, and rental details.
 
     </div>
 
 
     <p>
-        Your requested date is not reserved until
-        BAIL OUT confirms your booking.
+        Your request is not a confirmed reservation until
+        BAIL OUT confirms your rental.
     </p>
 
 
@@ -325,7 +313,6 @@ footer{
 
 
 </main>
-
 
 
 <footer>
