@@ -4,7 +4,8 @@
 <head>
 
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRD4HDEY70"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S81QYFRSXC"></script>
+
 <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -14,8 +15,25 @@
 
     gtag('js', new Date());
 
-    gtag('config', 'G-KRD4HDEY70');
+    gtag('config', 'G-S81QYFRSXC');
+
+    /*
+      Record the successful 15-yard dumpster request as a lead.
+
+      sessionStorage helps prevent the same lead from being counted
+      again if the customer refreshes the thank-you page.
+    */
+    if (!sessionStorage.getItem('15_yard_lead_recorded')) {
+
+        gtag('event', 'generate_lead', {
+            form_name: '15_yard_dumpster',
+            rental_type: '15-yard dumpster'
+        });
+
+        sessionStorage.setItem('15_yard_lead_recorded', 'true');
+    }
 </script>
+
 
 <meta charset="UTF-8">
 
@@ -30,6 +48,7 @@
 >
 
 <title>Request Received | BAIL OUT</title>
+
 
 <style>
 
