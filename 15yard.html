@@ -2,12 +2,34 @@
 <html lang="en">
 
 <head>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRD4HDEY70"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-KRD4HDEY70');
+</script>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>15-Yard Dumpster Rental | BAIL OUT</title>
 
-<meta name="description" content="Request a 15-yard roll-off dumpster from BAIL OUT. $375 for 7 days or $475 for 14 days, 2 tons included, no separate dumpster delivery charge, and additional weight at $100 per ton.">
+<meta
+    name="description"
+    content="Request a 15-yard roll-off dumpster from BAIL OUT. $375 for 7 days or $475 for 14 days, 2 tons included, no separate dumpster delivery charge, and additional weight at $100 per ton."
+>
+
 
 <style>
 
@@ -54,7 +76,9 @@ a{
 }
 
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header{
     background:#050706;
@@ -66,9 +90,11 @@ header{
     width:min(1200px, calc(100% - 40px));
     min-height:92px;
     margin:auto;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
     gap:30px;
 }
 
@@ -84,21 +110,14 @@ header{
     gap:20px;
 }
 
-.back-link{
-    color:white;
-    font-weight:800;
-}
-
+.back-link,
 .service-link{
     color:white;
     font-weight:800;
 }
 
+.back-link:hover,
 .service-link:hover{
-    color:var(--green);
-}
-
-.back-link:hover{
     color:var(--green);
 }
 
@@ -115,26 +134,61 @@ header{
     font-weight:900;
 }
 
+.header-button:hover{
+    background:var(--green-light);
+}
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
-    background:#080a09;
-    color:white;
     padding:70px 0;
+
+    background:
+        radial-gradient(
+            circle at 82% 10%,
+            rgba(32,214,66,.13),
+            transparent 30%
+        ),
+        #f4f5f4;
+
+    color:#111712;
 }
 
 .hero-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:60px;
+    gap:48px;
     align-items:center;
 }
 
 .hero-image{
-    border-radius:12px;
+    position:relative;
+    border-radius:13px;
     overflow:hidden;
-    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+    box-shadow:
+        0 20px 46px rgba(17,35,20,.15);
+}
+
+.hero-image::after{
+    content:"";
+
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+
+    height:6px;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            var(--green) 0 18px,
+            #111612 18px 29px
+        );
 }
 
 .hero-image img{
@@ -144,56 +198,232 @@ header{
 }
 
 .eyebrow{
-    color:var(--green);
+    color:var(--green-dark);
+
     font-size:13px;
     font-weight:900;
+
     text-transform:uppercase;
     letter-spacing:2px;
 }
 
 .hero h1{
+    color:#0b100c;
+
     font-size:52px;
     line-height:1.05;
+
     margin:10px 0 18px;
+
+    letter-spacing:-1px;
 }
 
 .hero p{
-    color:#d5d8d5;
+    color:#4f5b51;
+
     font-size:18px;
+
     margin-bottom:25px;
 }
 
 .hero-features{
     display:grid;
-    gap:11px;
+    gap:10px;
 }
 
 .feature{
     display:flex;
     gap:10px;
     align-items:center;
+
+    background:#fff;
+
+    border:1px solid #dbe3dc;
+    border-radius:7px;
+
+    padding:9px 12px;
+
+    box-shadow:
+        0 6px 16px rgba(18,32,20,.05);
+
     font-weight:700;
 }
 
 .check{
     width:25px;
     height:25px;
+
     border-radius:50%;
+
     background:var(--green);
     color:#061007;
+
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
+
     font-weight:1000;
+
     flex-shrink:0;
 }
 
 
-/* INTRO */
+/* =========================
+   PRICING PANEL
+========================= */
+
+.pricing-panel{
+    margin-top:28px;
+
+    background:#111511;
+
+    border:1px solid #293029;
+    border-left:6px solid var(--green);
+
+    border-radius:8px;
+
+    padding:20px;
+
+    box-shadow:
+        0 14px 32px rgba(0,0,0,.15);
+}
+
+.pricing-panel h3{
+    color:var(--green);
+
+    font-size:18px;
+
+    margin-bottom:12px;
+}
+
+.pricing-row{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+
+    padding:9px 0;
+
+    border-bottom:1px solid #303630;
+
+    color:white;
+
+    font-weight:800;
+}
+
+.pricing-row:last-of-type{
+    border-bottom:none;
+}
+
+.pricing-row strong{
+    color:var(--green);
+    font-size:24px;
+}
+
+.pricing-included{
+    margin-top:12px;
+
+    color:white;
+
+    font-size:14px;
+    font-weight:900;
+
+    line-height:1.45;
+}
+
+.pricing-extra{
+    margin-top:8px;
+    padding-top:8px;
+
+    border-top:1px solid #2a332c;
+
+    color:#f0f4f0;
+
+    font-size:12px;
+    font-weight:800;
+}
+
+.pricing-free{
+    color:var(--green);
+}
+
+.pricing-fee{
+    color:#fff;
+}
+
+
+/* =========================
+   QUICK PRICING FACTS
+========================= */
+
+.pricing-facts{
+    background:#fff;
+
+    border-top:1px solid #dce4dc;
+    border-bottom:1px solid #dce4dc;
+}
+
+.pricing-facts-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+}
+
+.pricing-fact{
+    padding:20px 13px;
+
+    text-align:center;
+
+    border-right:1px solid #e0e6e0;
+}
+
+.pricing-fact:last-child{
+    border-right:0;
+}
+
+.pricing-fact span{
+    display:block;
+
+    color:#677069;
+
+    font-size:10px;
+    font-weight:900;
+
+    text-transform:uppercase;
+    letter-spacing:.55px;
+}
+
+.pricing-fact strong{
+    display:block;
+
+    margin-top:5px;
+
+    color:#111712;
+
+    font-size:17px;
+    font-weight:1000;
+}
+
+.pricing-fact:nth-child(5) strong{
+    color:var(--green-dark);
+}
+
+
+/* =========================
+   ABOUT / GREAT FOR
+========================= */
 
 .intro{
-    background:white;
     padding:65px 0;
+
+    background:
+        linear-gradient(
+            rgba(247,250,247,.96),
+            rgba(247,250,247,.96)
+        ),
+        repeating-linear-gradient(
+            135deg,
+            transparent 0 22px,
+            rgba(32,214,66,.05) 22px 24px
+        );
 }
 
 .intro-grid{
@@ -205,6 +435,7 @@ header{
 .intro h2{
     font-size:35px;
     line-height:1.1;
+
     margin-bottom:15px;
 }
 
@@ -214,9 +445,16 @@ header{
 
 .good-for{
     background:#eff9f0;
+
     border-left:5px solid var(--green);
+    border-top:5px solid var(--green);
+
     padding:28px;
+
     border-radius:6px;
+
+    box-shadow:
+        0 12px 26px rgba(18,32,20,.08);
 }
 
 .good-for h3{
@@ -232,98 +470,87 @@ header{
 }
 
 
-/* PRICING */
-
-.pricing-panel{
-    margin-top:28px;
-    background:#111511;
-    border:1px solid #293029;
-    border-left:5px solid var(--green);
-    border-radius:8px;
-    padding:20px;
-}
-
-.pricing-panel h3{
-    color:white;
-    font-size:18px;
-    margin-bottom:12px;
-}
-
-.pricing-row{
-    display:flex;
-    justify-content:space-between;
-    gap:15px;
-    padding:9px 0;
-    border-bottom:1px solid #303630;
-    color:#e8ece8;
-    font-weight:800;
-}
-
-.pricing-row:last-of-type{
-    border-bottom:none;
-}
-
-.pricing-row strong{
-    color:var(--green);
-    font-size:20px;
-}
-
-.pricing-included{
-    margin-top:12px;
-    color:white;
-    font-size:14px;
-    font-weight:900;
-}
-
-.booking-summary{
-    background:#eff9f0;
-    border:1px solid #cfe7d2;
-    border-left:5px solid var(--green);
-    border-radius:7px;
-    padding:18px;
-    margin-bottom:24px;
-}
-
-.booking-summary strong{
-    color:#0a8f25;
-}
-
-
-/* FORM SECTION */
+/* =========================
+   FORM SECTION
+========================= */
 
 .quote{
+    position:relative;
+
     padding:80px 0;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(32,214,66,.10),
+            transparent 28%
+        ),
+        #fff;
 }
 
 .section-heading{
     text-align:center;
-    max-width:750px;
-    margin:0 auto 40px;
-}
 
-.section-heading .eyebrow{
-    color:var(--green-dark);
+    max-width:750px;
+
+    margin:0 auto 40px;
 }
 
 .section-heading h2{
     font-size:42px;
     line-height:1.1;
+
     margin:8px 0 13px;
 }
 
 .section-heading p{
     color:#606560;
+
     font-size:17px;
 }
 
 .form-card{
     max-width:900px;
+
     margin:auto;
+
     background:white;
+
     border-radius:12px;
+
     padding:38px;
-    box-shadow:0 15px 45px rgba(0,0,0,.12);
+
     border:1px solid #e1e4e1;
+    border-top:6px solid var(--green);
+
+    box-shadow:
+        0 18px 42px rgba(18,32,20,.12);
+}
+
+.booking-summary{
+    background:
+        linear-gradient(
+            135deg,
+            #e9f8eb,
+            #fafffa
+        );
+
+    border:1px solid #cce3cf;
+    border-left:5px solid var(--green);
+
+    border-radius:8px;
+
+    padding:18px;
+
+    margin-bottom:24px;
+
+    color:#223027;
+
+    line-height:1.6;
+}
+
+.booking-summary strong{
+    color:#101711;
 }
 
 .form-grid{
@@ -338,8 +565,10 @@ header{
 
 .field label{
     display:block;
+
     font-size:13px;
     font-weight:900;
+
     margin-bottom:6px;
 }
 
@@ -347,10 +576,14 @@ header{
 .field select,
 .field textarea{
     width:100%;
+
     padding:14px;
+
     border:1px solid #cbd0cb;
     border-radius:5px;
+
     background:white;
+
     font-family:inherit;
     font-size:14px;
 }
@@ -369,35 +602,96 @@ header{
 
 .submit-button{
     width:100%;
+
     border:0;
+
     background:var(--green);
     color:#061007;
+
     padding:17px;
+
     font-size:17px;
     font-weight:1000;
+
     border-radius:6px;
+
     cursor:pointer;
+
     margin-top:22px;
+
+    box-shadow:
+        0 9px 22px rgba(32,214,66,.20);
 }
 
 .submit-button:hover{
     background:var(--green-light);
 }
 
+.submit-button:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+}
+
+
+/* FORM STATUS */
+
+.form-status{
+    display:none;
+
+    margin-top:18px;
+
+    padding:16px;
+
+    border-radius:7px;
+
+    text-align:center;
+
+    font-size:14px;
+    font-weight:700;
+}
+
+.form-status.sending{
+    display:block;
+
+    background:#eff9f0;
+
+    border:1px solid #b9dfbf;
+
+    color:#176526;
+}
+
+.form-status.error{
+    display:block;
+
+    background:#fff0ee;
+
+    border:1px solid #efc2bd;
+
+    color:#8c1c13;
+}
+
 .form-note{
     text-align:center;
+
     color:#6b706b;
+
     font-size:12px;
+
     margin-top:14px;
 }
 
 
-/* CALL SECTION */
+/* =========================
+   CALL SECTION
+========================= */
 
 .call-section{
     background:var(--green);
+
     padding:45px 20px;
+
     text-align:center;
+
     color:#061007;
 }
 
@@ -407,21 +701,27 @@ header{
 
 .call-section p{
     margin:5px 0 15px;
+
     font-weight:700;
 }
 
 .call-section a{
     color:#061007;
+
     font-size:30px;
     font-weight:1000;
 }
 
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     background:#050706;
+
     color:#aaa;
+
     padding:40px 0;
 }
 
@@ -429,12 +729,14 @@ footer{
     display:flex;
     justify-content:space-between;
     align-items:center;
+
     gap:30px;
 }
 
 .footer-brand{
     display:flex;
     align-items:center;
+
     gap:20px;
 }
 
@@ -444,12 +746,14 @@ footer{
 
 .footer-name{
     color:white;
+
     font-weight:900;
     font-size:20px;
 }
 
 .footer-links{
     display:flex;
+
     gap:20px;
 }
 
@@ -462,7 +766,34 @@ footer{
 }
 
 
-/* MOBILE */
+/* =========================
+   MOBILE STICKY BAR
+========================= */
+
+.dumpster-mobile-bar{
+    display:none;
+}
+
+
+/* =========================
+   TABLET / MOBILE
+========================= */
+
+@media(max-width:980px){
+
+    .pricing-facts-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .pricing-fact:nth-child(3){
+        border-right:0;
+    }
+
+    .pricing-fact:nth-child(-n+3){
+        border-bottom:1px solid #e0e6e0;
+    }
+}
+
 
 @media(max-width:800px){
 
@@ -497,6 +828,78 @@ footer{
     }
 }
 
+
+@media(max-width:700px){
+
+    body{
+        padding-bottom:64px;
+    }
+
+    .pricing-facts-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .pricing-fact{
+        border-right:1px solid #e0e6e0 !important;
+        border-bottom:1px solid #e0e6e0 !important;
+    }
+
+    .pricing-fact:nth-child(even){
+        border-right:0 !important;
+    }
+
+    .pricing-fact:nth-last-child(-n+2){
+        border-bottom:0 !important;
+    }
+
+    .dumpster-mobile-bar{
+        position:fixed;
+
+        left:0;
+        right:0;
+        bottom:0;
+
+        z-index:2000;
+
+        display:grid;
+
+        grid-template-columns:1fr 1fr;
+
+        gap:1px;
+
+        padding:8px;
+
+        background:#071009;
+
+        box-shadow:
+            0 -5px 20px rgba(0,0,0,.22);
+    }
+
+    .dumpster-mobile-bar a{
+        min-height:47px;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        border-radius:5px;
+
+        font-size:12px;
+        font-weight:1000;
+    }
+
+    .mobile-call{
+        background:#fff;
+        color:#071009;
+    }
+
+    .mobile-book{
+        background:var(--green);
+        color:#061007;
+    }
+}
+
+
 @media(max-width:550px){
 
     .nav-wrap{
@@ -509,6 +912,11 @@ footer{
 
     .back-link{
         display:none;
+    }
+
+    .service-link{
+        font-size:12px;
+        white-space:nowrap;
     }
 
     .header-button{
@@ -539,263 +947,6 @@ footer{
 }
 
 
-/* ==========================================================
-   CUSTOMER-FOCUSED DUMPSTER PAGE UPDATES
-========================================================== */
-
-.hero{
-    background:
-        radial-gradient(circle at 82% 10%,rgba(32,214,66,.13),transparent 30%),
-        #f4f5f4;
-}
-
-.hero-grid{
-    gap:48px;
-}
-
-.hero-image{
-    position:relative;
-    border-radius:13px;
-    overflow:hidden;
-    box-shadow:0 20px 46px rgba(17,35,20,.15);
-}
-
-.hero-image::after{
-    content:"";
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    height:6px;
-    background:
-        repeating-linear-gradient(
-            135deg,
-            var(--green) 0 18px,
-            #111612 18px 29px
-        );
-}
-
-.hero h1{
-    letter-spacing:-1px;
-}
-
-.hero-features{
-    gap:10px;
-}
-
-.feature{
-    background:#fff;
-    border:1px solid #dbe3dc;
-    border-radius:7px;
-    box-shadow:0 6px 16px rgba(18,32,20,.05);
-}
-
-.pricing-panel{
-    border-left:6px solid var(--green);
-    box-shadow:0 14px 32px rgba(0,0,0,.15);
-}
-
-.pricing-row strong{
-    font-size:24px;
-}
-
-.pricing-included{
-    line-height:1.45;
-}
-
-.pricing-extra{
-    margin-top:8px;
-    padding-top:8px;
-    border-top:1px solid #2a332c;
-    color:#f0f4f0;
-    font-size:12px;
-    font-weight:800;
-}
-
-.pricing-free{
-    color:var(--green);
-}
-
-.pricing-fee{
-    color:#fff;
-}
-
-
-/* QUICK PRICING FACTS */
-
-.pricing-facts{
-    background:#fff;
-    border-top:1px solid #dce4dc;
-    border-bottom:1px solid #dce4dc;
-}
-
-.pricing-facts-grid{
-    display:grid;
-    grid-template-columns:repeat(6,1fr);
-}
-
-.pricing-fact{
-    padding:20px 13px;
-    text-align:center;
-    border-right:1px solid #e0e6e0;
-}
-
-.pricing-fact:last-child{
-    border-right:0;
-}
-
-.pricing-fact span{
-    display:block;
-    color:#677069;
-    font-size:10px;
-    font-weight:900;
-    text-transform:uppercase;
-    letter-spacing:.55px;
-}
-
-.pricing-fact strong{
-    display:block;
-    margin-top:5px;
-    color:#111712;
-    font-size:17px;
-    font-weight:1000;
-}
-
-.pricing-fact:nth-child(5) strong{
-    color:var(--green-dark);
-}
-
-
-/* INTRO CARDS */
-
-.intro{
-    background:
-        linear-gradient(rgba(247,250,247,.96),rgba(247,250,247,.96)),
-        repeating-linear-gradient(
-            135deg,
-            transparent 0 22px,
-            rgba(32,214,66,.05) 22px 24px
-        );
-}
-
-.good-for{
-    border-top:5px solid var(--green);
-    box-shadow:0 12px 26px rgba(18,32,20,.08);
-}
-
-
-/* BOOKING FORM */
-
-.quote{
-    position:relative;
-    background:
-        radial-gradient(circle at 10% 10%,rgba(32,214,66,.10),transparent 28%),
-        #fff;
-}
-
-.form-card{
-    border-top:6px solid var(--green);
-    box-shadow:0 18px 42px rgba(18,32,20,.12);
-}
-
-.booking-summary{
-    background:
-        linear-gradient(135deg,#e9f8eb,#fafffa);
-    border:1px solid #cce3cf;
-    border-left:5px solid var(--green);
-    border-radius:8px;
-    color:#223027;
-    line-height:1.6;
-}
-
-.booking-summary strong{
-    color:#101711;
-}
-
-.submit-button{
-    box-shadow:0 9px 22px rgba(32,214,66,.20);
-}
-
-
-/* MOBILE STICKY ACTIONS */
-
-.dumpster-mobile-bar{
-    display:none;
-}
-
-@media(max-width:980px){
-
-    .pricing-facts-grid{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-    .pricing-fact:nth-child(3){
-        border-right:0;
-    }
-
-    .pricing-fact:nth-child(-n+3){
-        border-bottom:1px solid #e0e6e0;
-    }
-}
-
-@media(max-width:700px){
-
-    body{
-        padding-bottom:64px;
-    }
-
-    .pricing-facts-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .pricing-fact{
-        border-right:1px solid #e0e6e0 !important;
-        border-bottom:1px solid #e0e6e0 !important;
-    }
-
-    .pricing-fact:nth-child(even){
-        border-right:0 !important;
-    }
-
-    .pricing-fact:nth-last-child(-n+2){
-        border-bottom:0 !important;
-    }
-
-    .dumpster-mobile-bar{
-        position:fixed;
-        left:0;
-        right:0;
-        bottom:0;
-        z-index:2000;
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:1px;
-        padding:8px;
-        background:#071009;
-        box-shadow:0 -5px 20px rgba(0,0,0,.22);
-    }
-
-    .dumpster-mobile-bar a{
-        min-height:47px;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        border-radius:5px;
-        font-size:12px;
-        font-weight:1000;
-    }
-
-    .mobile-call{
-        background:#fff;
-        color:#071009;
-    }
-
-    .mobile-book{
-        background:var(--green);
-        color:#061007;
-    }
-}
-
 @media(max-width:480px){
 
     .pricing-fact{
@@ -807,26 +958,18 @@ footer{
     }
 }
 
-@media(max-width:550px){
-
-    .service-link{
-        font-size:12px;
-        white-space:nowrap;
-    }
-}
-
 </style>
 
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "BAIL OUT Roll-Off Dumpster & Trailer Rentals",
-  "url": "https://bailoutrentals.com/",
-  "telephone": "+1-641-691-8799",
-  "description": "Request a 15-yard roll-off dumpster from BAIL OUT. $375 for 7 days or $475 for 14 days, 2 tons included, no separate dumpster delivery charge, and additional weight at $100 per ton.",
-  "image": "https://bailoutrentals.com/15yard.png"
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"BAIL OUT Roll-Off Dumpster & Trailer Rentals",
+    "url":"https://bailoutrentals.com/",
+    "telephone":"+1-641-691-8799",
+    "description":"Request a 15-yard roll-off dumpster from BAIL OUT. $375 for 7 days or $475 for 14 days, 2 tons included, no separate dumpster delivery charge, and additional weight at $100 per ton.",
+    "image":"https://bailoutrentals.com/15yard.png"
 }
 </script>
 
@@ -836,35 +979,55 @@ footer{
 <body>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
 <div class="nav-wrap">
 
     <a href="index.html">
+
         <img
             src="logo.png"
             alt="BAIL OUT Roll-Off Dumpster and Trailer Rentals"
             class="logo"
         >
+
     </a>
+
 
     <div class="header-actions">
 
-        <a href="index.html" class="back-link">
+        <a
+            href="index.html"
+            class="back-link"
+        >
             ← Back to Home
         </a>
 
-        <a href="service-area.html" class="service-link">
+
+        <a
+            href="service-area.html"
+            class="service-link"
+        >
             Service Area
         </a>
 
-        <a href="tel:6416918799" class="header-phone">
+
+        <a
+            href="tel:6416918799"
+            class="header-phone"
+        >
             641-691-8799
         </a>
 
-        <a href="#request" class="header-button">
+
+        <a
+            href="#request"
+            class="header-button"
+        >
             Request Booking
         </a>
 
@@ -875,7 +1038,10 @@ footer{
 </header>
 
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
@@ -900,9 +1066,11 @@ footer{
             BAIL OUT Dumpster Rentals
         </div>
 
+
         <h1>
             15-Yard Roll-Off Dumpster
         </h1>
+
 
         <p>
             A versatile dumpster rental option for cleanouts,
@@ -915,23 +1083,46 @@ footer{
         <div class="hero-features">
 
             <div class="feature">
-                <span class="check">✓</span>
+
+                <span class="check">
+                    ✓
+                </span>
+
                 Residential & Commercial Projects
+
             </div>
 
+
             <div class="feature">
-                <span class="check">✓</span>
+
+                <span class="check">
+                    ✓
+                </span>
+
                 Convenient Roll-Off Design
+
             </div>
 
+
             <div class="feature">
-                <span class="check">✓</span>
+
+                <span class="check">
+                    ✓
+                </span>
+
                 No Dumpster Delivery Charge
+
             </div>
 
+
             <div class="feature">
-                <span class="check">✓</span>
+
+                <span class="check">
+                    ✓
+                </span>
+
                 7 & 14 Day Rental Options
+
             </div>
 
         </div>
@@ -943,15 +1134,32 @@ footer{
                 15-Yard Dumpster Pricing
             </h3>
 
-            <div class="pricing-row">
-                <span>7 Days</span>
-                <strong>$375</strong>
-            </div>
 
             <div class="pricing-row">
-                <span>14 Days</span>
-                <strong>$475</strong>
+
+                <span>
+                    7 Days
+                </span>
+
+                <strong>
+                    $375
+                </strong>
+
             </div>
+
+
+            <div class="pricing-row">
+
+                <span>
+                    14 Days
+                </span>
+
+                <strong>
+                    $475
+                </strong>
+
+            </div>
+
 
             <div class="pricing-included">
 
@@ -985,51 +1193,106 @@ footer{
 </section>
 
 
-<!-- PRICING FACTS -->
+
+<!-- =========================
+     QUICK PRICING
+========================= -->
 
 <section
     class="pricing-facts"
     aria-label="15-yard dumpster rental pricing details"
 >
 
-    <div class="container pricing-facts-grid">
+<div class="container pricing-facts-grid">
 
-        <div class="pricing-fact">
-            <span>7 Days</span>
-            <strong>$375</strong>
-        </div>
 
-        <div class="pricing-fact">
-            <span>14 Days</span>
-            <strong>$475</strong>
-        </div>
+    <div class="pricing-fact">
 
-        <div class="pricing-fact">
-            <span>Disposal Included</span>
-            <strong>2 Tons</strong>
-        </div>
+        <span>
+            7 Days
+        </span>
 
-        <div class="pricing-fact">
-            <span>Additional Weight</span>
-            <strong>$100/Ton</strong>
-        </div>
-
-        <div class="pricing-fact">
-            <span>Dumpster Delivery</span>
-            <strong>No Charge</strong>
-        </div>
-
-        <div class="pricing-fact">
-            <span>Failed Delivery</span>
-            <strong>$100</strong>
-        </div>
+        <strong>
+            $375
+        </strong>
 
     </div>
+
+
+    <div class="pricing-fact">
+
+        <span>
+            14 Days
+        </span>
+
+        <strong>
+            $475
+        </strong>
+
+    </div>
+
+
+    <div class="pricing-fact">
+
+        <span>
+            Disposal Included
+        </span>
+
+        <strong>
+            2 Tons
+        </strong>
+
+    </div>
+
+
+    <div class="pricing-fact">
+
+        <span>
+            Additional Weight
+        </span>
+
+        <strong>
+            $100/Ton
+        </strong>
+
+    </div>
+
+
+    <div class="pricing-fact">
+
+        <span>
+            Dumpster Delivery
+        </span>
+
+        <strong>
+            No Charge
+        </strong>
+
+    </div>
+
+
+    <div class="pricing-fact">
+
+        <span>
+            Failed Delivery
+        </span>
+
+        <strong>
+            $100
+        </strong>
+
+    </div>
+
+
+</div>
 
 </section>
 
 
-<!-- ABOUT -->
+
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section class="intro">
 
@@ -1046,10 +1309,11 @@ footer{
 
         <p>
             The 15-yard roll-off dumpster provides useful capacity
-            without requiring the space of a larger container. It can
-            be a practical option for home improvement projects,
-            property cleanups, remodeling work and other jobs that
-            produce more debris than standard trash service can handle.
+            without requiring the space of a larger container.
+            It can be a practical option for home improvement
+            projects, property cleanups, remodeling work and
+            other jobs that produce more debris than standard
+            trash service can handle.
         </p>
 
     </div>
@@ -1062,13 +1326,35 @@ footer{
         </h3>
 
         <ul>
-            <li>Home cleanouts</li>
-            <li>Garage and basement cleanup</li>
-            <li>Remodeling projects</li>
-            <li>Property cleanup</li>
-            <li>Construction projects</li>
-            <li>Moving and downsizing</li>
-            <li>General debris removal</li>
+
+            <li>
+                Home cleanouts
+            </li>
+
+            <li>
+                Garage and basement cleanup
+            </li>
+
+            <li>
+                Remodeling projects
+            </li>
+
+            <li>
+                Property cleanup
+            </li>
+
+            <li>
+                Construction projects
+            </li>
+
+            <li>
+                Moving and downsizing
+            </li>
+
+            <li>
+                General debris removal
+            </li>
+
         </ul>
 
     </div>
@@ -1081,9 +1367,15 @@ footer{
 </section>
 
 
-<!-- REQUEST FORM -->
 
-<section class="quote" id="request">
+<!-- =========================
+     REQUEST FORM
+========================= -->
+
+<section
+    class="quote"
+    id="request"
+>
 
 <div class="container">
 
@@ -1094,19 +1386,24 @@ footer{
             Request Booking
         </div>
 
+
         <h2>
             Request Your 15-Yard Dumpster
         </h2>
 
+
         <p>
-            Choose your rental period and requested delivery date below.
-            BAIL OUT will confirm availability and your rental details.
+            Choose your rental period and requested delivery
+            date below. BAIL OUT will confirm availability
+            and your rental details.
         </p>
 
     </div>
 
 
+
     <div class="form-card">
+
 
         <div class="booking-summary">
 
@@ -1117,27 +1414,41 @@ footer{
             <br>
 
             $375 for 7 days
+
             &nbsp; | &nbsp;
+
             $475 for 14 days
 
             <br>
 
             2 tons included
+
             &nbsp; • &nbsp;
+
             Additional weight $100/ton
 
             <br>
 
             No dumpster delivery charge
+
             &nbsp; • &nbsp;
+
             Failed delivery fee $100
 
         </div>
 
 
+
+        <!--
+        IMPORTANT:
+        JavaScript submits this form to Formspree.
+        After Formspree confirms success, the customer
+        is redirected to thank-you-15yard.html
+        -->
+
         <form
-            action="https://formspree.io/f/mzezbzyq"
-            method="POST"
+            id="booking-form"
+            onsubmit="handleDumpsterSubmit(event); return false;"
         >
 
 
@@ -1155,6 +1466,7 @@ footer{
             >
 
 
+
             <div class="form-grid">
 
 
@@ -1169,10 +1481,12 @@ footer{
                         type="text"
                         name="customer_name"
                         placeholder="Your name"
+                        autocomplete="name"
                         required
                     >
 
                 </div>
+
 
 
                 <div class="field">
@@ -1186,10 +1500,12 @@ footer{
                         type="tel"
                         name="phone"
                         placeholder="(555) 555-5555"
+                        autocomplete="tel"
                         required
                     >
 
                 </div>
+
 
 
                 <div class="field">
@@ -1203,10 +1519,12 @@ footer{
                         type="email"
                         name="email"
                         placeholder="you@example.com"
+                        autocomplete="email"
                         required
                     >
 
                 </div>
+
 
 
                 <div class="field">
@@ -1220,10 +1538,12 @@ footer{
                         type="text"
                         name="delivery_address"
                         placeholder="Street, City, State, ZIP"
+                        autocomplete="street-address"
                         required
                     >
 
                 </div>
+
 
 
                 <div class="field">
@@ -1240,6 +1560,7 @@ footer{
                     >
 
                 </div>
+
 
 
                 <div class="field">
@@ -1269,6 +1590,7 @@ footer{
                     </select>
 
                 </div>
+
 
 
                 <div class="field full">
@@ -1316,6 +1638,7 @@ footer{
                 </div>
 
 
+
                 <div class="field full">
 
                     <label for="materials">
@@ -1330,6 +1653,7 @@ footer{
                     ></textarea>
 
                 </div>
+
 
 
                 <div class="field full">
@@ -1350,7 +1674,9 @@ footer{
             </div>
 
 
+
             <button
+                id="submit-button"
                 type="submit"
                 class="submit-button"
             >
@@ -1358,12 +1684,27 @@ footer{
             </button>
 
 
+
+            <div
+                id="form-status"
+                class="form-status"
+                role="status"
+                aria-live="polite"
+            ></div>
+
+
+
             <p class="form-note">
+
                 Submitting this form sends a booking request.
+
                 Your requested dates are not reserved until
                 availability is confirmed by BAIL OUT.
+
                 Additional weight is $100 per ton.
+
                 A failed delivery fee of $100 applies when applicable.
+
             </p>
 
 
@@ -1378,7 +1719,10 @@ footer{
 </section>
 
 
-<!-- CALL -->
+
+<!-- =========================
+     CALL SECTION
+========================= -->
 
 <section class="call-section">
 
@@ -1387,7 +1731,8 @@ footer{
     </h2>
 
     <p>
-        Call BAIL OUT with booking questions or to check availability.
+        Call BAIL OUT with booking questions
+        or to check availability.
     </p>
 
     <a href="tel:6416918799">
@@ -1397,7 +1742,10 @@ footer{
 </section>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1411,6 +1759,7 @@ footer{
             alt="BAIL OUT"
             class="footer-logo"
         >
+
 
         <div>
 
@@ -1429,6 +1778,7 @@ footer{
         </div>
 
     </div>
+
 
 
     <div class="footer-links">
@@ -1461,6 +1811,9 @@ footer{
 </footer>
 
 
+
+<!-- MOBILE ACTION BAR -->
+
 <div
     class="dumpster-mobile-bar"
     aria-label="15-yard dumpster quick actions"
@@ -1483,5 +1836,220 @@ footer{
 </div>
 
 
+
+<!-- =========================
+     FORM SUBMISSION
+========================= -->
+
+<script>
+
+async function handleDumpsterSubmit(event){
+
+    event.preventDefault();
+
+
+    const bookingForm =
+        document.getElementById('booking-form');
+
+
+    const submitButton =
+        document.getElementById('submit-button');
+
+
+    const formStatus =
+        document.getElementById('form-status');
+
+
+    /*
+    Prevent multiple submissions while the
+    first request is being processed.
+    */
+
+    submitButton.disabled = true;
+
+    submitButton.textContent =
+        'Sending Request...';
+
+
+    formStatus.className =
+        'form-status sending';
+
+    formStatus.textContent =
+        'Sending your rental request...';
+
+
+
+    /*
+    Collect all customer form fields.
+    */
+
+    const formData =
+        new FormData(bookingForm);
+
+
+
+    try{
+
+
+        /*
+        Submit the rental request to the
+        working Formspree endpoint.
+        */
+
+        const response =
+            await fetch(
+
+                'https://formspree.io/f/mzezbzyq',
+
+                {
+                    method:'POST',
+
+                    body:formData,
+
+                    headers:{
+                        'Accept':'application/json'
+                    }
+                }
+
+            );
+
+
+
+        /*
+        Only show the thank-you page if
+        Formspree confirms the submission
+        was successful.
+        */
+
+        if(response.ok){
+
+
+            /*
+            Record the lead in Google Analytics
+            if Google Analytics is available.
+            */
+
+            if(typeof gtag === 'function'){
+
+                gtag(
+                    'event',
+                    'generate_lead',
+                    {
+                        lead_source:
+                            '15_yard_dumpster',
+
+                        rental_type:
+                            '15_yard'
+                    }
+                );
+
+            }
+
+
+
+            /*
+            Redirect customer to the custom
+            BAIL OUT thank-you page.
+            */
+
+            window.location.href =
+                'thank-you-15yard.html';
+
+
+            return;
+
+        }
+
+
+
+        /*
+        If Formspree returns an error,
+        attempt to display its message.
+        */
+
+        let errorMessage =
+
+            'We could not send your request. Please try again or call BAIL OUT at 641-691-8799.';
+
+
+
+        try{
+
+
+            const data =
+                await response.json();
+
+
+            if(
+                data.errors &&
+                data.errors.length
+            ){
+
+                errorMessage =
+
+                    data.errors
+
+                    .map(
+                        error =>
+                            error.message
+                    )
+
+                    .join(', ');
+
+            }
+
+
+        }
+        catch(error){
+
+            /*
+            Keep the default error message.
+            */
+
+        }
+
+
+
+        throw new Error(
+            errorMessage
+        );
+
+
+    }
+    catch(error){
+
+
+        /*
+        Display the error and allow the
+        customer to try again.
+        */
+
+        formStatus.className =
+            'form-status error';
+
+
+        formStatus.textContent =
+
+            error.message ||
+
+            'We could not send your request. Please try again or call BAIL OUT at 641-691-8799.';
+
+
+
+        submitButton.disabled =
+            false;
+
+
+        submitButton.textContent =
+            'Submit 15-Yard Booking Request';
+
+    }
+
+}
+
+</script>
+
+
 </body>
+
 </html>
