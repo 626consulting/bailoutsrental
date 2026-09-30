@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -14,18 +13,12 @@
 >
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S81QYFRSXC"></script>
-
 <script>
 window.dataLayer = window.dataLayer || [];
-
-function gtag(){
-    dataLayer.push(arguments);
-}
-
+function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-S81QYFRSXC');
 </script>
-
 
 <style>
 
@@ -73,9 +66,6 @@ img{
     margin:auto;
 }
 
-
-/* HEADER */
-
 header{
     background:var(--black);
     border-bottom:3px solid var(--green);
@@ -104,7 +94,7 @@ header{
 }
 
 .back-link{
-    color:#ffffff;
+    color:#fff;
 }
 
 .back-link:hover{
@@ -126,13 +116,10 @@ header{
     background:var(--green-light);
 }
 
-
-/* HERO */
-
 .hero{
     padding:65px 0;
     background:#080a09;
-    color:#ffffff;
+    color:#fff;
 }
 
 .hero-grid{
@@ -231,12 +218,9 @@ header{
     font-weight:900;
 }
 
-
-/* INTRO */
-
 .intro{
     padding:60px 0;
-    background:#ffffff;
+    background:#fff;
 }
 
 .intro-grid{
@@ -266,9 +250,6 @@ header{
     padding-left:20px;
 }
 
-
-/* FORM */
-
 .quote{
     scroll-margin-top:20px;
     padding:70px 0;
@@ -294,7 +275,7 @@ header{
     max-width:900px;
     margin:auto;
     padding:35px;
-    background:#ffffff;
+    background:#fff;
     border:1px solid var(--line);
     border-radius:12px;
     box-shadow:0 15px 40px rgba(0,0,0,.10);
@@ -336,7 +317,7 @@ header{
     padding:13px;
     border:1px solid #c8d0c9;
     border-radius:5px;
-    background:#ffffff;
+    background:#fff;
     font:inherit;
 }
 
@@ -377,8 +358,26 @@ header{
     text-align:center;
 }
 
+.backup-contact{
+    margin-top:18px;
+    padding:16px;
+    background:#fff8df;
+    border:1px solid #eadb9e;
+    border-left:5px solid #d6aa00;
+    border-radius:6px;
+    text-align:center;
+    font-size:14px;
+}
 
-/* CALL */
+.backup-contact strong{
+    display:block;
+    margin-bottom:4px;
+}
+
+.backup-contact a{
+    color:#0b6f22;
+    font-weight:900;
+}
 
 .call-section{
     padding:40px 20px;
@@ -399,13 +398,10 @@ header{
     font-weight:1000;
 }
 
-
-/* FOOTER */
-
 footer{
     padding:35px 0;
     background:var(--black);
-    color:#aaaaaa;
+    color:#aaa;
 }
 
 .footer-wrap{
@@ -426,7 +422,7 @@ footer{
 }
 
 .footer-name{
-    color:#ffffff;
+    color:#fff;
     font-weight:1000;
 }
 
@@ -436,15 +432,12 @@ footer{
 }
 
 .footer-links a{
-    color:#dddddd;
+    color:#ddd;
 }
 
 .footer-links a:hover{
     color:var(--green);
 }
-
-
-/* MOBILE */
 
 @media(max-width:800px){
 
@@ -499,7 +492,6 @@ footer{
 
 </head>
 
-
 <body>
 
 
@@ -508,15 +500,8 @@ footer{
 <div class="container nav-wrap">
 
     <a href="/index.html">
-
-        <img
-            src="/logo.png"
-            alt="BAIL OUT"
-            class="logo"
-        >
-
+        <img src="/logo.png" alt="BAIL OUT" class="logo">
     </a>
-
 
     <div class="header-actions">
 
@@ -567,7 +552,6 @@ footer{
             A practical option for home cleanouts, remodeling,
             property cleanup, construction debris and similar projects.
         </p>
-
 
         <div class="features">
 
@@ -642,12 +626,9 @@ footer{
 
     </div>
 
-
     <div class="good-for">
 
-        <h3>
-            Great For:
-        </h3>
+        <h3>Great For:</h3>
 
         <ul>
             <li>Home cleanouts</li>
@@ -692,9 +673,7 @@ footer{
 
         <div class="booking-summary">
 
-            <strong>
-                15-Yard Roll-Off Dumpster
-            </strong>
+            <strong>15-Yard Roll-Off Dumpster</strong>
 
             <br>
 
@@ -734,6 +713,12 @@ footer{
 
             <input
                 type="hidden"
+                name="_url"
+                value="https://bailoutrentals.com/15yard.html"
+            >
+
+            <input
+                type="hidden"
                 name="rental_type"
                 value="15-Yard Roll-Off Dumpster"
             >
@@ -749,64 +734,41 @@ footer{
 
             <div class="form-grid">
 
-
                 <div class="field">
-
-                    <label for="name">
-                        Full Name *
-                    </label>
-
+                    <label for="name">Full Name *</label>
                     <input
                         id="name"
                         name="customer_name"
                         type="text"
-                        autocomplete="name"
                         required
                     >
-
                 </div>
 
 
                 <div class="field">
-
-                    <label for="phone">
-                        Phone Number *
-                    </label>
-
+                    <label for="phone">Phone Number *</label>
                     <input
                         id="phone"
                         name="phone"
                         type="tel"
-                        autocomplete="tel"
                         required
                     >
-
                 </div>
 
 
                 <div class="field">
-
-                    <label for="email">
-                        Email Address *
-                    </label>
-
+                    <label for="email">Email Address *</label>
                     <input
                         id="email"
                         name="email"
                         type="email"
-                        autocomplete="email"
                         required
                     >
-
                 </div>
 
 
                 <div class="field">
-
-                    <label for="address">
-                        Delivery Address *
-                    </label>
-
+                    <label for="address">Delivery Address *</label>
                     <input
                         id="address"
                         name="delivery_address"
@@ -814,23 +776,17 @@ footer{
                         placeholder="Street, City, State, ZIP"
                         required
                     >
-
                 </div>
 
 
                 <div class="field">
-
-                    <label for="date">
-                        Requested Delivery Date *
-                    </label>
-
+                    <label for="date">Requested Delivery Date *</label>
                     <input
                         id="date"
                         name="requested_delivery_date"
                         type="date"
                         required
                     >
-
                 </div>
 
 
@@ -872,7 +828,6 @@ footer{
                     <textarea
                         id="materials"
                         name="materials"
-                        placeholder="Household items, furniture, remodeling debris, construction debris, wood, etc."
                         required
                     ></textarea>
 
@@ -888,7 +843,6 @@ footer{
                     <textarea
                         id="details"
                         name="additional_details"
-                        placeholder="Anything else we should know?"
                     ></textarea>
 
                 </div>
@@ -908,6 +862,26 @@ footer{
                 Your rental is not reserved until BAIL OUT confirms availability.
             </p>
 
+
+            <div class="backup-contact">
+
+                <strong>
+                    Having trouble submitting your request?
+                </strong>
+
+                Call
+                <a href="tel:6416918799">
+                    641-691-8799
+                </a>
+
+                or email
+
+                <a href="mailto:bailoutrentals@gmail.com">
+                    bailoutrentals@gmail.com
+                </a>.
+
+            </div>
+
         </form>
 
     </div>
@@ -923,9 +897,7 @@ footer{
         Have Questions?
     </h2>
 
-    <p>
-        Call BAIL OUT
-    </p>
+    <p>Call BAIL OUT</p>
 
     <a href="tel:6416918799">
         641-691-8799
@@ -947,25 +919,15 @@ footer{
         >
 
         <div>
-
-            <div class="footer-name">
-                BAIL OUT
-            </div>
-
-            <div>
-                Roll-Off Dumpster & Trailer Rentals
-            </div>
-
+            <div class="footer-name">BAIL OUT</div>
+            <div>Roll-Off Dumpster & Trailer Rentals</div>
         </div>
 
     </div>
 
-
     <div class="footer-links">
 
-        <a href="/index.html">
-            Home
-        </a>
+        <a href="/index.html">Home</a>
 
         <a href="/index.html#rentals">
             All Rentals
@@ -980,7 +942,6 @@ footer{
 </div>
 
 </footer>
-
 
 </body>
 </html>
