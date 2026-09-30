@@ -502,21 +502,6 @@ header{
     background:var(--green-light);
 }
 
-.submit-button:disabled{
-    opacity:.7;
-    cursor:not-allowed;
-}
-
-.form-status{
-    margin-top:16px;
-    text-align:center;
-    font-weight:bold;
-}
-
-.form-status:empty{
-    display:none;
-}
-
 .form-note{
     text-align:center;
     color:#6b706b;
@@ -592,13 +577,11 @@ footer{
     color:var(--green);
 }
 
-/* MOBILE ACTION BAR */
-
 .dumpster-mobile-bar{
     display:none;
 }
 
-/* RESPONSIVE */
+/* TABLET AND MOBILE */
 
 @media(max-width:980px){
     .pricing-facts-grid{
@@ -761,20 +744,18 @@ footer{
 
 <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "BAIL OUT Roll-Off Dumpster & Trailer Rentals",
-    "url": "https://bailoutrentals.com/",
-    "telephone": "+1-641-691-8799",
-    "description": "Request a 20-yard roll-off dumpster from BAIL OUT. $450 for 7 days or $550 for 14 days, 2 tons included, no separate dumpster delivery charge, and additional weight at $100 per ton.",
-    "image": "https://bailoutrentals.com/20yard.png"
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"BAIL OUT Roll-Off Dumpster & Trailer Rentals",
+    "url":"https://bailoutrentals.com/",
+    "telephone":"+1-641-691-8799",
+    "description":"Request a 20-yard roll-off dumpster from BAIL OUT. $450 for 7 days or $550 for 14 days, 2 tons included, no separate dumpster delivery charge, and additional weight at $100 per ton.",
+    "image":"https://bailoutrentals.com/20yard.png"
 }
 </script>
 </head>
 
 <body>
-
-<!-- HEADER -->
 
 <header>
     <div class="nav-wrap">
@@ -805,8 +786,6 @@ footer{
         </div>
     </div>
 </header>
-
-<!-- HERO -->
 
 <section class="hero">
     <div class="container">
@@ -892,8 +871,6 @@ footer{
     </div>
 </section>
 
-<!-- PRICING FACTS -->
-
 <section
     class="pricing-facts"
     aria-label="20-yard dumpster rental pricing details"
@@ -931,8 +908,6 @@ footer{
     </div>
 </section>
 
-<!-- ABOUT -->
-
 <section class="intro">
     <div class="container">
         <div class="intro-grid">
@@ -964,8 +939,6 @@ footer{
         </div>
     </div>
 </section>
-
-<!-- REQUEST FORM -->
 
 <section class="quote" id="request">
     <div class="container">
@@ -1005,15 +978,39 @@ footer{
                 Failed delivery fee $100
             </div>
 
+            <!--
+                Submit directly to FormSubmit.
+                FormSubmit handles verification and redirects
+                to the full URL specified in _next.
+            -->
+
             <form
                 id="booking-form"
-                action="https://formspree.io/f/mzezbzyq"
+                action="https://formsubmit.co/bailoutrentals@gmail.com"
                 method="POST"
             >
                 <input
                     type="hidden"
+                    name="_next"
+                    value="https://bailoutrentals.com/thank-you-20yard.html"
+                >
+
+                <input
+                    type="hidden"
+                    name="_url"
+                    value="https://bailoutrentals.com/20yard.html"
+                >
+
+                <input
+                    type="hidden"
                     name="_subject"
                     value="20-Yard Dumpster Booking Request"
+                >
+
+                <input
+                    type="hidden"
+                    name="_template"
+                    value="table"
                 >
 
                 <input
@@ -1097,9 +1094,11 @@ footer{
                             required
                         >
                             <option value="">Select rental period</option>
+
                             <option value="7 Days - $450">
                                 7 Days - $450
                             </option>
+
                             <option value="14 Days - $550">
                                 14 Days - $550
                             </option>
@@ -1117,24 +1116,31 @@ footer{
                             required
                         >
                             <option value="">Select project type</option>
+
                             <option value="Home Cleanout">
                                 Home Cleanout
                             </option>
+
                             <option value="Remodeling">
                                 Remodeling / Renovation
                             </option>
+
                             <option value="Construction">
                                 Construction
                             </option>
+
                             <option value="Property Cleanup">
                                 Property Cleanup
                             </option>
+
                             <option value="Commercial Project">
                                 Commercial Project
                             </option>
+
                             <option value="Moving">
                                 Moving / Downsizing
                             </option>
+
                             <option value="Other">Other</option>
                         </select>
                     </div>
@@ -1171,13 +1177,6 @@ footer{
                     Submit 20-Yard Booking Request
                 </button>
 
-                <p
-                    id="form-status"
-                    class="form-status"
-                    role="status"
-                    aria-live="polite"
-                ></p>
-
                 <p class="form-note">
                     Submitting this form sends a booking request.
                     Your requested dates are not reserved until
@@ -1190,8 +1189,6 @@ footer{
     </div>
 </section>
 
-<!-- CALL -->
-
 <section class="call-section">
     <h2>Prefer to Talk to Someone?</h2>
 
@@ -1201,8 +1198,6 @@ footer{
 
     <a href="tel:6416918799">641-691-8799</a>
 </section>
-
-<!-- FOOTER -->
 
 <footer>
     <div class="container footer-wrap">
@@ -1230,8 +1225,6 @@ footer{
     </div>
 </footer>
 
-<!-- MOBILE ACTION BAR -->
-
 <div
     class="dumpster-mobile-bar"
     aria-label="20-yard dumpster quick actions"
@@ -1244,74 +1237,6 @@ footer{
         Request 20-Yard
     </a>
 </div>
-
-<!-- FORM SUBMISSION AND THANK-YOU REDIRECT -->
-
-<script>
-(() => {
-    const form = document.getElementById('booking-form');
-    const button = document.getElementById('submit-button');
-    const status = document.getElementById('form-status');
-
-    const originalText = button.textContent;
-    let submitting = false;
-
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-
-        if (submitting) return;
-
-        submitting = true;
-        button.disabled = true;
-        button.textContent = 'Sending Request...';
-
-        status.style.color = '#176526';
-        status.textContent = 'Sending your request...';
-
-        try {
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            if (!response.ok) {
-                let message =
-                    'Your request could not be sent. Please try again or call 641-691-8799.';
-
-                const data = await response.json().catch(() => null);
-
-                if (data && Array.isArray(data.errors)) {
-                    message = data.errors
-                        .map(error => error.message)
-                        .join(' ') || message;
-                }
-
-                throw new Error(message);
-            }
-
-            window.location.assign(
-                new URL(
-                    'thank-you-20yard.html',
-                    window.location.href
-                ).href
-            );
-
-        } catch (error) {
-            status.style.color = '#a32020';
-            status.textContent =
-                error.message ||
-                'Unable to send your request. Please call 641-691-8799.';
-
-            button.disabled = false;
-            button.textContent = originalText;
-            submitting = false;
-        }
-    });
-})();
-</script>
 
 </body>
 </html>
