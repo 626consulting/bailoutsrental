@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -24,6 +25,7 @@ function gtag(){
 gtag('js', new Date());
 gtag('config', 'G-S81QYFRSXC');
 </script>
+
 
 <style>
 
@@ -368,32 +370,6 @@ header{
     background:var(--green-light);
 }
 
-.submit-button:disabled{
-    opacity:.65;
-    cursor:not-allowed;
-}
-
-.form-status{
-    margin-top:15px;
-    padding:12px;
-    border-radius:5px;
-    text-align:center;
-    font-weight:800;
-    display:none;
-}
-
-.form-status.sending{
-    display:block;
-    background:#eef8ef;
-    color:#1f612d;
-}
-
-.form-status.error{
-    display:block;
-    background:#fff0f0;
-    color:#9b1c1c;
-}
-
 .form-note{
     margin-top:12px;
     color:var(--muted);
@@ -523,6 +499,7 @@ footer{
 
 </head>
 
+
 <body>
 
 
@@ -531,12 +508,15 @@ footer{
 <div class="container nav-wrap">
 
     <a href="/index.html">
+
         <img
             src="/logo.png"
             alt="BAIL OUT"
             class="logo"
         >
+
     </a>
+
 
     <div class="header-actions">
 
@@ -690,7 +670,6 @@ footer{
 
 <div class="container">
 
-
     <div class="section-heading">
 
         <div class="eyebrow">
@@ -702,15 +681,14 @@ footer{
         </h2>
 
         <p>
-            Complete the form below and BAIL OUT will confirm
-            availability and rental details.
+            Tell us when and where you need the dumpster.
+            BAIL OUT will confirm availability and rental details.
         </p>
 
     </div>
 
 
     <div class="form-card">
-
 
         <div class="booking-summary">
 
@@ -732,7 +710,6 @@ footer{
 
 
         <form
-            id="booking-form"
             action="https://formsubmit.co/bailoutrentals@gmail.com"
             method="POST"
         >
@@ -745,8 +722,14 @@ footer{
 
             <input
                 type="hidden"
-                name="_url"
-                value="https://bailoutrentals.com/15yard.html"
+                name="_next"
+                value="https://bailoutrentals.com/thank-you-15yard.html"
+            >
+
+            <input
+                type="hidden"
+                name="_template"
+                value="table"
             >
 
             <input
@@ -914,20 +897,11 @@ footer{
 
 
             <button
-                id="submit-button"
                 type="submit"
                 class="submit-button"
             >
                 Submit 15-Yard Booking Request
             </button>
-
-
-            <div
-                id="form-status"
-                class="form-status"
-                role="status"
-                aria-live="polite"
-            ></div>
 
 
             <p class="form-note">
@@ -1006,142 +980,6 @@ footer{
 </div>
 
 </footer>
-
-
-<script>
-
-const bookingForm =
-    document.getElementById("booking-form");
-
-bookingForm.addEventListener(
-    "submit",
-    async function(event){
-
-        event.preventDefault();
-
-
-        const submitButton =
-            document.getElementById("submit-button");
-
-        const formStatus =
-            document.getElementById("form-status");
-
-
-        submitButton.disabled = true;
-
-        submitButton.textContent =
-            "Sending Request...";
-
-
-        formStatus.className =
-            "form-status sending";
-
-        formStatus.textContent =
-            "Sending your rental request...";
-
-
-        const formData =
-            new FormData(bookingForm);
-
-        const formObject =
-            Object.fromEntries(
-                formData.entries()
-            );
-
-
-        try{
-
-            const response =
-                await fetch(
-                    "https://formsubmit.co/ajax/bailoutrentals@gmail.com",
-                    {
-                        method:"POST",
-
-                        headers:{
-                            "Content-Type":"application/json",
-                            "Accept":"application/json"
-                        },
-
-                        body:
-                            JSON.stringify(
-                                formObject
-                            )
-                    }
-                );
-
-
-            const result =
-                await response
-                .json()
-                .catch(
-                    () => ({})
-                );
-
-
-            if(
-                response.ok &&
-                result.success !== false &&
-                result.success !== "false"
-            ){
-
-                if(
-                    typeof gtag ===
-                    "function"
-                ){
-
-                    gtag(
-                        "event",
-                        "generate_lead",
-                        {
-                            rental_type:
-                                "15_yard_dumpster"
-                        }
-                    );
-
-                }
-
-
-                window.location.href =
-                    "/thank-you-15yard.html";
-
-                return;
-
-            }
-
-
-            throw new Error(
-                result.message ||
-                "The request could not be submitted."
-            );
-
-
-        }catch(error){
-
-            console.error(
-                "FormSubmit Error:",
-                error
-            );
-
-
-            formStatus.className =
-                "form-status error";
-
-            formStatus.textContent =
-                "We could not send your request. Please try again or call BAIL OUT at 641-691-8799.";
-
-
-            submitButton.disabled =
-                false;
-
-            submitButton.textContent =
-                "Submit 15-Yard Booking Request";
-
-        }
-
-    }
-);
-
-</script>
 
 
 </body>
