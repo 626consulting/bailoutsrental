@@ -886,6 +886,11 @@ header{
     border-radius:6px;
     font-size:13px;
     font-weight:1000;
+    transition:.2s ease;
+}
+
+.review-actions a:hover{
+    transform:translateY(-2px);
 }
 
 .review-read{
@@ -1303,14 +1308,10 @@ footer{
         right:0;
         bottom:0;
         z-index:3000;
-
         display:grid;
         grid-template-columns:1fr 1fr;
-
         gap:8px;
-
         padding:8px;
-
         background:#071009;
     }
 
@@ -2172,7 +2173,9 @@ footer{
 </section>
 
 
-<!-- REVIEWS -->
+<!-- =========================================================
+     REVIEWS
+========================================================= -->
 
 <section
     class="reviews-section"
@@ -2213,37 +2216,39 @@ footer{
 
 <p>
 
-    Read current customer reviews
-    or share your experience after
-    renting with BAIL OUT.
+    View our Google Business Profile
+    or read customer reviews for
+    BAIL OUT Roll-Off Dumpster Service & Trailer Rentals.
 
 </p>
 
 
 <div class="review-actions">
 
-    <!-- VIEW BUSINESS PROFILE -->
+
+    <!-- GOOGLE BUSINESS PROFILE -->
 
     <a
         class="review-read"
+        href="https://www.google.com/maps/search/?api=1&amp;query=BAIL+OUT+Roll-Off+Dumpster+Service+%26+Trailer+Rentals+Marshalltown+IA"
+        target="_blank"
+        rel="noopener"
+    >
+        View Google Business Profile
+    </a>
+
+
+    <!-- GOOGLE REVIEWS / MAPS LINK PROVIDED -->
+
+    <a
+        class="review-leave"
         href="https://www.google.com/maps/place/BAIL+OUT+Roll-Off+Dumpster+Service+%26+Trailer+Rentals/@42.007683,-102.1585059,6z/data=!4m12!1m2!2m1!1sBAIL+OUT+Roll-Off+Dumpster+Service+%26+Trailer+Rentals!3m8!1s0x87efa55290d5b985:0x648bf409c7fcf9b2!8m2!3d42.007683!4d-92.9299903!9m1!1b1!15sCjRCQUlMIE9VVCBSb2xsLU9mZiBEdW1wc3RlciBTZXJ2aWNlICYgVHJhaWxlciBSZW50YWxzWjYiNGJhaWwgb3V0IHJvbGwgb2ZmIGR1bXBzdGVyIHNlcnZpY2UgJiB0cmFpbGVyIHJlbnRhbHOSARdkdW1wc3Rlcl9yZW50YWxfc2VydmljZZoBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsdlQydHJlVTB6UmtWaWVrNTVXbnBrV0dGSGJHdE9iRXBDV1ZjNGVsUXpZeEFC4AEA-gEECAAQOA!16s%2Fg%2F11nw57b0bn?entry=ttu&amp;g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D"
         target="_blank"
         rel="noopener"
     >
-        View BAIL OUT on Google
+        View Google Reviews
     </a>
 
-
-    <!-- DIRECT REVIEW BUTTON -->
-
-    <a
-        class="review-leave"
-        href="https://g.page/r/CY290STV6-WWEAE/review"
-        target="_blank"
-        rel="noopener"
-    >
-        Leave a Google Review
-    </a>
 
 </div>
 
@@ -2298,6 +2303,8 @@ footer{
             src="0BE09A0F-1F16-4112-BDF6-09D3A31B1F2B.mp4"
             type="video/mp4"
         >
+
+        Your browser does not support the video tag.
 
     </video>
 
@@ -2631,6 +2638,35 @@ footer{
 
 <summary>
 
+    Do you charge for dumpster delivery?
+
+    <span class="faq-toggle">
+        +
+    </span>
+
+</summary>
+
+<div class="faq-answer">
+
+<p>
+
+    Standard dumpster delivery has no separate
+    delivery charge.
+
+    Submit your service address so BAIL OUT
+    can confirm availability and placement details.
+
+</p>
+
+</div>
+
+</details>
+
+
+<details class="faq-item">
+
+<summary>
+
     Which dumpster size should I choose?
 
     <span class="faq-toggle">
@@ -2752,8 +2788,10 @@ footer{
 </h2>
 
 <p>
+
     Complete the form below and BAIL OUT
     will follow up about your rental request.
+
 </p>
 
 
@@ -2950,6 +2988,8 @@ footer{
 <div
     id="quote-form-status"
     class="form-status"
+    role="status"
+    aria-live="polite"
 ></div>
 
 
@@ -3065,7 +3105,10 @@ All Rights Reserved.
 
 <!-- MOBILE BUTTONS -->
 
-<div class="mobile-action-bar">
+<div
+    class="mobile-action-bar"
+    aria-label="Quick rental actions"
+>
 
 <a
     href="tel:6416918799"
@@ -3084,7 +3127,7 @@ All Rights Reserved.
 </div>
 
 
-<!-- FAQ -->
+<!-- FAQ SCRIPT -->
 
 <script>
 
@@ -3130,7 +3173,7 @@ document.addEventListener(
 </script>
 
 
-<!-- FORM -->
+<!-- QUOTE FORM SCRIPT -->
 
 <script>
 
