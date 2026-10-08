@@ -29,7 +29,7 @@ gtag('config', 'G-S81QYFRSXC');
 
 <meta
     name="description"
-    content="BAIL OUT provides 15-yard and 20-yard roll-off dumpster and trailer rentals in Marshalltown, Iowa and surrounding areas. Request rental availability online."
+    content="BAIL OUT provides 15-yard and 20-yard roll-off dumpster and trailer rentals in Marshalltown, Iowa and nearby Central Iowa communities. View pricing and request rental availability online."
 >
 
 <meta
@@ -51,7 +51,8 @@ gtag('config', 'G-S81QYFRSXC');
     "name": "BAIL OUT Roll-Off Dumpster Service & Trailer Rentals",
     "url": "https://bailoutrentals.com/",
     "telephone": "+1-641-691-8799",
-    "description": "Roll-off dumpster and trailer rentals serving Marshalltown, Iowa and surrounding communities.",
+    "email": "bailoutrentals@gmail.com",
+    "description": "Roll-off dumpster and trailer rentals serving Marshalltown, Iowa and nearby Central Iowa communities.",
     "image": "https://bailoutrentals.com/logo.png",
     "address": {
         "@type": "PostalAddress",
@@ -60,7 +61,15 @@ gtag('config', 'G-S81QYFRSXC');
         "addressRegion": "IA",
         "postalCode": "50158",
         "addressCountry": "US"
-    }
+    },
+    "areaServed": [
+        "Marshalltown, Iowa",
+        "Ames, Iowa",
+        "Baxter, Iowa",
+        "Colfax, Iowa",
+        "Tama, Iowa",
+        "Toledo, Iowa"
+    ]
 }
 </script>
 
@@ -597,6 +606,160 @@ header{
     font-weight:900;
 }
 
+
+
+
+/* HOME CLEANOUT SEO SECTION */
+
+.homeowner-seo{
+    padding:70px 0;
+    background:#f4f7f4;
+}
+
+.homeowner-seo-wrap{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    align-items:center;
+    gap:45px;
+}
+
+.homeowner-seo .eyebrow{
+    margin-bottom:12px;
+}
+
+.homeowner-seo h2{
+    margin-bottom:14px;
+    color:var(--ink);
+    font-size:clamp(30px,3.5vw,43px);
+    line-height:1.15;
+}
+
+.homeowner-seo p{
+    max-width:680px;
+    color:var(--muted);
+}
+
+.homeowner-benefits{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin-top:20px;
+}
+
+.homeowner-benefits span{
+    padding:8px 11px;
+    background:#fff;
+    border:1px solid #d5e1d6;
+    border-radius:999px;
+    color:#17371d;
+    font-size:12px;
+    font-weight:800;
+}
+
+.homeowner-seo-card{
+    padding:30px;
+    background:#101511;
+    color:#fff;
+    border-left:6px solid var(--green);
+    border-radius:12px;
+    box-shadow:0 16px 34px rgba(18,32,20,.12);
+}
+
+.homeowner-seo-card h3{
+    margin-bottom:10px;
+    color:#fff;
+    font-size:25px;
+}
+
+.homeowner-seo-card p{
+    color:#dce3dd;
+}
+
+.homeowner-seo-card a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:20px;
+    padding:13px 18px;
+    background:var(--green);
+    color:#061007;
+    border-radius:6px;
+    font-weight:900;
+}
+
+
+/* LOCAL SERVICE AREA TRUST */
+
+.local-service-highlight{
+    padding:64px 0;
+    background:#fff;
+}
+
+.local-service-box{
+    max-width:1040px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:28px;
+    padding:32px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-left:6px solid var(--green);
+    border-radius:13px;
+    box-shadow:0 15px 34px rgba(18,32,20,.08);
+}
+
+.local-service-box h2{
+    color:var(--ink);
+    font-size:clamp(28px,3vw,38px);
+    line-height:1.15;
+}
+
+.local-service-box p{
+    margin-top:10px;
+    color:var(--muted);
+}
+
+.local-city-chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    align-content:flex-start;
+}
+
+.local-city-chips span{
+    padding:9px 12px;
+    background:var(--soft-green);
+    border:1px solid #cfe3d2;
+    border-radius:999px;
+    color:#17371d;
+    font-size:12px;
+    font-weight:900;
+}
+
+.local-service-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:20px;
+}
+
+.local-service-actions a{
+    padding:11px 16px;
+    border-radius:5px;
+    font-size:13px;
+    font-weight:900;
+}
+
+.local-service-actions .primary{
+    background:var(--green);
+    color:#061007;
+}
+
+.local-service-actions .secondary{
+    background:#101511;
+    color:#fff;
+}
 
 /* NEW CONTRACTOR SEO SECTION */
 
@@ -1462,7 +1625,9 @@ footer{
     }
 
     .quote-wrap,
-    .contractor-seo-wrap{
+    .contractor-seo-wrap,
+    .homeowner-seo-wrap,
+    .local-service-box{
         grid-template-columns:1fr;
     }
 
@@ -1724,11 +1889,11 @@ footer{
 <p class="hero-lead">
 
 Clear pricing, easy online rental requests
-and local service for Marshalltown, Iowa
-and surrounding communities.
+and local service based in Marshalltown, Iowa
+for customers across nearby Central Iowa communities.
 
-Perfect for cleanouts, construction,
-renovations, property cleanup and more.
+Rental options for home cleanouts, moving,
+construction, renovations, property cleanup and more.
 
 </p>
 
@@ -2080,6 +2245,78 @@ Trailer rentals for equipment, hauling, materials and property projects.
 </section>
 
 
+
+<!-- HOME CLEANOUT SEO SECTION -->
+
+<section class="homeowner-seo">
+
+<div class="container">
+
+<div class="homeowner-seo-wrap">
+
+
+<div>
+
+<div class="eyebrow">
+Homeowners & Property Cleanouts
+</div>
+
+<h2>
+Home Cleanout Dumpster Rentals in Marshalltown
+</h2>
+
+<p>
+
+Cleaning out a home, garage, basement or property?
+BAIL OUT offers 15-yard and 20-yard roll-off dumpsters
+for moving, downsizing, household cleanouts and property cleanup.
+
+</p>
+
+
+<div class="homeowner-benefits">
+
+<span>Home Cleanouts</span>
+
+<span>Moving & Downsizing</span>
+
+<span>Garage Cleanup</span>
+
+<span>Property Cleanup</span>
+
+<span>15 & 20 Yard Options</span>
+
+</div>
+
+</div>
+
+
+<div class="homeowner-seo-card">
+
+<h3>
+Planning a Home Cleanout?
+</h3>
+
+<p>
+
+Compare dumpster sizes, pricing and rental periods
+for residential cleanup projects.
+
+</p>
+
+<a href="home-cleanout-dumpster-rental.html">
+View Home Cleanout Dumpster Rentals
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
 <!-- NEW CONTRACTOR SEO SECTION -->
 
 <section class="contractor-seo">
@@ -2146,6 +2383,54 @@ and construction project information.
 View Construction Dumpster Rentals
 </a>
 
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- LOCAL SERVICE AREA TRUST -->
+
+<section class="local-service-highlight">
+
+<div class="container">
+
+<div class="local-service-box">
+
+<div>
+
+<div class="eyebrow">
+Local Service Area
+</div>
+
+<h2>
+Serving Marshalltown and Nearby Central Iowa Communities
+</h2>
+
+<p>
+BAIL OUT currently accepts rental requests in Marshalltown, Ames,
+Baxter, Colfax, Tama and Toledo. Other nearby locations may also be
+available depending on the delivery address, requested dates and equipment availability.
+</p>
+
+<div class="local-service-actions">
+    <a href="service-area.html" class="primary">View Service Area</a>
+    <a href="#quote" class="secondary">Check Your Address</a>
+</div>
+
+</div>
+
+<div class="local-city-chips">
+    <span>Marshalltown</span>
+    <span>Ames</span>
+    <span>Baxter</span>
+    <span>Colfax</span>
+    <span>Tama</span>
+    <span>Toledo</span>
 </div>
 
 </div>
@@ -2815,6 +3100,26 @@ $450 for 7 days or $550 for 14 days. Two tons of disposal are included.
 </details>
 
 
+
+<details class="faq-item">
+
+<summary>
+Do you offer dumpsters for home cleanouts?
+<span class="faq-toggle">+</span>
+</summary>
+
+<div class="faq-answer">
+<p>
+Yes. BAIL OUT offers 15-yard and 20-yard roll-off dumpsters for home cleanouts,
+moving, downsizing, garage cleanup and property cleanup projects. Visit the
+<a href="home-cleanout-dumpster-rental.html">home cleanout dumpster rental page</a>
+for more information.
+</p>
+</div>
+
+</details>
+
+
 <details class="faq-item">
 
 <summary>
@@ -3198,6 +3503,10 @@ Home
 
 <a href="#rentals">
 Rentals
+</a>
+
+<a href="home-cleanout-dumpster-rental.html">
+Home Cleanouts
 </a>
 
 <a href="construction-dumpster-rental.html">
