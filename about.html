@@ -2,13 +2,56 @@
 <html lang="en">
 
 <head>
+
+<!-- GOOGLE ANALYTICS -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S81QYFRSXC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+gtag('js', new Date());
+gtag('config', 'G-S81QYFRSXC');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>About BAIL OUT | Roll-Off Dumpster & Trailer Rentals</title>
+<title>About BAIL OUT | Dumpster & Trailer Rental in Marshalltown, IA</title>
 
 <meta name="description"
-content="Learn more about BAIL OUT and our straightforward approach to roll-off dumpster and trailer rentals for cleanouts, construction, property projects and hauling needs.">
+content="Learn about BAIL OUT, a Marshalltown, Iowa rental service offering 15-yard and 20-yard roll-off dumpsters and trailer rentals for cleanouts, construction, property cleanup and hauling needs.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://bailoutrentals.com/about.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://bailoutrentals.com/#business",
+  "name": "BAIL OUT Roll-Off Dumpster Service & Trailer Rentals",
+  "url": "https://bailoutrentals.com/",
+  "telephone": "+1-641-691-8799",
+  "email": "bailoutrentals@gmail.com",
+  "image": "https://bailoutrentals.com/logo.png",
+  "description": "Roll-off dumpster and trailer rentals serving Marshalltown, Iowa and surrounding Central Iowa communities.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1011 Iowa Ave W",
+    "addressLocality": "Marshalltown",
+    "addressRegion": "IA",
+    "postalCode": "50158",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    "Marshalltown, Iowa",
+    "Ames, Iowa",
+    "Baxter, Iowa",
+    "Colfax, Iowa",
+    "Tama, Iowa",
+    "Toledo, Iowa"
+  ]
+}
+</script>
 
 <style>
 :root{
@@ -435,6 +478,187 @@ header{
     font-size:14px;
 }
 
+
+/* TRUST STRIP */
+.trust-strip{
+    background:#0b100c;
+    color:#fff;
+    border-bottom:4px solid var(--green);
+}
+
+.trust-strip-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.trust-strip-item{
+    min-height:86px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:18px 20px;
+    text-align:center;
+    border-right:1px solid #29302a;
+}
+
+.trust-strip-item:last-child{
+    border-right:0;
+}
+
+.trust-strip-item strong{
+    color:var(--green);
+    font-size:16px;
+}
+
+.trust-strip-item span{
+    margin-top:2px;
+    color:#dce3dd;
+    font-size:12px;
+    font-weight:700;
+}
+
+
+/* LOCAL TRUST */
+.local-trust-section{
+    background:#fff;
+}
+
+.local-trust-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:30px;
+    max-width:1030px;
+    margin:0 auto;
+}
+
+.local-panel,
+.contact-panel{
+    padding:32px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    box-shadow:0 12px 30px rgba(18,32,20,.07);
+}
+
+.local-panel{
+    background:
+        linear-gradient(145deg,#f7fbf7 0%,#edf8ef 100%);
+    border-left:6px solid var(--green);
+}
+
+.local-panel h3,
+.contact-panel h3{
+    margin-bottom:11px;
+    color:var(--ink);
+    font-size:25px;
+}
+
+.local-panel p,
+.contact-panel p{
+    color:var(--muted);
+}
+
+.city-chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin-top:20px;
+}
+
+.city-chips span{
+    padding:8px 11px;
+    background:#fff;
+    border:1px solid #cee0d1;
+    border-radius:999px;
+    color:#17371d;
+    font-size:12px;
+    font-weight:900;
+}
+
+.contact-panel{
+    background:#101611;
+    color:#fff;
+}
+
+.contact-panel h3{
+    color:#fff;
+}
+
+.contact-panel p{
+    color:#d5ddd6;
+}
+
+.contact-list{
+    margin-top:18px;
+    display:grid;
+    gap:11px;
+}
+
+.contact-row{
+    padding:13px 14px;
+    background:#171f19;
+    border:1px solid #2c3830;
+    border-radius:7px;
+}
+
+.contact-row strong{
+    display:block;
+    color:var(--green);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.7px;
+}
+
+.contact-row a,
+.contact-row span{
+    color:#fff;
+    font-weight:800;
+}
+
+.local-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:20px;
+}
+
+.local-actions a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:11px 15px;
+    border-radius:5px;
+    font-size:13px;
+    font-weight:900;
+}
+
+.local-actions .primary{
+    background:var(--green);
+    color:#061007;
+}
+
+.local-actions .secondary{
+    border:1px solid #536158;
+    color:#fff;
+}
+
+.price-trust{
+    margin-top:20px;
+    padding:18px;
+    background:#fff;
+    border:1px solid #dce5dd;
+    border-radius:9px;
+}
+
+.price-trust strong{
+    color:var(--ink);
+}
+
+.price-trust p{
+    margin-top:5px;
+    color:var(--muted);
+    font-size:14px;
+}
+
 /* CTA */
 .about-cta{
     padding:58px 0;
@@ -566,6 +790,23 @@ footer{
         max-width:620px;
     }
 
+    .local-trust-grid{
+        grid-template-columns:1fr;
+        max-width:760px;
+    }
+
+    .trust-strip-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .trust-strip-item:nth-child(2){
+        border-right:0;
+    }
+
+    .trust-strip-item:nth-child(-n+2){
+        border-bottom:1px solid #29302a;
+    }
+
     .cta-wrap{
         flex-direction:column;
         align-items:flex-start;
@@ -588,6 +829,19 @@ footer{
     .story-grid{
         grid-template-columns:1fr;
         max-width:620px;
+    }
+
+    .trust-strip-grid{
+        grid-template-columns:1fr;
+    }
+
+    .trust-strip-item{
+        border-right:0;
+        border-bottom:1px solid #29302a;
+    }
+
+    .trust-strip-item:last-child{
+        border-bottom:0;
     }
 
     .section{
@@ -678,9 +932,9 @@ footer{
             </h1>
 
             <p>
-                BAIL OUT provides roll-off dumpster and trailer rental options
-                for cleanouts, construction, property projects, hauling and
-                other jobs that need a straightforward rental solution.
+                BAIL OUT provides 15-yard and 20-yard roll-off dumpster rentals
+                and trailer rental options for homeowners, contractors, property
+                managers and businesses in Marshalltown, Iowa and surrounding communities.
             </p>
 
             <div class="hero-buttons">
@@ -700,15 +954,43 @@ footer{
 </div>
 </section>
 
+<section class="trust-strip" aria-label="BAIL OUT rental highlights">
+<div class="container">
+    <div class="trust-strip-grid">
+
+        <div class="trust-strip-item">
+            <strong>Marshalltown, Iowa</strong>
+            <span>Local rental service</span>
+        </div>
+
+        <div class="trust-strip-item">
+            <strong>15 & 20 Yard</strong>
+            <span>Roll-off dumpster options</span>
+        </div>
+
+        <div class="trust-strip-item">
+            <strong>2 Tons Included</strong>
+            <span>With dumpster rentals</span>
+        </div>
+
+        <div class="trust-strip-item">
+            <strong>641-691-8799</strong>
+            <span>Direct customer contact</span>
+        </div>
+
+    </div>
+</div>
+</section>
+
 <section class="section">
 <div class="container">
 
     <div class="section-heading">
         <div class="eyebrow">Who We Are</div>
-        <h2>A Straightforward Approach to Rentals</h2>
+        <h2>Local Service, Clear Information, Direct Communication</h2>
         <p>
-            Our goal is to make it easier for customers to find the rental
-            option they need, submit a request and get the details confirmed.
+            BAIL OUT is focused on making dumpster and trailer rentals easier to understand
+            before a customer ever submits a request.
         </p>
     </div>
 
@@ -717,27 +999,27 @@ footer{
         <div class="story-card feature">
             <h3>Built Around the Customer</h3>
             <p>
-                BAIL OUT is focused on keeping the rental process clear and
-                practical. Customers can review available rental options,
-                see dumpster pricing and submit their request online.
+                Customers can review dumpster sizes, rental periods, current pricing
+                and key rental details before requesting equipment. That makes it easier
+                to compare options and plan a project before committing to a rental.
             </p>
             <p>
-                From home cleanouts and renovation work to construction,
-                property cleanup and hauling needs, the goal is to help
-                customers get the right rental for the project.
+                BAIL OUT supports home cleanouts, moving and downsizing, remodeling,
+                construction, property cleanup and hauling projects throughout the
+                Marshalltown area.
             </p>
         </div>
 
         <div class="story-card">
-            <h3>Real Equipment. Real Service.</h3>
+            <h3>A Local Point of Contact</h3>
             <p>
-                The equipment shown throughout the site represents the kind
-                of real-world projects BAIL OUT is built to support.
+                BAIL OUT gives customers a direct phone number and online request
+                process instead of sending them through a national marketplace.
             </p>
             <p>
-                Rental requests are followed by confirmation so availability,
-                timing and project details can be reviewed before the rental
-                is finalized.
+                Every request is reviewed before the rental is finalized so the
+                delivery address, timing, equipment availability and project details
+                can be confirmed.
             </p>
         </div>
 
@@ -790,6 +1072,81 @@ footer{
 </div>
 </section>
 
+<section class="section local-trust-section">
+<div class="container">
+
+    <div class="section-heading">
+        <div class="eyebrow">Local Rental Company</div>
+        <h2>Serving Marshalltown and Central Iowa Communities</h2>
+        <p>
+            BAIL OUT is based in Marshalltown and accepts rental requests from
+            nearby communities. Exact availability is confirmed using the delivery address.
+        </p>
+    </div>
+
+    <div class="local-trust-grid">
+
+        <div class="local-panel">
+            <h3>Service That Stays Close to the Project</h3>
+            <p>
+                Current service areas include Marshalltown, Ames, Baxter, Colfax,
+                Tama and Toledo, with other nearby locations considered based on
+                address, requested dates and equipment availability.
+            </p>
+
+            <div class="city-chips">
+                <span>Marshalltown</span>
+                <span>Ames</span>
+                <span>Baxter</span>
+                <span>Colfax</span>
+                <span>Tama</span>
+                <span>Toledo</span>
+            </div>
+
+            <div class="price-trust">
+                <strong>Transparent dumpster pricing</strong>
+                <p>
+                    15-yard rentals start at $375 for 7 days and 20-yard rentals
+                    start at $450 for 7 days. Two tons of disposal are included,
+                    and there is no separate standard dumpster delivery charge.
+                </p>
+            </div>
+        </div>
+
+        <div class="contact-panel">
+            <h3>Know Who You Are Contacting</h3>
+            <p>
+                Customers can contact BAIL OUT directly before or after submitting
+                a rental request.
+            </p>
+
+            <div class="contact-list">
+                <div class="contact-row">
+                    <strong>Phone</strong>
+                    <a href="tel:6416918799">641-691-8799</a>
+                </div>
+
+                <div class="contact-row">
+                    <strong>Email</strong>
+                    <a href="mailto:bailoutrentals@gmail.com">bailoutrentals@gmail.com</a>
+                </div>
+
+                <div class="contact-row">
+                    <strong>Business Address</strong>
+                    <span>1011 Iowa Ave W, Marshalltown, IA 50158</span>
+                </div>
+            </div>
+
+            <div class="local-actions">
+                <a href="service-area.html" class="primary">View Service Area</a>
+                <a href="index.html#quote" class="secondary">Request a Rental</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
+
 <section class="section">
 <div class="container">
 
@@ -808,7 +1165,8 @@ footer{
             <div class="focus-icon">✓</div>
             <h3>Straightforward Options</h3>
             <p>
-                Clear rental choices and pricing information for dumpster rentals.
+                Published dumpster sizes, rental periods and pricing help customers
+                compare options before requesting equipment.
             </p>
         </div>
 
@@ -816,7 +1174,9 @@ footer{
             <div class="focus-icon">✓</div>
             <h3>Project-Focused Service</h3>
             <p>
-                Rental options designed around cleanup, construction and hauling needs.
+                Dedicated information is available for
+                <a href="home-cleanout-dumpster-rental.html">home cleanouts</a> and
+                <a href="construction-dumpster-rental.html">construction projects</a>.
             </p>
         </div>
 
@@ -879,8 +1239,10 @@ footer{
         <div class="footer-links">
             <a href="index.html">Home</a>
             <a href="index.html#rentals">Rentals</a>
+            <a href="home-cleanout-dumpster-rental.html">Home Cleanouts</a>
+            <a href="construction-dumpster-rental.html">Construction Rentals</a>
             <a href="about.html">About Us</a>
-            <a href="index.html#how">How It Works</a>
+            <a href="service-area.html">Service Area</a>
             <a href="index.html#faq">FAQ</a>
             <a href="index.html#quote">Contact</a>
         </div>
