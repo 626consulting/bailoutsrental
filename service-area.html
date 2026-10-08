@@ -14,10 +14,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dumpster Rental in Marshalltown, Iowa | BAIL OUT</title>
+<title>Dumpster Rental Service Area | Marshalltown & Central Iowa | BAIL OUT</title>
 
 <meta name="description"
-content="Looking for dumpster rental in Marshalltown, Iowa? BAIL OUT offers 15-yard and 20-yard roll-off dumpsters for cleanouts, remodeling, construction and property cleanup, serving surrounding communities within approximately 50 miles.">
+content="BAIL OUT provides 15-yard and 20-yard roll-off dumpster rentals in Marshalltown, Ames, Baxter, Colfax, Tama and Toledo, Iowa, plus surrounding communities within approximately 50 miles.">
 
 <meta name="robots" content="index, follow">
 
@@ -42,18 +42,27 @@ content="Looking for dumpster rental in Marshalltown, Iowa? BAIL OUT offers 15-y
   },
   "serviceType": [
     "Roll-Off Dumpster Rental",
+    "Home Cleanout Dumpster Rental",
     "Construction Dumpster Rental",
     "Trailer Rental"
   ],
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": 42.007683,
-      "longitude": -92.9299903
-    },
-    "geoRadius": 80467
-  }
+  "areaServed": [
+    {"@type":"City","name":"Marshalltown","containedInPlace":{"@type":"State","name":"Iowa"}},
+    {"@type":"City","name":"Ames","containedInPlace":{"@type":"State","name":"Iowa"}},
+    {"@type":"City","name":"Baxter","containedInPlace":{"@type":"State","name":"Iowa"}},
+    {"@type":"City","name":"Colfax","containedInPlace":{"@type":"State","name":"Iowa"}},
+    {"@type":"City","name":"Tama","containedInPlace":{"@type":"State","name":"Iowa"}},
+    {"@type":"City","name":"Toledo","containedInPlace":{"@type":"State","name":"Iowa"}},
+    {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.007683,
+        "longitude": -92.9299903
+      },
+      "geoRadius": 80467
+    }
+  ]
 }
 </script>
 
@@ -680,6 +689,65 @@ header{
 
 /* FOOTER */
 
+
+/* CITY SERVICE GRID */
+.city-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    max-width:1080px;
+    margin:0 auto;
+}
+
+.city-card{
+    padding:27px 24px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:5px solid var(--green);
+    border-radius:11px;
+    box-shadow:0 10px 26px rgba(18,32,20,.07);
+}
+
+.city-card.primary{
+    background:linear-gradient(145deg,#eaf9ec,#fff 72%);
+    border-top-color:var(--green-dark);
+}
+
+.city-card h3{
+    margin-bottom:9px;
+    color:var(--ink);
+    font-size:21px;
+    line-height:1.2;
+}
+
+.city-card p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+.city-card a{
+    display:inline-block;
+    margin-top:13px;
+    color:var(--green-dark);
+    font-weight:900;
+    font-size:13px;
+}
+
+.nearby-note{
+    max-width:920px;
+    margin:28px auto 0;
+    padding:22px 24px;
+    background:#101511;
+    color:#fff;
+    border-left:6px solid var(--green);
+    border-radius:9px;
+    text-align:center;
+}
+
+.nearby-note strong{
+    color:var(--green);
+}
+
 /* CONTRACTOR SEO CALLOUT */
 .contractor-callout{
     padding:72px 0;
@@ -828,6 +896,10 @@ footer{
         grid-template-columns:1fr;
     }
 
+    .city-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
     .cta-inner{
         flex-direction:column;
         align-items:flex-start;
@@ -863,6 +935,10 @@ footer{
 
 
     .contractor-callout-wrap{
+        grid-template-columns:1fr;
+    }
+
+    .city-grid{
         grid-template-columns:1fr;
     }
 
@@ -947,9 +1023,10 @@ footer{
                 Looking for a dumpster rental in Marshalltown, Iowa? BAIL OUT provides
                 15-yard and 20-yard roll-off dumpsters for home cleanouts, remodeling,
                 construction, property cleanup and other debris-removal projects.
-                We serve Marshalltown and surrounding communities within approximately
-                50 miles. Submit your address with your rental request and we will
-                confirm availability for your location.
+                We currently serve Marshalltown, Ames, Baxter, Colfax, Tama and Toledo,
+                along with other surrounding locations within approximately 50 miles.
+                Submit your address with your rental request and we will confirm
+                availability for your exact location.
             </p>
 
             <div class="hero-buttons">
@@ -969,7 +1046,7 @@ footer{
             <div class="label">Primary Service Area</div>
 
             <h2>
-                Marshalltown + Approximately 50 Miles
+                Marshalltown + Central Iowa Communities
             </h2>
 
             <p>
@@ -984,7 +1061,11 @@ footer{
                 </div>
 
                 <div class="coverage-item">
-                    Surrounding communities within approximately 50 miles
+                    Ames, Baxter, Colfax, Tama & Toledo
+                </div>
+
+                <div class="coverage-item">
+                    Other nearby locations may be available
                 </div>
 
                 <div class="coverage-item">
@@ -1018,55 +1099,82 @@ footer{
         </h2>
 
         <p>
-            BAIL OUT is based around the Marshalltown area and serves customers
-            throughout the surrounding region. If you are not sure whether your
-            address falls inside the regular service area, send us your location
-            and we can confirm it before your rental is scheduled.
+            BAIL OUT provides dumpster rental service in Marshalltown, Ames, Baxter,
+            Colfax, Tama and Toledo, Iowa. Other surrounding locations within
+            approximately 50 miles may also be available. Send your project address
+            with your request so BAIL OUT can confirm service for your location.
         </p>
     </div>
 
 
-    <div class="area-grid">
+    <div class="city-grid">
 
-        <div class="area-card highlight">
-
-            <h3>
-                Marshalltown, Iowa
-            </h3>
-
+        <article class="city-card primary">
+            <h3>Dumpster Rental in Marshalltown, Iowa</h3>
             <p>
-                Marshalltown is the primary service area for BAIL OUT dumpster
-                and trailer rental requests.
+                Marshalltown is BAIL OUT's primary service area. Customers can request
+                15-yard and 20-yard roll-off dumpsters for home cleanouts, remodeling,
+                construction, moving, downsizing and property cleanup projects.
             </p>
+            <a href="index.html#rentals">View Dumpster Options</a>
+        </article>
 
+        <article class="city-card">
+            <h3>Dumpster Rental in Ames, Iowa</h3>
             <p>
-                Customers can request 15-yard or 20-yard dumpsters for home
-                cleanouts, renovation work, construction, property cleanup
-                and other debris-removal projects.
+                BAIL OUT accepts dumpster rental requests for Ames projects. Submit your
+                delivery address and requested dates so availability can be confirmed
+                before the rental is finalized.
             </p>
+            <a href="index.html#quote">Check Ames Availability</a>
+        </article>
 
-        </div>
-
-
-        <div class="area-card">
-
-            <h3>
-                Outside Marshalltown?
-            </h3>
-
+        <article class="city-card">
+            <h3>Dumpster Rental in Baxter, Iowa</h3>
             <p>
-                BAIL OUT also serves surrounding communities within
-                approximately 50 miles of Marshalltown.
+                Customers in Baxter can request 15-yard or 20-yard roll-off dumpsters
+                for household cleanouts, renovations, construction and property cleanup,
+                subject to address and equipment availability.
             </p>
+            <a href="index.html#quote">Check Baxter Availability</a>
+        </article>
 
+        <article class="city-card">
+            <h3>Dumpster Rental in Colfax, Iowa</h3>
             <p>
-                Because availability can vary by exact address and rental date,
-                include your full delivery location when submitting your request.
-                BAIL OUT will confirm the details before the rental is finalized.
+                BAIL OUT serves Colfax rental requests for residential and project cleanup.
+                Send the project address and requested rental dates to confirm service for
+                your location.
             </p>
+            <a href="index.html#quote">Check Colfax Availability</a>
+        </article>
 
-        </div>
+        <article class="city-card">
+            <h3>Dumpster Rental in Tama, Iowa</h3>
+            <p>
+                Tama customers can request roll-off dumpsters for home cleanouts,
+                remodeling, construction and general property cleanup. Exact availability
+                is confirmed using the delivery address.
+            </p>
+            <a href="index.html#quote">Check Tama Availability</a>
+        </article>
 
+        <article class="city-card">
+            <h3>Dumpster Rental in Toledo, Iowa</h3>
+            <p>
+                BAIL OUT accepts dumpster rental requests in Toledo for cleanout,
+                renovation and construction projects. Include your full address so
+                delivery availability can be confirmed.
+            </p>
+            <a href="index.html#quote">Check Toledo Availability</a>
+        </article>
+
+    </div>
+
+    <div class="nearby-note">
+        <strong>Outside one of these cities?</strong> BAIL OUT also considers rental
+        requests from other surrounding locations within approximately 50 miles of
+        Marshalltown. Call 641-691-8799 or submit the project address to confirm service.
     </div>
 
 </div>
@@ -1295,15 +1403,17 @@ footer{
 
         <details class="faq-item">
             <summary>
-                What area does BAIL OUT serve?
+                What cities does BAIL OUT serve?
                 <span class="faq-toggle" aria-hidden="true">+</span>
             </summary>
 
             <div class="faq-answer">
                 <p>
-                    BAIL OUT serves Marshalltown, Iowa and surrounding communities
-                    within approximately 50 miles. Exact service availability is
-                    confirmed using the delivery address provided with your request.
+                    BAIL OUT currently serves Marshalltown, Ames, Baxter, Colfax,
+                    Tama and Toledo, Iowa. Other surrounding locations within
+                    approximately 50 miles may also be available. Exact service
+                    availability is confirmed using the delivery address provided
+                    with your request.
                 </p>
             </div>
         </details>
@@ -1336,6 +1446,23 @@ footer{
                     Submit your full address or call BAIL OUT at 641-691-8799.
                     Service outside the primary area is handled based on the exact
                     location, requested dates and equipment availability.
+                </p>
+            </div>
+        </details>
+
+
+        <details class="faq-item">
+            <summary>
+                Do you provide dumpsters for home cleanouts?
+                <span class="faq-toggle" aria-hidden="true">+</span>
+            </summary>
+
+            <div class="faq-answer">
+                <p>
+                    Yes. BAIL OUT offers 15-yard and 20-yard dumpsters for home
+                    cleanouts, moving, downsizing, garage cleanouts and property cleanup.
+                    Visit our <a href="home-cleanout-dumpster-rental.html">home cleanout dumpster rental page</a>
+                    for size guidance, pricing and rental information.
                 </p>
             </div>
         </details>
@@ -1448,6 +1575,7 @@ footer{
         <div class="footer-links">
             <a href="index.html">Home</a>
             <a href="index.html#rentals">Rentals</a>
+            <a href="home-cleanout-dumpster-rental.html">Home Cleanouts</a>
             <a href="construction-dumpster-rental.html">Construction Rentals</a>
             <a href="about.html">About Us</a>
             <a href="service-area.html">Service Area</a>
