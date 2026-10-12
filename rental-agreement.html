@@ -49,7 +49,7 @@
   <form id="agreement-form" action="https://formspree.io/f/mzezbzyq" method="POST">
     <input type="hidden" name="_subject" value="BAIL OUT - completed rental agreement">
     <input type="hidden" name="submission_type" value="Rental agreement acknowledgement">
-    <input type="hidden" name="agreement_version" value="2026-10-12-v1">
+    <input type="hidden" name="agreement_version" value="2026-10-12-v2">
     <input type="hidden" name="rental_time_zone" value="America/Chicago (Central Time)">
     <input type="hidden" name="signed_at_utc" id="signed_at_utc">
     <textarea name="agreement_terms" id="agreement_terms_for_email" hidden></textarea>
@@ -60,22 +60,13 @@
         <div><label for="customer_name">Customer or business name *</label><input id="customer_name" name="customer_name" autocomplete="name" required></div>
         <div><label for="email">Email for your records *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
         <div><label for="phone">Phone *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
-        <div><label for="rental_number">Quote or rental number</label><input id="rental_number" name="rental_number"></div>
         <div class="wide"><label for="site_address">Rental site address *</label><input id="site_address" name="site_address" autocomplete="street-address" required></div>
         <div><label for="equipment">Equipment *</label><select id="equipment" name="equipment" required><option value="">Select equipment</option><option>15-yard dumpster</option><option>20-yard dumpster</option><option>Trailer</option></select></div>
-        <div><label for="equipment_id">Trailer ID or plate (if applicable)</label><input id="equipment_id" name="equipment_id"></div>
         <div><label for="start_datetime">Confirmed start date and time *</label><input id="start_datetime" name="start_datetime" type="datetime-local" required></div>
         <div><label for="end_datetime">Confirmed end date and time *</label><input id="end_datetime" name="end_datetime" type="datetime-local" required></div>
-        <div><label for="agreed_price">Confirmed rental price ($) *</label><input id="agreed_price" name="agreed_price" type="number" min="0" step="0.01" required></div>
-        <div><label for="deposit">Deposit ($), if any</label><input id="deposit" name="deposit" type="number" min="0" step="0.01"></div>
-        <div class="wide"><label for="delivery_terms">Confirmed delivery or pickup terms *</label><input id="delivery_terms" name="delivery_terms" required></div>
-        <div class="wide"><label for="condition_notes">Existing condition notes or approved exceptions</label><textarea id="condition_notes" name="condition_notes"></textarea></div>
-      </div>
-      <h3>Inspection</h3>
-      <div class="choices">
-        <label class="choice"><input type="checkbox" name="photos_saved" value="Yes"> Equipment photos saved</label>
-        <label class="choice"><input type="checkbox" name="condition_noted" value="Yes"> Existing condition noted</label>
-        <label class="choice"><input type="checkbox" name="trailer_checks" value="Yes"> Trailer driver, insurance, and tow vehicle checked</label>
+        <div><label for="agreed_price">Confirmed rental rate *</label><select id="agreed_price" name="agreed_price" required disabled><option value="">Choose equipment first</option></select></div>
+        <div><label for="delivery_terms">Delivery or pickup *</label><select id="delivery_terms" name="delivery_terms" required><option value="">Select confirmed arrangement</option><option value="BAIL OUT delivers and picks up">BAIL OUT delivers and picks up</option><option value="Customer picks up and returns trailer">Customer picks up and returns trailer</option></select></div>
+        <p class="small wide">Select the rate and delivery arrangement BAIL OUT confirmed with you. Trailer prices are provided in a separate written quote.</p>
       </div>
     </div>
 
@@ -111,7 +102,7 @@
     <div class="notice no-print"><strong>Agreement submitted.</strong> Choose <strong>Print / Save as PDF</strong> below. On a phone, use your browser's print or share options and select Save as PDF. Keep this copy for your records.</div>
     <div class="actions no-print"><button type="button" class="button" id="print-button">Print / Save as PDF</button><a class="button secondary" href="index.html">Back to BAIL OUT</a></div>
     <h1>BAIL OUT Rental Agreement</h1>
-    <p>Customer copy of submitted details and terms, version 2026-10-12-v1.</p>
+    <p>Customer copy of submitted details and terms, version 2026-10-12-v2.</p>
     <div id="receipt-details" class="receipt-grid"></div>
     <div id="receipt-terms"></div>
     <div class="receipt-signature"><p><strong>Customer acknowledgment:</strong> I agreed to transact electronically and intended my typed name to sign this agreement.</p><p><strong>Typed signature:</strong> <span id="receipt-signature"></span> &nbsp; <strong>Date:</strong> <span id="receipt-date"></span></p><p><strong>Submitted:</strong> <span id="receipt-submitted"></span></p><p>BAIL OUT confirmation and any representative signature follow separately. For a countersigned copy, contact <strong>bailoutrentals@gmail.com</strong>.</p></div>
@@ -124,14 +115,28 @@
   const button = document.getElementById('submit-button');
   const details = [
     ['Customer or business', 'customer_name'], ['Email', 'email'], ['Phone', 'phone'],
-    ['Quote or rental number', 'rental_number'], ['Rental site', 'site_address'],
-    ['Equipment', 'equipment'], ['Trailer ID or plate', 'equipment_id'],
+    ['Rental site', 'site_address'], ['Equipment', 'equipment'],
     ['Start date and time (Central)', 'start_datetime'], ['End date and time (Central)', 'end_datetime'],
-    ['Confirmed rental price ($)', 'agreed_price'], ['Deposit ($)', 'deposit'],
-    ['Delivery or pickup terms', 'delivery_terms'], ['Condition notes', 'condition_notes'],
-    ['Equipment photos saved', 'photos_saved'], ['Existing condition noted', 'condition_noted'],
-    ['Trailer checks completed', 'trailer_checks']
+    ['Confirmed rental rate', 'agreed_price'], ['Delivery or pickup', 'delivery_terms']
   ];
+  const equipment = form.elements.equipment;
+  const rate = form.elements.agreed_price;
+  const delivery = form.elements.delivery_terms;
+  const rates = {
+    '15-yard dumpster': ['15-yard dumpster — 1 day — $325', '15-yard dumpster — 7 days — $375', '15-yard dumpster — 14 days — $475'],
+    '20-yard dumpster': ['20-yard dumpster — 1 day — $400', '20-yard dumpster — 7 days — $450', '20-yard dumpster — 14 days — $550'],
+    'Trailer': ['Trailer rental — price per confirmed written quote']
+  };
+  function updateChoices() {
+    rate.replaceChildren(new Option(equipment.value ? 'Select confirmed rental rate' : 'Choose equipment first', ''));
+    for (const choice of rates[equipment.value] || []) rate.add(new Option(choice, choice));
+    rate.disabled = !equipment.value;
+    const trailerPickup = delivery.querySelector('option[value="Customer picks up and returns trailer"]');
+    trailerPickup.disabled = equipment.value !== 'Trailer';
+    if (trailerPickup.disabled && delivery.value === trailerPickup.value) delivery.value = '';
+  }
+  equipment.addEventListener('change', updateChoices);
+  updateChoices();
   const today = new Date();
   document.getElementById('signature_date').value = [today.getFullYear(), String(today.getMonth()+1).padStart(2,'0'), String(today.getDate()).padStart(2,'0')].join('-');
   document.getElementById('print-button').addEventListener('click', () => window.print());
@@ -150,7 +155,7 @@
     form.elements.signed_at_utc.value = sentAt.toISOString();
     const termsForEmail = document.querySelectorAll('#agreement-terms h2, #agreement-terms h3, #agreement-terms p');
     form.elements.agreement_terms.value = [
-      'BAIL OUT Rental Agreement, version 2026-10-12-v1',
+      'BAIL OUT Rental Agreement, version 2026-10-12-v2',
       'Published dumpster rental prices: 15 yard — 1 day $325, 7 days $375, 14 days $475; 20 yard — 1 day $400, 7 days $450, 14 days $550.',
       ...Array.from(termsForEmail, element => element.textContent.trim())
     ].join(String.fromCharCode(10, 10));
