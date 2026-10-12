@@ -195,6 +195,17 @@ header{
 }
 
 
+
+.nav-dropdown{position:relative}
+.nav-dropdown > summary{display:flex;align-items:center;gap:5px;list-style:none;cursor:pointer;color:#f0f3f0;font-size:12px;font-weight:800}
+.nav-dropdown > summary::-webkit-details-marker{display:none}
+.nav-dropdown > summary::after{content:"▾";font-size:11px}
+.nav-dropdown > summary:hover,.nav-dropdown[open] > summary{color:var(--green)}
+.nav-dropdown > summary:focus-visible,.nav-dropdown-menu a:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 16px);left:-14px;z-index:1100;min-width:220px;padding:8px;background:#101611;border:1px solid #355039;border-radius:6px;box-shadow:0 12px 25px rgba(0,0,0,.35)}
+.nav-dropdown-menu a{display:block;padding:10px 12px;white-space:nowrap;line-height:1.35}
+.nav-dropdown-menu a:hover{background:#1c2c1f;color:var(--green)}
+
 /* HERO */
 
 .hero{
@@ -1617,8 +1628,13 @@ footer{
 @media(max-width:1000px){
 
     .nav-links{
-        display:none;
+        display:flex;
     }
+
+
+    .nav-links > a{display:none}
+    .nav-wrap{gap:10px}
+    .nav-actions .phone{display:none}
 
     .steps{
         grid-template-columns:repeat(2,1fr);
@@ -1722,6 +1738,10 @@ footer{
 
 
 @media(max-width:480px){
+    .nav-actions{display:none}
+
+    .nav-dropdown-menu{left:auto;right:0}
+
 
     .container,
     .nav-wrap{
@@ -1807,7 +1827,7 @@ footer{
 
 <a href="#home">Home</a>
 
-<a href="#rentals">Rentals</a>
+<details class="nav-dropdown"><summary>Rentals</summary><div class="nav-dropdown-menu"><a href="index.html#rentals">Rentals &amp; Pricing</a><a href="15yard.html">15-Yard Dumpster</a><a href="20yard.html">20-Yard Dumpster</a><a href="trailer.html">Trailer Rental</a><a href="rental-agreement.html">Rental Agreement</a></div></details>
 
 <a href="home-cleanout-dumpster-rental.html">
     Home Cleanouts
