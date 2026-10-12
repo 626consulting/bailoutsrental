@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rental Agreement | BAIL OUT Dumpster & Trailer Rentals</title>
+  <meta name="robots" content="noindex,follow">
+  <style>
+    :root{--green:#118f29;--ink:#172019;--muted:#546157;--line:#d7e1d9;--soft:#f4f8f4}
+    *{box-sizing:border-box}body{margin:0;color:var(--ink);font:16px/1.55 Arial,Helvetica,sans-serif;background:#fff}
+    a{color:#087a27}.site-header{background:#070a07;color:#fff;border-bottom:4px solid #20d642}
+    .site-header div{max-width:1000px;margin:auto;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+    .site-header a{color:#fff;text-decoration:none;font-weight:700}.site-header .brand{font-size:22px;color:#37df52}
+    main{max-width:1000px;margin:34px auto 80px;padding:0 22px}h1{font-size:clamp(29px,4vw,40px);line-height:1.15;margin:0 0 8px}
+    h2{font-size:22px;margin:32px 0 14px}h3{font-size:17px;margin:22px 0 5px}p{margin:8px 0 14px}
+    .intro{color:var(--muted);max-width:760px}.notice{border-left:4px solid var(--green);background:var(--soft);padding:14px 18px;margin:22px 0}
+    .panel{border:1px solid var(--line);border-radius:12px;padding:22px;margin:24px 0;box-shadow:0 3px 13px #1125130b}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px}.wide{grid-column:1/-1}
+    label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}input,select,textarea{font:inherit;width:100%;border:1px solid #a5b6a9;border-radius:6px;padding:10px;background:#fff;color:var(--ink)}
+    input:focus,select:focus,textarea:focus{outline:3px solid #86d994;outline-offset:1px}textarea{min-height:80px;resize:vertical}
+    .choices{display:flex;gap:22px;flex-wrap:wrap}.choice{display:flex;gap:8px;align-items:flex-start;font-weight:400;font-size:15px;margin:0}
+    .choice input{width:18px;height:18px;margin:2px 0 0;flex:none}.terms{border-top:1px solid var(--line);padding-top:4px}
+    .terms p{font-size:14px;line-height:1.55}.prices{width:100%;border-collapse:collapse;max-width:620px;margin:14px 0}
+    .prices th,.prices td{border:1px solid var(--line);padding:9px;text-align:left}.prices th{background:var(--soft)}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.button{border:0;border-radius:6px;background:var(--green);color:#fff;padding:13px 20px;font:700 16px Arial;cursor:pointer;text-decoration:none}
+    .button.secondary{background:#172019}.button:disabled{opacity:.55;cursor:wait}.status{min-height:25px;font-weight:700}.error{color:#a41b16}.success{color:#086b22}
+    .small{font-size:13px;color:var(--muted)}#receipt[hidden],#agreement-form[hidden]{display:none}
+    .receipt-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px 20px;margin:20px 0}.receipt-grid div{padding:5px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+    .receipt-grid strong{display:block;font-size:12px;color:var(--muted);text-transform:uppercase}.receipt-signature{border-top:1px solid var(--line);padding-top:10px}
+    @media(max-width:650px){.grid,.receipt-grid{grid-template-columns:1fr}.panel{padding:16px}.site-header div{align-items:flex-start;flex-direction:column}}
+    @media print{
+      @page{size:letter;margin:.65in}body{font:10pt/1.35 Arial;color:#000}main{max-width:none;margin:0;padding:0}
+      .site-header,.no-print,#agreement-form,#receipt .notice,#receipt .actions{display:none!important}#receipt[hidden]{display:none}
+      h1{font-size:18pt}h2{font-size:12pt;margin:16pt 0 7pt}h3{font-size:10pt;margin:10pt 0 3pt}
+      .receipt-grid{grid-template-columns:1fr 1fr;gap:2pt 12pt;margin:10pt 0}.receipt-grid div{padding:3pt 0}
+      .terms p{font-size:9pt;line-height:1.35;margin:3pt 0 6pt}.terms h3{break-after:avoid}
+      .prices th,.prices td{padding:4pt}.receipt-signature{break-inside:avoid}.panel{border:0;box-shadow:none;padding:0;margin:0}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header"><div><a class="brand" href="index.html">BAIL OUT</a><a href="index.html">Back to rentals</a></div></header>
+<main>
+  <div class="no-print"><h1>Rental agreement</h1>
+    <p class="intro">Complete this agreement after BAIL OUT confirms your equipment, dates, and price. Your submission goes to BAIL OUT. When it succeeds, you can print or save the completed agreement as a PDF for your records.</p>
+    <div class="notice"><strong>Before signing:</strong> Check every rental detail. A request alone does not reserve equipment; BAIL OUT will confirm the rental separately.</div>
+  </div>
+
+  <form id="agreement-form" action="https://formspree.io/f/mzezbzyq" method="POST">
+    <input type="hidden" name="_subject" value="BAIL OUT - completed rental agreement">
+    <input type="hidden" name="submission_type" value="Rental agreement acknowledgement">
+    <input type="hidden" name="agreement_version" value="2026-10-12-draft-1">
+    <input type="hidden" name="rental_time_zone" value="America/Chicago (Central Time)">
+    <input type="hidden" name="signed_at_utc" id="signed_at_utc">
+    <div class="panel">
+      <h2>Rental details</h2>
+      <p class="small">Enter the rental start and end times in Central Time (Iowa).</p>
+      <div class="grid">
+        <div><label for="customer_name">Customer or business name *</label><input id="customer_name" name="customer_name" autocomplete="name" required></div>
+        <div><label for="email">Email for your records *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div><label for="phone">Phone *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+        <div><label for="rental_number">Quote or rental number</label><input id="rental_number" name="rental_number"></div>
+        <div class="wide"><label for="site_address">Rental site address *</label><input id="site_address" name="site_address" autocomplete="street-address" required></div>
+        <div><label for="equipment">Equipment *</label><select id="equipment" name="equipment" required><option value="">Select equipment</option><option>15-yard dumpster</option><option>20-yard dumpster</option><option>Trailer</option></select></div>
+        <div><label for="equipment_id">Trailer ID or plate (if applicable)</label><input id="equipment_id" name="equipment_id"></div>
+        <div><label for="start_datetime">Confirmed start date and time *</label><input id="start_datetime" name="start_datetime" type="datetime-local" required></div>
+        <div><label for="end_datetime">Confirmed end date and time *</label><input id="end_datetime" name="end_datetime" type="datetime-local" required></div>
+        <div><label for="agreed_price">Confirmed rental price ($) *</label><input id="agreed_price" name="agreed_price" type="number" min="0" step="0.01" required></div>
+        <div><label for="deposit">Deposit ($), if any</label><input id="deposit" name="deposit" type="number" min="0" step="0.01"></div>
+        <div class="wide"><label for="delivery_terms">Confirmed delivery or pickup terms *</label><input id="delivery_terms" name="delivery_terms" required></div>
+        <div class="wide"><label for="condition_notes">Existing condition notes or approved exceptions</label><textarea id="condition_notes" name="condition_notes"></textarea></div>
+      </div>
+      <h3>Inspection</h3>
+      <div class="choices">
+        <label class="choice"><input type="checkbox" name="photos_saved" value="Yes"> Equipment photos saved</label>
+        <label class="choice"><input type="checkbox" name="condition_noted" value="Yes"> Existing condition noted</label>
+        <label class="choice"><input type="checkbox" name="trailer_checks" value="Yes"> Trailer driver, insurance, and tow vehicle checked</label>
+      </div>
+    </div>
+
+    <div class="panel" id="agreement-terms">
+      <h2>Published dumpster rental prices</h2>
+      <table class="prices"><thead><tr><th>Dumpster</th><th>1 day</th><th>7 days</th><th>14 days</th></tr></thead><tbody><tr><td>15 yard</td><td>$325</td><td>$375</td><td>$475</td></tr><tr><td>20 yard</td><td>$400</td><td>$450</td><td>$550</td></tr></tbody></table>
+      <p>Trailer pricing is stated in the confirmed quote. Dumpster rentals include 2 tons of disposal unless the signed rental confirmation states a different allowance. Additional disposal weight is $100 per ton; the confirmed quote should state how any partial ton is billed.</p>
+      <h2>Customer responsibilities</h2>
+      <div class="terms">
+        <h3>1. Confirmation and rental period</h3><p>A request does not reserve equipment. The rental begins and ends at the date and time written above or in a written confirmation accepted by both parties. Extensions require BAIL OUT approval in advance; any added charge must be disclosed and accepted before the extension. Equipment is not released until required payment and identification are completed.</p>
+        <h3>2. Site access and placement</h3><p>The customer must provide a safe, legal, accessible location and obtain any required property permission or permit. Tell BAIL OUT about soft ground, buried utilities, septic systems, overhead lines, gates, slopes, and other site hazards before delivery. BAIL OUT may refuse an unsafe placement. A $100 failed dumpster delivery fee applies if the trip cannot be completed because access or the site is not ready, as disclosed before the rental. BAIL OUT remains responsible for its own negligent acts.</p>
+        <h3>3. Dumpster loading and materials</h3><p>Do not move, alter, overfill, burn in, or place weight above the rim of the dumpster. Keep the load level and safe for pickup. No hazardous waste, fuel, chemicals, wet paint, propane tanks, batteries, asbestos-containing material, or other material the disposal facility cannot accept. Ask before loading tires, appliances, electronics, concrete, dirt, shingles, or other heavy or special material. The customer is responsible for documented disposal, removal, or return-trip costs caused by an unapproved load.</p>
+        <h3>4. Trailer towing and use</h3><p>Only an authorized licensed driver may tow the trailer. Before pickup, the renter must show proof of insurance and use a legally registered tow vehicle with adequate towing capacity and the correct hitch, lights, safety chains, and brakes when required. The renter must inspect the connection, observe the trailer's stated load rating, and secure the load. No subletting, unauthorized drivers, alteration, illegal use, or use beyond the agreed purpose without written approval.</p>
+        <h3>5. Condition and damage</h3><p>BAIL OUT and the customer should record the equipment's condition with photos or written notes at release and return. Report any existing damage before use, and report any accident, theft, missing part, or new damage promptly. The customer is responsible for reasonable documented repair or replacement costs for loss or damage beyond ordinary wear that the customer, an authorized user, or an invited person causes through misuse, negligence, or breach of this agreement. The customer is not responsible for defects or damage caused by BAIL OUT.</p>
+        <h3>6. Pickup and additional charges</h3><p>Provide clear access for pickup or return the trailer by the agreed time. BAIL OUT will itemize any additional charges and provide supporting information on request. Charges for extra days, unsuccessful pickup trips, special materials, excessive cleaning, missing components, or trailer late return apply only when the amount or method was disclosed in the confirmed quote or separately approved before the charge, except reasonable documented repair or cleanup costs under this agreement.</p>
+        <h3>7. Property and third party claims</h3><p>The customer accepts the ordinary risk that heavy equipment may mark a customer-selected surface and must disclose known site conditions. Each party remains responsible for loss to the extent caused by its own conduct. The customer will reimburse BAIL OUT for reasonable third party claims to the extent caused by the customer's negligent or unauthorized use, unsafe loading, or breach of this agreement. This does not require the customer to cover BAIL OUT's negligence, equipment defects, or conduct for which BAIL OUT is legally responsible.</p>
+        <h3>8. Other terms</h3><p>BAIL OUT may delay service for unsafe weather, road, site, or equipment conditions and will communicate changes. The confirmed quote controls the price and approved dates; any separate written cancellation terms must be given before payment. Iowa law governs this agreement. If one provision cannot be enforced, the remaining terms continue to the extent permitted by law. Electronic signatures may be used when both parties agree to transact electronically.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Review and sign</h2>
+      <p>By signing, the customer confirms receipt of these terms, the stated rental details, and the opportunity to inspect the equipment. A signature does not waive rights that cannot be waived under applicable law.</p>
+      <label class="choice"><input id="electronic_consent" type="checkbox" name="electronic_consent" value="I agree to conduct this transaction electronically and intend my typed name to sign" required> I agree to conduct this transaction electronically and intend my typed name below to sign this agreement. *</label>
+      <div class="grid" style="margin-top:19px"><div><label for="signature">Type your full name as your signature *</label><input id="signature" name="customer_signature" autocomplete="off" required></div><div><label for="signature_date">Date signed *</label><input id="signature_date" name="signature_date" type="date" required></div></div>
+      <div class="actions"><button id="submit-button" class="button" type="submit">Submit signed agreement</button></div>
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+      <p class="small">Please save the completed copy on the confirmation screen. BAIL OUT will review the submission and confirm your rental separately.</p>
+    </div>
+  </form>
+
+  <section id="receipt" hidden aria-live="polite">
+    <div class="notice no-print"><strong>Agreement submitted.</strong> Choose <strong>Print / Save as PDF</strong> below. On a phone, use your browser's print or share options and select Save as PDF. Keep this copy for your records.</div>
+    <div class="actions no-print"><button type="button" class="button" id="print-button">Print / Save as PDF</button><a class="button secondary" href="index.html">Back to BAIL OUT</a></div>
+    <h1>BAIL OUT Rental Agreement</h1>
+    <p>Customer copy of submitted details and terms, version 2026-10-12-draft-1.</p>
+    <div id="receipt-details" class="receipt-grid"></div>
+    <div id="receipt-terms"></div>
+    <div class="receipt-signature"><p><strong>Customer acknowledgment:</strong> I agreed to transact electronically and intended my typed name to sign this agreement.</p><p><strong>Typed signature:</strong> <span id="receipt-signature"></span> &nbsp; <strong>Date:</strong> <span id="receipt-date"></span></p><p><strong>Submitted:</strong> <span id="receipt-submitted"></span></p><p>BAIL OUT confirmation and any representative signature follow separately. For a countersigned copy, contact <strong>bailoutrentals@gmail.com</strong>.</p></div>
+  </section>
+</main>
+<script>
+(() => {
+  const form = document.getElementById('agreement-form');
+  const status = document.getElementById('status');
+  const button = document.getElementById('submit-button');
+  const details = [
+    ['Customer or business', 'customer_name'], ['Email', 'email'], ['Phone', 'phone'],
+    ['Quote or rental number', 'rental_number'], ['Rental site', 'site_address'],
+    ['Equipment', 'equipment'], ['Trailer ID or plate', 'equipment_id'],
+    ['Start date and time (Central)', 'start_datetime'], ['End date and time (Central)', 'end_datetime'],
+    ['Confirmed rental price ($)', 'agreed_price'], ['Deposit ($)', 'deposit'],
+    ['Delivery or pickup terms', 'delivery_terms'], ['Condition notes', 'condition_notes'],
+    ['Equipment photos saved', 'photos_saved'], ['Existing condition noted', 'condition_noted'],
+    ['Trailer checks completed', 'trailer_checks']
+  ];
+  const today = new Date();
+  document.getElementById('signature_date').value = [today.getFullYear(), String(today.getMonth()+1).padStart(2,'0'), String(today.getDate()).padStart(2,'0')].join('-');
+  document.getElementById('print-button').addEventListener('click', () => window.print());
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const start = new Date(form.elements.start_datetime.value).getTime();
+    const end = new Date(form.elements.end_datetime.value).getTime();
+    if (!(end > start)) {
+      status.className = 'status error'; status.textContent = 'The end date and time must be after the start.';
+      form.elements.end_datetime.focus(); return;
+    }
+    button.disabled = true;
+    status.className = 'status'; status.textContent = 'Submitting your agreement...';
+    const sentAt = new Date();
+    form.elements.signed_at_utc.value = sentAt.toISOString();
+    const data = new FormData(form);
+    try {
+      const response = await fetch(form.action, {method:'POST', body:data, headers:{Accept:'application/json'}});
+      if (!response.ok) throw new Error('The agreement could not be sent. Please try again or call BAIL OUT.');
+      const receiptDetails = document.getElementById('receipt-details');
+      details.forEach(([label, key]) => {
+        const cell = document.createElement('div');
+        const title = document.createElement('strong'); title.textContent = label;
+        const value = document.createElement('span'); value.textContent = data.get(key) || '—';
+        cell.append(title, value); receiptDetails.append(cell);
+      });
+      const termsCopy = document.getElementById('agreement-terms').cloneNode(true);
+      termsCopy.removeAttribute('id');
+      document.getElementById('receipt-terms').append(termsCopy);
+      document.getElementById('receipt-signature').textContent = data.get('customer_signature');
+      document.getElementById('receipt-date').textContent = data.get('signature_date');
+      document.getElementById('receipt-submitted').textContent = sentAt.toLocaleString();
+      form.hidden = true;
+      document.getElementById('receipt').hidden = false;
+      window.scrollTo({top:0, behavior:'smooth'});
+    } catch (error) {
+      status.className = 'status error'; status.textContent = error.message;
+      button.disabled = false;
+    }
+  });
+})();
+</script>
+</body>
+</html>
