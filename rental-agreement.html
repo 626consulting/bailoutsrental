@@ -46,10 +46,10 @@
     <div class="notice"><strong>Before signing:</strong> Check every rental detail. A request alone does not reserve equipment; BAIL OUT will confirm the rental separately.</div>
   </div>
 
-  <form id="agreement-form" action="https://formspree.io/f/mzezbzyq" method="POST">
+  <form id="agreement-form" action="https://formspree.io/f/REPLACE_WITH_AGREEMENT_FORM_ID" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_subject" value="BAIL OUT - completed rental agreement">
     <input type="hidden" name="submission_type" value="Rental agreement acknowledgement">
-    <input type="hidden" name="agreement_version" value="2026-10-12-v2">
+    <input type="hidden" name="agreement_version" value="2026-10-12-v3">
     <input type="hidden" name="rental_time_zone" value="America/Chicago (Central Time)">
     <input type="hidden" name="signed_at_utc" id="signed_at_utc">
     <textarea name="agreement_terms" id="agreement_terms_for_email" hidden></textarea>
@@ -67,6 +67,7 @@
         <div><label for="agreed_price">Confirmed rental rate *</label><select id="agreed_price" name="agreed_price" required disabled><option value="">Choose equipment first</option></select></div>
         <div><label for="delivery_terms">Delivery or pickup *</label><select id="delivery_terms" name="delivery_terms" required><option value="">Select confirmed arrangement</option><option value="BAIL OUT delivers and picks up">BAIL OUT delivers and picks up</option><option value="Customer picks up and returns trailer">Customer picks up and returns trailer</option></select></div>
         <p class="small wide">Select the rate and delivery arrangement BAIL OUT confirmed with you. Trailer prices are provided in a separate written quote.</p>
+        <div class="wide"><label for="driver_license">Photo of driver's license (front only) *</label><input id="driver_license" name="driver_license" type="file" accept="image/*,application/pdf" required><p class="small">Upload one clear image or PDF, up to 10 MB. BAIL OUT and its form provider, Formspree, will receive the file for renter identity verification. The image will not appear in your printable copy.</p></div>
       </div>
     </div>
 
@@ -91,6 +92,7 @@
       <h2>Review and sign</h2>
       <p>By signing, the customer confirms receipt of these terms, the stated rental details, and the opportunity to inspect the equipment. A signature does not waive rights that cannot be waived under applicable law.</p>
       <label class="choice"><input id="electronic_consent" type="checkbox" name="electronic_consent" value="I agree to conduct this transaction electronically and intend my typed name to sign" required> I agree to conduct this transaction electronically and intend my typed name below to sign this agreement. *</label>
+      <label class="choice" style="margin-top:14px"><input id="id_consent" type="checkbox" name="id_consent" value="I authorize BAIL OUT to receive my driver's license image for rental identity verification" required> I authorize BAIL OUT to receive my driver's license image for rental identity verification. *</label>
       <div class="grid" style="margin-top:19px"><div><label for="signature">Type your full name as your signature *</label><input id="signature" name="customer_signature" autocomplete="off" required></div><div><label for="signature_date">Date signed *</label><input id="signature_date" name="signature_date" type="date" required></div></div>
       <div class="actions"><button id="submit-button" class="button" type="submit">Submit signed agreement</button></div>
       <div id="status" class="status" role="status" aria-live="polite"></div>
@@ -102,10 +104,10 @@
     <div class="notice no-print"><strong>Agreement submitted.</strong> Choose <strong>Print / Save as PDF</strong> below. On a phone, use your browser's print or share options and select Save as PDF. Keep this copy for your records.</div>
     <div class="actions no-print"><button type="button" class="button" id="print-button">Print / Save as PDF</button><a class="button secondary" href="index.html">Back to BAIL OUT</a></div>
     <h1>BAIL OUT Rental Agreement</h1>
-    <p>Customer copy of submitted details and terms, version 2026-10-12-v2.</p>
+    <p>Customer copy of submitted details and terms, version 2026-10-12-v3.</p>
     <div id="receipt-details" class="receipt-grid"></div>
     <div id="receipt-terms"></div>
-    <div class="receipt-signature"><p><strong>Customer acknowledgment:</strong> I agreed to transact electronically and intended my typed name to sign this agreement.</p><p><strong>Typed signature:</strong> <span id="receipt-signature"></span> &nbsp; <strong>Date:</strong> <span id="receipt-date"></span></p><p><strong>Submitted:</strong> <span id="receipt-submitted"></span></p><p>BAIL OUT confirmation and any representative signature follow separately. For a countersigned copy, contact <strong>bailoutrentals@gmail.com</strong>.</p></div>
+    <div class="receipt-signature"><p><strong>Photo ID:</strong> submitted to BAIL OUT for renter verification; the image is excluded from this printable copy.</p><p><strong>Customer acknowledgment:</strong> I agreed to transact electronically and intended my typed name to sign this agreement.</p><p><strong>Typed signature:</strong> <span id="receipt-signature"></span> &nbsp; <strong>Date:</strong> <span id="receipt-date"></span></p><p><strong>Submitted:</strong> <span id="receipt-submitted"></span></p><p>BAIL OUT confirmation and any representative signature follow separately. For a countersigned copy, contact <strong>bailoutrentals@gmail.com</strong>.</p></div>
   </section>
 </main>
 <script>
@@ -149,20 +151,31 @@
       status.className = 'status error'; status.textContent = 'The end date and time must be after the start.';
       form.elements.end_datetime.focus(); return;
     }
+    const license = form.elements.driver_license.files[0];
+    if (!license || license.size > 10 * 1024 * 1024 || !(license.type.startsWith('image/') || license.type === 'application/pdf')) {
+      status.className = 'status error'; status.textContent = 'Choose one photo or PDF of the front of your driver\'s license, up to 10 MB.';
+      form.elements.driver_license.focus(); return;
+    }
     button.disabled = true;
     status.className = 'status'; status.textContent = 'Submitting your agreement...';
     const sentAt = new Date();
     form.elements.signed_at_utc.value = sentAt.toISOString();
     const termsForEmail = document.querySelectorAll('#agreement-terms h2, #agreement-terms h3, #agreement-terms p');
     form.elements.agreement_terms.value = [
-      'BAIL OUT Rental Agreement, version 2026-10-12-v2',
+      'BAIL OUT Rental Agreement, version 2026-10-12-v3',
       'Published dumpster rental prices: 15 yard — 1 day $325, 7 days $375, 14 days $475; 20 yard — 1 day $400, 7 days $450, 14 days $550.',
       ...Array.from(termsForEmail, element => element.textContent.trim())
     ].join(String.fromCharCode(10, 10));
     const data = new FormData(form);
     try {
       const response = await fetch(form.action, {method:'POST', body:data, headers:{Accept:'application/json'}});
-      if (!response.ok) throw new Error('The agreement could not be sent. Please try again or call BAIL OUT.');
+      if (!response.ok) {
+        const responseBody = await response.json().catch(() => null);
+        const uploadUnavailable = JSON.stringify(responseBody || {}).includes('NO_FILE_UPLOADS');
+        throw new Error(uploadUnavailable
+          ? 'Photo ID upload is not enabled for this form. Your agreement was not submitted. Please call BAIL OUT.'
+          : 'The agreement could not be sent. Please try again or call BAIL OUT.');
+      }
       const receiptDetails = document.getElementById('receipt-details');
       details.forEach(([label, key]) => {
         const cell = document.createElement('div');
