@@ -49,7 +49,7 @@
   <form id="agreement-form" action="https://formspree.io/f/mzezbzyq" method="POST">
     <input type="hidden" name="_subject" value="BAIL OUT - completed rental agreement">
     <input type="hidden" name="submission_type" value="Rental agreement acknowledgement">
-    <input type="hidden" name="agreement_version" value="2026-10-12-v2">
+    <input type="hidden" name="agreement_version" value="2026-10-12-v3">
     <input type="hidden" name="rental_time_zone" value="America/Chicago (Central Time)">
     <input type="hidden" name="signed_at_utc" id="signed_at_utc">
     <textarea name="agreement_terms" id="agreement_terms_for_email" hidden></textarea>
@@ -65,8 +65,9 @@
         <div><label for="start_datetime">Confirmed start date and time *</label><input id="start_datetime" name="start_datetime" type="datetime-local" required></div>
         <div><label for="end_datetime">Confirmed end date and time *</label><input id="end_datetime" name="end_datetime" type="datetime-local" required></div>
         <div><label for="agreed_price">Confirmed rental rate *</label><select id="agreed_price" name="agreed_price" required disabled><option value="">Choose equipment first</option></select></div>
-        <div><label for="delivery_terms">Delivery or pickup *</label><select id="delivery_terms" name="delivery_terms" required><option value="">Select confirmed arrangement</option><option value="BAIL OUT delivers and picks up">BAIL OUT delivers and picks up</option><option value="Customer picks up and returns trailer">Customer picks up and returns trailer</option></select></div>
-        <p class="small wide">Select the rate and delivery arrangement BAIL OUT confirmed with you. Trailer prices are provided in a separate written quote.</p>
+        <div id="extra-tonnage-field" hidden><label for="extra_tonnage">Do you expect the dumpster to exceed the included 2 tons? *</label><select id="extra_tonnage" name="extra_tonnage" disabled><option value="">Select Yes or No</option><option value="No">No</option><option value="Yes">Yes</option></select></div>
+        <div><label for="delivery_terms">Delivery arrangement *</label><select id="delivery_terms" name="delivery_terms" required><option value="">Select confirmed arrangement</option><option value="BAIL OUT delivers and picks up">BAIL OUT delivers and picks up</option><option value="Customer picks up and returns trailer">Customer picks up and returns trailer</option></select></div>
+        <p class="small wide">BAIL OUT delivers and picks up dumpsters at the rental site address above. Select the rate BAIL OUT confirmed with you. Trailer prices and pickup or delivery arrangements are provided in a separate written quote. Two tons are included with a dumpster; additional disposal weight is $100 per ton as described below.</p>
       </div>
     </div>
 
@@ -102,7 +103,7 @@
     <div class="notice no-print"><strong>Agreement submitted.</strong> Choose <strong>Print / Save as PDF</strong> below. On a phone, use your browser's print or share options and select Save as PDF. Keep this copy for your records.</div>
     <div class="actions no-print"><button type="button" class="button" id="print-button">Print / Save as PDF</button><a class="button secondary" href="index.html">Back to BAIL OUT</a></div>
     <h1>BAIL OUT Rental Agreement</h1>
-    <p>Customer copy of submitted details and terms, version 2026-10-12-v2.</p>
+    <p>Customer copy of submitted details and terms, version 2026-10-12-v3.</p>
     <div id="receipt-details" class="receipt-grid"></div>
     <div id="receipt-terms"></div>
     <div class="receipt-signature"><p><strong>Customer acknowledgment:</strong> I agreed to transact electronically and intended my typed name to sign this agreement.</p><p><strong>Typed signature:</strong> <span id="receipt-signature"></span> &nbsp; <strong>Date:</strong> <span id="receipt-date"></span></p><p><strong>Submitted:</strong> <span id="receipt-submitted"></span></p><p>BAIL OUT confirmation and any representative signature follow separately. For a countersigned copy, contact <strong>bailoutrentals@gmail.com</strong>.</p></div>
@@ -117,11 +118,14 @@
     ['Customer or business', 'customer_name'], ['Email', 'email'], ['Phone', 'phone'],
     ['Rental site', 'site_address'], ['Equipment', 'equipment'],
     ['Start date and time (Central)', 'start_datetime'], ['End date and time (Central)', 'end_datetime'],
-    ['Confirmed rental rate', 'agreed_price'], ['Delivery or pickup', 'delivery_terms']
+    ['Confirmed rental rate', 'agreed_price'], ['Additional tonnage expected', 'extra_tonnage'], ['Delivery arrangement', 'delivery_terms']
   ];
   const equipment = form.elements.equipment;
   const rate = form.elements.agreed_price;
   const delivery = form.elements.delivery_terms;
+  const extraTonnage = form.elements.extra_tonnage;
+  const extraTonnageField = document.getElementById('extra-tonnage-field');
+  let lastEquipment = '';
   const rates = {
     '15-yard dumpster': ['15-yard dumpster — 1 day — $325', '15-yard dumpster — 7 days — $375', '15-yard dumpster — 14 days — $475'],
     '20-yard dumpster': ['20-yard dumpster — 1 day — $400', '20-yard dumpster — 7 days — $450', '20-yard dumpster — 14 days — $550'],
@@ -131,9 +135,18 @@
     rate.replaceChildren(new Option(equipment.value ? 'Select confirmed rental rate' : 'Choose equipment first', ''));
     for (const choice of rates[equipment.value] || []) rate.add(new Option(choice, choice));
     rate.disabled = !equipment.value;
+    const isDumpster = equipment.value === '15-yard dumpster' || equipment.value === '20-yard dumpster';
+    extraTonnageField.hidden = !isDumpster;
+    extraTonnage.disabled = !isDumpster;
+    extraTonnage.required = isDumpster;
+    if (!isDumpster) extraTonnage.value = '';
     const trailerPickup = delivery.querySelector('option[value="Customer picks up and returns trailer"]');
     trailerPickup.disabled = equipment.value !== 'Trailer';
-    if (trailerPickup.disabled && delivery.value === trailerPickup.value) delivery.value = '';
+    if (equipment.value !== lastEquipment) {
+      delivery.value = isDumpster ? 'BAIL OUT delivers and picks up' : '';
+      lastEquipment = equipment.value;
+    }
+    if (isDumpster) delivery.value = 'BAIL OUT delivers and picks up';
   }
   equipment.addEventListener('change', updateChoices);
   updateChoices();
@@ -155,7 +168,7 @@
     form.elements.signed_at_utc.value = sentAt.toISOString();
     const termsForEmail = document.querySelectorAll('#agreement-terms h2, #agreement-terms h3, #agreement-terms p');
     form.elements.agreement_terms.value = [
-      'BAIL OUT Rental Agreement, version 2026-10-12-v2',
+      'BAIL OUT Rental Agreement, version 2026-10-12-v3',
       'Published dumpster rental prices: 15 yard — 1 day $325, 7 days $375, 14 days $475; 20 yard — 1 day $400, 7 days $450, 14 days $550.',
       ...Array.from(termsForEmail, element => element.textContent.trim())
     ].join(String.fromCharCode(10, 10));
@@ -165,6 +178,7 @@
       if (!response.ok) throw new Error('The agreement could not be sent. Please try again or call BAIL OUT.');
       const receiptDetails = document.getElementById('receipt-details');
       details.forEach(([label, key]) => {
+        if (key === 'extra_tonnage' && !data.get(key)) return;
         const cell = document.createElement('div');
         const title = document.createElement('strong'); title.textContent = label;
         const value = document.createElement('span'); value.textContent = data.get(key) || '—';
