@@ -20,7 +20,12 @@
     input:focus,select:focus,textarea:focus{outline:3px solid #86d994;outline-offset:1px}textarea{min-height:80px;resize:vertical}
     .choices{display:flex;gap:22px;flex-wrap:wrap}.choice{display:flex;gap:8px;align-items:flex-start;font-weight:400;font-size:15px;margin:0}
     .choice input{width:18px;height:18px;margin:2px 0 0;flex:none}.terms{border-top:1px solid var(--line);padding-top:4px}
-    .terms p{font-size:14px;line-height:1.55}.prices{width:100%;border-collapse:collapse;max-width:620px;margin:14px 0}
+    .duration-options{display:flex;gap:12px;flex-wrap:wrap;border:0;padding:0;margin:0}.duration-options legend{font-weight:700;font-size:14px;margin-bottom:8px}
+    .duration-options .choice{align-items:center;border:1px solid #a5b6a9;border-radius:6px;padding:10px 14px;min-width:125px;cursor:pointer}
+    .duration-options input[type="radio"]{appearance:none;width:20px;height:20px;border:2px solid var(--green);border-radius:3px;padding:0;margin:0;display:grid;place-items:center}
+    .duration-options input[type="radio"]:checked{background:var(--green)}.duration-options input[type="radio"]:checked::after{content:'✓';color:#fff;font-size:15px;line-height:1}
+    .duration-options input[type="radio"]:focus-visible{outline:3px solid #86d994;outline-offset:2px}
+    .terms p,.terms li{font-size:14px;line-height:1.55}.prices{width:100%;border-collapse:collapse;max-width:620px;margin:14px 0}
     .prices th,.prices td{border:1px solid var(--line);padding:9px;text-align:left}.prices th{background:var(--soft)}
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.button{border:0;border-radius:6px;background:var(--green);color:#fff;padding:13px 20px;font:700 16px Arial;cursor:pointer;text-decoration:none}
     .button.secondary{background:#172019}.button:disabled{opacity:.55;cursor:wait}.status{min-height:25px;font-weight:700}.error{color:#a41b16}.success{color:#086b22}
@@ -33,7 +38,7 @@
       .site-header,.no-print,#agreement-form,#receipt .notice,#receipt .actions{display:none!important}#receipt[hidden]{display:none}
       h1{font-size:18pt}h2{font-size:12pt;margin:16pt 0 7pt}h3{font-size:10pt;margin:10pt 0 3pt}
       .receipt-grid{grid-template-columns:1fr 1fr;gap:2pt 12pt;margin:10pt 0}.receipt-grid div{padding:3pt 0}
-      .terms p{font-size:9pt;line-height:1.35;margin:3pt 0 6pt}.terms h3{break-after:avoid}
+      .terms p,.terms li{font-size:9pt;line-height:1.35;margin:3pt 0 6pt}.terms h3{break-after:avoid}
       .prices th,.prices td{padding:4pt}.receipt-signature{break-inside:avoid}.panel{border:0;box-shadow:none;padding:0;margin:0}
     }
   </style>
@@ -49,7 +54,7 @@
   <form id="agreement-form" action="https://formspree.io/f/mzezbzyq" method="POST">
     <input type="hidden" name="_subject" value="BAIL OUT - completed rental agreement">
     <input type="hidden" name="submission_type" value="Rental agreement acknowledgement">
-    <input type="hidden" name="agreement_version" value="2026-10-12-v4">
+    <input type="hidden" name="agreement_version" value="2026-10-15-v5">
     <input type="hidden" name="rental_time_zone" value="America/Chicago (Central Time)">
     <input type="hidden" name="signed_at_utc" id="signed_at_utc">
     <textarea name="agreement_terms" id="agreement_terms_for_email" hidden></textarea>
@@ -62,33 +67,68 @@
         <div><label for="phone">Phone *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
         <div class="wide"><label for="site_address">Rental site address *</label><input id="site_address" name="site_address" autocomplete="street-address" required></div>
         <div><label for="equipment">Equipment *</label><select id="equipment" name="equipment" required><option value="">Select equipment</option><option>15-yard dumpster</option><option>20-yard dumpster</option><option>Trailer</option></select></div>
+        <fieldset class="wide duration-options"><legend>Rental period *</legend><label class="choice"><input type="radio" name="rental_period" value="24 hours" required> 24 hours</label><label class="choice"><input type="radio" name="rental_period" value="7 days" required> 7 days</label><label class="choice"><input type="radio" name="rental_period" value="14 days" required> 14 days</label></fieldset>
         <div><label for="start_datetime">Confirmed start date and time *</label><input id="start_datetime" name="start_datetime" type="datetime-local" required></div>
         <div><label for="end_datetime">Confirmed end date and time *</label><input id="end_datetime" name="end_datetime" type="datetime-local" required></div>
-        <div><label for="agreed_price">Confirmed rental rate *</label><select id="agreed_price" name="agreed_price" required disabled><option value="">Choose equipment first</option></select></div>
+        <div><label for="agreed_price">Rental rate for selected period</label><input id="agreed_price" name="agreed_price" readonly placeholder="Choose equipment and rental period"></div>
         <div id="extra-tonnage-field" hidden><label for="extra_tonnage">Do you expect the dumpster to exceed the included 2 tons? *</label><select id="extra_tonnage" name="extra_tonnage" disabled><option value="">Select Yes or No</option><option value="No">No</option><option value="Yes">Yes</option></select></div>
+        <div class="wide" id="intended-contents-field" hidden><label for="intended_contents">What will you place in the dumpster? *</label><textarea id="intended_contents" name="intended_contents" disabled placeholder="Describe the materials you plan to load"></textarea></div>
         <div><label for="delivery_terms">Delivery arrangement *</label><select id="delivery_terms" name="delivery_terms" required><option value="">Select confirmed arrangement</option><option value="BAIL OUT delivers and picks up">BAIL OUT delivers and picks up</option><option value="Customer picks up and returns trailer">Customer picks up and returns trailer</option></select></div>
-        <p class="small wide">BAIL OUT delivers and picks up dumpsters at the rental site address above. Select the rate BAIL OUT confirmed with you. Trailer prices and pickup or delivery arrangements are provided in a separate written quote. Two tons are included with a dumpster; additional disposal weight is $100 per ton as described below.</p>
+        <p class="small wide">BAIL OUT delivers and picks up dumpsters at the rental site address above. Choose the rental period BAIL OUT confirmed with you; the matching dumpster rate appears above. Trailer prices and pickup or delivery arrangements are provided in a separate written quote. Two tons are included with a dumpster; additional disposal weight is $100 per ton as described below.</p>
       </div>
     </div>
 
     <div class="panel" id="agreement-terms">
-      <h2>Customer responsibilities</h2>
+      <h2>Rental agreement terms and fees</h2>
       <div class="terms">
-        <h3>1. Confirmation and rental period</h3><p>A request does not reserve equipment. The rental begins and ends at the date and time written above or in a written confirmation accepted by both parties. Extensions require BAIL OUT approval in advance; any added charge must be disclosed and accepted before the extension. Equipment is not released until required payment and identification are completed.</p>
-        <h3>2. Site access and placement</h3><p>The customer must provide a safe, legal, accessible location and obtain any required property permission or permit. Tell BAIL OUT about soft ground, buried utilities, septic systems, overhead lines, gates, slopes, and other site hazards before delivery. BAIL OUT may refuse an unsafe placement. A $100 failed dumpster delivery fee applies if the trip cannot be completed because access or the site is not ready, as disclosed before the rental. BAIL OUT remains responsible for its own negligent acts.</p>
-        <h3>3. Dumpster loading and materials</h3><p>Do not move, alter, overfill, burn in, or place weight above the rim of the dumpster. Keep the load level and safe for pickup. No hazardous waste, fuel, chemicals, wet paint, propane tanks, batteries, asbestos-containing material, or other material the disposal facility cannot accept. Ask before loading tires, appliances, electronics, concrete, dirt, shingles, or other heavy or special material. The customer is responsible for documented disposal, removal, or return-trip costs caused by an unapproved load.</p>
-        <h3>4. Trailer towing and use</h3><p>Only an authorized licensed driver may tow the trailer. Before pickup, the renter must show proof of insurance and use a legally registered tow vehicle with adequate towing capacity and the correct hitch, lights, safety chains, and brakes when required. The renter must inspect the connection, observe the trailer's stated load rating, and secure the load. No subletting, unauthorized drivers, alteration, illegal use, or use beyond the agreed purpose without written approval.</p>
-        <h3>5. Condition and damage</h3><p>BAIL OUT and the customer should record the equipment's condition with photos or written notes at release and return. Report any existing damage before use, and report any accident, theft, missing part, or new damage promptly. The customer is responsible for reasonable documented repair or replacement costs for loss or damage beyond ordinary wear that the customer, an authorized user, or an invited person causes through misuse, negligence, or breach of this agreement. The customer is not responsible for defects or damage caused by BAIL OUT.</p>
-        <h3>6. Pickup and additional charges</h3><p>Provide clear access for pickup or return the trailer by the agreed time. BAIL OUT will itemize any additional charges and provide supporting information on request. Charges for extra days, unsuccessful pickup trips, special materials, excessive cleaning, missing components, or trailer late return apply only when the amount or method was disclosed in the confirmed quote or separately approved before the charge, except reasonable documented repair or cleanup costs under this agreement.</p>
-        <h3>7. Property and third party claims</h3><p>The customer accepts the ordinary risk that heavy equipment may mark a customer-selected surface and must disclose known site conditions. Each party remains responsible for loss to the extent caused by its own conduct. The customer will reimburse BAIL OUT for reasonable third party claims to the extent caused by the customer's negligent or unauthorized use, unsafe loading, or breach of this agreement. This does not require the customer to cover BAIL OUT's negligence, equipment defects, or conduct for which BAIL OUT is legally responsible.</p>
-        <h3>8. Other terms</h3><p>BAIL OUT may delay service for unsafe weather, road, site, or equipment conditions and will communicate changes. The confirmed quote controls the price and approved dates; any separate written cancellation terms must be given before payment. Iowa law governs this agreement. If one provision cannot be enforced, the remaining terms continue to the extent permitted by law. Electronic signatures may be used when both parties agree to transact electronically.</p>
+        <p><strong>WEIGHT / OVERAGE: 2 tons are included. Weight over 2 tons is charged at $100 per ton up to 7 tons. Loads over 7 tons are subject to an additional $300 overweight surcharge, plus applicable disposal/overage charges.</strong></p>
+        <h3>1. Rental and Payment</h3>
+        <p>The customer (&quot;Renter&quot;) agrees to rent the dumpster, trailer, or other item identified above from Bail Out Rentals (&quot;Owner&quot;) for the rental period shown in this Agreement. Renter agrees to pay the rental rate and all applicable delivery, pickup, weight overage, disposal, cleaning, sorting, damage, recovery, late-return, tax, and other charges disclosed in this Agreement or reasonably incurred because of the rental. Unless otherwise agreed in writing, rental charges continue until the rented item is returned to or retrieved and accepted by Owner. Any extension must be approved by Owner.</p>
+        <h3>2. Dumpster Weight Limits and Overage Charges</h3>
+        <p>Unless the rental order states otherwise, the dumpster rental includes up to 2 tons of disposal weight. Weight is based on the disposal facility scale ticket or other documented disposal weight. Weight over 2 tons is charged at $100 per ton, up to a total load weight of 7 tons. A load exceeding 7 tons is subject to an additional $300 overweight surcharge, in addition to the per-ton overage and any third-party disposal, handling, recovery, or regulatory charges. Owner may refuse to transport an unsafe or overloaded container until the load is reduced to a safe transport weight.</p>
+        <h3>3. Prohibited and Restricted Materials</h3>
+        <p>Renter may not place prohibited or hazardous materials in a dumpster unless Owner has specifically approved the material in writing. Prohibited materials include, at a minimum:</p>
+        <ul>
+          <li>Hazardous chemicals, fuels, oils, solvents, paints, pesticides, asbestos, batteries, medical waste, or other hazardous/regulated materials.</li>
+          <li>Tires, unless specifically approved in advance and priced separately.</li>
+          <li>Any material prohibited by the disposal facility, landfill, transfer station, law, regulation, or Owner policy.</li>
+        </ul>
+        <p>If prohibited or hazardous material is discovered, Renter is responsible for all resulting disposal, handling, sorting, environmental, return/rejection, cleanup, transportation, and third-party charges, to the extent permitted by law.</p>
+        <h3>4. Heavy, Dense, Steel, and Mixed Loads</h3>
+        <p>Renter must disclose heavy, dense, recyclable, or special materials before delivery. Steel, concrete, dirt, gravel, brick, shingles, and similar dense materials may require a separate container, reduced fill level, separate pricing, or prior approval. Owner may require materials to be kept separate. If a load must be sorted, separated, reloaded, or rejected because materials were mixed or not disclosed, Renter is responsible for reasonable sorting, labor, disposal, and handling fees.</p>
+        <h3>5. Customer Responsibility for Dumpster Contents</h3>
+        <p>Renter is responsible for everything placed in the dumpster during the rental period, whether placed there by Renter, employees, contractors, household members, neighbors, or other persons. Renter represents that the description of the intended contents is accurate and agrees to notify Owner before placing materially different, restricted, or unusually heavy contents in the dumpster. Renter should keep special or restricted materials separate when instructed by Owner.</p>
+        <h3>6. Delivery, Placement, Access, and Retrieval</h3>
+        <p>Renter is responsible for providing a reasonably safe, stable, and accessible placement and pickup location. Renter must disclose conditions that may affect safe delivery or retrieval, including soft ground, steep grades, narrow access, low clearances, overhead lines, locked gates, parked vehicles, snow, mud, or other obstructions. Renter authorizes Owner to place the dumpster in the location directed by Renter and accepts responsibility for surface or property damage that is reasonably associated with the requested placement, except to the extent caused by Owner&#x27;s negligence or misconduct.</p>
+        <p>If Owner cannot access the dumpster for pickup, exchange, or service at the scheduled time because access is blocked, unsafe, or otherwise unavailable, rental charges may continue until access is restored. Renter is also responsible for reasonable failed-trip, towing, extraction, recovery, or special-equipment charges required to retrieve the dumpster or trailer because of site conditions or Renter-caused access problems.</p>
+        <h3>7. Moving or Relocating a Dumpster</h3>
+        <p>Renter may not move, drag, tow, lift, relocate, or allow another person to relocate a dumpster after placement without Owner&#x27;s prior approval. Renter is responsible for damage, recovery, towing, or extraction costs caused by unauthorized movement or relocation.</p>
+        <h3>8. Trailer and Towing Requirements</h3>
+        <p>If the rental includes a trailer, Renter is responsible for confirming that the tow vehicle, hitch, electrical connection, braking system, and towing capacity are appropriate. Before travel, Renter must inspect and properly secure the hitch/coupler, safety chains, breakaway device, lights, brakes, tires, doors/gates, ramps, and cargo. Renter is responsible for safe loading, securing cargo, observing rated capacities, and complying with applicable towing laws.</p>
+        <h3>9. Condition, Care, and Damage</h3>
+        <p>Renter agrees to protect the rented item from abuse, vandalism, overloading, fire, contamination, theft, and avoidable damage. Renter must promptly report damage, unsafe conditions, loss, or theft. Renter may be responsible for documented repair, replacement, recovery, towing, cleaning, disposal, and loss-of-use costs resulting from damage or loss beyond ordinary wear, to the extent permitted by law.</p>
+        <h3>10. Late Return, Holdover, and Extensions</h3>
+        <p>The rented item must be ready for pickup or returned by the agreed date and time. Extensions require Owner approval. Additional daily or rental-period charges may apply when the item is kept beyond the agreed term, when pickup cannot be completed because the item is inaccessible, or when Renter requests additional time.</p>
+        <h3>11. Ownership</h3>
+        <p>All dumpsters, trailers, and rented equipment remain the property of Bail Out Rentals. Renter receives only temporary possession and use rights. Renter may not sell, pledge, sublease, conceal, encumber, permanently relocate, or otherwise dispose of any rented item.</p>
+        <h3>12. Payment Authorization and Additional Charges</h3>
+        <p>Renter authorizes Owner to charge the agreed rental amount and other authorized amounts to the payment method provided. Additional post-rental charges may include documented weight overage, overweight surcharge, additional rental days, failed pickup/service attempts, sorting, prohibited-material handling, disposal, fuel, cleaning, towing, extraction/recovery, damage, missing items, and other charges allowed by this Agreement and applicable law. Owner will maintain reasonable supporting records for post-rental charges.</p>
+        <h3>13. Responsibility for Claims</h3>
+        <p>To the extent permitted by applicable law, Renter is responsible for claims, losses, injuries, or property damage arising from Renter&#x27;s possession, placement, loading, use, transportation, or contents of the rented item, or from persons Renter permits to use or access it. Renter agrees to indemnify and hold Owner harmless from third-party claims arising from Renter&#x27;s misuse, negligence, prohibited contents, unauthorized movement, or violation of this Agreement, except to the extent caused by Owner&#x27;s negligence or misconduct.</p>
+        <h3>14. Taxes and Government Charges</h3>
+        <p>Renter is responsible for applicable sales, use, rental, disposal, environmental, toll, permit, and other governmental charges when legally required. Taxes will be calculated under current law and are not fixed by this Agreement.</p>
+        <h3>15. Default and Recovery</h3>
+        <p>Renter is in default if Renter fails to pay amounts when due, fails to make the rented item available for timely pickup/return, materially violates this Agreement, provides materially false information, places prohibited materials in a container, improperly transfers or conceals the rented item, or causes serious misuse or unauthorized relocation. Upon default, Owner may terminate the rental, demand immediate return or access, recover the rented item as permitted by law, and pursue amounts lawfully due.</p>
+        <h3>16. Iowa Law</h3>
+        <p>This Agreement is governed by the laws of the State of Iowa.</p>
+        <h3>17. Entire Agreement</h3>
+        <p>This Agreement, the rental order, fee schedule, photographs, scale tickets, delivery/pickup records, and any signed addenda constitute the complete agreement relating to this rental. Changes must be agreed to by Owner and Renter. Electronic signatures and electronically stored copies may be accepted to the extent permitted by law.</p>
       </div>
     </div>
-
     <div class="panel">
       <h2>Review and sign</h2>
       <p>By signing, the customer confirms receipt of these terms, the stated rental details, and the opportunity to inspect the equipment. A signature does not waive rights that cannot be waived under applicable law.</p>
-      <label class="choice"><input id="electronic_consent" type="checkbox" name="electronic_consent" value="I agree to conduct this transaction electronically and intend my typed name to sign" required> I agree to conduct this transaction electronically and intend my typed name below to sign this agreement. *</label>
+      <label class="choice"><input id="electronic_consent" type="checkbox" name="electronic_consent" value="I have read and agree to the rental terms, selected rental rate, and disclosed fees above; I consent to use my typed name as my electronic signature" required> I have read and agree to the rental terms, selected rental rate, and disclosed fees above. I consent to use my typed name as my electronic signature. *</label>
       <div class="grid" style="margin-top:19px"><div><label for="signature">Type your full name as your signature *</label><input id="signature" name="customer_signature" autocomplete="off" required></div><div><label for="signature_date">Date signed *</label><input id="signature_date" name="signature_date" type="date" required></div></div>
       <div class="actions"><button id="submit-button" class="button" type="submit">Submit signed agreement</button></div>
       <div id="status" class="status" role="status" aria-live="polite"></div>
@@ -100,10 +140,10 @@
     <div class="notice no-print"><strong>Agreement submitted.</strong> Choose <strong>Print / Save as PDF</strong> below. On a phone, use your browser's print or share options and select Save as PDF. Keep this copy for your records.</div>
     <div class="actions no-print"><button type="button" class="button" id="print-button">Print / Save as PDF</button><a class="button secondary" href="index.html">Back to BAIL OUT</a></div>
     <h1>BAIL OUT Rental Agreement</h1>
-    <p>Customer copy of submitted details and terms, version 2026-10-12-v4.</p>
+    <p>Customer copy of submitted details and terms, version 2026-10-15-v5.</p>
     <div id="receipt-details" class="receipt-grid"></div>
     <div id="receipt-terms"></div>
-    <div class="receipt-signature"><p><strong>Customer acknowledgment:</strong> I agreed to transact electronically and intended my typed name to sign this agreement.</p><p><strong>Typed signature:</strong> <span id="receipt-signature"></span> &nbsp; <strong>Date:</strong> <span id="receipt-date"></span></p><p><strong>Submitted:</strong> <span id="receipt-submitted"></span></p><p>BAIL OUT confirmation and any representative signature follow separately. For a countersigned copy, contact <strong>bailoutrentals@gmail.com</strong>.</p></div>
+    <div class="receipt-signature"><p><strong>Customer acknowledgment:</strong> I read and agreed to the rental terms, selected rental rate, and disclosed fees, and consented to use my typed name as my electronic signature.</p><p><strong>Typed signature:</strong> <span id="receipt-signature"></span> &nbsp; <strong>Date:</strong> <span id="receipt-date"></span></p><p><strong>Submitted:</strong> <span id="receipt-submitted"></span></p><p>BAIL OUT confirmation and any representative signature follow separately. For a countersigned copy, contact <strong>bailoutrentals@gmail.com</strong>.</p></div>
   </section>
 </main>
 <script>
@@ -113,30 +153,37 @@
   const button = document.getElementById('submit-button');
   const details = [
     ['Customer or business', 'customer_name'], ['Email', 'email'], ['Phone', 'phone'],
-    ['Rental site', 'site_address'], ['Equipment', 'equipment'],
+    ['Rental site', 'site_address'], ['Equipment', 'equipment'], ['Rental period', 'rental_period'],
     ['Start date and time (Central)', 'start_datetime'], ['End date and time (Central)', 'end_datetime'],
-    ['Confirmed rental rate', 'agreed_price'], ['Additional tonnage expected', 'extra_tonnage'], ['Delivery arrangement', 'delivery_terms']
+    ['Confirmed rental rate', 'agreed_price'], ['Additional tonnage expected', 'extra_tonnage'], ['Intended dumpster contents', 'intended_contents'], ['Delivery arrangement', 'delivery_terms']
   ];
   const equipment = form.elements.equipment;
   const rate = form.elements.agreed_price;
+  const periods = form.querySelectorAll('input[name="rental_period"]');
   const delivery = form.elements.delivery_terms;
   const extraTonnage = form.elements.extra_tonnage;
   const extraTonnageField = document.getElementById('extra-tonnage-field');
+  const intendedContents = form.elements.intended_contents;
+  const intendedContentsField = document.getElementById('intended-contents-field');
   let lastEquipment = '';
   const rates = {
-    '15-yard dumpster': ['15-yard dumpster — 1 day — $325', '15-yard dumpster — 7 days — $375', '15-yard dumpster — 14 days — $475'],
-    '20-yard dumpster': ['20-yard dumpster — 1 day — $400', '20-yard dumpster — 7 days — $450', '20-yard dumpster — 14 days — $550'],
-    'Trailer': ['Trailer rental — price per confirmed written quote']
+    '15-yard dumpster': {'24 hours': '$325', '7 days': '$375', '14 days': '$475'},
+    '20-yard dumpster': {'24 hours': '$400', '7 days': '$450', '14 days': '$550'}
   };
   function updateChoices() {
-    rate.replaceChildren(new Option(equipment.value ? 'Select confirmed rental rate' : 'Choose equipment first', ''));
-    for (const choice of rates[equipment.value] || []) rate.add(new Option(choice, choice));
-    rate.disabled = !equipment.value;
+    const period = form.querySelector('input[name="rental_period"]:checked')?.value;
+    rate.value = equipment.value === 'Trailer' && period
+      ? 'Per confirmed written quote'
+      : rates[equipment.value]?.[period] || '';
     const isDumpster = equipment.value === '15-yard dumpster' || equipment.value === '20-yard dumpster';
     extraTonnageField.hidden = !isDumpster;
     extraTonnage.disabled = !isDumpster;
     extraTonnage.required = isDumpster;
     if (!isDumpster) extraTonnage.value = '';
+    intendedContentsField.hidden = !isDumpster;
+    intendedContents.disabled = !isDumpster;
+    intendedContents.required = isDumpster;
+    if (!isDumpster) intendedContents.value = '';
     const trailerPickup = delivery.querySelector('option[value="Customer picks up and returns trailer"]');
     trailerPickup.disabled = equipment.value !== 'Trailer';
     if (equipment.value !== lastEquipment) {
@@ -146,6 +193,7 @@
     if (isDumpster) delivery.value = 'BAIL OUT delivers and picks up';
   }
   equipment.addEventListener('change', updateChoices);
+  periods.forEach(option => option.addEventListener('change', updateChoices));
   updateChoices();
   const today = new Date();
   document.getElementById('signature_date').value = [today.getFullYear(), String(today.getMonth()+1).padStart(2,'0'), String(today.getDate()).padStart(2,'0')].join('-');
@@ -163,9 +211,9 @@
     status.className = 'status'; status.textContent = 'Submitting your agreement...';
     const sentAt = new Date();
     form.elements.signed_at_utc.value = sentAt.toISOString();
-    const termsForEmail = document.querySelectorAll('#agreement-terms h2, #agreement-terms h3, #agreement-terms p');
+    const termsForEmail = document.querySelectorAll('#agreement-terms h2, #agreement-terms h3, #agreement-terms p, #agreement-terms li');
     form.elements.agreement_terms.value = [
-      'BAIL OUT Rental Agreement, version 2026-10-12-v4',
+      'BAIL OUT Rental Agreement, version 2026-10-15-v5',
       ...Array.from(termsForEmail, element => element.textContent.trim())
     ].join(String.fromCharCode(10, 10));
     const data = new FormData(form);
@@ -174,7 +222,7 @@
       if (!response.ok) throw new Error('The agreement could not be sent. Please try again or call BAIL OUT.');
       const receiptDetails = document.getElementById('receipt-details');
       details.forEach(([label, key]) => {
-        if (key === 'extra_tonnage' && !data.get(key)) return;
+        if ((key === 'extra_tonnage' || key === 'intended_contents') && !data.get(key)) return;
         const cell = document.createElement('div');
         const title = document.createElement('strong'); title.textContent = label;
         const value = document.createElement('span'); value.textContent = data.get(key) || '—';
