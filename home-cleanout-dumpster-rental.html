@@ -3211,6 +3211,25 @@ async function handleCleanoutSubmit(event){
 </script>
 
 
+
+<!-- CLICK-TO-CALL TRACKING -->
+<script>
+document.addEventListener("click", function(event){
+    const callLink = event.target.closest('a[href^="tel:"]');
+
+    if(!callLink || typeof gtag !== "function"){
+        return;
+    }
+
+    gtag("event", "click_to_call", {
+        phone_number: callLink.getAttribute("href").replace("tel:", ""),
+        link_text: (callLink.textContent || "").trim(),
+        page_path: window.location.pathname,
+        page_title: document.title
+    });
+});
+</script>
+
 </body>
 
 </html>
