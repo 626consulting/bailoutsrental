@@ -20,6 +20,7 @@
     input:focus,select:focus,textarea:focus{outline:3px solid #86d994;outline-offset:1px}textarea{min-height:80px;resize:vertical}
     .choices{display:flex;gap:22px;flex-wrap:wrap}.choice{display:flex;gap:8px;align-items:flex-start;font-weight:400;font-size:15px;margin:0}
     .choice input{width:18px;height:18px;margin:2px 0 0;flex:none}.terms{border-top:1px solid var(--line);padding-top:4px}
+    .acknowledgment-terms{margin:12px 0 18px 26px;padding:0}.acknowledgment-terms li{margin:4px 0}
     .duration-options{display:flex;gap:12px;flex-wrap:wrap;border:0;padding:0;margin:0}.duration-options legend{font-weight:700;font-size:14px;margin-bottom:8px}
     .duration-options .choice{align-items:center;border:1px solid #a5b6a9;border-radius:6px;padding:10px 14px;min-width:125px;cursor:pointer}
     .duration-options input[type="radio"]{appearance:none;width:20px;height:20px;border:2px solid var(--green);border-radius:3px;padding:0;margin:0;display:grid;place-items:center}
@@ -54,7 +55,7 @@
   <form id="agreement-form" action="https://formspree.io/f/mzezbzyq" method="POST">
     <input type="hidden" name="_subject" value="BAIL OUT - completed rental agreement">
     <input type="hidden" name="submission_type" value="Rental agreement acknowledgement">
-    <input type="hidden" name="agreement_version" value="2026-10-15-v5">
+    <input type="hidden" name="agreement_version" value="2026-10-15-v6">
     <input type="hidden" name="rental_time_zone" value="America/Chicago (Central Time)">
     <input type="hidden" name="signed_at_utc" id="signed_at_utc">
     <textarea name="agreement_terms" id="agreement_terms_for_email" hidden></textarea>
@@ -128,7 +129,8 @@
     <div class="panel">
       <h2>Review and sign</h2>
       <p>By signing, the customer confirms receipt of these terms, the stated rental details, and the opportunity to inspect the equipment. A signature does not waive rights that cannot be waived under applicable law.</p>
-      <label class="choice"><input id="electronic_consent" type="checkbox" name="electronic_consent" value="I have read and agree to the rental terms, selected rental rate, and disclosed fees above; I consent to use my typed name as my electronic signature" required> I have read and agree to the rental terms, selected rental rate, and disclosed fees above. I consent to use my typed name as my electronic signature. *</label>
+      <label class="choice"><input id="electronic_consent" type="checkbox" name="electronic_consent" value="I acknowledge and agree to all eight statements below and consent to use my typed name as my electronic signature" required> I acknowledge and agree to all of the following, and consent to use my typed name as my electronic signature. *</label>
+      <ul id="acknowledgment-terms" class="acknowledgment-terms"><li>The rental information, delivery/placement address, and intended contents are correct.</li><li>I understand that 2 tons are included and that overage charges apply above 2 tons.</li><li>I understand that loads over 7 tons are subject to an additional $300 overweight surcharge.</li><li>I will not place hazardous chemicals or tires in the dumpster unless specifically approved.</li><li>I understand that special/heavy materials may need to be kept separate and sorting fees may apply.</li><li>I am responsible for all contents placed in the dumpster during my rental.</li><li>I understand that blocked or unsafe access may result in continued rental charges and towing/extraction/recovery fees.</li><li>I agree to the Rental Agreement and Terms above.</li></ul>
       <div class="grid" style="margin-top:19px"><div><label for="signature">Type your full name as your signature *</label><input id="signature" name="customer_signature" autocomplete="off" required></div><div><label for="signature_date">Date signed *</label><input id="signature_date" name="signature_date" type="date" required></div></div>
       <div class="actions"><button id="submit-button" class="button" type="submit">Submit signed agreement</button></div>
       <div id="status" class="status" role="status" aria-live="polite"></div>
@@ -140,10 +142,10 @@
     <div class="notice no-print"><strong>Agreement submitted.</strong> Choose <strong>Print / Save as PDF</strong> below. On a phone, use your browser's print or share options and select Save as PDF. Keep this copy for your records.</div>
     <div class="actions no-print"><button type="button" class="button" id="print-button">Print / Save as PDF</button><a class="button secondary" href="index.html">Back to BAIL OUT</a></div>
     <h1>BAIL OUT Rental Agreement</h1>
-    <p>Customer copy of submitted details and terms, version 2026-10-15-v5.</p>
+    <p>Customer copy of submitted details and terms, version 2026-10-15-v6.</p>
     <div id="receipt-details" class="receipt-grid"></div>
     <div id="receipt-terms"></div>
-    <div class="receipt-signature"><p><strong>Customer acknowledgment:</strong> I read and agreed to the rental terms, selected rental rate, and disclosed fees, and consented to use my typed name as my electronic signature.</p><p><strong>Typed signature:</strong> <span id="receipt-signature"></span> &nbsp; <strong>Date:</strong> <span id="receipt-date"></span></p><p><strong>Submitted:</strong> <span id="receipt-submitted"></span></p><p>BAIL OUT confirmation and any representative signature follow separately. For a countersigned copy, contact <strong>bailoutrentals@gmail.com</strong>.</p></div>
+    <div class="receipt-signature"><p><strong>Customer acknowledgment:</strong> I acknowledged and agreed to all eight statements below and consented to use my typed name as my electronic signature.</p><div id="receipt-acknowledgments"></div><p><strong>Typed signature:</strong> <span id="receipt-signature"></span> &nbsp; <strong>Date:</strong> <span id="receipt-date"></span></p><p><strong>Submitted:</strong> <span id="receipt-submitted"></span></p><p>BAIL OUT confirmation and any representative signature follow separately. For a countersigned copy, contact <strong>bailoutrentals@gmail.com</strong>.</p></div>
   </section>
 </main>
 <script>
@@ -213,8 +215,11 @@
     form.elements.signed_at_utc.value = sentAt.toISOString();
     const termsForEmail = document.querySelectorAll('#agreement-terms h2, #agreement-terms h3, #agreement-terms p, #agreement-terms li');
     form.elements.agreement_terms.value = [
-      'BAIL OUT Rental Agreement, version 2026-10-15-v5',
-      ...Array.from(termsForEmail, element => element.textContent.trim())
+      'BAIL OUT Rental Agreement, version 2026-10-15-v6',
+      ...Array.from(termsForEmail, element => element.textContent.trim()),
+      'CUSTOMER ACKNOWLEDGMENT: Checked and agreed to all eight statements:',
+      ...Array.from(document.querySelectorAll('#acknowledgment-terms li'), element => element.textContent.trim()),
+      'Consent to typed electronic signature: Yes'
     ].join(String.fromCharCode(10, 10));
     const data = new FormData(form);
     try {
@@ -231,6 +236,9 @@
       const termsCopy = document.getElementById('agreement-terms').cloneNode(true);
       termsCopy.removeAttribute('id');
       document.getElementById('receipt-terms').append(termsCopy);
+      const acknowledgmentCopy = document.getElementById('acknowledgment-terms').cloneNode(true);
+      acknowledgmentCopy.removeAttribute('id');
+      document.getElementById('receipt-acknowledgments').append(acknowledgmentCopy);
       document.getElementById('receipt-signature').textContent = data.get('customer_signature');
       document.getElementById('receipt-date').textContent = data.get('signature_date');
       document.getElementById('receipt-submitted').textContent = sentAt.toLocaleString();
