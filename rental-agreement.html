@@ -55,7 +55,7 @@
   <form id="agreement-form" action="https://formspree.io/f/mzezbzyq" method="POST">
     <input type="hidden" name="_subject" value="BAIL OUT - completed rental agreement">
     <input type="hidden" name="submission_type" value="Rental agreement acknowledgement">
-    <input type="hidden" name="agreement_version" value="2026-10-15-v6">
+    <input type="hidden" name="agreement_version" value="2026-10-16-one-page-v7">
     <input type="hidden" name="rental_time_zone" value="America/Chicago (Central Time)">
     <input type="hidden" name="signed_at_utc" id="signed_at_utc">
     <textarea name="agreement_terms" id="agreement_terms_for_email" hidden></textarea>
@@ -79,7 +79,11 @@
       </div>
     </div>
 
-    <div class="panel" id="agreement-terms">
+    <div class="panel" id="project-details"><h2>Project and materials</h2><div class="grid">
+<div><label for="project_type">What type of project? *</label><select id="project_type" name="project_type" required><option value="">Select project</option><option>Home cleanout</option><option>Construction or remodeling</option><option>Roofing</option><option>Landscaping</option><option>Business cleanout</option><option>Other</option></select></div>
+<div><label for="material_type">Main materials *</label><select id="material_type" name="material_type" required><option value="">Select materials</option><option>Household junk</option><option>Wood and construction debris</option><option>Furniture</option><option>Roofing shingles (approval required)</option><option>Yard debris</option><option>Concrete, dirt or heavy material (approval required)</option><option>Mixed materials</option><option>Other / not sure</option></select></div>
+<div class="wide"><label for="project_notes">Additional project details</label><textarea id="project_notes" name="project_notes" placeholder="Describe materials and delivery instructions"></textarea></div></div><p class="small">No hazardous waste, fuel, chemicals, wet paint, propane tanks, batteries, or asbestos. Ask BAIL OUT before loading tires, appliances, electronics, concrete, dirt, shingles, or other special materials. Review the full terms below.</p></div>
+<div class="panel" id="agreement-terms">
       <h2>Rental agreement terms and fees</h2>
       <div class="terms">
         <p><strong>WEIGHT / OVERAGE: 2 tons are included. Weight over 2 tons is charged at $100 per ton up to 7 tons. Loads over 7 tons are subject to an additional $300 overweight surcharge, plus applicable disposal/overage charges.</strong></p>
@@ -252,5 +256,11 @@
   });
 })();
 </script>
-</body>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+ const size=new URLSearchParams(location.search).get('size');
+ const select=document.getElementById('equipment');
+ if(size==='15'||size==='20'){select.value=size+'-yard dumpster';select.dispatchEvent(new Event('change',{bubbles:true}));}
+});
+</script></body>
 </html>
