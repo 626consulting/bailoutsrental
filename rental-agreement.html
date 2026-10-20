@@ -146,7 +146,7 @@
     <div class="notice no-print"><strong>Agreement submitted.</strong> Choose <strong>Print / Save as PDF</strong> below. On a phone, use your browser's print or share options and select Save as PDF. Keep this copy for your records.</div>
     <div class="actions no-print"><button type="button" class="button" id="print-button">Print / Save as PDF</button><a class="button secondary" href="index.html">Back to BAIL OUT</a></div>
     <h1>BAIL OUT Rental Agreement</h1>
-    <p>Customer copy of submitted details and terms, version 2026-10-15-v6.</p>
+    <p>Customer copy of submitted details and terms, version 2026-10-16-one-page-v7.</p>
     <div id="receipt-details" class="receipt-grid"></div>
     <div id="receipt-terms"></div>
     <div class="receipt-signature"><p><strong>Customer acknowledgment:</strong> I acknowledged and agreed to all eight statements below and consented to use my typed name as my electronic signature.</p><div id="receipt-acknowledgments"></div><p><strong>Typed signature:</strong> <span id="receipt-signature"></span> &nbsp; <strong>Date:</strong> <span id="receipt-date"></span></p><p><strong>Submitted:</strong> <span id="receipt-submitted"></span></p><p>BAIL OUT confirmation and any representative signature follow separately. For a countersigned copy, contact <strong>bailoutrentals@gmail.com</strong>.</p></div>
@@ -213,13 +213,22 @@
       status.className = 'status error'; status.textContent = 'The end date and time must be after the start.';
       form.elements.end_datetime.focus(); return;
     }
+    const selectedPeriod = form.querySelector('input[name="rental_period"]:checked')?.value;
+    const expectedHours = {'24 hours': 24, '7 days': 168, '14 days': 336}[selectedPeriod];
+    const actualHours = (end - start) / 3600000;
+    if (!expectedHours || Math.abs(actualHours - expectedHours) > 1 / 60) {
+      status.className = 'status error';
+      status.textContent = 'Your selected rental period does not match the start and end dates. Please adjust the dates or select the correct rental period.';
+      form.elements.end_datetime.focus();
+      return;
+    }
     button.disabled = true;
     status.className = 'status'; status.textContent = 'Submitting your agreement...';
     const sentAt = new Date();
     form.elements.signed_at_utc.value = sentAt.toISOString();
     const termsForEmail = document.querySelectorAll('#agreement-terms h2, #agreement-terms h3, #agreement-terms p, #agreement-terms li');
     form.elements.agreement_terms.value = [
-      'BAIL OUT Rental Agreement, version 2026-10-15-v6',
+      'BAIL OUT Rental Agreement, version 2026-10-16-one-page-v7',
       ...Array.from(termsForEmail, element => element.textContent.trim()),
       'CUSTOMER ACKNOWLEDGMENT: Checked and agreed to all eight statements:',
       ...Array.from(document.querySelectorAll('#acknowledgment-terms li'), element => element.textContent.trim()),
