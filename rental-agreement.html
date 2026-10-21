@@ -43,6 +43,14 @@
       .prices th,.prices td{padding:4pt}.receipt-signature{break-inside:avoid}.panel{border:0;box-shadow:none;padding:0;margin:0}
     }
   </style>
+  <!-- Google Ads tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18528152758"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18528152758');
+  </script>
 </head>
 <body>
 <header class="site-header"><div><a class="brand" href="index.html">BAIL OUT</a><a href="index.html">Back to rentals</a></div></header>
@@ -257,6 +265,12 @@
       document.getElementById('receipt-submitted').textContent = sentAt.toLocaleString();
       form.hidden = true;
       document.getElementById('receipt').hidden = false;
+      // Track a lead only after the rental form provider accepts the submission.
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-18528152758/j34UCPPW6KQdELbZ9IJF'
+        });
+      }
       window.scrollTo({top:0, behavior:'smooth'});
     } catch (error) {
       status.className = 'status error'; status.textContent = error.message;
