@@ -215,21 +215,9 @@
   form.addEventListener('submit', async event => {
     event.preventDefault();
     if (!form.reportValidity()) return;
-    const start = new Date(form.elements.start_datetime.value).getTime();
-    const end = new Date(form.elements.end_datetime.value).getTime();
-    if (!(end > start)) {
-      status.className = 'status error'; status.textContent = 'The end date and time must be after the start.';
-      form.elements.end_datetime.focus(); return;
-    }
-    const selectedPeriod = form.querySelector('input[name="rental_period"]:checked')?.value;
-    const expectedHours = {'24 hours': 24, '7 days': 168, '14 days': 336}[selectedPeriod];
-    const actualHours = (end - start) / 3600000;
-    if (!expectedHours || Math.abs(actualHours - expectedHours) > 1 / 60) {
-      status.className = 'status error';
-      status.textContent = 'Your selected rental period does not match the start and end dates. Please adjust the dates or select the correct rental period.';
-      form.elements.end_datetime.focus();
-      return;
-    }
+    // Rental dates are requests; do not block a signed agreement based on
+    // the selected duration or the requested start/end date range.
+    // BAIL OUT reviews and confirms dates and pricing separately.
     button.disabled = true;
     status.className = 'status'; status.textContent = 'Submitting your agreement...';
     const sentAt = new Date();
