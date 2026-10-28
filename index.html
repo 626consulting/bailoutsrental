@@ -1798,6 +1798,17 @@ footer{
     }
 }
 
+
+/* Contact and rental request cards */
+.quote-actions{padding:30px;display:grid;gap:18px;align-content:center;min-width:0}
+.quote-action-card{border:1px solid #d8e6da;border-radius:12px;padding:25px;background:#fff;min-width:0}
+.quote-action-card h2{font-size:clamp(22px,2.5vw,28px);margin:8px 0 10px}
+.quote-action-card p{margin:0 0 15px;line-height:1.6}
+.quote-action-label{font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#187e2b}
+.quote-action-button{display:block;text-align:center;padding:14px 16px;background:var(--green);border-radius:7px;color:#061007;text-decoration:none;font-weight:900;transition:filter .2s}
+.quote-action-button:hover,.quote-action-button:focus-visible{filter:brightness(.92);text-decoration:underline}
+.quote-action-card .quote-action-note{font-size:12px;color:#536457;margin:12px 0 0}
+@media(max-width:680px){.quote-actions{padding:18px}.quote-action-card{padding:20px}}
 </style>
 
   <!-- Google Ads measurement tag -->
@@ -3268,27 +3279,21 @@ bailoutrentals@gmail.com
 </div>
 
 
-<div class="form-card" id="contact-us-form">
-<h2>Contact Us</h2>
-<p>Have a question about dumpster rentals, trailer rentals, pricing, or an existing rental? Send BAIL OUT a message.</p>
-<div style="text-align:center;padding:20px 12px"><a class="submit-button" style="display:inline-block;text-decoration:none;padding:15px 24px" href="https://docs.google.com/forms/d/e/1FAIpQLSeYBXIc-I1C3E9azdRYuZ2EE536HX3w531TXn_vN-B7WVLdYA/viewform">Send Us a Message</a><p style="font-size:13px;margin-top:12px">For rental booking requests, use the separate rental request form below.</p></div>
+<div class="quote-actions">
+  <div class="quote-action-card" id="contact-us-form">
+    <div class="quote-action-label">Questions &amp; Support</div>
+    <h2>Contact Us</h2>
+    <p>Questions about pricing, availability, or an existing rental? Send us a message and we'll follow up.</p>
+    <a class="quote-action-button" href="https://docs.google.com/forms/d/e/1FAIpQLSeYBXIc-I1C3E9azdRYuZ2EE536HX3w531TXn_vN-B7WVLdYA/viewform">Send Us a Message</a>
+  </div>
+  <div class="quote-action-card">
+    <div class="quote-action-label">New Rental</div>
+    <h2>Request a Rental</h2>
+    <p>Choose your equipment, provide delivery details, and submit your rental request for approval.</p>
+    <a class="quote-action-button" href="https://docs.google.com/forms/d/e/1FAIpQLSc5nH6jnDZkCavOjuX2UitNYP6EEvm4ufhdrxbIP2Ld45tQ-w/viewform">Start Rental Request</a>
+    <p class="quote-action-note">Requests are subject to availability and confirmation.</p>
+  </div>
 </div>
-
-<div class="form-card">
-
-<h2>
-Request a Quote
-</h2>
-
-<p>
-Use the booking form to request a rental. BAIL OUT will follow up to confirm availability.
-</p>
-
-
-<div style="text-align:center;padding:24px 12px"><p>Complete your rental request, delivery details, and agreement in our secure booking form. BAIL OUT will review availability before confirming your rental.</p><a class="submit-button" style="display:inline-block;text-decoration:none;padding:15px 24px" href="https://docs.google.com/forms/d/e/1FAIpQLSc5nH6jnDZkCavOjuX2UitNYP6EEvm4ufhdrxbIP2Ld45tQ-w/viewform">Start Rental Request</a><p style="font-size:13px;margin-top:12px">Submitting a request does not reserve equipment. BAIL OUT will confirm availability and final pricing.</p></div>
-
-</div>
-
 </div>
 
 </div>
