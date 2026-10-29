@@ -894,7 +894,7 @@ footer{
   "name": "BAIL OUT Roll-Off Dumpster & Trailer Rentals",
   "url": "https://bailoutrentals.com/",
   "telephone": "+1-641-691-8799",
-  "description": "Request a Premier enclosed trailer from BAIL OUT. $325 for 1 day, $375 for 7 days, or $475 for 14 days, 2 tons included, no separate dumpster delivery charge, and additional weight at $100 per ton.",
+  "description": "Premier enclosed tandem-axle trailer rental from BAIL OUT. $125 per day, $450 per week, or $1,100 per month. Request availability online.",
   "image": "https://bailoutrentals.com/15yard.png"
 }
 </script>
@@ -1013,32 +1013,23 @@ footer{
 
             <div class="feature">
                 <span class="check">✓</span>
-                1, 7 & 14 Day Rental Options
+                Daily, Weekly & Monthly Rentals
             </div>
 
         </div>
 
         <div class="pricing-panel">
-            <h3>Premier Trailer Pricing</h3>
-            <div class="pricing-row">
-                <span>1 Day</span>
-                <strong>$325</strong>
-            </div>
-            <div class="pricing-row">
-                <span>7 Days</span>
-                <strong>$375</strong>
-            </div>
-            <div class="pricing-row">
-                <span>14 Days</span>
-                <strong>$475</strong>
-            </div>
-            <div class="pricing-included">
-                <div>✓ 2 Tons of Disposal Included</div>
-                <div class="pricing-extra">Additional Weight: $100 per Ton</div>
-                <div class="pricing-extra pricing-free">Dumpster Delivery: No Charge</div>
-                <div class="pricing-extra pricing-fee">Failed Delivery Fee: $100</div>
-            </div>
-        </div>
+<h3>Premier Trailer Pricing</h3>
+<div class="pricing-row"><span>1 Day</span><strong>&#36;125</strong></div>
+<div class="pricing-row"><span>7 Days</span><strong>&#36;450</strong></div>
+<div class="pricing-row"><span>Monthly</span><strong>&#36;1,100</strong></div>
+<div class="pricing-included">
+<div>✓ Enclosed Cargo Trailer</div>
+<div class="pricing-extra">Tandem-Axle Design</div>
+<div class="pricing-extra pricing-free">Rear Double Doors</div>
+<div class="pricing-extra">Availability Confirmed Before Booking</div>
+</div>
+</div>
 
     </div>
 
@@ -1259,8 +1250,8 @@ async function handleDumpsterSubmit(event){
                     'event',
                     'generate_lead',
                     {
-                        lead_source:'15_yard_dumpster',
-                        rental_type:'15_yard'
+                        lead_source:'trailer_rental',
+                        rental_type:'enclosed_trailer'
                     }
                 );
             }
@@ -1299,7 +1290,7 @@ async function handleDumpsterSubmit(event){
 
         submitButton.disabled = false;
         submitButton.textContent =
-            'Submit 15-Yard Booking Request';
+            'Submit Trailer Booking Request';
     }
 }
 
