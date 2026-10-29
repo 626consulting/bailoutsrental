@@ -885,6 +885,14 @@ footer{
     color:#ffffff;
 }
 
+.trailer-gallery{position:relative}
+.trailer-gallery .gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);border:0;border-radius:50%;width:42px;height:42px;background:rgba(0,0,0,.7);color:white;font-size:24px;cursor:pointer;z-index:2}
+.trailer-gallery .gallery-prev{left:12px}
+.trailer-gallery .gallery-next{right:12px}
+.trailer-gallery .gallery-arrow[hidden]{display:none}
+.gallery-dots{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:8px}
+.gallery-dots button{width:11px;height:11px;border:1px solid white;border-radius:50%;background:rgba(0,0,0,.5);cursor:pointer;padding:0}
+.gallery-dots button[aria-current="true"]{background:var(--green)}
 </style>
 
 <script type="application/ld+json">
@@ -967,12 +975,12 @@ footer{
 <div class="hero-grid">
 
 
-    <div class="hero-image">
-
-        <img src="trailer.png"
-             alt="Premier enclosed tandem-axle cargo trailer">
-
-    </div>
+    <div class="hero-image trailer-gallery" aria-label="Premier enclosed trailer photo gallery">
+  <img id="trailer-gallery-image" src="trailer.png" alt="Premier enclosed trailer" loading="eager">
+  <button type="button" class="gallery-arrow gallery-prev" aria-label="Previous trailer photo" onclick="moveTrailerPhoto(-1)" hidden>&#10094;</button>
+  <button type="button" class="gallery-arrow gallery-next" aria-label="Next trailer photo" onclick="moveTrailerPhoto(1)" hidden>&#10095;</button>
+  <div id="trailer-gallery-dots" class="gallery-dots" aria-label="Choose trailer photo"></div>
+</div>
 
 
     <div>
@@ -1315,5 +1323,51 @@ document.addEventListener("click", function(event){
 });
 </script>
 
+<script>
+(function(){
+  const candidates=[
+    {src:'trailer.png',alt:'Premier enclosed trailer main photo'},
+    {src:'trailer-front.jpg',alt:'Premier enclosed trailer front and side view'},
+    {src:'trailer-rear.jpg',alt:'Premier enclosed trailer rear view'}
+  ];
+  const gallery=document.querySelector('.trailer-gallery');
+  if(!gallery)return;
+  const picture=document.getElementById('trailer-gallery-image');
+  const dots=document.getElementById('trailer-gallery-dots');
+  const photos=[candidates[0]];
+  let current=0,timer;
+  function show(index){
+    current=(index+photos.length)%photos.length;
+    picture.src=photos[current].src;picture.alt=photos[current].alt;
+    dots.innerHTML='';
+    if(photos.length>1){
+      photos.forEach((photo,i)=>{
+        const dot=document.createElement('button');
+        dot.type='button';dot.setAttribute('aria-label','Show trailer photo '+(i+1));
+        dot.setAttribute('aria-current',String(i===current));
+        dot.addEventListener('click',()=>{show(i);resetTimer()});
+        dots.appendChild(dot);
+      });
+    }
+    gallery.querySelectorAll('.gallery-arrow').forEach(b=>b.hidden=photos.length<2);
+  }
+  function resetTimer(){
+    clearInterval(timer);
+    if(photos.length>1&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+      timer=setInterval(()=>show(current+1),5500);
+  }
+  window.moveTrailerPhoto=function(step){show(current+step);resetTimer()};
+  candidates.slice(1).forEach(candidate=>{
+    const test=new Image();
+    test.onload=()=>{photos.push(candidate);show(current);resetTimer()};
+    test.src=candidate.src;
+  });
+  gallery.addEventListener('mouseenter',()=>clearInterval(timer));
+  gallery.addEventListener('mouseleave',resetTimer);
+  gallery.addEventListener('focusin',()=>clearInterval(timer));
+  gallery.addEventListener('focusout',resetTimer);
+  show(0);
+})();
+</script>
 </body>
 </html>
