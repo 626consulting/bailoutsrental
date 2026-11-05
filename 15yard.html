@@ -1385,5 +1385,23 @@ document.addEventListener("click", function(event){
 });
 </script>
 
+
+<!-- Booking-form open tracking: measures outbound opens, not completed submissions. -->
+<script>
+document.addEventListener("click", function(event) {
+  const link = event.target.closest('a[href*="docs.google.com/forms/"]');
+  if (!link || typeof gtag !== "function") return;
+  const url = link.getAttribute("href") || "";
+  const formType = url.includes("1FAIpQLSdy6N99pAELqcUxQm99Nr_1OUWrlvaWqKCUH5FWbdM9PtJx5w") ? "trailer" :
+    url.includes("1FAIpQLSc5nH6jnDZkCavOjuX2UitNYP6EEvm4ufhdrxbIP2Ld45tQ-w") ? "dumpster" : "contact";
+  if (formType === "contact") return;
+  gtag("event", "booking_form_open", {
+    form_type: formType,
+    link_text: (link.textContent || "").trim().slice(0, 100),
+    page_path: window.location.pathname,
+    transport_type: "beacon"
+  });
+});
+</script>
 </body>
 </html>
