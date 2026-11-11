@@ -1333,6 +1333,9 @@ document.addEventListener("click", function(event) {
     form_type: formType,
     link_text: (link.textContent || "").trim().slice(0, 100),
     page_path: window.location.pathname,
+    form_destination: formType === "trailer" ? "trailer_rental" : "dumpster_rental",
+    // Presence flags only: never send raw ad click IDs or customer data in analytics events.
+    ad_click_present: /(?:^|[?&])(gclid|gbraid|wbraid)=/.test(window.location.search) ? "yes" : "unknown",
     transport_type: "beacon"
   });
 });
