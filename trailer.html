@@ -1371,14 +1371,14 @@ document.addEventListener("click", function(event){
 })();
 </script>
 
-<!-- Booking-form open tracking: measures outbound opens, not completed submissions. -->
+<!-- Booking-form open tracking: measures navigation to embedded forms, not completed submissions. -->
 <script>
 document.addEventListener("click", function(event) {
-  const link = event.target.closest('a[href*="docs.google.com/forms/"]');
+  const link = event.target.closest('a[href="/dumpster-request.html"], a[href="/trailer-request.html"]');
   if (!link || typeof gtag !== "function") return;
   const url = link.getAttribute("href") || "";
-  const formType = url.includes("1FAIpQLSdy6N99pAELqcUxQm99Nr_1OUWrlvaWqKCUH5FWbdM9PtJx5w") ? "trailer" :
-    url.includes("1FAIpQLSc5nH6jnDZkCavOjuX2UitNYP6EEvm4ufhdrxbIP2Ld45tQ-w") ? "dumpster" : "contact";
+  const formType = url.includes("/trailer-request.html") ? "trailer" :
+    url.includes("/dumpster-request.html") ? "dumpster" : "contact";
   if (formType === "contact") return;
   gtag("event", "booking_form_open", {
     form_type: formType,
